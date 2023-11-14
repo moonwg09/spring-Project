@@ -22,7 +22,8 @@ public class MemberController {
 	
 	// 회원가입 버튼 클릭 시
 		@RequestMapping(value = "/join", method = RequestMethod.POST)
-		public void memberJoin5() throws Exception {
+
+		public void memberJoin5123() throws Exception {
 			logger.info("memberJoin 진입");
 		}
 	

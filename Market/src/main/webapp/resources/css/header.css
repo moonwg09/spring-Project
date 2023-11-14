@@ -1,0 +1,62 @@
+.Main_Header{
+    display: flex;
+    margin-left: 11%;
+    padding: 0.5%
+}
+
+.LogoImg{
+    width: 40%;
+    padding: 3% 10%;
+}
+
+.Main_Bar_top{
+    margin-top:3.5%;
+    width: 100%;
+    display: flex;
+}
+
+.Main_Bar > .Bar_bar{
+    display: flex;
+    margin-right: 22px;
+    font-weight: 700;
+   	text-decoration: none;
+   	font-size: 20px; 
+   	color: #555555;
+}
+
+.search-container {
+    text-align: center;
+    margin-left: 5%;
+    margin-top: 1%;
+}
+
+input[type="text"] {
+    background-color: #e9ecef;
+    border-radius: 8px; 
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+}
+
+.search-button {
+    padding: 8px 15px;
+    font-size: 16px;
+    background-color: white;
+    border: 1px solid lightgray;
+    color: black;
+    border-radius: 8px; 
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.search-button:hover {
+    background-color: #e9ecef;
+    color: #868e96;
+    text-decoration: none;
+}
+
+.Bar_bar:hover{
+    color: #868e96;
+}

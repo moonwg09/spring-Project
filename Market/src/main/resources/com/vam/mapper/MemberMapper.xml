@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="com.vam.mapper.MemberMapper">
+       <insert id="memberJoin">
+        <!-- Specify column names in the VALUES clause -->
+        INSERT INTO member (memberNo, id, password, nickName, email, addr1, addr2, phone, regDate, adminCk)
+        VALUES (#{memberNo}, #{id}, #{password}, #{nickName}, #{email}, #{addr1}, #{addr2}, #{phone}, now(), #{adminCk})
+    </insert>
+    </mapper>

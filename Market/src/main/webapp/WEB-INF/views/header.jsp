@@ -15,7 +15,7 @@
 <div class="Main_Header" style="height: 10%;">
         <div class="Main_Logo">
             <!--메인 로고 메인 화면으로 들어가는 경로-->
-            <a target="_blank" href="Index.html"><img class="LogoImg" src="resources/image/logo.jpg"></a>
+            <a target="_blank" href="/main"><img class="LogoImg" src="/resources/image/logo.jpg"></a>
         </div>
 
         <!--상단바 모양 틀-->

@@ -22,11 +22,15 @@ public class MemberController {
 	
 	
 	// 회원가입 버튼 클릭 시
-	@RequestMapping(value = "/join", method = RequestMethod.GET)
-	public void memberJoin() throws Exception {
-		logger.info("memberJoin 진입");
+	@RequestMapping(value = "/check", method = RequestMethod.GET)
+	public void memberCheck() throws Exception {
+		logger.info("memberCheck 진입");
 	}
-
+	// 다음 클릭 시
+		@RequestMapping(value = "/join", method = RequestMethod.GET)
+		public void memberJoin() throws Exception {
+			logger.info("memberJoin 진입");
+		}
 	// 로그인 버튼 클릭 시
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public void memberLogin() throws Exception {

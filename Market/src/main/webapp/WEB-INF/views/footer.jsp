@@ -17,8 +17,8 @@
             <!--회원가입과 로그인-->
             <div class="Check">감귤 Check</div><br>
             <div class="Check-a">
-            <a href="Signup.html" class="Main_a_Button1">회원 가입</a>
-            <a href="LoginForm.html" class="Main_a_Button1">로그인</a>
+            <a href="/member/check" class="Main_a_Button1">회원 가입</a>
+            <a href="/member/login" class="Main_a_Button1">로그인</a>
         </div>
         </section>
         <!--Footer의 세부 카테고리 시작-->
@@ -103,7 +103,7 @@
 
                         <!--sns링크 연결-->
             <section class="ImgMix">
-                <img src="resources/image/Sns.png" class="ImgMix-1" style="height: 3%;">
+                <img src="/resources/image/Sns.png" class="ImgMix-1" style="height: 3%;">
             </section>
                 <span class="Footer_M">
                     <b>

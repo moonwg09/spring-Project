@@ -1,0 +1,440 @@
+@charset "UTF-8"; 
+
+.signup_form {
+	background-color: gainsboro;
+	width: 30%;
+	margin-top:100px;
+	margin: 0 auto;
+	padding: 1% 1%;
+}
+
+.signup_container {
+	background-color: white;
+	padding: 3% 5%;
+	margin: 0 auto;
+}
+
+.signup_title {
+	font-size: 18px;
+}
+
+hr {
+	border: 0;
+	height: 1px;
+	background-color: black;
+}
+
+.signup_step_form {
+	display: flex;
+	text-align: center;
+}
+
+.signup_step {
+	width: 100%;
+}
+
+.signup_subtitle_form {
+	width: 100%;
+	padding: 10px 0px;
+}
+
+.signup_subtitle_text {
+	font-size: 13px;
+	font-weight: 900;
+	padding: 1% 0%;
+}
+
+.signup_subtitle_text2 {
+	font-size: 8px;
+}
+
+.signup_btn_form {
+	display: flex;
+	margin-left: 54%;
+}
+
+.signup_btn_cancel {
+	background-color: gray;
+	border: 1px solid gainsboro;
+	color: white;
+	font-size: 12px;
+	padding: 3% 15%;
+	cursor: pointer;
+}
+
+.signup_btn_next {
+	background-color: orangered;
+	border: 1px solid gainsboro;
+	color: white;
+	font-size: 12px;
+	margin-left: 2%;
+	padding: 3% 15%;
+	cursor: pointer;
+}
+
+.signup_input_textbox {
+	margin-top: 3%;
+}
+
+.signup_input_text {
+	font-size: 11px;
+}
+
+.signup_input_boxcheck {
+	display: flex;
+	width: 100%;
+	margin-top: 1%;
+}
+
+.signup_input_box_id {
+	width: 80%;
+	border-radius: 5px;
+	border: 2px solid gainsboro;
+	padding: 1.2% 1%;
+}
+
+.signup_input_check {
+	background-color: black;
+	color: white;
+	font-size: 10px;
+	width: 15%;
+	margin-left: 2%;
+	padding: 1.7% 1%;
+	text-align: center;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.signup_input_textbox_1 {
+	margin-top: 1.5%;
+	width: 100%;
+}
+
+.singup_input_text_1 {
+	font-size: 11px;
+}
+
+.signup_input_box_1 {
+	border-radius: 5px;
+	border: 2px solid gainsboro;
+	width: 94.5%;
+	margin-top: 1.5%;
+	padding: 1.2% 2.5%;
+}
+
+.signup_input_box_1_re {
+	border-radius: 5px;
+	border: 2px solid gainsboro;
+	width: 94.5%;
+	margin-top: 1.5%;
+	padding: 1.2% 2.5%;
+}
+
+.signup_input_box_2 {
+	border-radius: 5px;
+	border: 2px solid gainsboro;
+	width: 94.5%;
+	margin-top: 1.5%;
+	padding: 1.2% 2.5%;
+}
+
+.signup_input_box_3 {
+	border-radius: 5px;
+	border: 2px solid gainsboro;
+	width: 94.5%;
+	margin-top: 1.5%;
+	padding: 1.2% 2.5%;
+}
+
+.signup_input_email_text {
+	font-size: 11px;
+	margin-top: 1.5%;
+}
+
+.signup_input_email_box {
+	border: 2px solid gainsboro;
+	border-radius: 5px;
+	padding: 1.2% 2.5%;
+	width: 70%;
+}
+
+.signup_input_email_boxbtn {
+	display: flex;
+	margin-top: 1.5%;
+	width: 100%;
+}
+
+.signup_input_email_btn {
+	cursor: pointer;
+	background-color: black;
+	color: white;
+	font-size: 10px;
+	padding: 1.7% 1.3%;
+	border-radius: 5px;
+	width: 25%;
+	margin-left: 2%;
+	text-align: center;
+}
+
+.signup_input_phoneNum {
+	margin-top: 1.5%;
+}
+
+.signup_input_phoneNum_scrollBoxBtn {
+	display: flex;
+	margin-top: 1.5%;
+	width: 100%;
+}
+
+.signup_input_phoneNum_scroll {
+	border: 2px solid gainsboro;
+	border-radius: 5px;
+	width: 15%;
+	margin-right: 2%;
+	text-align: center;
+}
+
+.signup_input_phoneNum_box {
+	border: 2px solid gainsboro;
+	border-radius: 5px;
+	width: 72%;
+	padding: 1.2% 1.5%;
+}
+
+.signup_input_phoneNum_btn {
+	cursor: pointer;
+	background-color: black;
+	color: white;
+	font-size: 10px;
+	padding: 1.7% 1.3%;
+	border-radius: 5px;
+	width: 25%;
+	margin-left: 2%;
+	text-align: center;
+}
+
+.signup_input_add {
+	margin-top: 1.5%;
+	width: 100%;
+}
+
+.signup_input_add_boxbtn {
+	display: flex;
+	margin-top: 1.5%;
+	margin-bottom: 1.5%;
+}
+
+.signup_input_add_box {
+	border: 2px solid gainsboro;
+	border-radius: 5px;
+	padding: 1.2% 1.5%;
+}
+
+.signup_input_add_btn {
+	background-color: black;
+	color: white;
+	font-size: 10px;
+	padding: 1.2% 2%;
+	border-radius: 5px;
+	margin-left: 2%;
+	cursor: pointer;
+}
+
+.signup_input_add_btn_text {
+	margin-top: 3.5%;
+}
+
+/* step css */
+.progressbar-wrapper {
+	background: #fff;
+	width: 100%;
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+
+.progressbar li {
+	list-style-type: none;
+	width: 30%;
+	float: left;
+	font-size: 10px;
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
+	color: #7d7d7d;
+}
+
+.progressbar li:before {
+	width: 15px;
+	height: 15px;
+	content: "";
+	line-height: 30px;
+	border: 3px solid #7d7d7d;
+	display: block;
+	text-align: center;
+	margin: 0 auto 3px auto;
+	border-radius: 50%;
+	position: relative;
+	z-index: 2;
+	background-color: #fff;
+}
+
+.progressbar li:after {
+	width: 100%;
+	height: 6px;
+	content: '';
+	position: absolute;
+	background-color: #7d7d7d;
+	top: 7px;
+	left: -50%;
+	z-index: 0;
+}
+
+.progressbar li:first-child:after {
+	content: none;
+}
+
+.progressbar li.active {
+	color: #7d7d7d;
+	font-weight: bold;
+}
+
+.progressbar li.active:before {
+	border-color: #7d7d7d;
+	background: white;
+}
+
+.progressbar li.active+li:after {
+	background-color: #7d7d7d;
+}
+
+.progressbar li.active:before {
+	background: rgb(240, 118, 11) url(user.svg) no-repeat center center;
+	background-size: 60%;
+}
+
+.progressbar li::before {
+	background: #fff url(user.svg) no-repeat center center;
+	background-size: 60%;
+}
+
+/* EMCheckPopup */
+.EMPopup_form {
+	margin: 0 auto;
+	background-color: gainsboro;
+	width: 90%;
+	padding: 3% 3%;
+}
+
+.EMPopup_form_container {
+	background-color: white;
+	padding: 1% 1%;
+}
+
+.EMPopup_title {
+	font-size: 18px;
+	font-weight: 700;
+	padding: 5% 3%;
+}
+
+.EMPopup_form_main_box {
+	padding: 0% 3%;
+}
+
+.EMPopup_form_main_input {
+	padding: 2% 1%;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+
+.EMPopup_main_btn {
+	padding: 1% 3%;
+	border-radius: 5px;
+	background-color: black;
+	color: white;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.EMPopup_main_form {
+	display: flex;
+}
+
+.EMPopup_under {
+	padding: 5% 3%;
+	margin-top: 10%;
+	display: flex;
+}
+
+.EMPopup_under_retext {
+	font-size: 13px;
+	font-weight: 700;
+}
+
+.EMPopup_under_btn {
+	font-size: 13px;
+	padding: 0% 3%;
+	font-weight: 300;
+	color: darkblue;
+	cursor: pointer;
+}
+
+/* PNCheckPopup */
+.PNPopup_form {
+	margin: 0 auto;
+	background-color: gainsboro;
+	width: 90%;
+	padding: 3% 3%;
+}
+
+.PNPopup_form_container {
+	background-color: white;
+	padding: 1% 1%;
+}
+
+.PNPopup_title {
+	font-size: 18px;
+	font-weight: 700;
+	padding: 5% 3%;
+}
+
+.PNPopup_form_main_box {
+	padding: 0% 3%;
+}
+
+.PNPopup_form_main_input {
+	padding: 2% 1%;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+
+.PNPopup_main_btn {
+	padding: 1% 3%;
+	border-radius: 5px;
+	background-color: black;
+	color: white;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.PNPopup_main_form {
+	display: flex;
+}
+
+.PNPopup_under {
+	padding: 5% 3%;
+	margin-top: 10%;
+	display: flex;
+}
+
+.PNPopup_under_retext {
+	font-size: 13px;
+	font-weight: 700;
+}
+
+.PNPopup_under_btn {
+	font-size: 13px;
+	padding: 0% 3%;
+	font-weight: 300;
+	color: darkblue;
+	cursor: pointer;
+}

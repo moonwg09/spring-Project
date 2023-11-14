@@ -39,7 +39,7 @@
 						<!--당근 마켓 회원가입 로그인 경로-->
 						<div class="Main_a_Button">
 						<%-- <c:if test="${member == null}"> --%>
-						<a href="/member/join" class="Main_aa_Button"> 회원 가입 <!--Signup.html-->
+						<a href="/member/check" class="Main_aa_Button"> 회원 가입 <!--Signup.html-->
 							</a> <a href="member/login" class="Main_aa_Button"> 로그인 <!--Login.html-->
 							</a>
 						<%-- </c:if> --%>

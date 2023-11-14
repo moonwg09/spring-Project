@@ -1,308 +1,215 @@
-@charset "UTF-8";
-*{
-   margin: 0;
-   padding:0;
-}
-
-/* 화면 전체 렙 */
-.wrapper{
-   width: 100%;
-}
-
-/* content 랩 */
-.wrap{
-   width : 800px;
-   margin: auto;
-}
-/* 페이지 제목 */
-.subjecet{
-   width: 100%;
-    height: 120px;
-    background-color: #8EC0E4;
-}
-.subjecet span{
-   margin-left: 31px;
-    font-size: 80px;
-    font-weight: 900;
-    color: white;
-}
-
-/* 아이디 영역 */
-.id_wrap{
-   width: 100%;
-    margin-top: 20px;
-}
-.id_name{
-   font-size: 25px;
-    font-weight: bold;
-}
-.id_input_box{
-   border: 1px solid black;
-   height:31px;
-   padding: 10px 14px;   
-   
-}
-.id_input{
-   width:100%;
-   height:100%;
-   border:none;
-   font-size:28px;
-}
-
-/* 비밀번호 영역 */
-.pw_wrap{
-   width: 100%;
-    margin-top: 20px;
-}
-.pw_name{
-   font-size: 25px;
-    font-weight: bold;
-}
-.pw_input_box{
-   border: 1px solid black;
-   height:31px;
-   padding: 10px 14px;   
-   
-}
-.pw_input{
-   width:100%;
-   height:100%;
-   border:none;
-   font-size:28px;
-}
-
-/* 비밀번호 확인 영역 */
-.pwck_wrap{
-   width: 100%;
-    margin-top: 20px;
-}
-.pwck_name{
-   font-size: 25px;
-    font-weight: bold;
-}
-.pwck_input_box{
-   border: 1px solid black;
-   height:31px;
-   padding: 10px 14px;   
-   
-}
-.pwck_input{
-   width:100%;
-   height:100%;
-   border:none;
-   font-size:28px;
-}
-
-/* 이름 영역 */
-.user_wrap{
-   width: 100%;
-    margin-top: 20px;
-}
-.user_name{
-   font-size: 25px;
-    font-weight: bold;
-}
-.user_input_box{
-   border: 1px solid black;
-   height:31px;
-   padding: 10px 14px;   
-   
-}
-.user_input{
-   width:100%;
-   height:100%;
-   border:none;
-   font-size:28px;
-}
-
-/* 메일 영역 */
-.mail_wrap{
-   width: 100%;
-    margin-top: 20px;
-}
-.mail_name{
-   font-size: 25px;
-    font-weight: bold;
-}
-.mail_input_box{
-   border: 1px solid black;
-   height:31px;
-   padding: 10px 14px;   
-   
-}
-.mail_input{
-   width:100%;
-   height:100%;
-   border:none;
-   font-size:28px;
-}
-.mail_check_wrap{
-   margin-top: 20px;   
-}
-.mail_check_input_box{
-   border: 1px solid black;
-    height: 31px;
-    padding: 10px 14px;
-    width: 61%;
-    float: left;
-}
-.mail_check_input{
-   width:100%;
-   height:100%;
-   border:none;
-   font-size:28px;
-}
-.mail_check_button{
-    border: 1px solid black;
-    height: 51px;
+.check_form{
+    background-color: gainsboro;
     width: 30%;
-    float: right;
-    line-height: 50px;
+    margin: 0 auto;
+    padding: 1% 1%;
+        margin-top: 100px;
+}
+.check_container{
+    background-color: white;
+    padding: 3% 5%;
+    
+    margin: 0 auto;
+}
+.check_title{
+    font-size: 18px;
+}
+
+hr{
+    border: 0;
+    height: 1px;
+    background-color: black;
+    
+}
+.check_step_form{
+    display: flex;
     text-align: center;
-    font-size: 30px;
+    
+    
+      
+}
+.check_step{
+    width: 100%;
+}
+
+.check_subtitle_form{
+    width: 100%;
+    padding: 1.5% 0%;
+}
+
+.check_subtitle_text{
+    font-size: 13px;
     font-weight: 900;
-    background-color: #ececf7;
+    padding: 1% 0%;
+}
+.check_subtitle_text2{
+    font-size: 8px;
+}
+
+
+.check_check_allCboxtext{
+    display: flex;
+    padding: 1.5% 0%;
+}
+
+.check_check_allCbox{
+    font-size: 10px;
+}
+
+
+.check_check_allCtext{
+    font-size: 10px;
+    font-weight: 700;
+    margin-top: 0.7%;
+    margin-left: 1%;
+}
+
+.check_check_allCsub{
+    font-size: 8px;
+}
+
+.check_check_selectC{
+    padding: 2% 0%;
+}
+.check_check_selectC1_title{
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2% 0%;
+}
+
+.check_check_selectC1_boxtext{
+    display: flex;
+    
+}
+
+.check_check_selectC1_box{
+    font-size:10px;
+    
+
+}
+
+.check_check_selectC1_text{
+    font-size: 10px;
+    padding: 0% 1%;
+    font-weight: 500;
+    margin-top: 2.3px;
+    
+}
+
+
+.check_check_selectC2_title{
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2% 0%;
+}
+
+.check_check_selectC2_boxtext{
+    display: flex;
+    
+}
+
+.check_check_selectC2_box{
+    font-size: 10px;
+}
+
+.check_check_selectC2_text{
+    font-size: 10px;
+    padding: 0% 1%;
+    font-weight: 500;
+    margin-top: 2.3px;
+}
+
+
+.check_btn_form{
+    display: flex;
+    margin-left: 54%;
+}
+
+.check_btn_cancel{
+    background-color: gray;
+    border: 1px solid gainsboro;
+    color: white;
+    font-size: 12px;
+    padding: 3% 15%;
     cursor: pointer;
 }
 
-/* 주소 영역 */
-.address_wrap{
-   width: 100%;
-    margin-top: 20px;
-}
-.address_name{
-   font-size: 25px;
-    font-weight: bold;
-}
-.address_input_1_box{
-   border: 1px solid black;
-    height: 31px;
-    padding: 10px 14px;
-    width: 61%;
-    float: left;   
-}
-.address_input_1{
-   width:100%;
-   height:100%;
-   border:none;
-   font-size:28px;   
-}
-.address_button{
-    border: 1px solid black;
-    height: 51px;
-    width: 30%;
-    float: right;
-    line-height: 50px;
-    text-align: center;
-    font-size: 30px;
-    font-weight: 900;
-    background-color: #ececf7;
-    cursor: pointer;   
-}
-.address_input_2_wrap{
-   margin-top: 20px;
-}
-.address_input_2_box{
-   border: 1px solid black;
-   height:31px;
-   padding: 10px 14px;   
-   
-}
-.address_input_2{
-   width:100%;
-   height:100%;
-   border:none;
-   font-size:28px;
-}
-
-.address_input_3_wrap{
-   margin-top: 20px;
-}
-.address_input_3_box{
-   border: 1px solid black;
-   height:31px;
-   padding: 10px 14px;   
-   
-}
-.address_input_3{
-   width:100%;
-   height:100%;
-   border:none;
-   font-size:28px;
-}
-
-/* 가입하기 버튼 */
-.join_button_wrap{
-   margin-top: 40px;
-   text-align: center;
-}
-.join_button{
-   width: 100%;
-    height: 80px;
-    background-color: #6AAFE6;
-    font-size: 40px;
-    font-weight: 900;
+.check_btn_next{
+    background-color: orangered;
+    border: 1px solid gainsboro;
     color: white;
+    font-size: 12px;
+    margin-left: 5px;
+    padding: 3% 15%;
+    cursor: pointer;
 }
 
-/* float 속성 해제 */
-.clearfix{
-   clear: both;
+
+
+
+/* step css */
+
+.progressbar-wrapper {
+    background: #fff;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 5px;
+
 }
-/* 중복아이디 존재하지 않는경우 */
-   .id_input_re_1{
-      color : green;
-      display : none;
-   }
-   /* 중복아이디 존재하는 경우 */
-   .id_input_re_2{
-      color : red;
-      display : none;
-   }
-   
-   #mail_check_input_box_false{
-    background-color:#ebebe4;
+
+.progressbar li {
+    list-style-type: none;
+    width: 30%;
+    float: left;
+    font-size:10px;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    color: #7d7d7d;
 }
- 
-#mail_check_input_box_true{
-    background-color:white;
+.progressbar li:before {
+  width: 15px;
+  height: 15px;
+  content: "";
+  line-height: 30px;
+  border: 3px solid #7d7d7d;
+  display: block;
+  text-align: center;
+  margin: 0 auto 3px auto;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  background-color: #fff;
 }
- 
- 
-.correct{
-    color : green;
+.progressbar li:after {
+   width: 100%;
+   height: 6px;
+   content: '';
+   position: absolute;
+   background-color: #7d7d7d;
+   top: 7px;
+   left: -50%;
+   z-index: 0;
 }
-.incorrect{
-    color : red;
+.progressbar li:first-child:after {
+   content: none;
 }
- 
- 
-/* 유효성 검사 문구 */
- 
-.final_id_ck{
-    display: none;
+.progressbar li.active {
+  color: #7d7d7d;
+  font-weight: bold;  
 }
-.final_pw_ck{
-    display: none;
+.progressbar li.active:before {
+  border-color: #7d7d7d;
+  background: rgb(240, 118, 11);
 }
-.final_pwck_ck{
-    display: none;
+.progressbar li.active + li:after {
+  background-color:#7d7d7d;
 }
-.final_name_ck{
-    display: none;
+.progressbar li.active:before {
+  background:rgb(240, 118, 11)  url(user.svg) no-repeat center center;
+  background-size: 60%;
 }
-.final_mail_ck{
-    display: none;
+.progressbar li::before {
+  background: #fff url(user.svg) no-repeat center center;
+  background-size: 60%;
 }
-.final_addr_ck{
-    display: none;
-}
-/* 비밀번호 확인 일치 유효성검사 */
-.pwck_input_re_1{
-        color : green;
-        display : none;    
-}
-.pwck_input_re_2{
-        color : red;
-        display : none;    
-} 

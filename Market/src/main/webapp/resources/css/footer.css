@@ -1,0 +1,185 @@
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+.footer-root {
+    text-align: center;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-root {
+    background-color: white;
+    color: black;
+    font-family: Arial, sans-serif;
+}
+
+.footer-In {
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+.footer-Content{
+    padding: 4.8rem 0;
+    text-align: left; 
+}
+
+.footer-OutLine{
+    float: right;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.Check{
+    line-height: 1.4;
+    font-size: 15px; 
+    font-weight: 700;
+}
+
+.Check-a{
+    display: flex;
+}
+
+.Main_a_Button1 {
+    font-size: 15px;
+    line-height: 10px;
+    font-weight: 700;
+    background-color: #E9ECEF;
+    color: #212529;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    padding: 12px 2rem;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+
+.Main_a_Button1:hover {
+    background-color: #e9ecef;
+    color: #868e96;
+}
+
+.Footer_Sheet1{
+    line-height: 4;
+    font-size: 0.3rem;
+    margin-right: 20px;
+}
+
+.Footer_Sheet2{
+    line-height: 4;
+    font-size: 0.3rem;
+    margin-right: 20px;
+}
+
+.Footer_Sheet3{
+    line-height: 4;
+    font-size: 0.3rem;
+    margin-right: 50px;
+}
+
+.Bar_bar {
+    cursor: pointer;
+    text-align: center;
+    font-size: 15px;
+}
+
+.Bar_bar:hover{
+    text-decoration: underline;
+}
+
+.Footer_Sheets {
+    display: flex;
+}
+
+.Footer_Sheets {
+    display: flex;
+}
+
+.Footer_List {
+    margin-right: 20px;
+}
+
+.Bar_bar {
+    color: black;
+    text-decoration: none;
+}
+
+.Bar_bar:hover {
+    text-decoration: underline;
+}
+
+/* Footer 텍스트 스타일 */
+
+.Footer_T {
+    line-height: 1.5;
+    font-size: 13px;
+    text-align: left;
+    offset-distance: inherit;
+}
+
+b{
+    color: #868b94;
+}
+
+.Footer_T span{
+    color: #868b94;
+}
+
+.Footer_M {
+    margin-top: 20px;
+}
+
+.Footer_M a {
+    color: #868b94;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.Footer_M a:hover {
+    text-decoration: underline;
+}
+
+.ImgMix-1{
+    margin-left: 80%;
+    width: 30%;
+}
+
+.fa-instagram {
+    color: #e4405f;
+}
+
+.fa-facebook {
+    color: #1877f2;
+}
+
+.fa-youtube {
+    color: #ff0000;
+}
+
+.Footer_Y a {
+    color: #868b94;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 13px;
+}
+
+.Footer_Y a:hover {
+    text-decoration: underline;
+}
+
+
+    hr {
+        width: 110%; 
+        margin: 20px auto; 
+        border: 1px solid #ddd; 
+    }

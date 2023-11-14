@@ -11,5 +11,10 @@ public class BookController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(BookController.class);
 	
-	
+	//메인 페이지 이동
+	@RequestMapping(value = "/main", method = RequestMethod.GET)
+	public void mainPageGET() {
+		
+		logger.info("메인 페이지 진입");
+	}
 }

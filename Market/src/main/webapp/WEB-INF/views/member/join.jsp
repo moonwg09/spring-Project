@@ -75,23 +75,19 @@
 
 			</div>
 
-			<div class="signupemail_wrap">
-				<div class="signupemail_name">이메일</div>
-				<div class="signupemail_input_box">
-					<input type="text" class="signupemail_input"
-						placeholder="예시) 1234@naver.com" name="email">
-				</div>
+			<div class="signup_input_email_boxtext">
+            <div class="signup_input_email_text">
+                이메일
+            </div>
 
-				<div class="signupemail_check_wrap">
-					<div class="signupemail_check_input_box" id="mail_check_input_box_false">
-						<input class="signupemail_check_input" disabled="disabled">
-					</div>
-					<div class="signupemail_check_button" onclick="showPopup();">
-						<span>인증메일 발송</span>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</div>
+            <div class="signup_input_email_boxbtn">
+            <input type="text" class="signup_input_email_box" placeholder="예시) 1234@naver.com">
+            
+            <div class="signup_input_email_btn" onclick="showPopup();">
+              인증메일 발송
+          </div>
+        </div>
+        </div>
 
 			<div class="signup_input_phoneNum">
 				<div class="singup_input_text_1">휴대폰 번호</div>

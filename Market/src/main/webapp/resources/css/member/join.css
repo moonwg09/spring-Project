@@ -72,49 +72,49 @@ hr {
 	cursor: pointer;
 }
 
-.signup_input_textbox {
+.signupid_wrap{
 	margin-top: 3%;
 }
 
-.signup_input_text {
+.signupid_name {
 	font-size: 11px;
 }
 
-.signup_input_boxcheck {
+
+.signupid_input_box{
 	display: flex;
 	width: 100%;
 	margin-top: 1%;
 }
 
-.signup_input_box_id {
+.signupid_input {
 	width: 80%;
 	border-radius: 5px;
 	border: 2px solid gainsboro;
 	padding: 1.2% 1%;
 }
 
-.signup_input_check {
-	background-color: black;
-	color: white;
-	font-size: 10px;
-	width: 15%;
-	margin-left: 2%;
-	padding: 1.7% 1%;
-	text-align: center;
-	border-radius: 5px;
-	cursor: pointer;
+
+.signupid_input_re_1{
+	color : green;
+	display : none;
 }
 
-.signup_input_textbox_1 {
+.signupid_input_re_2{
+	color : red;
+	display : none;
+}
+
+.signuppw_input_textbox_1 {
 	margin-top: 1.5%;
 	width: 100%;
 }
 
-.singup_input_text_1 {
+.singuppw_input_text_1 {
 	font-size: 11px;
 }
 
-.signup_input_box_1 {
+.signuppw_input_box_1 {
 	border-radius: 5px;
 	border: 2px solid gainsboro;
 	width: 94.5%;

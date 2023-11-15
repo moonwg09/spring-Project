@@ -15,20 +15,29 @@ public class MemberMapperTests {
 	@Autowired
 	MemberMapper membermapper;
 	
+//	@Test
+//	public void memberJoinTest() throws Exception{ 
+//		MemberVO member = new MemberVO();
+//	  member.setMemberNo(3);
+//	  member.setId("12324");
+//	  member.setPassword("12234");
+//	  member.setNickName("용호22");
+//	  member.setEmail("qwe22");
+//	  member.setAddr1("12322");
+//	  member.setAddr2("12322");
+//	  member.setPhone("12322");
+//	  member.setAdminCk(1);
+//	  
+//	  membermapper.memberJoin(member); //쿼리 메서드 실행
+//	  
+//	  }
+	
+	//아이디 중복검사
 	@Test
-	public void memberJoinTest() throws Exception{ 
-		MemberVO member = new MemberVO();
-	  member.setMemberNo(3);
-	  member.setId("12324");
-	  member.setPassword("12234");
-	  member.setNickName("용호22");
-	  member.setEmail("qwe22");
-	  member.setAddr1("12322");
-	  member.setAddr2("12322");
-	  member.setPhone("12322");
-	  member.setAdminCk(1);
-	  
-	  membermapper.memberJoin(member); //쿼리 메서드 실행
-	  
-	  }
+	public void idCheck() throws Exception{
+		String id = "test3";
+		String id2 = "test1234";
+		membermapper.idCheck(id);
+		membermapper.idCheck(id2);
+	}
 }

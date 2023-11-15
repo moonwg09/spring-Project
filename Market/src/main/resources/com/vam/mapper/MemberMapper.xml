@@ -6,6 +6,11 @@
        <insert id="memberJoin">
         <!-- Specify column names in the VALUES clause -->
         INSERT INTO member (memberNo, id, password, nickName, email, addr1, addr2, phone, regDate, adminCk)
-        VALUES (#{memberNo}, #{id}, #{password}, #{nickName}, #{email}, #{addr1}, #{addr2}, #{phone}, now(), #{adminCk})
+        VALUES (NULL, #{id}, #{password}, #{nickName}, #{email}, #{addr1}, #{addr2}, #{phone}, now(), 0)
     </insert>
+    
+    <!-- 아이디 중복검사 -->
+    <select id="idCheck" resultType="int">
+    	select count(*) from member where id = #{id}
+    </select>
     </mapper>

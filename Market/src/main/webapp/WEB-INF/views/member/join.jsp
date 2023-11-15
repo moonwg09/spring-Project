@@ -17,6 +17,7 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.js"
    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
    crossorigin="anonymous"></script>
+   <script type="text/javascript" src="../resources/js/signup.js"></script>
 </head>
 <body>
 	<div id="header">
@@ -81,12 +82,14 @@
             </div>
 
             <div class="signup_input_email_boxbtn">
-            <input type="text" class="signup_input_email_box" placeholder="예시) 1234@naver.com">
+            <input type="text" class="signup_input_email_box" placeholder="예시) 1234@naver.com" id="pInput">
             
             <div class="signup_input_email_btn" onclick="showPopup();">
               인증메일 발송
           </div>
+          
         </div>
+        	<p id="mail_check_input_box_warn"></p>
         </div>
 
 			<div class="signup_input_phoneNum">
@@ -135,6 +138,8 @@
 	<jsp:include page="../footer.jsp"></jsp:include>
 	
 <script>
+
+	var code = ""; //이메일 전송 인증번호 저장위한 코드
 	
 	$(document).ready(function(){
 		//회원가입 버튼(회원가입 기능 작동)
@@ -168,15 +173,35 @@
 	});
 	
 	//인증번호 이메일 전송
-	$(".signupemail_check_button").click(function(){
+	$(".signup_input_email_btn").click(function(){
 		
-		var email = $(".signupemail_input").val();
+		var email = $(".signup_input_email_box").val();
 		
 		$.ajax({
 			
 			type:"GET",
-			url:"mailCheck?email=" + email
+			url:"mailCheck?email=" + email,
+			success:function(data){
+				
+				code = data;
+				
+			}
 		});
+	});
+	
+	//인증번호 비교
+	$(".signup_input_email_box").blur(function(){
+		
+		var inputCode = $(".signup_input_email_box").val(); //입력코드
+		var checkResult = $("#mail_check_input_box_warn"); //비교결과
+		
+		if(inputCode == code){
+			checkResult.html("인증번호가 일치합니다.");
+			checkResult.attr("class", "correct");
+		} else {
+			checkResult.html("인증번호를 다시 확인해주세요");
+			checkResult.attr("class", "incorrect");
+		}
 	});
 	
 	

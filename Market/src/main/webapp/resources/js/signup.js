@@ -44,7 +44,7 @@
   });
 
   function showPopup() {
-    window.open("EMCheckPopUp.html","a","width=500, height=300, left=100, top=50");
+    window.open("EMCheckPopUp","a","width=500, height=300, left=100, top=50");
   }
 
   function showPopup1() {

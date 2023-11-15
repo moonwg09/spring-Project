@@ -1,0 +1,154 @@
+@charset "UTF-8";
+
+
+
+/* EMCheckPopup */
+
+
+.EMPopup_form{
+    margin: 0 auto;
+    background-color: gainsboro;
+    width: 90%;
+    padding: 3% 3%;
+    
+}
+
+.EMPopup_form_container{
+    background-color: white;
+    padding: 1% 1%;
+}
+
+.EMPopup_title{
+    
+    font-size: 18px;
+    font-weight: 700;
+    padding: 5% 3%;
+}
+
+.EMPopup_form_main_box{
+    
+    padding: 0% 3%;
+    
+    
+    
+}
+
+.EMPopup_form_main_input{
+    padding: 2% 1%;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.EMPopup_main_btn{
+    padding: 1% 3%;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    
+}
+
+.EMPopup_main_form{
+    display: flex;
+}
+
+.EMPopup_under{
+    padding: 5% 3%;
+    margin-top: 10%;
+    display: flex;
+
+    
+}
+
+.EMPopup_under_retext{
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.EMPopup_under_btn{
+    font-size: 13px;
+    padding: 0% 3%;
+    font-weight: 300;
+    color: darkblue;
+    cursor: pointer;
+}
+
+
+
+/* PNCheckPopup */
+
+
+.PNPopup_form{
+    margin: 0 auto;
+    background-color: gainsboro;
+    width: 90%;
+    padding: 3% 3%;
+    
+}
+
+.PNPopup_form_container{
+    background-color: white;
+    padding: 1% 1%;
+}
+
+.PNPopup_title{
+    
+    font-size: 18px;
+    font-weight: 700;
+    padding: 5% 3%;
+}
+
+.PNPopup_form_main_box{
+    
+    padding: 0% 3%;
+    
+    
+    
+}
+
+.PNPopup_form_main_input{
+    padding: 2% 1%;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.PNPopup_main_btn{
+    padding: 1% 3%;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    
+}
+
+.PNPopup_main_form{
+    display: flex;
+}
+
+.PNPopup_under{
+    padding: 5% 3%;
+    margin-top: 10%;
+    display: flex;
+
+    
+}
+
+.PNPopup_under_retext{
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.PNPopup_under_btn{
+    font-size: 13px;
+    padding: 0% 3%;
+    font-weight: 300;
+    color: darkblue;
+    cursor: pointer;
+}
+
+
+
+
+

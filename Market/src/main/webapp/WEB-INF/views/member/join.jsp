@@ -77,13 +77,19 @@
 
 			<div class="signupemail_wrap">
 				<div class="signupemail_name">이메일</div>
+				<div class="signupemail_input_box">
+					<input type="text" class="signupemail_input"
+						placeholder="예시) 1234@naver.com" name="email">
+				</div>
 
 				<div class="signupemail_check_wrap">
-					<input type="text" class="signup_input_email_box"
-						placeholder="예시) 1234@naver.com" name="email">
-
+					<div class="signupemail_check_input_box" id="mail_check_input_box_false">
+						<input class="signupemail_check_input" disabled="disabled">
+					</div>
 					<div class="signupemail_check_button" onclick="showPopup();">
-						인증메일 발송</div>
+						<span>인증메일 발송</span>
+					</div>
+					<div class="clearfix"></div>
 				</div>
 			</div>
 
@@ -163,9 +169,23 @@
 				}
 			}
 		});
-		
-		
 	});
+	
+	//인증번호 이메일 전송
+	$(".signupemail_check_button").click(function(){
+		
+		var email = $(".signupemail_input").val();
+		
+		$.ajax({
+			
+			type:"GET",
+			url:"mailCheck?email=" + email
+		});
+	});
+	
+	
+	
+	
 </script>
 </body>
 </html>

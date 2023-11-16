@@ -11,4 +11,7 @@ public interface MemberService {
 	
 	// 휴대폰인증
 	public void sendPhoneNumber(String memberPhone, String cerNum) throws Exception;
+	
+	// 로그인
+	public MemberVO memberLogin(MemberVO mvo) throws Exception;
 }

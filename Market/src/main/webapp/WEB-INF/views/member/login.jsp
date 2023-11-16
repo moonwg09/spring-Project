@@ -27,9 +27,9 @@
        <div class="container">
       
         <img src="../resources/image/login.jpg" style="margin-bottom: 15%;">
-        <form action="login" method="POST" id="loginForm">
+        <form action="/member/login" method="POST" id="login_form">
             <div class="form-group">
-                <input type="text" class="username" name="username" placeholder="아이디를 입력해주세요" required>
+                <input type="text" class="username" name="id" placeholder="아이디를 입력해주세요" required>
             </div><br>
             <div class="form-group">
                 <input type="password" class="password" name="password" placeholder="비밀번호를 입력해주세요" required>
@@ -61,12 +61,11 @@
 <script>
  
     /* 로그인 버튼 클릭 메서드 */
-    $(".login_button").click(function(){
+    $(".submit").click(function(){
         
        // alert("로그인 버튼 작동");
        
     	/* 로그인 메서드 서버 요청 */
-        $("#login_form").attr("action", "/member/login.do");
         $("#login_form").submit();
  
 

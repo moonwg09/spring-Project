@@ -3,6 +3,8 @@ package com.vam.controller;
 import java.util.Random;
 
 import javax.mail.internet.MimeMessage;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,6 +17,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.vam.VO.MemberVO;
 import com.vam.service.MemberService;
@@ -151,6 +154,28 @@ public class MemberController {
         
         
         return numStr;
+	}
+	
+	// 로그인
+	@RequestMapping(value="login", method=RequestMethod.POST)
+	public String loginPOST(HttpServletRequest request, MemberVO mvo, RedirectAttributes rttr) throws Exception{
+		
+//		System.out.println("login 메서드 진입");
+//		System.out.println("전달된 데이터 : " + mvo);
+		
+		HttpSession session = request.getSession();
+		MemberVO lvo = memberservice.memberLogin(mvo);
+		
+		if(lvo == null) {
+			
+			int result = 0;
+			rttr.addFlashAttribute("result", result);
+			return "redirect:/member/login";
+		}
+		
+		session.setAttribute("member", lvo);
+		
+		return "redirect:/main";
 	}
 
 }

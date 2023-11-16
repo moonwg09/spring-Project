@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="Signup.css">
+<link rel="stylesheet" href="../resources/css/member/popup.css">
 </head>
 <body>
  <div class="PNPopup_form">
@@ -15,9 +15,9 @@
         </div>
         <div class="PNPopup_main_form">
             <div class="PNPopup_form_main_box">
-            <input type="text" class="PNPopup_form_main_input">
+            <input type="text" class="PNPopup_form_main_input" id="ckInput">
             </div>
-            <div class="PNPopup_main_btn">
+            <div class="PNPopup_main_btn" onclick="setParentText()" >
                 확인
             </div>
         </div>
@@ -31,5 +31,12 @@
         </div>
     </div>
     </div>
+    
+    <script>
+	function setParentText() {
+   		opener.document.getElementById("phoneInput").value = document.getElementById("ckInput").value;
+   		window.close();
+   	}
+    </script>
 </body>
 </html>

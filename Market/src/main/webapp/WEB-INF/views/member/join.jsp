@@ -99,10 +99,11 @@
                     list
                 </div> -->
 					<input type="text" class="signup_input_phoneNum_box"
-						placeholder="-없이 입력해주세요" name="phone">
-					<div class="signup_input_phoneNum_btn" onclick="showPopup1()">
+						placeholder="-없이 입력해주세요" name="memberPhone" id="phoneInput">
+					<div class="signup_input_phoneNum_btn" onclick="showPopup1()" >
 						인증번호 발송</div>
 				</div>
+				<p id="mail_check_input_box_warning"></p>
 			</div>
 
 
@@ -140,7 +141,7 @@
 <script>
 
 	var code = ""; //이메일 전송 인증번호 저장위한 코드
-	
+	var phoneCode = "";
 	$(document).ready(function(){
 		//회원가입 버튼(회원가입 기능 작동)
 		$(".signup_btn_next").click(function(){
@@ -204,9 +205,45 @@
 		}
 	});
 	
-	
-	
-	
+	$('.signup_input_phoneNum_btn').on(
+			"click",
+			function() {
+				var memberPhone = $('.signup_input_phoneNum_box').val(); // .id_input에 입력되는 값
+				var data = {
+						memberPhone : memberPhone
+				} // '컨트롤에 넘길 데이터 이름' : '데이터(.id_input에 입력되는 값)'
+		
+				$.ajax({
+					type : "post",
+					url : "memberPhoneCheck",
+					data : data,
+					success : function(result) {
+						if (result != 'fail') {
+							phoneCode = result;
+							updatePhoneCheckResult();
+						} 
+					}// success 종료
+
+				}); // ajax 종료	
+
+			});// function 종료
+			// 휴대폰 인증번호 비교
+			$(".signup_input_phoneNum_box").blur(function(){
+				 updatePhoneCheckResult();
+				 function updatePhoneCheckResult() {
+				        var inputCode = $(".signup_input_phoneNum_box").val();
+				        var checkResult = $("#mail_check_input_box_warning");
+
+				        if (inputCode == phoneCode) {
+				            checkResult.html("인증번호가 일치합니다.");
+				            checkResult.attr("class", "correct");
+				        } else {
+				            checkResult.html("인증번호를 다시 확인해주세요");
+				            checkResult.attr("class", "incorrect");
+				        }
+				    }	
+			});
+			
 </script>
 </body>
 </html>

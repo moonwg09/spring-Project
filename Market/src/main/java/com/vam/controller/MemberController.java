@@ -11,6 +11,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -69,7 +70,10 @@ public class MemberController {
 	}
 	
 	
-	
+	@RequestMapping(value = "/PNCheckPopup", method = RequestMethod.GET)
+	public void memberPnCheck() throws Exception {
+		logger.info("memberPhoneCheck 진입");
+	}
 	
 	//아이디 중복 검사
 	@RequestMapping(value = "/idChk", method = RequestMethod.POST)
@@ -130,5 +134,23 @@ public class MemberController {
 		
 		return num;
 	}
-	
+	// 휴대폰 인증
+	@RequestMapping(value="/memberPhoneCheck")
+	@ResponseBody
+	public String sendSMS(String memberPhone) throws Exception{
+		Random rand  = new Random();
+        String numStr = "";
+        for(int i=0; i<4; i++) {
+            String ran = Integer.toString(rand.nextInt(10));
+            numStr+=ran;
+        }
+
+        System.out.println("수신자 번호 : " + memberPhone);
+        System.out.println("인증번호 : " + numStr);
+        memberservice.sendPhoneNumber(memberPhone,numStr);
+        
+        
+        return numStr;
+	}
+
 }

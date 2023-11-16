@@ -48,7 +48,7 @@
   }
 
   function showPopup1() {
-    window.open("PNCheckPopup.html","a","width=500, height=300, left=100, top=50");
+    window.open("PNCheckPopup","a","width=500, height=300, left=100, top=50");
   }
 
 

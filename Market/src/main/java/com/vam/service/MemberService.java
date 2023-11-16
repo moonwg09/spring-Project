@@ -9,4 +9,6 @@ public interface MemberService {
 	//아이디 중복 검사
 	public int idCheck(String id) throws Exception;
 	
+	// 휴대폰인증
+	public void sendPhoneNumber(String memberPhone, String cerNum) throws Exception;
 }

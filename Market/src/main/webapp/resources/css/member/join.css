@@ -243,6 +243,43 @@ hr {
 .signup_input_add_btn_text {
 	margin-top: 3.5%;
 }
+.final_id_ck{
+	display: none;	
+}
+
+.final_pw_ck{
+	display: none;	
+}
+
+.final_pwck_ck{
+	display: none;	
+}
+
+.final_nickname_ck{
+	display: none;	
+}
+
+.final_mail_ck{
+	display: none;	
+}
+
+.final_phone_ck{
+	display: none;	
+}
+
+.final_addr_ck{
+	display: none;	
+}
+
+.pwck_input_re_1{
+	color : green;
+	display : none;
+}
+
+.pwck_input_re_2{
+	color : red;
+	display : none;
+}
 
 /* step css */
 .progressbar-wrapper {

@@ -31,10 +31,10 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public void sendPhoneNumber(String memberPhone, String cerNum) throws Exception {
-		String api_key = "NCS49QDVJCHS581I";
-		String api_secret = "JGKDC5SZ2OGP8MTUV27RDDQOKOHQ4IO6";
+		String api_key = "NCSVEENROUGXFV4T";
+		String api_secret = "VTACPJ4NRZKSMEGW068D0XTOU15SBUZ5";
 		Message coolsms = new Message(api_key, api_secret);
-		String myMail = "01088235776";
+		String myMail = "01083404100";
 		// 4 params(to, from, type, text) are mandatory. must be filled
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("to", memberPhone); // 수신전화번호

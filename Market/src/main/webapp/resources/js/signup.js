@@ -55,25 +55,3 @@
 
 
 
-
-
-  /*add api*/
-
-  function findAddr(){
-	new daum.Postcode({
-        oncomplete: function(data) {
-        	
-        	console.log(data);
-        
-            var roadAddr = data.roadAddress; 
-            var jibunAddr = data.jibunAddress; 
-            
-            document.getElementById('signup_input_add_box').value = data.zonecode;
-            if(roadAddr !== ''){
-                document.getElementById("signup_input_add_box").value = roadAddr;
-            } 
-            else if(jibunAddr !== ''){
-                document.getElementById("signup_input_add_box").value = jibunAddr;
-            }
-        }
-    }).open();}

@@ -27,7 +27,7 @@
 		<form id="join_form" action="/member/join" method="post">
 		<div class="signup_container">
 			<div class="signup_title">회원가입</div>
-			<hr />
+
 
 			<div class="signup_step_form">
 				<div class="signup_step">
@@ -90,16 +90,20 @@
 
             <div class="signup_input_email_boxbtn">
             <input type="text" class="signup_input_email_box" placeholder="예시) 1234@naver.com" id="pInput" name="email">
-            <p class="final_mail_ck">이메일을 입력해주세요.</p>
+           
+          
             
             <div class="signup_input_email_btn" onclick="showPopup();">
               인증메일 발송
               
               
           </div>
-          
+           
         </div>
-        	<p id="mail_check_input_box_warn"></p>
+        	<p class="signupid_input_re_1">인증번호가 완료되었습니다.</p>
+				<p class="signupid_input_re_2">인증번호가 틀립니다. </p>
+				  <p class="final_mail_ck">이메일을 입력해주세요.</p>
+        	
         </div>
 
 			<div class="signup_input_phoneNum">
@@ -138,8 +142,6 @@
 					
 					<p class="final_addr_ck">주소를 입력해주세요.</p>
 			</div>
-
-			<hr>
 
 			<div class="signup_btn_form">
 				<input type="button" class="signup_btn_cancel" value="취소">
@@ -223,6 +225,7 @@
 			//이메일 유효성 검사
 			if(mail == ""){
 				$('.final_mail_ck').css('display', 'block');
+				
 				mailCheck = false;
 			}else {
 				$('.final_mail_ck').css('display', 'none');
@@ -305,16 +308,22 @@
 		
 		var inputCode = $(".signup_input_email_box").val(); //입력코드
 		var checkResult = $("#mail_check_input_box_warn"); //비교결과
-		
 		if(inputCode == code){
-			checkResult.html("인증번호가 일치합니다.");
-			checkResult.attr("class", "correct");
+			$('.signupid_input_re_1').css("display", "inline-block");
+			$('.signupid_input_re_2').css("display", "none");
 			mailnumCheck = true;
-		} else {
-			checkResult.html("인증번호를 다시 확인해주세요");
-			checkResult.attr("class", "incorrect");
+			
+		}else if(mail==""){
+			$('.signupid_input_re_1').css("display", "none");
+			$('.signupid_input_re_2').css("display", "none");
+		}
+		
+		else {
+			$('.signupid_input_re_2').css("display", "inline-block");
+			$('.signupid_input_re_1').css("display", "none");
 			mailnumCheck = false;
 		}
+		
 	});
 	
 	$('.signup_input_phoneNum_btn').on(
@@ -350,7 +359,10 @@
 				            checkResult.html("인증번호가 일치합니다.");
 				            checkResult.attr("class", "correct");
 				            phonenumCheck = true;
-				        } else {
+				        }else if(phoneCode =="" || phoneCode ==null || phoneCode ==undefined){
+				        	 checkResult.html("");
+				        } 
+				        else {
 				            checkResult.html("인증번호를 다시 확인해주세요");
 				            checkResult.attr("class", "incorrect");
 				            phonenumCheck = false;
@@ -428,5 +440,6 @@
 			});
 			
 </script>
+
 </body>
 </html>

@@ -163,8 +163,26 @@ hr {
 	margin-top: 1%;
 }
 
-
-
+.signupPhone_input_re_1{
+		color: green;
+	display: none;
+	font-size: 12px;
+}
+.signupPhone_input_re_2{
+		color: red;
+	display: none;
+	font-size: 12px;
+}
+.signupEmail_input_re_1{
+		color: green;
+	display: none;
+	font-size: 12px;
+}
+.signupEmail_input_re_2{
+		color: red;
+	display: none;
+	font-size: 12px;
+}
 .signupid_input_re_1 {
 	color: green;
 	display: none;

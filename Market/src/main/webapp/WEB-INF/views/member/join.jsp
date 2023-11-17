@@ -100,8 +100,8 @@
           </div>
            
         </div>
-        	<p class="signupid_input_re_1">인증번호가 일치합니다.</p>
-				<p class="signupid_input_re_2">인증번호가 틀립니다. </p>
+        	<p class="signupEmail_input_re_1">인증번호가 일치합니다.</p>
+				<p class="signupEmail_input_re_2">인증번호가 틀립니다. </p>
 				  <p class="final_mail_ck">이메일을 입력해주세요.</p>
         	
         </div>
@@ -117,8 +117,8 @@
 					<div class="signup_input_phoneNum_btn" onclick="showPopup1()" >
 						인증번호 발송</div>
 				</div>
-					<p class="signupid_input_re_1">인증번호가 일치합니다.</p>
-				<p class="signupid_input_re_2">인증번호가 틀립니다. </p>
+					<p class="signupPhone_input_re_1">인증번호가 일치합니다.</p>
+				<p class="signupPhone_input_re_2">인증번호가 틀립니다. </p>
 				  <p class="final_mail_ck">휴대폰 번호를 입력해주세요.</p>
         	
 			</div>
@@ -311,18 +311,18 @@
 		var inputCode = $(".signup_input_email_box").val(); //입력코드
 		var checkResult = $("#mail_check_input_box_warn"); //비교결과
 		if(inputCode == code){
-			$('.signupid_input_re_1').css("display", "inline-block");
-			$('.signupid_input_re_2').css("display", "none");
+			$('.signupEmail_input_re_1').css("display", "inline-block");
+			$('.signupEmail_input_re_2').css("display", "none");
 			mailnumCheck = true;
 			
 		}else if(mail==""){
-			$('.signupid_input_re_1').css("display", "none");
-			$('.signupid_input_re_2').css("display", "none");
+			$('.signupEmail_input_re_1').css("display", "none");
+			$('.signupEmail_input_re_2').css("display", "none");
 		}
 		
 		else {
-			$('.signupid_input_re_2').css("display", "inline-block");
-			$('.signupid_input_re_1').css("display", "none");
+			$('.signupEmail_input_re_2').css("display", "inline-block");
+			$('.signupEmail_input_re_1').css("display", "none");
 			mailnumCheck = false;
 		}
 		
@@ -358,16 +358,16 @@
 				        var checkResult = $("#mail_check_input_box_warning");
 
 				        if (inputCode == phoneCode) {
-				            checkResult.html("인증번호가 일치합니다.");
-				            checkResult.attr("class", "correct");
+				        	$('.signupPhone_input_re_1').css("display", "inline-block");
+							$('.signupPhone_input_re_2').css("display", "none");
 				            phonenumCheck = true;
-				        }else if(mail==""){
-							$('.signupid_input_re_1').css("display", "none");
-							$('.signupid_input_re_2').css("display", "none");
+				        }else if(phone==""){
+							$('.signupPhone_input_re_1').css("display", "none");
+							$('.signupPhone_input_re_2').css("display", "none");
 						}
 				        else {
-				            checkResult.html("인증번호를 다시 확인해주세요");
-				            checkResult.attr("class", "incorrect");
+				        	$('.signupPhone_input_re_2').css("display", "inline-block");
+							$('.signupPhone_input_re_1').css("display", "none");
 				            phonenumCheck = false;
 				        }
 				    }	
@@ -424,7 +424,7 @@
 			
 			// 비밀번호 확인 일치 유효성 검사
 			
-			$('.signuppw_input_box_1_re').on("propertychange change keyup paste input", function(){
+			$('.signuppw_input_box_1_re').on("propertychange change", function(){
 				
 				var pw = $('.signuppw_input_box_1').val();
 				var pwck = $('.signuppw_input_box_1_re').val();
@@ -434,7 +434,7 @@
 					$('.pwck_input_re_1').css('display', 'block');
 					$('.pwck_input_re_2').css('display', 'none');
 					pwckcorCheck = true;
-				}else {
+				}else if(pw !=pwck){
 					$('.pwck_input_re_1').css('display', 'none');
 					$('.pwck_input_re_2').css('display', 'block');
 					pwckcorCheck = false;

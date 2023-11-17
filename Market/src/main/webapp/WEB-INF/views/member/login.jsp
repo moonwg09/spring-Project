@@ -43,10 +43,11 @@
             <div class="form-group2">
                 <button type="submit" class="submit">로그인</button>
             </div>
-            <div class="kakao-login-button">
-                <span>    
+            <div >
+            <button class="kakao-login-button"><span>    
                 <img src="../resources/image/kakao-icon.jpg" alt="Kakao Icon">
-                Login with Kakao</span>
+                Login with Kakao</span></button>
+                
             </div>
         </form>
         <div class="links">

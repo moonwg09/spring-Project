@@ -100,7 +100,7 @@
           </div>
            
         </div>
-        	<p class="signupid_input_re_1">인증번호가 완료되었습니다.</p>
+        	<p class="signupid_input_re_1">인증번호가 일치합니다.</p>
 				<p class="signupid_input_re_2">인증번호가 틀립니다. </p>
 				  <p class="final_mail_ck">이메일을 입력해주세요.</p>
         	
@@ -117,8 +117,10 @@
 					<div class="signup_input_phoneNum_btn" onclick="showPopup1()" >
 						인증번호 발송</div>
 				</div>
-				<p id="mail_check_input_box_warning"></p>
-				<p class="final_phone_ck">휴대폰 번호를 입력해주세요.</p>
+					<p class="signupid_input_re_1">인증번호가 일치합니다.</p>
+				<p class="signupid_input_re_2">인증번호가 틀립니다. </p>
+				  <p class="final_mail_ck">휴대폰 번호를 입력해주세요.</p>
+        	
 			</div>
 
 
@@ -359,9 +361,10 @@
 				            checkResult.html("인증번호가 일치합니다.");
 				            checkResult.attr("class", "correct");
 				            phonenumCheck = true;
-				        }else if(phoneCode =="" || phoneCode ==null || phoneCode ==undefined){
-				        	 checkResult.html("");
-				        } 
+				        }else if(mail==""){
+							$('.signupid_input_re_1').css("display", "none");
+							$('.signupid_input_re_2').css("display", "none");
+						}
 				        else {
 				            checkResult.html("인증번호를 다시 확인해주세요");
 				            checkResult.attr("class", "incorrect");

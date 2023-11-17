@@ -17,10 +17,5 @@ public class BookController {
 		
 		logger.info("메인 페이지 진입");
 	}
-	//메인 페이지 이동
-		@RequestMapping(value = "/main", method = RequestMethod.GET)
-		public void mainPageGET23() {
-			
-			logger.info("메인 페이지 진입");
-		}
+
 }

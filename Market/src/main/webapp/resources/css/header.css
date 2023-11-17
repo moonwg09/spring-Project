@@ -15,7 +15,7 @@
     display: flex;
 }
 
-.Main_Bar > .Bar_bar{
+.Bar_bar{
     display: flex;
     margin-right: 22px;
     font-weight: 700;
@@ -30,7 +30,7 @@
     margin-top: 1%;
 }
 
-input[type="text"] {
+.header_input {
     background-color: #e9ecef;
     border-radius: 8px; 
     width: 300px;

@@ -2,16 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
-<link rel="stylesheet" type="text/css" href="resources/css/header.css">
-<link rel="stylesheet" type="text/css" href="resources/css/main.css">
-<link rel="stylesheet" type="text/css" href="resources/css/footer.css">
-</head>
+
 <div class="Main_Header" style="height: 10%;">
         <div class="Main_Logo">
             <!--메인 로고 메인 화면으로 들어가는 경로-->
@@ -46,9 +37,8 @@
         <!--검색 기능-->
         <div class="search-container">
             <form action="/search" method="get">
-                <input type="text" name="search" placeholder="물품이나 동네를 검색해보세요." value="">
+                <input type="text" class="header_input" name="search" placeholder="물품이나 동네를 검색해보세요." value="">
                 <button type="submit" class="search-button">검색하기</button>
             </form>
         </div>
-        </div>
-    </div>
+   </div>

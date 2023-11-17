@@ -1,15 +1,13 @@
 .check_form{
-    background-color: gainsboro;
-    width: 30%;
     margin: 0 auto;
     padding: 1% 1%;
-        margin-top: 100px;
+    margin-top: 100px;
 }
-.check_container{
-    background-color: white;
+.check_container {
+	width:600px;
     padding: 3% 5%;
-    
     margin: 0 auto;
+    border: 3px solid gainsboro;
 }
 .check_title{
     font-size: 18px;
@@ -30,6 +28,10 @@ hr{
 }
 .check_step{
     width: 100%;
+        background: #fff;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 5px;
 }
 
 .check_subtitle_form{
@@ -38,41 +40,43 @@ hr{
 }
 
 .check_subtitle_text{
-    font-size: 13px;
+    font-size: 17px;
     font-weight: 900;
     padding: 1% 0%;
 }
 .check_subtitle_text2{
-    font-size: 8px;
+    font-size: 12px;
 }
-
+.check_check_allCform{
+	padding: 2% 0%;
+}
 
 .check_check_allCboxtext{
     display: flex;
-    padding: 1.5% 0%;
+    margin-bottom: 1%;
 }
 
 .check_check_allCbox{
-    font-size: 10px;
+    font-size: 15px;
 }
 
 
 .check_check_allCtext{
-    font-size: 10px;
+    font-size: 15px;
     font-weight: 700;
-    margin-top: 0.7%;
     margin-left: 1%;
 }
 
 .check_check_allCsub{
-    font-size: 8px;
+    font-size: 12px;
 }
 
 .check_check_selectC{
     padding: 2% 0%;
+    margin-bottom: 10%;	
 }
 .check_check_selectC1_title{
-    font-size: 11px;
+    font-size: 15px;
     font-weight: 600;
     padding: 2% 0%;
 }
@@ -83,22 +87,24 @@ hr{
 }
 
 .check_check_selectC1_box{
-    font-size:10px;
+    font-size:14px;
     
 
 }
 
 .check_check_selectC1_text{
-    font-size: 10px;
-    padding: 0% 1%;
+    font-size: 14px;
     font-weight: 500;
-    margin-top: 2.3px;
-    
+
+}
+.check_check_selectC1_text> textarea{
+	width:100%;
+	resize: none;
 }
 
 
 .check_check_selectC2_title{
-    font-size: 11px;
+    font-size: 15px;
     font-weight: 600;
     padding: 2% 0%;
 }
@@ -109,16 +115,17 @@ hr{
 }
 
 .check_check_selectC2_box{
-    font-size: 10px;
+    font-size: 14px;
 }
 
 .check_check_selectC2_text{
-    font-size: 10px;
-    padding: 0% 1%;
+    font-size: 14px;
     font-weight: 500;
-    margin-top: 2.3px;
 }
-
+.check_check_selectC2_text>textarea{
+	width:100%;
+	resize: none;
+}
 
 .check_btn_form{
     display: flex;

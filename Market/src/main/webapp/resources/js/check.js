@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("약관에 동의해주세요.");
       } else {
     
-        window.location.href = "Signup.html";
+        window.location.href = "/member/join";
     
       }
     });

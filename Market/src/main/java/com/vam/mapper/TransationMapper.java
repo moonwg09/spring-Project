@@ -7,4 +7,7 @@ import com.vam.VO.ProductVO;
 
 public interface TransationMapper {
 	public List<ProductVO> productList();
+	
+	public ProductVO productGetDetail(int productNo);
+	
 }

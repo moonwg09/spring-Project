@@ -10,13 +10,21 @@ import com.vam.mapper.TransationMapper;
 import com.vam.service.TransationService;
 
 @Service
-public class TransationServiceImpl implements TransationService{
+public class TransationServiceImpl implements TransationService {
 
 	@Autowired
 	TransationMapper productmapper;
 	
+	// 상품 전체보기
 	@Override
-public List<ProductVO> productList() throws Exception {
-	return productmapper.productList();
-}
+	public List<ProductVO> productList() throws Exception {
+		return productmapper.productList();
+	}
+
+	// 상품 상세보기
+	@Override
+	public ProductVO productGetDetail(int productNo) throws Exception {
+	
+		return productmapper.productGetDetail(productNo);
+	}
 }

@@ -6,4 +6,6 @@ import com.vam.VO.ProductVO;
 
 public interface TransationService {
 	public List<ProductVO> productList() throws Exception;
+	
+	public ProductVO productGetDetail(int productNo) throws Exception;
 }

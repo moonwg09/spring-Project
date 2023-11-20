@@ -3,7 +3,12 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     <mapper namespace="com.vam.mapper.TransationMapper">
-       <select id="productList" resultType="com.vam.VO.ProductVO">
-        	select * from product
-        </select>
+    	<select id="productList" resultType="com.vam.VO.ProductVO">
+    		select * from product
+    	</select>
+    	
+    	<select id="productGetDetail" resultType="com.vam.VO.ProductVO">
+    		select * from product where productNo = #{productNo}
+    	</select>
     </mapper>
+  

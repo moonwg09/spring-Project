@@ -16,9 +16,14 @@ public class TransationMapperTests {
 	@Autowired
 	TransationMapper productmapper;
 	
+//	@Test
+//	public void produvtTest() throws Exception{
+//		  
+//		  System.out.println(productmapper.productList());
+//	}
+	
 	@Test
-	public void produvtTest() throws Exception{
-		  
-		  System.out.println(productmapper.productList());
+	public void productGetDetailTest() throws Exception{
+		System.out.println(productmapper.productGetDetail(1));
 	}
 }

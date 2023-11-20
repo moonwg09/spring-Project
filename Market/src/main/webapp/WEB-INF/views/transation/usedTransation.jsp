@@ -6,6 +6,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css"
@@ -157,7 +161,7 @@
 									style="list-style: none; margin: 0 auto; width: 100%; height: 100%;">
 									<c:forEach items="${product}" var="product">
 										<li>
-
+										<a class="move" href='<c:out value="${product.productNo}"/>' style="text-decoration: none; color:black">
 											<div>
 												<span style="text-align: center"><img
 													src="../resources/image/eximg.webp"
@@ -174,7 +178,7 @@
 													<span>관심</span><span>0</span><span>∙</span> <span>채팅</span><span>${product.chatCount}</span>
 												</div>
 											</div>
-
+</a>
 										</li>
 									</c:forEach>
 								</ul>
@@ -192,8 +196,21 @@
 					</div>
 				</div>
 			</div>
+			<form id="moveForm"  method="get">
+
+		</form>
 		</div>
 	</div>
 	<jsp:include page="../footer.jsp"></jsp:include>
+	<script type="text/javascript">
+	let moveForm = $('#moveForm')
+	
+		$(".move").on("click", function(e){
+			e.preventDefault();
+			moveForm.append("<input type='hidden' name='productNo' value='"+ $(this).attr("href") +"'>");
+			moveForm.attr("action","detailProduct")
+			moveForm.submit();
+		});
+	</script>
 </body>
 </html>

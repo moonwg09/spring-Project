@@ -19,10 +19,9 @@
 	rel="stylesheet"
 	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
 	crossorigin="anonymous" />
-<script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js"
+	integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+	crossorigin="anonymous"></script>
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
@@ -35,7 +34,7 @@
 	<div id="header">
 		<jsp:include page="../header.jsp"></jsp:include>
 	</div>
-	<form action="" method="" style="width:90%">
+	<form action="" method="" style="width: 90%">
 		<div class="detail_container">
 			<div class="detail_div">
 				<div id="carouselExampleIndicators" class="carousel slide"
@@ -50,11 +49,12 @@
 					<div class="carousel-inner">
 						<div class="carousel-item active">
 							<img src="../resources/image/eximg.webp" class="d-block w-100"
-								alt="..." style="width:500px;height: 587px" />
+								alt="..." style="width: 500px; height: 587px" />
 						</div>
 						<div class="carousel-item">
 							<img src="../resources/image/transationimg.webp"
-								class="d-block w-100" style="width:500px;height: 587px" alt="..." />
+								class="d-block w-100" style="width: 500px; height: 587px"
+								alt="..." />
 						</div>
 					</div>
 					<button class="carousel-control-prev" type="button"
@@ -91,8 +91,9 @@
 						<hr />
 						<div class="detail_info_sub">
 							<div class="detail_font">
-								<span>1시간전</span><span class="font_dot">·</span><span>조회10
-								</span><span class="font_dot">·</span><span>관심 0 </span>
+								<span>1시간전</span><span class="font_dot">·</span><span>조회</span><span>
+									${productDetail.viewcount}</span> </span><span class="font_dot">·</span><span>관심
+									0 </span>
 							</div>
 						</div>
 						<div class="detail_info_profile_div">
@@ -101,17 +102,17 @@
 									<img src="../resources/image/profile.png" alt="" />
 								</div>
 								<div class="detail_info_profile_info">
-									<div class="detail_info_profile_name">yen</div>
-									<div class="detail_info_profile_address">관악구 신림동</div>
+									<div class="detail_info_profile_name">${writerProductInfo.mvo.nickName}</div>
+									<div class="detail_info_profile_address">${writerProductInfo.mvo.addr2}</div>
 								</div>
 							</div>
 							<div class="detail_info_manner_div">
 								<div class="detail_info_detail_div">
-									<p>36.5°C</p>
+									<p>${writerProductInfo.mvo.manner}°C</p>
 									<div class="progress">
 										<div class="progress-bar" role="progressbar"
-											style="width: 25%" aria-valuenow="25" aria-valuemin="0"
-											aria-valuemax="100"></div>
+											style="width: ${writerProductInfo.mvo.manner}%"
+											aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 									</div>
 								</div>
 								<div class="manner_div_img">
@@ -179,13 +180,38 @@
 				</div>
 			</div>
 		</div>
+		<div class="detail_info_content_container">
+			<div class="detail_info_content_div_comment">
+				<div class="detail_info_comment">
+					<div class="detail_info_title">
+						<span>댓글</span>
+					</div>
+					<hr />
+					<div class="detail_comment_profile_div">
+						<div class="detail_comment_profile_sub_info">
+							<div class="detail_info_profile_img">
+								<img src="../resources/image/profile.png" alt="" />
+							</div>
+							<div class="detail_info_profile_info">
+								<div class="detail_info_profile_name">yen</div>
+								<div class="detail_info_profile_address">관악구 신림동</div>
+							</div>
+						</div>
+						<textarea>있었는데 없어졌습니다..!포장 사진이 없어서 매장에서 먹었던 사진 올려요 ^^다 맛있어요. 떡볶이 순대 튀김 포장했는데요.사장님 센스가 최고에요!!분식 정말 좋아하는데 남기지 않았어요^^최고!
+    					</textarea>
+					</div>
+				</div>
+			</div>
+		</div>
 	</form>
 	<hr style="width: 100%">
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7829d38593feb9a538108e0c91873472&libraries=services"></script>
 
 	<jsp:include page="../footer.jsp"></jsp:include>
-	 <script>var productAddress = '<c:out value="${productDetail.address}" />';</script> 
+	<script>
+		var productAddress = '<c:out value="${productDetail.address}" />';
+	</script>
 	<script type="text/javascript">
 		var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
 		var options = {
@@ -195,29 +221,24 @@
 		};
 
 		var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
-		 var geocoder = new kakao.maps.services.Geocoder();
+		var geocoder = new kakao.maps.services.Geocoder();
 
-	      // 주소로 좌표를 검색합니다
-	      geocoder.addressSearch(
-	    		  productAddress,
-	        function (result, status) {
-	          // 정상적으로 검색이 완료됐으면
-	          if (status === kakao.maps.services.Status.OK) {
-	            var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+		// 주소로 좌표를 검색합니다
+		geocoder.addressSearch(productAddress, function(result, status) {
+			// 정상적으로 검색이 완료됐으면
+			if (status === kakao.maps.services.Status.OK) {
+				var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
 
-	            // 결과값으로 받은 위치를 마커로 표시합니다
-	            var marker = new kakao.maps.Marker({
-	              map: map,
-	              position: coords,
-	            });
+				// 결과값으로 받은 위치를 마커로 표시합니다
+				var marker = new kakao.maps.Marker({
+					map : map,
+					position : coords,
+				});
 
-	           
-
-	            // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-	            map.setCenter(coords);
-	          }
-	        }
-	      );
+				// 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+				map.setCenter(coords);
+			}
+		});
 	</script>
 </body>
 </html>

@@ -36,90 +36,90 @@
 							<i class="fa-regular fa-square-plus" style="margin-right: 2%"></i><span>BEST</span>
 						</div>
 						<div class="nav_item_a">
-							<a href="/main"> <span>인기매물</span>
+							<a class="category" href='1' > <span>인기매물</span>
 							</a>
 						</div>
 						<div class="nav_item_title">
 							<i class="fa-regular fa-square-plus" style="margin-right: 2%"></i><span>패션의류</span>
 						</div>
 						<div class="nav_item_a">
-							<a href="/main"> <span>여성의류</span>
+							<a class="category" href='2' > <span>여성의류</span>
 							</a>
 						</div>
 						<div class="nav_item_a">
-							<a href=""> <span>남성의류</span>
+							<a class="category" href='3' > <span>남성의류</span>
 							</a>
 						</div>
 						<div class="nav_item_title">
 							<i class="fa-regular fa-square-plus" style="margin-right: 2%"></i><span>패션잡화</span>
 						</div>
 						<div class="nav_item_a">
-							<a href="/main"> <span>여성신발</span>
+							<a class="category" href='4' >  <span>여성신발</span>
 							</a>
 						</div>
 						<div class="nav_item_a">
-							<a href=""> <span>남성신발</span>
+							<a class="category" href='5' > <span>남성신발</span>
 							</a>
 						</div>
 						<div class="nav_item_a">
-							<a href=""> <span>시계</span>
+							<a class="category" href='6' >  <span>시계</span>
 							</a>
 						</div>
 						<div class="nav_item_a">
-							<a href=""> <span>기타잡화</span>
+							<a class="category" href='7' >  <span>기타잡화</span>
 							</a>
 						</div>
 						<div class="nav_item_title">
 							<i class="fa-regular fa-square-plus" style="margin-right: 2%"></i><span>노트북/PC</span>
 						</div>
 						<div class="nav_item_a">
-							<a href="/main"> <span>노트북</span>
+							<a class="category" href='8' >  <span>노트북</span>
 							</a>
 						</div>
 						<div class="nav_item_a">
-							<a href=""> <span>데스크탑/본체</span>
+							<a class="category" href='9' > <span>데스크탑/본체</span>
 							</a>
 						</div>
 						<div class="nav_item_a">
-							<a href=""> <span>모니터</span>
+							<a class="category" href='10' >  <span>모니터</span>
 							</a>
 						</div>
 						<div class="nav_item_a">
-							<a href=""> <span>키보드/마우스/헤드셋</span>
+							<a class="category" href='11' > <span>키보드/마우스/헤드셋</span>
 							</a>
 						</div>
 						<div class="nav_item_a">
-							<a href=""> <span>기타</span>
+							<a class="category" href='12' >  <span>기타</span>
 							</a>
 						</div>
 						<div class="nav_item_title">
 							<i class="fa-regular fa-square-plus" style="margin-right: 2%"></i><span>가전제품</span>
 						</div>
 						<div class="nav_item_a">
-							<a href="/main"> <span>냉장고</span>
+							<a class="category" href='13' >  <span>냉장고</span>
 							</a>
 						</div>
 						<div class="nav_item_a">
-							<a href=""> <span>TV</span>
+							<a class="category" href='14' >  <span>TV</span>
 							</a>
 						</div>
 						<div class="nav_item_a">
-							<a href=""> <span>세탁기/건조기</span>
+							<a class="category" href='15' > <span>세탁기/건조기</span>
 							</a>
 						</div>
 						<div class="nav_item_a">
-							<a href=""> <span>주방가전</span>
+							<a class="category" href='16' >  <span>주방가전</span>
 							</a>
 						</div>
 						<div class="nav_item_a">
-							<a href=""> <span>기타 가전제품</span>
+							<a class="category" href='17' > <span>기타 가전제품</span>
 							</a>
 						</div>
 						<div class="nav_item_title">
 							<i class="fa-regular fa-square-plus" style="margin-right: 2%"></i><span>무료나눔</span>
 						</div>
 						<div class="nav_item_a">
-							<a href=""> <span>무료나눔</span>
+							<a class="category" href='18' >  <span>무료나눔</span>
 							</a>
 						</div>
 					</div>
@@ -141,6 +141,7 @@
 					</div>
 				</div>
 			</div>
+			
 			<div class="content_header">
 				<div class="content_div">
 					<div class="content_title">
@@ -175,9 +176,10 @@
 												<p class="price">${formattedPrice}원</p>
 												<p class="pTag">${product.address}</p>
 												<div class="button_div2" style="display: flex">
-													<span>관심</span><span>0</span><span>∙</span> <span>채팅</span><span>${product.chatCount}</span>
+													<span>관심</span><span>0</span><span>∙</span> <span>채팅</span><span>${product.chatcount}</span>
+													<span>∙</span> <span>조회수</span><span>${product.viewcount}</span>
 												</div>
-											</div>
+											</div>	
 </a>
 										</li>
 									</c:forEach>
@@ -211,6 +213,14 @@
 			moveForm.attr("action","detailProduct")
 			moveForm.submit();
 		});
+	$(".category").on("click", function(e){
+		e.preventDefault();
+		moveForm.append("<input type='hidden' name='categori' value='"+ $(this).attr("href") +"'>");
+		moveForm.attr("action","usedTransation");
+		moveForm.submit();
+	});
+	
 	</script>
+
 </body>
 </html>

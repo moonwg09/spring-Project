@@ -19,11 +19,22 @@ public class TransationMapperTests {
 //	@Test
 //	public void produvtTest() throws Exception{
 //		  
-//		  System.out.println(productmapper.productList());
+//		  System.out.println(productmapper.productList(1));
+//	}
+	
+//	@Test
+//	public void productGetDetailTest() throws Exception{
+//		System.out.println(productmapper.productGetDetail(1));
+//	}
+	
+//	@Test
+//	public void getMemberAndProductTest() throws Exception{
+//
+//		    System.out.println(productmapper.getMemberAndProduct(2));
 //	}
 	
 	@Test
-	public void productGetDetailTest() throws Exception{
-		System.out.println(productmapper.productGetDetail(1));
+	public void increaseViewCount() throws Exception{
+		System.out.println(productmapper.increaseViewCount(2));
 	}
 }

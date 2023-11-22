@@ -19,7 +19,7 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
       <div class="header_main_div">
         <div class="logo_div"><img src="/resources/image/logo.jpg" alt="" onclick="window.location.href = '/main'" style="cursor: pointer;"/></div>
         <div class="header_content_div">
-          <div class="content_div_font"><span>중고거래</span></div>
+          <div class="content_div_font"><span onclick="window.location.href = '/transation/usedTransation'">중고거래</span></div>
           <div class="content_div_font"><span>동네업체</span></div>
           <div class="content_div_font"><span>알바</span></div>
           <div class="content_div_font"><span>부동산 직거래</span></div>
@@ -41,7 +41,7 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
       <div class="header_main_div2">
         <div class="logo_div2"><img src="/resources/image/logo.jpg" alt="" onclick="window.location.href = '/main'" style="cursor: pointer;"/></div>
         <div class="header_content_div2">
-          <div class="content_div_font2"><span>중고거래</span></div>
+          <div class="content_div_font2"><span onclick="window.location.href ='/transation/usedTransation'">중고거래</span></div>
           <div class="content_div_font2"><span>동네업체</span></div>
           <div class="content_div_font2"><span>알바</span></div>
           <div class="content_div_font2"><span>부동산 직거래</span></div>

@@ -1,0 +1,295 @@
+@charset "UTF-8";
+
+.detail_container {
+	width: 100%;
+	height: 100%;
+	margin-top: 13vh
+}
+
+.detail_div {
+	width: 90%;
+	height: 80%;
+	margin: 0 auto;
+	display: flex;
+}
+
+.detail_infO_contaitner {
+	width: 50%;
+	height: 80%;
+}
+
+.detail_info_div {
+	width: 100%;
+	padding: 10px 40px;
+}
+
+.detail_info_categori {
+	width: 100%;
+}
+
+.detail_info_categori>span {
+	font-size: 14px;
+	color: rgba(59, 130, 246, 0.5);
+	font-weight: 700;
+}
+
+.detail_info_title {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.detail_info_title_font>span {
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.detail_info_price>span {
+	font-size: 35px;
+	font-weight: 700;
+}
+
+.detail_info_sub {
+	display: flex;
+	font-size: 12px;
+	width: 100%;
+}
+
+.detail_font {
+	width: 100%;
+	color: #868e96;
+}
+
+.font_dot {
+	margin-left: 1%;
+	margin-right: 1%;
+}
+
+.detail_info_profile_div {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.detail_info_profile_sub_info {
+	display: flex;
+	margin-top: 2%;
+	width: 50%;
+}
+
+.detail_info_profile_img>img {
+	width: 40px;
+	height: auto;
+	border-radius: 50%;
+}
+
+.detail_info_profile_info {
+	margin-bottom: 5%;
+	margin-left: 4%;
+	width: 100%;
+}
+
+.detail_info_profile_name {
+	font-size: 12px;
+}
+
+.detail_info_profile_address {
+	font-size: 12px;
+}
+
+.detail_info_manner_div {
+	display: flex;
+	align-items: center;
+}
+
+.manner_div_img>img {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+}
+
+.detail_info_manner_div {
+	text-align: end;
+}
+
+.detail_info_detail_div {
+	width: 100px;
+	margin-right: 5%;
+}
+
+.detail_info_detail_div>p {
+	margin: 0;
+}
+
+.detail_warn_container {
+	width: 100%;
+	font-size: 15px;
+	text-align: center;
+	background-color: rgba(249, 249, 249, 1);
+	margin-bottom: 5%;
+}
+
+.detail_warn_div {
+	width: 70%;
+	padding: 10px 0px;
+	margin: 0 auto;
+}
+
+.detail_warn_div>span {
+	color: #5a5a5a;
+	font-weight: 700;
+	margin-bottom: 2%;
+}
+
+.font_p1 {
+	font-size: 12px;
+	text-align: center;
+	width: 100%;
+}
+
+.font_p2 {
+	font-size: 13px;
+	font-weight: 700;
+	text-decoration: underline;
+}
+
+.font_p2>span {
+	color: red;
+	font-size: 13px;
+}
+
+.detail_info_content_container {
+	width: 100%;
+	height: auto;
+	margin-top: 3%;
+}
+
+.detail_info_content_div {
+	width: 90%;
+	margin: 0 auto;
+	display: flex;
+}
+
+.detail_info_left {
+	width: 60%;
+}
+
+.detail_info_title {
+	font-weight: 700;
+}
+
+.detail_product_info_div {
+  white-space: pre-line;
+  width: 70%;
+  text-align: start;
+  font-size: 13px;
+}
+
+.detail_info_right {
+	width: 30%;
+	margin: 0 auto;
+}
+
+.detail_info_content_box {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: space-between;
+	text-align: center;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	border-right: none;
+	border-left: none;
+}
+
+hr {
+	width: 90%;
+}
+
+.detail_info_content_address {
+	width: 50%;
+	padding: 10px 10px;
+	border-right: 1px solid rgba(0, 0, 0, 0.3);
+	border-left: none;
+}
+
+.detail_info_content_categori {
+	padding: 10px 10px;
+	border-right: none;
+	width: 50%;
+}
+
+.address_title {
+	margin-bottom: 1%;
+	font-size: 14px;
+	color: #b2b2b2;
+}
+
+.address_info {
+	font-size: 13px;
+	color: #666666;
+}
+
+.product_detail_button_div {
+	display: flex;
+	width: 100%;
+	margin-top: 5%;
+}
+
+.product_detail_button {
+	margin: 0 auto;
+	width: 100%;
+	text-align: center;
+}
+
+.likeButton {
+	padding: 10px 25px;
+	width: 40%;
+	border: none;
+	font-weight: 700;
+	background-color: #fa6616;
+	color: white;
+}
+
+.chatButton {
+	padding: 10px 25px;
+	width: 40%;
+	border: none;
+	font-weight: 700;
+	color: white;
+	background-color: #f70000;
+}
+
+.detail_info_content_div_comment {
+  width: 60%;
+  margin: 0 auto;
+}
+.detail_info_comment {
+  width: 100%;
+}
+
+.detail_info_comment > hr {
+  width: 100%;
+}
+.detail_comment_profile_div {
+  width: 100%;
+  margin-bottom: 1%;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.detail_comment_profile_sub_info {
+  display: flex;
+  padding: 20px 20px;
+  width: 50%;
+}
+textarea {
+  border: none;
+  width: 100%;
+  height: 100px;
+  padding:20px 20px;
+  text-align: start;
+  resize: none;
+  font-size: 18px;
+}
+textarea:focus {
+  outline: none;
+}

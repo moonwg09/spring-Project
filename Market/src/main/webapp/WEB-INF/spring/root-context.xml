@@ -16,18 +16,26 @@
 		<property name="password" value="1234"></property>	
 	</bean>
 	
+	<mybatis-spring:scan base-package="com.vam.mapper" />
+	
 	<bean id="datasource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
 		<constructor-arg ref="hikariConfig"></constructor-arg>
 	</bean>
 	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="datasource"></property>
+		<property name="configLocation" value="classpath:/mybatis-config.xml" />
+		<property name="mapperLocations" value="classpath:com/vam/repository/mapper/*.xml" />
 	</bean>
 	
-	<mybatis-spring:scan base-package="com.vam.mapper"/>
 	
-	<context:component-scan base-package="com.vam.**"></context:component-scan>
 	
+	
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+    <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+
+<context:component-scan base-package="com.vam.**"></context:component-scan>	
 	
 	<!-- navermail설정 -->
 

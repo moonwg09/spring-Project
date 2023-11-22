@@ -10,6 +10,9 @@
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
+  
+  <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+  
 
 <link rel="stylesheet" type="text/css"
 	href="../resources/css/header.css">
@@ -43,13 +46,12 @@
             <div class="form-group2">
                 <button type="submit" class="submit">로그인</button>
             </div>
-            <div >
-            <button class="kakao-login-button"><span>    
-                <img src="../resources/image/kakao-icon.jpg" alt="Kakao Icon">
-                Login with Kakao</span></button>
-                
-            </div>
+            <a href="https://kauth.kakao.com/oauth/authorize
+            ?client_id=febbfe0c7cdec9f4b935100d5cbc597d&redirect_uri=http://localhost:8080/member/kakao&response_type=code">
+            	<img src="/resources/icon/kakao_login_large_narrow.png" style="height:60px">
+            </a>
         </form>
+       
         <div class="links">
             <a href="find-username">아이디 찾기</a>
             <a href="find-password">비밀번호 찾기</a>

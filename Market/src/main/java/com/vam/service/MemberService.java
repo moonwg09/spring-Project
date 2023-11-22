@@ -1,5 +1,16 @@
 package com.vam.service;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+import org.springframework.stereotype.Service;
+
+import com.fasterxml.jackson.core.JsonParser;
 import com.vam.VO.MemberVO;
 
 public interface MemberService {
@@ -14,4 +25,6 @@ public interface MemberService {
 	
 	// ·Î±×ÀÎ
 	public MemberVO memberLogin(MemberVO mvo) throws Exception;
+	
+	
 }

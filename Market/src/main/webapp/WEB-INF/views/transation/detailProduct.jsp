@@ -185,6 +185,7 @@
 				<div class="detail_info_comment">
 					<div class="detail_info_title">
 						<span>댓글</span>
+						<span class="detail_info_span">후기작성</span>
 					</div>
 					<hr />
 					<div class="detail_comment_profile_div">
@@ -197,13 +198,14 @@
 								<div class="detail_info_profile_address">관악구 신림동</div>
 							</div>
 						</div>
-						<textarea>있었는데 없어졌습니다..!포장 사진이 없어서 매장에서 먹었던 사진 올려요 ^^다 맛있어요. 떡볶이 순대 튀김 포장했는데요.사장님 센스가 최고에요!!분식 정말 좋아하는데 남기지 않았어요^^최고!
-    					</textarea>
+						<p class="comment_Ptag">있었는데 없어졌습니다..!포장 사진이 없어서 매장에서 먹었던 사진 올려요 ^^다 맛있어요. 떡볶이 순대 튀김 포장했는데요.사장님 센스가 최고에요!!분식 정말 좋아하는데 남기지 않았어요^^최고!
+    					</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</form>
+	
 	<hr style="width: 100%">
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7829d38593feb9a538108e0c91873472&libraries=services"></script>

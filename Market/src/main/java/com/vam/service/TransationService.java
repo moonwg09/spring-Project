@@ -12,4 +12,6 @@ public interface TransationService {
 	public ProductVO getMemberAndProduct(int productNo);
 	
 	public int increaseViewCount(int productNo);
+	
+	public ChatVO insertChat(int productNo);
 }

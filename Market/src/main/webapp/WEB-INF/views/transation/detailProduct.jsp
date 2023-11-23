@@ -1,10 +1,17 @@
+<%@page import="com.vam.VO.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%
+    HttpSession sessi = request.getSession();
+    MemberVO member = (MemberVO) sessi.getAttribute("member");
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css"
@@ -185,7 +192,7 @@
 				<div class="detail_info_comment">
 					<div class="detail_info_title">
 						<span>댓글</span>
-						<span class="detail_info_span">후기작성</span>
+						<span class="detail_info_span" id="modal-open">후기작성</span>
 					</div>
 					<hr />
 					<div class="detail_comment_profile_div">
@@ -205,7 +212,66 @@
 			</div>
 		</div>
 	</form>
-	
+  <c:if test="${member ==null }">
+	<div class="container">
+      <div class="popup-wrap" id="popup">
+        <div class="modal_div">
+          <div class="circle-icon">
+            <i class="fa-solid fa-exclamation"></i>
+          </div>
+          <p class="modal_title">로그인후 이용 가능합니다.</p>
+          <p class="modal_title smft">로그인 하시겠습니까?</p>
+          <div class="modal_button_div">
+            <div class="modal_button yes"><span>예</span></div>
+            <div class="modal_button no" id="close"><span>아니요</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+   </c:if>
+   <c:if test="${member ==null }">
+	<div class="container">
+      <div class="popup-wrap" id="popup">
+        <div class="modal_div">
+          <div class="circle-icon">
+            <i class="fa-solid fa-exclamation"></i>
+          </div>
+          <p class="modal_title">로그인후 이용 가능합니다.</p>
+          <p class="modal_title smft">로그인 하시겠습니까?</p>
+          <div class="modal_button_div">
+            <div class="modal_button yes"><span>예</span></div>
+            <div class="modal_button no" id="close"><span>아니요</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+   </c:if>
+   <c:if test="${member != null}">
+   <form>
+      <div class="container">
+        <div class="popup-wrap" id="popup">
+          <div class="modal_div_login">
+            <p class="modal_title_login">댓글작성</p>
+
+            <hr style="width: 100%; margin: 0 auto; margin-bottom: 3%" />
+            <div class="modal_button_div">
+              <div class="modal_button_login">
+                <textarea class="comment_textarea" name="" id="">ds</textarea>
+              </div>
+            </div>
+            <div class="modal_button_div">
+              <div class="modal_button_div_login">
+                <span class="modal_button_comment">예</span>
+              </div>
+              <div class="modal_button_div_login">
+                <span class="modal_button_comment"  id="close">아니요</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+   </c:if>
 	<hr style="width: 100%">
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7829d38593feb9a538108e0c91873472&libraries=services"></script>
@@ -215,6 +281,20 @@
 		var productAddress = '<c:out value="${productDetail.address}" />';
 	</script>
 	<script type="text/javascript">
+	 $(function () {
+	
+	        $('#modal-open').click(function () {
+	          $('#popup').css('display', 'flex').hide().fadeIn();
+	     	 	document.body.style.overflow = 'hidden';
+	        });
+	        $('#close').click(function () {
+	          modalClose();
+	        });
+	        function modalClose() {
+	          $('#popup').fadeOut();
+	     	 document.body.style.overflow = 'auto';
+	        }
+	      });
 		var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
 		var options = {
 			//지도를 생성할 때 필요한 기본 옵션
@@ -241,6 +321,8 @@
 				map.setCenter(coords);
 			}
 		});
+		
+	
 	</script>
 </body>
 </html>

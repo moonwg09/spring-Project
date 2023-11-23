@@ -190,13 +190,15 @@ public class MemberController {
 	
 	@RequestMapping(value="/kakao", method=RequestMethod.GET)
 	public String kakaoLogin(@RequestParam(value = "code", required = false) String code, Model model) throws Exception{
-        System.out.println("#########" + code);
+	
+		System.out.println("#########" + code);
         String access_Token = kakaoService.getAccessToken(code);
         KakaoDTO userInfo = kakaoService.getUserInfo(access_Token);
      
         session.invalidate();
         session.setAttribute("kakaoN", userInfo.getK_name());
         session.setAttribute("kakaoE", userInfo.getK_email());
+     
        
         return "redirect:/main";
     }

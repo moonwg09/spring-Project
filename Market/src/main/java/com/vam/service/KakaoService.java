@@ -50,7 +50,7 @@ public class KakaoService implements KakaoInterface {
             StringBuilder sb = new StringBuilder();
             sb.append("grant_type=authorization_code");
             sb.append("&client_id=febbfe0c7cdec9f4b935100d5cbc597d");  //본인이 발급받은 key
-            sb.append("&redirect_uri=http://localhost:8080/member/kakao");     // 본인이 설정해 놓은 경로
+            sb.append("&redirect_uri=http://localhost:8081/member/kakao");     // 본인이 설정해 놓은 경로
             sb.append("&code=" + authorize_code);
             bw.write(sb.toString());
             bw.flush();

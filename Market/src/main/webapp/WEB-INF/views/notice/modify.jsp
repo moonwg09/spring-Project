@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
@@ -78,18 +78,18 @@
                                    
                                     </li>
                                     <li>
-                                    	<sec:authorize access="isAnonymous()">
+                                    	
                                         	<a href="/mypage/customlogin">
                                             	<i class="zmdi zmdi-lock"></i>
                                             	Login
                                         	</a>
-                                        </sec:authorize>
-                                        <sec:authorize access="isAuthenticated()">
+                                       
+                                        
                                         	<a onClick="alert('Logout Success!')" href="/mypage/logout" >
                                             	<i class="zmdi zmdi-lock"></i>
                                             	Logout
                                         	</a>                                       
-                                        </sec:authorize>
+                                        
                                     </li>
                                 </ul>
                             </div>
@@ -407,9 +407,9 @@
     <script src="/resources/js/main.js"></script>
 
 	<!-- cartPreview -->
-	<sec:authorize access="isAuthenticated()">
+	
 		<script src="/resources/js/ajax-cartPreview.js"></script>
-	</sec:authorize>
+	
 	
 	<!-- ajax-mail js -->
     <script src="/resources/js/ajax-mail.js"></script>

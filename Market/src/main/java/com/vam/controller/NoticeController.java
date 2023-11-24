@@ -141,6 +141,7 @@ public class NoticeController {
 		}
 	}
 	
+
 	@GetMapping("/modify")
 	public String modify(@RequestParam("notice_id") Long notice_id, Model model) {
 		
@@ -151,6 +152,7 @@ public class NoticeController {
 	}
 	
 
+	
 	@PostMapping("/modify")
 	public String modify(RedirectAttributes rttr, NoticeVO notice, MultipartFile noticeImage) {
 		log.info("modify notice : "+notice);

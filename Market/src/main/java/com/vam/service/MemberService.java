@@ -14,16 +14,16 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.vam.VO.MemberVO;
 
 public interface MemberService {
-	// È¸¿ø°¡ÀÔ
+	// È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public void memberJoin(MemberVO mvo) throws Exception;
 	
-	//¾ÆÀÌµð Áßº¹ °Ë»ç
+	//ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ßºï¿½ ï¿½Ë»ï¿½
 	public int idCheck(String id) throws Exception;
 	
-	// ÈÞ´ëÆùÀÎÁõ
+	// ï¿½Þ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public void sendPhoneNumber(String memberPhone, String cerNum) throws Exception;
 	
-	// ·Î±×ÀÎ
+	// ï¿½Î±ï¿½ï¿½ï¿½
 	public MemberVO memberLogin(MemberVO mvo) throws Exception;
 	
 	

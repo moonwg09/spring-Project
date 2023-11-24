@@ -41,8 +41,8 @@ public class BookController {
 		
 		logger.info("getImage()........" + fileName);
 		
-		File file = new File("c:\\upload\\" + fileName);
-		
+		File file = new File("c:\\upload\\temp\\" + fileName);
+	
 		ResponseEntity<byte[]> result = null;
 		
 		try {
@@ -50,7 +50,6 @@ public class BookController {
 			HttpHeaders header = new HttpHeaders();
 			
 			header.add("Content-type", Files.probeContentType(file.toPath()));
-			
 			result = new ResponseEntity<>(FileCopyUtils.copyToByteArray(file), header, HttpStatus.OK);
 			
 		}catch (IOException e) {

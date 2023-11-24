@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
 
 <%@include file="/WEB-INF/views/layout/top.jsp" %>
 
@@ -52,19 +53,20 @@
                             <div class="blog-item" style="position:relative; padding-top:81%; display:block;">
                                 <img id="main-img${varstatus.index}" onError ="this.src='/resources/img/blog/1.jpg'" alt="error"
                                 style="position:absolute; top:0; width:100%;height:100%">
+                                <div class="read-more" style="position: absolute; top:50%;left:50%; transform:translate(-50%,-50%)">
+                                        <a href="get?notice_id=${notice.notice_id }">Read more</a>
+                                    </div>
+                                    
                                 <script>
                                   	var imageName = encodeURIComponent('${notice.notice_image.image_uploadPath}'+'/'+'${notice.notice_image.image_uuid}'+'_'+'${notice.notice_image.image_name}');
-                                  	var realSrc = '/product/display?fileName='+imageName;
+                                  	var realSrc = '/display?fileName='+imageName;
                                   	
                               		document.getElementById('main-img${varstatus.index}').src= realSrc;
 								</script>
                                 <div class="blog-desc">
                                     <h5 class="blog-title"><a href="get?notice_id=${notice.notice_id}"><c:out value="${notice.notice_title }"/></a></h5>
                                     <p>${notice.notice_information }</p>
-                                    <div class="read-more">
-                                        <a href="get?notice_id=${notice.notice_id }">Read more</a>
-                                    </div>
-                                    
+                                   
                                 </div>
                             </div>
                         </div>

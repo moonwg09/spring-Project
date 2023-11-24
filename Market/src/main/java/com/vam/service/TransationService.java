@@ -2,6 +2,7 @@ package com.vam.service;
 
 import java.util.List;
 
+import com.vam.VO.ChatVO;
 import com.vam.VO.ProductVO;
 
 public interface TransationService {

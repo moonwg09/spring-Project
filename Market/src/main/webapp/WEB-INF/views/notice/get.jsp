@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
 <%@include file="/WEB-INF/views/layout/top.jsp" %>
 <!-- BREADCRUMBS SETCTION START -->
         <div class="breadcrumbs-section plr-200 mb-80 section">
@@ -71,7 +72,7 @@
 	                                    style="width:100%;height:100%">
 	                                    <script>
                                            	var imageName = encodeURIComponent('${notice.notice_image.image_uploadPath}'+'/'+'${notice.notice_image.image_uuid}'+'_'+'${notice.notice_image.image_name}');
-                                           	var realSrc = '/product/display?fileName='+imageName;
+                                           	var realSrc = '/display?fileName='+imageName;
                                        		document.getElementById('notice-img').src= realSrc;
 										</script>
 	                                    <div class="today-date bg-img-1">

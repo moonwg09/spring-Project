@@ -23,7 +23,7 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
           <div class="content_div_font"><span>동네업체</span></div>
           <div class="content_div_font"><span>알바</span></div>
           <div class="content_div_font"><span>부동산 직거래</span></div>
-          <div class="content_div_font"><span>이벤트</span></div>
+          <div class="content_div_font"><span onclick="window.location.href = '/notice/list'">이벤트</span></div>
         </div>
         <div class="search_div">
           <div class="header_input_div">

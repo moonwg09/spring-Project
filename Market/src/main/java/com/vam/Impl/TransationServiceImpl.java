@@ -2,12 +2,14 @@ package com.vam.Impl;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.vam.VO.ProductVO;
 import com.vam.mapper.TransationMapper;
+import com.vam.VO.ChatVO;
 import com.vam.service.TransationService;
 
 @Service
@@ -16,13 +18,13 @@ public class TransationServiceImpl implements TransationService {
 	@Autowired
 	TransationMapper productmapper;
 
-	// »óÇ° ÀüÃ¼º¸±â
+	// ï¿½ï¿½Ç° ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½
 	@Override
 	public List<ProductVO> productList(int categori) throws Exception {
 		return productmapper.productList(categori);
 	}
 
-	// »óÇ° »ó¼¼º¸±â
+	// ï¿½ï¿½Ç° ï¿½ó¼¼ºï¿½ï¿½ï¿½
 	@Override
 	public ProductVO productGetDetail(int productNo) throws Exception {
 
@@ -38,5 +40,11 @@ public class TransationServiceImpl implements TransationService {
 	@Override
 	public int increaseViewCount(int productNo) {
 		return productmapper.increaseViewCount(productNo);
+	}
+
+	@Override
+	public ChatVO insertChat(int productNo) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

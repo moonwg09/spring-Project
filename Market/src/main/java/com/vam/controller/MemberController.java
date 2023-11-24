@@ -41,8 +41,8 @@ public class MemberController {
 	@Autowired
 	private JavaMailSender mailSender;
 	
-	@Autowired
-	private HttpSession session;
+//	@Autowired
+//	private HttpSession session;
 	
 	
 	
@@ -190,21 +190,21 @@ public class MemberController {
 		return "redirect:/main";
 	}
 	
-	@RequestMapping(value="/kakao", method=RequestMethod.GET)
-	public String kakaoLogin(@RequestParam(value = "code", required = false) String code, Model model) throws Exception{
-	
-		System.out.println("#########" + code);
-        String access_Token = kakaoService.getAccessToken(code);
-        KakaoDTO userInfo = kakaoService.getUserInfo(access_Token);
-     
-        session.invalidate();
-        session.setAttribute("kakaoN", userInfo.getK_name());
-        session.setAttribute("kakaoE", userInfo.getK_email());
-     
-       
-        return "redirect:/main";
-    }
-	
+//	@RequestMapping(value="/kakao", method=RequestMethod.GET)
+//	public String kakaoLogin(@RequestParam(value = "code", required = false) String code, Model model) throws Exception{
+//	
+//		System.out.println("#########" + code);
+//        String access_Token = kakaoService.getAccessToken(code);
+//        KakaoDTO userInfo = kakaoService.getUserInfo(access_Token);
+//     
+//        session.invalidate();
+//        session.setAttribute("kakaoN", userInfo.getK_name());
+//        session.setAttribute("kakaoE", userInfo.getK_email());
+//     
+//       
+//        return "redirect:/main";
+//    }
+//	
 	
 	
 		

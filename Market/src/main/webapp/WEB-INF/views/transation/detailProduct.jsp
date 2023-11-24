@@ -191,23 +191,24 @@
 			<div class="detail_info_content_div_comment">
 				<div class="detail_info_comment">
 					<div class="detail_info_title">
-						<span>댓글</span>
+						<span>${member.nickName}</span>
 						<span class="detail_info_span" id="modal-open">후기작성</span>
 					</div>
 					<hr />
-					<div class="detail_comment_profile_div">
-						<div class="detail_comment_profile_sub_info">
-							<div class="detail_info_profile_img">
-								<img src="../resources/image/profile.png" alt="" />
-							</div>
-							<div class="detail_info_profile_info">
-								<div class="detail_info_profile_name">yen</div>
-								<div class="detail_info_profile_address">관악구 신림동</div>
-							</div>
-						</div>
-						<p class="comment_Ptag">있었는데 없어졌습니다..!포장 사진이 없어서 매장에서 먹었던 사진 올려요 ^^다 맛있어요. 떡볶이 순대 튀김 포장했는데요.사장님 센스가 최고에요!!분식 정말 좋아하는데 남기지 않았어요^^최고!
-    					</p>
-					</div>
+					<c:forEach items="${chatList}" var="chatItem">
+        <div class="detail_comment_profile_div">
+            <div class="detail_comment_profile_sub_info">
+                <div class="detail_info_profile_img">
+                    <img src="../resources/image/profile.png" alt="" />
+                </div>
+                <div class="detail_info_profile_info">
+                    <div class="detail_info_profile_name">${chatItem.senderName}</div>
+                    <div class="detail_info_profile_address">${chatItem.senderAddress}</div>
+                </div>
+            </div>
+            <p class="comment_Ptag">${chatItem.content}</p>
+        </div>
+    </c:forEach>
 				</div>
 			</div>
 		</div>
@@ -247,7 +248,8 @@
     </div>
    </c:if>
    <c:if test="${member != null}">
-   <form>
+   <form id="frmm"> 
+   <input type="hidden" value="${productDetail.productNo}" class="product_comment_content" name="productNo">
       <div class="container">
         <div class="popup-wrap" id="popup">
           <div class="modal_div_login">
@@ -256,12 +258,12 @@
             <hr style="width: 100%; margin: 0 auto; margin-bottom: 3%" />
             <div class="modal_button_div">
               <div class="modal_button_login">
-                <textarea class="comment_textarea" name="" id="">ds</textarea>
+                <input type="text" class="comment_textarea"  id="" name="content"></input>
               </div>
             </div>
             <div class="modal_button_div">
               <div class="modal_button_div_login">
-                <span class="modal_button_comment">예</span>
+                <input class="modal_button_comment" type="submit">예</input>
               </div>
               <div class="modal_button_div_login">
                 <span class="modal_button_comment"  id="close">아니요</span>
@@ -281,6 +283,7 @@
 		var productAddress = '<c:out value="${productDetail.address}" />';
 	</script>
 	<script type="text/javascript">
+	
 	 $(function () {
 	
 	        $('#modal-open').click(function () {
@@ -322,7 +325,37 @@
 			}
 		});
 		
-	
+		var comentCheck = false;
+		
+		$(document).ready(function(){
+			//회원가입 버튼(회원가입 기능 작동)
+			$(".modal_button_comment").click(function(e){
+				/* $("#join_form").attr("action", "/member/join");
+				$("#join_form").submit(); */
+				e.preventDefault();
+				var content = $(".comment_textarea").val();
+				var productNo = $(".product_comment_content").val();
+
+				if (content) {
+					$.ajax({
+					    type: "POST",
+					    url: "/transation/chat",
+					    data: {
+					        content: content,
+					        productNo: productNo
+					    },
+					    success: function (chatList) {
+					        console.log("채팅 성공적으로 제출됨");
+					        document.getElementById("frmm").submit();
+					    },
+					    error: function (error) {
+					        console.error("채팅 제출 중 오류 발생:", error.responseJSON);
+					    }
+					});
+				}
+				
+			});
+		});
 	</script>
 </body>
 </html>

@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.vam.VO.MemberVO;
 import com.vam.VO.ProductVO;
+import com.vam.VO.ChatVO;
 
 public interface TransationMapper {
 	// 게시글 전체보기
@@ -17,4 +18,9 @@ public interface TransationMapper {
 	
 	// 게시글 조회수 증가
 	public int increaseViewCount(int productNo);
+	
+	// 댓글 등록
+	public void insertChat(ChatVO cvo);
+
+	public List<ChatVO> selectChat(int productNo);
 }

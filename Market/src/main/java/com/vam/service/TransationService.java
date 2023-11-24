@@ -10,9 +10,11 @@ public interface TransationService {
 	
 	public ProductVO productGetDetail(int productNo) throws Exception;
 
-	public ProductVO getMemberAndProduct(int productNo);
+	public ProductVO getMemberAndProduct(int productNo) throws Exception;
 	
-	public int increaseViewCount(int productNo);
+	public int increaseViewCount(int productNo)throws Exception;
 	
-	public ChatVO insertChat(int productNo);
+	public void insertChat(ChatVO cvo) throws Exception;
+	
+	public List<ChatVO> selectChat(int productNo) throws Exception;
 }

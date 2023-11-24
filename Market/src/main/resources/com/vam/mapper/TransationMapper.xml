@@ -32,8 +32,15 @@
 		<result property="regDate" column="regDate" />
 		<result property="likecount" column="likecount" />
 		<collection property="mvo" resultMap="memberResultMap" />
-	</resultMap>
 
+	</resultMap>
+	<resultMap id="chatResultMap" type="com.vam.VO.ChatVO">
+		<id property="chatNo" column="chatNo" />
+		<result property="productNo" column="productNo" />
+		<result property="content" column="content" />
+		<collection property="pvo" resultMap="productResultMap" />
+		
+	</resultMap>
 
 	<select id="productGetDetail" resultType="com.vam.VO.ProductVO">
 		select * from product
@@ -54,5 +61,15 @@
 		SET viewcount = viewcount + 1
 		WHERE productNo = #{productNo}
 	</update>
+	
+	<insert id="insertChat" >
+		insert into chat (chatNo, productNo, content) values (null, #{productNo}, #{content})
+	</insert>
+	<select id="selectChat" resultMap="chatResultMap">
+    SELECT chat.chatNo, chat.productNo, chat.content
+    FROM chat JOIN product ON chat.productNo = product.productNo
+    WHERE chat.productNo =#{productNo};
+	</select>
 </mapper>
+
   

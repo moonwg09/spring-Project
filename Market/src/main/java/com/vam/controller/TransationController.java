@@ -34,6 +34,8 @@ public class TransationController {
 		System.out.println(productservice.productGetDetail(productNo));
 		System.out.println(productservice.getMemberAndProduct(productNo));
 		productservice.increaseViewCount(productNo);
+		
+		
 		model.addAttribute("writerProductInfo",productservice.getMemberAndProduct(productNo));
 		model.addAttribute("productDetail",productservice.productGetDetail(productNo));
 

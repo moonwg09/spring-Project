@@ -11,6 +11,16 @@ public class ProductVO {
 	
 	private MemberVO mvo;
 	
+	private ChatVO cvo;
+	
+
+	public ChatVO getCvo() {
+		return cvo;
+	}
+
+	public void setCvo(ChatVO cvo) {
+		this.cvo = cvo;
+	}
 
 	public MemberVO getMvo() {
 		return mvo;
@@ -121,7 +131,7 @@ public class ProductVO {
 		return "ProductVO [title=" + title + ", img=" + img + ", content=" + content + ", address=" + address
 				+ ", writer=" + writer + ", productNo=" + productNo + ", categori=" + categori + ", price=" + price
 				+ ", viewcount=" + viewcount + ", chatcount=" + chatcount + ", likecount=" + likecount + ", regDate="
-				+ regDate + ", mvo=" + mvo + "]";
+				+ regDate + ", mvo=" + mvo + ", cvo=" + cvo + "]";
 	}
 	
 	

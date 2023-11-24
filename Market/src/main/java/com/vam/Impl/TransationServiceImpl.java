@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.vam.VO.ChatVO;
 import com.vam.VO.ProductVO;
 import com.vam.mapper.TransationMapper;
 import com.vam.service.TransationService;
@@ -38,5 +39,15 @@ public class TransationServiceImpl implements TransationService {
 	@Override
 	public int increaseViewCount(int productNo) {
 		return productmapper.increaseViewCount(productNo);
+	}
+	@Override
+	public void insertChat(ChatVO cvo) throws Exception {
+		productmapper.insertChat(cvo);
+		
+	}
+	@Override
+	public List<ChatVO> selectChat(int productNo) throws Exception {
+	
+		return productmapper.selectChat(productNo);
 	}
 }

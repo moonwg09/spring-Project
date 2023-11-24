@@ -19,12 +19,10 @@ public class MemberRepository {
 	
 
 	
-	// 카카오 로그인
 		public void kakaoinsert(HashMap<String, Object> userInfo) {
 			sql.insert("Member.kakaoInsert",userInfo);
 		}
 
-		// 카카오 확인
 		public KakaoDTO findkakao(HashMap<String, Object> userInfo) {
 			System.out.println("RN:"+userInfo.get("nickname"));
 			System.out.println("RE:"+userInfo.get("email"));

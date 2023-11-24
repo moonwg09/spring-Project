@@ -3,6 +3,7 @@ package com.vam.controller;
 
 import java.util.Random;
 
+
 import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -45,90 +46,90 @@ public class MemberController {
 	
 	
 	
-	// È¸¿ø°¡ÀÔ ¹öÆ° Å¬¸¯ ½Ã
+	// È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ° Å¬ï¿½ï¿½ ï¿½ï¿½
 	@RequestMapping(value = "/check", method = RequestMethod.GET)
 	public void memberCheck() throws Exception {
-		logger.info("memberCheck ÁøÀÔ");
+		logger.info("memberCheck ï¿½ï¿½ï¿½ï¿½");
 	}
-	// ´ÙÀ½ Å¬¸¯ ½Ã
+	// ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ ï¿½ï¿½
 		@RequestMapping(value = "/join", method = RequestMethod.GET)
 		public void memberJoin() throws Exception {
-			logger.info("memberJoin ÁøÀÔ");
+			logger.info("memberJoin ï¿½ï¿½ï¿½ï¿½");
 		}
 		
-	//È¸¿ø°¡ÀÔ
+	//È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		@RequestMapping(value="/join", method = RequestMethod.POST)
 		public String joinPOST(MemberVO mvo) throws Exception {
 			
-			logger.info("join ÁøÀÔ");
+			logger.info("join ï¿½ï¿½ï¿½ï¿½");
 			
-			// È¸¿ø°¡ÀÔ ¼­ºñ½º ½ÇÇà
+			// È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			memberservice.memberJoin(mvo);
 			
-			logger.info("join service ¼º°ø");
+			logger.info("join service ï¿½ï¿½ï¿½ï¿½");
 			
 			return "redirect:/main";
 		}
 		
-	// ·Î±×ÀÎ ¹öÆ° Å¬¸¯ ½Ã
+	// ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½Æ° Å¬ï¿½ï¿½ ï¿½ï¿½
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public void memberLogin() throws Exception {
-		logger.info("memberLogin ÁøÀÔ");
+		logger.info("memberLogin ï¿½ï¿½ï¿½ï¿½");
 	}
 	
-	//ÀÌ¸ÞÀÏ Ã¼Å© ÆË¾÷Ã¢
+	//ï¿½Ì¸ï¿½ï¿½ï¿½ Ã¼Å© ï¿½Ë¾ï¿½Ã¢
 	@RequestMapping(value = "/EMCheckPopUp", method = RequestMethod.GET)
 	public void memberLogin2() throws Exception {
-		logger.info("memberLogin ÁøÀÔ");
+		logger.info("memberLogin ï¿½ï¿½ï¿½ï¿½");
 	}
 	
 	
 	@RequestMapping(value = "/PNCheckPopup", method = RequestMethod.GET)
 	public void memberPnCheck() throws Exception {
-		logger.info("memberPhoneCheck ÁøÀÔ");
+		logger.info("memberPhoneCheck ï¿½ï¿½ï¿½ï¿½");
 	}
 	
-	//¾ÆÀÌµð Áßº¹ °Ë»ç
+	//ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ßºï¿½ ï¿½Ë»ï¿½
 	@RequestMapping(value = "/idChk", method = RequestMethod.POST)
 	@ResponseBody
 	public String IdChkPOST(String id) throws Exception {
 		
-		logger.info("idChk() ÁøÀÔ");
+		logger.info("idChk() ï¿½ï¿½ï¿½ï¿½");
 		
 		int result = memberservice.idCheck(id);
 		
-		logger.info("°á°ú°ª = " + result);
+		logger.info("ï¿½ï¿½ï¿½ï¿½ï¿½ = " + result);
 		
 		if(result != 0 ) {
-			return "fail"; //Áßº¹ ¾ÆÀÌµð Á¸Àç
+			return "fail"; //ï¿½ßºï¿½ ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½
 		} else {
 			return "success";
 		}
 	}
 	
-	//ÀÌ¸ÞÀÏ ÀÎÁõ
+	//ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	@RequestMapping(value="/mailCheck", method=RequestMethod.GET)
 	@ResponseBody
 	public String mailCheckGET(String email) throws Exception{
 		
-		logger.info("ÀÌ¸ÞÀÏ µ¥ÀÌÅÍ Àü¼Û È®ÀÎ");
-		logger.info("ÀÎÁõ¹øÈ£ : " + email);
+		logger.info("ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½");
+		logger.info("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ : " + email);
 		
-		//ÀÎÁõ¹øÈ£ ³­¼ö »ý¼º
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		Random random = new Random();
 		int checkNum = random.nextInt(888888) + 111111;
-		logger.info("ÀÎÁõ¹øÈ£ " + checkNum);
+		logger.info("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ " + checkNum);
 		
-		//ÀÌ¸ÞÀÏ º¸³»±â
+		//ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		String setFrom = "moonwg09@naver.com";
 		String toMail = email;
-		String title = "È¸¿ø°¡ÀÔ ÀÎÁõ ÀÌ¸ÞÀÏ ÀÔ´Ï´Ù.";
+		String title = "È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Ô´Ï´ï¿½.";
 		String content = 
-				"È¨ÆäÀÌÁö¸¦ ¹æ¹®ÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù." +
+				"È¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½æ¹®ï¿½ï¿½ï¿½Ö¼Å¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½." +
 				"<br><br>" +
-				"ÀÎÁõ ¹øÈ£´Â " + checkNum + "ÀÔ´Ï´Ù." +
+				"ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ " + checkNum + "ï¿½Ô´Ï´ï¿½." +
 				"<br>" + 
-				"ÇØ´ç ÀÎÁõ¹øÈ£¸¦ ÀÎÁõ¹øÈ£ È®ÀÎ¶õ¿¡ ±âÀÔÇÏ¿© ÁÖ¼¼¿ä.";
+				"ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ È®ï¿½Î¶ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.";
 		
 		try {
 			
@@ -147,7 +148,7 @@ public class MemberController {
 		
 		return num;
 	}
-	// ÈÞ´ëÆù ÀÎÁõ
+	// ï¿½Þ´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	@RequestMapping(value="/memberPhoneCheck")
 	@ResponseBody
 	public String sendSMS(String memberPhone) throws Exception{
@@ -158,20 +159,20 @@ public class MemberController {
             numStr+=ran;
         }
 
-        System.out.println("¼ö½ÅÀÚ ¹øÈ£ : " + memberPhone);
-        System.out.println("ÀÎÁõ¹øÈ£ : " + numStr);
+        System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ : " + memberPhone);
+        System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ : " + numStr);
         memberservice.sendPhoneNumber(memberPhone,numStr);
         
         
         return numStr;
 	}
 	
-	// ·Î±×ÀÎ
+	// ï¿½Î±ï¿½ï¿½ï¿½
 	@RequestMapping(value="login", method=RequestMethod.POST)
 	public String loginPOST(HttpServletRequest request, MemberVO mvo, RedirectAttributes rttr) throws Exception{
 		
-//		System.out.println("login ¸Þ¼­µå ÁøÀÔ");
-//		System.out.println("Àü´ÞµÈ µ¥ÀÌÅÍ : " + mvo);
+//		System.out.println("login ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
+//		System.out.println("ï¿½ï¿½ï¿½Þµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : " + mvo);
 		
 		HttpSession session = request.getSession();
 		MemberVO lvo = memberservice.memberLogin(mvo);
@@ -184,6 +185,7 @@ public class MemberController {
 		}
 		
 		session.setAttribute("member", lvo);
+	
 		
 		return "redirect:/main";
 	}

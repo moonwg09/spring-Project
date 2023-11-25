@@ -4,8 +4,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%
-    HttpSession sessi = request.getSession();
-    MemberVO member = (MemberVO) sessi.getAttribute("member");
+HttpSession sessi = request.getSession();
+MemberVO member = (MemberVO) sessi.getAttribute("member");
 %>
 
 <!DOCTYPE html>
@@ -191,90 +191,127 @@
 			<div class="detail_info_content_div_comment">
 				<div class="detail_info_comment">
 					<div class="detail_info_title">
-						<span>${member.nickName}</span>
-						<span class="detail_info_span" id="modal-open">후기작성</span>
+						<span>댓글</span> <span class="detail_info_span" id="modal-open">댓글작성</span>
 					</div>
 					<hr />
-					<c:forEach items="${chatList}" var="chatItem">
-        <div class="detail_comment_profile_div">
-            <div class="detail_comment_profile_sub_info">
-                <div class="detail_info_profile_img">
-                    <img src="../resources/image/profile.png" alt="" />
-                </div>
-                <div class="detail_info_profile_info">
-                    <div class="detail_info_profile_name">${chatItem.senderName}</div>
-                    <div class="detail_info_profile_address">${chatItem.senderAddress}</div>
-                </div>
-            </div>
-            <p class="comment_Ptag">${chatItem.content}</p>
-        </div>
-    </c:forEach>
+					<c:forEach items="${commentList}" var="chatItem">
+
+						<div class="detail_comment_profile_div">
+							<div class="detail_comment_profile_sub_info">
+								<div class="detail_info_profile_img">
+									<img src="../resources/image/profile.png" alt="" />
+								</div>
+								<div class="detail_info_profile_info">
+									<div class="detail_info_profile_name">${chatItem.mvo.nickName}</div>
+									<div class="detail_info_profile_address">${chatItem.mvo.addr2}</div>
+								</div>
+								<c:if test="${member.nickName eq chatItem.mvo.nickName}">
+
+									
+									
+										<div style="width: 100%; height: 100%; text-align: end;"
+											class="detailProduct_deleteBtn">
+											
+											<a href="/transation/delete?chatNo=${chatItem.chatNo}&productNo=${chatItem.pvo.productNo}"><i class="fa-solid fa-trash-can"
+												style="color: black; cursor: pointer;"
+												></i></a>
+										</div>
+
+									
+								</c:if>
+							</div>
+							<p class="comment_Ptag">${chatItem.content}</p>
+
+						</div>
+					</c:forEach>
+					<c:if test="${empty commentList}">
+						<p
+							style="padding: 0px 20px; text-align: center; height: 300px; display: flex; width: 100%; align-items: center; justify-content: center;">등록된
+							댓글이 없습니다.</p>
+					</c:if>
 				</div>
 			</div>
 		</div>
 	</form>
-  <c:if test="${member ==null }">
-	<div class="container">
-      <div class="popup-wrap" id="popup">
-        <div class="modal_div">
-          <div class="circle-icon">
-            <i class="fa-solid fa-exclamation"></i>
-          </div>
-          <p class="modal_title">로그인후 이용 가능합니다.</p>
-          <p class="modal_title smft">로그인 하시겠습니까?</p>
-          <div class="modal_button_div">
-            <div class="modal_button yes"><span>예</span></div>
-            <div class="modal_button no" id="close"><span>아니요</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-   </c:if>
-   <c:if test="${member ==null }">
-	<div class="container">
-      <div class="popup-wrap" id="popup">
-        <div class="modal_div">
-          <div class="circle-icon">
-            <i class="fa-solid fa-exclamation"></i>
-          </div>
-          <p class="modal_title">로그인후 이용 가능합니다.</p>
-          <p class="modal_title smft">로그인 하시겠습니까?</p>
-          <div class="modal_button_div">
-            <div class="modal_button yes"><span>예</span></div>
-            <div class="modal_button no" id="close"><span>아니요</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-   </c:if>
-   <c:if test="${member != null}">
-   <form id="frmm"> 
-   <input type="hidden" value="${productDetail.productNo}" class="product_comment_content" name="productNo">
-      <div class="container">
-        <div class="popup-wrap" id="popup">
-          <div class="modal_div_login">
-            <p class="modal_title_login">댓글작성</p>
+	<c:if test="${member ==null }">
+		<div class="container">
+			<div class="popup-wrap" id="popup">
+				<div class="modal_div">
+					<div class="circle-icon">
+						<i class="fa-solid fa-exclamation"></i>
+					</div>
+					<p class="modal_title">로그인후 이용 가능합니다.</p>
+					<p class="modal_title smft">로그인 하시겠습니까?</p>
+					<div class="modal_button_div">
+						<div class="modal_button yes">
+							<span onclick="window.location.href ='/member/login'">예</span>
+						</div>
+						<div class="modal_button no" id="close">
+							<span>아니요</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</c:if>
+	<c:if test="${member ==null }">
+		<div class="container">
+			<div class="popup-wrap" id="popup">
+				<div class="modal_div">
+					<div class="circle-icon">
+						<i class="fa-solid fa-exclamation"></i>
+					</div>
+					<p class="modal_title">로그인후 이용 가능합니다.</p>
+					<p class="modal_title smft">로그인 하시겠습니까?</p>
+					<div class="modal_button_div">
+						<div class="modal_button yes">
+							<span>예</span>
+						</div>
+						<div class="modal_button no" id="close">
+							<span>아니요</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</c:if>
+	<c:if test="${member != null}">
+		<form id="frmm" action="chat" method="post">
+			<input type="hidden" value="${productDetail.productNo}"
+				class="product_comment_content" name="productNo"> <input
+				type="hidden" value="${member.memberNo}" name="memberNo">
+			<div class="container">
+				<div class="popup-wrap" id="popup">
+					<div class="modal_div_login">
+						<p class="modal_title_login">댓글작성</p>
 
-            <hr style="width: 100%; margin: 0 auto; margin-bottom: 3%" />
-            <div class="modal_button_div">
-              <div class="modal_button_login">
-                <input type="text" class="comment_textarea"  id="" name="content"></input>
-              </div>
-            </div>
-            <div class="modal_button_div">
-              <div class="modal_button_div_login">
-                <input class="modal_button_comment" type="submit">예</input>
-              </div>
-              <div class="modal_button_div_login">
-                <span class="modal_button_comment"  id="close">아니요</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </form>
-   </c:if>
+						<hr style="width: 100%; margin: 0 auto; margin-bottom: 3%" />
+						<div class="modal_button_div">
+							<div class="modal_button_login">
+								<input type="text" class="comment_textarea" id="" name="content"></input>
+							</div>
+						</div>
+						<div class="modal_button_div">
+							<div class="modal_button_div_login">
+								<input class="modal_button_comment" type="submit">예</input>
+							</div>
+							<div class="modal_button_div_login">
+								<span class="modal_button_comment" id="close">아니요</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</c:if>
 	<hr style="width: 100%">
+	<script>
+    function submitForm() {
+        // 폼 서브밋 버튼 클릭
+        document.getElementById("submitButton").click();
+    }
+</script>
+	
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7829d38593feb9a538108e0c91873472&libraries=services"></script>
 
@@ -283,21 +320,20 @@
 		var productAddress = '<c:out value="${productDetail.address}" />';
 	</script>
 	<script type="text/javascript">
-	
-	 $(function () {
-	
-	        $('#modal-open').click(function () {
-	          $('#popup').css('display', 'flex').hide().fadeIn();
-	     	 	document.body.style.overflow = 'hidden';
-	        });
-	        $('#close').click(function () {
-	          modalClose();
-	        });
-	        function modalClose() {
-	          $('#popup').fadeOut();
-	     	 document.body.style.overflow = 'auto';
-	        }
-	      });
+		$(function() {
+
+			$('#modal-open').click(function() {
+				$('#popup').css('display', 'flex').hide().fadeIn();
+				document.body.style.overflow = 'hidden';
+			});
+			$('#close').click(function() {
+				modalClose();
+			});
+			function modalClose() {
+				$('#popup').fadeOut();
+				document.body.style.overflow = 'auto';
+			}
+		});
 		var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
 		var options = {
 			//지도를 생성할 때 필요한 기본 옵션
@@ -324,38 +360,8 @@
 				map.setCenter(coords);
 			}
 		});
-		
-		var comentCheck = false;
-		
-		$(document).ready(function(){
-			//회원가입 버튼(회원가입 기능 작동)
-			$(".modal_button_comment").click(function(e){
-				/* $("#join_form").attr("action", "/member/join");
-				$("#join_form").submit(); */
-				e.preventDefault();
-				var content = $(".comment_textarea").val();
-				var productNo = $(".product_comment_content").val();
 
-				if (content) {
-					$.ajax({
-					    type: "POST",
-					    url: "/transation/chat",
-					    data: {
-					        content: content,
-					        productNo: productNo
-					    },
-					    success: function (chatList) {
-					        console.log("채팅 성공적으로 제출됨");
-					        document.getElementById("frmm").submit();
-					    },
-					    error: function (error) {
-					        console.error("채팅 제출 중 오류 발생:", error.responseJSON);
-					    }
-					});
-				}
-				
-			});
-		});
+		var comentCheck = false;
 	</script>
 </body>
 </html>

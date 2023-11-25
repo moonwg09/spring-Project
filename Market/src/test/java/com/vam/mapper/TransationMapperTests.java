@@ -49,9 +49,16 @@ public class TransationMapperTests {
 //		
 //	}
 	
+//	@Test
+//	public void selectChatTest() throws Exception{
+//		
+//		System.out.println(productmapper.selectChat(2));
+//	}
+	
 	@Test
-	public void selectChatTest() throws Exception{
+	public void deleteChatTest() throws Exception{
+		productmapper.deleteComment(112);
 		
-		System.out.println(productmapper.selectChat(2));
+
 	}
 }

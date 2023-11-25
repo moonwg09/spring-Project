@@ -1,11 +1,25 @@
 package com.vam.VO;
 
 public class ChatVO {
-	private int chatNo, productNo;
+	private int chatNo, productNo,memberNo;
+	
 	private String content;
 	
 	private ProductVO pvo;
+	private MemberVO mvo;
 	
+	public int getMemberNo() {
+		return memberNo;
+	}
+	public void setMemberNo(int memberNo) {
+		this.memberNo = memberNo;
+	}
+	public MemberVO getMvo() {
+		return mvo;
+	}
+	public void setMvo(MemberVO mvo) {
+		this.mvo = mvo;
+	}
 	public ProductVO getPvo() {
 		return pvo;
 	}
@@ -32,7 +46,8 @@ public class ChatVO {
 	}
 	@Override
 	public String toString() {
-		return "ChatVO [chatNo=" + chatNo + ", productNo=" + productNo + ", content=" + content + ", pvo=" + pvo + "]";
+		return "ChatVO [chatNo=" + chatNo + ", productNo=" + productNo + ", memberNo=" + memberNo + ", content="
+				+ content + ", pvo=" + pvo + ", mvo=" + mvo + "]";
 	}
 	
 	

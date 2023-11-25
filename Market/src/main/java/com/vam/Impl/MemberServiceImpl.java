@@ -1,6 +1,7 @@
 package com.vam.Impl;
 
 import java.util.HashMap;
+import java.util.List;
 
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,5 +58,11 @@ public class MemberServiceImpl implements MemberService {
 	public MemberVO memberLogin(MemberVO mvo) throws Exception {
 			
 		return membermapper.memberLogin(mvo);
+	}
+	
+	@Override
+	public List<MemberVO> memberGet() throws Exception {
+		
+		return membermapper.memberGet();
 	}
 }

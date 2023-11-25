@@ -64,7 +64,7 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
             ></i>
             <p style="font-size: 10px">채팅</p>
           </div>
-          <div class="icon_detail_div2">
+          <div class="icon_detail_div2" onclick="window.location.href ='/transation/writeProduct'">
             <i
               class="fa-solid fa-pen-to-square"
               style="color: #eea811; font-size: 20px"
@@ -88,9 +88,9 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
           <div class="content_div_font2"><span onclick="window.location.href ='/transation/usedTransation'">중고거래</span></div>
           <div class="content_div_font2"><span>동네업체</span></div>
           <div class="content_div_font2"><span>알바</span></div>
-          <div class="content_div_font2"><span>부동산 직거래</span></div>
           <div class="content_div_font2"><span>이벤트</span></div>
-          <li><a href="/admin/main">관리자 페이지</a>
+          <div class="content_div_font2"><span onclick="window.location.href ='/admin/main'">관리자페이지</span></div>
+
         </div>
         <div class="search_div2">
           <div class="header_input_div2">

@@ -16,6 +16,10 @@
     
     <!-- 로그인 -->
     <select id="memberLogin" resultType="com.vam.VO.MemberVO">
-    	select id, nickname, adminCk, manner from member where id = #{id} and password = #{password} 
+    	select id, nickname, adminCk, manner, addr2,memberNo from member where id = #{id} and password = #{password} 
+    </select>
+    
+    <select id="memberGet" resultType="com.vam.VO.MemberVO">
+    	select * from member
     </select>
     </mapper>

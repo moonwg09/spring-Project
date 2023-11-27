@@ -150,7 +150,7 @@ public class MemberController {
 	}
 	// 占쌨댐옙占쏙옙 占쏙옙占쏙옙
 	@RequestMapping(value="/memberPhoneCheck")
-	@ResponseBody
+	@Respon	seBody
 	public String sendSMS(String memberPhone) throws Exception{
 		Random rand  = new Random();
         String numStr = "";

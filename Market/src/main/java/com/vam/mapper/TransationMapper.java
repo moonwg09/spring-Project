@@ -23,4 +23,6 @@ public interface TransationMapper {
 	public void insertChat(ChatVO cvo);
 
 	public List<ChatVO> selectChat(int productNo);
+	
+	public void deleteComment(int chatNo);
 }

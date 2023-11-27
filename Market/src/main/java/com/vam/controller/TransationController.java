@@ -39,19 +39,29 @@ public class TransationController {
 		System.out.println(productservice.productGetDetail(productNo));
 		System.out.println(productservice.getMemberAndProduct(productNo));
 		productservice.increaseViewCount(productNo);
+		productservice.selectChat(productNo);
 
+		model.addAttribute("commentList",productservice.selectChat(productNo));
 		model.addAttribute("writerProductInfo", productservice.getMemberAndProduct(productNo));
 		model.addAttribute("productDetail", productservice.productGetDetail(productNo));
-
 	}
 
 	@RequestMapping(value = "/chat", method = RequestMethod.POST)
-	@ResponseBody
-	public List<ChatVO> insertChat(ChatVO cvo, int productNo) throws Exception {
+	public String insertChat(ChatVO cvo, int productNo,int memberNo) throws Exception {
 		logger.info("insertChat 진입");
 		productservice.insertChat(cvo);
+		return "redirect:/transation/detailProduct?productNo=" + cvo.getProductNo();
+	}
+	@RequestMapping(value = "/writeProduct", method = RequestMethod.GET)
+	public void writeProduct() throws Exception {
 		
-		List<ChatVO> chatList = productservice.selectChat(cvo.getProductNo());
-		return chatList;
+		logger.info("writeProduct 진입");
+	}
+	@RequestMapping(value = "/delete", method = RequestMethod.GET)
+	public String deleteComment(int chatNo, int productNo) throws Exception {
+		
+		logger.info("deleteComment 진입");
+		productservice.deleteComment(chatNo);
+		return "redirect:/transation/detailProduct?productNo=" + productNo;
 	}
 }

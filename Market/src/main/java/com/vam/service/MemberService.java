@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.List;
 
 import org.springframework.stereotype.Service;
 
@@ -26,5 +27,7 @@ public interface MemberService {
 	// ï¿½Î±ï¿½ï¿½ï¿½
 	public MemberVO memberLogin(MemberVO mvo) throws Exception;
 	
+	// À¯ÀúÁ¤º¸ °¡Á®¿À±â
+	public List<MemberVO> memberGet() throws Exception;
 	
 }

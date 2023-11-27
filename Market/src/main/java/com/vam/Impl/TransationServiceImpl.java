@@ -42,13 +42,7 @@ public class TransationServiceImpl implements TransationService {
 	public int increaseViewCount(int productNo) {
 		return productmapper.increaseViewCount(productNo);
 	}
-<<<<<<< HEAD
 
-	@Override
-	public ChatVO insertChat(int productNo) {
-		// TODO Auto-generated method stub
-		return null;
-=======
 	@Override
 	public void insertChat(ChatVO cvo) throws Exception {
 		productmapper.insertChat(cvo);
@@ -58,6 +52,11 @@ public class TransationServiceImpl implements TransationService {
 	public List<ChatVO> selectChat(int productNo) throws Exception {
 	
 		return productmapper.selectChat(productNo);
->>>>>>> fd192de86a8064ff1aec99ca7fb019803c396440
+
+	}
+	@Override
+	public void deleteComment(int chatNo) throws Exception {
+		productmapper.deleteComment(chatNo);
+		
 	}
 }

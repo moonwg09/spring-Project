@@ -1,5 +1,7 @@
 package com.vam.mapper;
 
+import java.util.List;
+
 import com.vam.VO.MemberVO;
 
 public interface MemberMapper {
@@ -12,4 +14,6 @@ public interface MemberMapper {
 	// 로그인
 	public MemberVO memberLogin(MemberVO mvo);
 	
+	// 유저 정보 가져오기
+	public List<MemberVO> memberGet();
 }

@@ -40,6 +40,7 @@ public class MemberController {
 	
 	@Autowired
 	private JavaMailSender mailSender;
+
 	
 //	@Autowired
 //	private HttpSession session;
@@ -61,12 +62,14 @@ public class MemberController {
 		@RequestMapping(value="/join", method = RequestMethod.POST)
 		public String joinPOST(MemberVO mvo) throws Exception {
 			
+
+			
+		        
+		        /* 회원가입 쿼리 실행 */
+		        memberservice.memberJoin(mvo);
 			logger.info("join 占쏙옙占쏙옙");
 			
-			// 회占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙
-			memberservice.memberJoin(mvo);
-			
-			logger.info("join service 占쏙옙占쏙옙");
+
 			
 			return "redirect:/main";
 		}
@@ -171,9 +174,7 @@ public class MemberController {
 	@RequestMapping(value="login", method=RequestMethod.POST)
 	public String loginPOST(HttpServletRequest request, MemberVO mvo, RedirectAttributes rttr) throws Exception{
 		
-//		System.out.println("login 占쌨쇽옙占쏙옙 占쏙옙占쏙옙");
-//		System.out.println("占쏙옙占쌨듸옙 占쏙옙占쏙옙占쏙옙 : " + mvo);
-		
+			           	            		
 		HttpSession session = request.getSession();
 		MemberVO lvo = memberservice.memberLogin(mvo);
 		
@@ -188,6 +189,7 @@ public class MemberController {
 	
 		
 		return "redirect:/main";
+
 	}
 	
 //	@RequestMapping(value="/kakao", method=RequestMethod.GET)

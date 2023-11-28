@@ -46,7 +46,7 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
           <div class="content_div_font2"><span>동네업체</span></div>
           <div class="content_div_font2"><span>알바</span></div>
           <div class="content_div_font2"><span>부동산 직거래</span></div>
-          <div class="content_div_font2"><span>이벤트</span></div>
+          <div class="content_div_font2"><span onclick="window.location.href = '/notice/list'">이벤트</span></div>
         </div>
         <div class="search_div2">
           <div class="header_input_div2">
@@ -88,7 +88,7 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
           <div class="content_div_font2"><span onclick="window.location.href ='/transation/usedTransation'">중고거래</span></div>
           <div class="content_div_font2"><span>동네업체</span></div>
           <div class="content_div_font2"><span>알바</span></div>
-          <div class="content_div_font2"><span>이벤트</span></div>
+          <div class="content_div_font2"><span onclick="window.location.href = '/notice/list'">이벤트</span></div>
           <div class="content_div_font2"><span onclick="window.location.href ='/admin/main'">관리자페이지</span></div>
 
         </div>

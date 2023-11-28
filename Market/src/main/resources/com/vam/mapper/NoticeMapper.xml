@@ -68,7 +68,9 @@ PUBLIC "=//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<delete id="delete">
-		DELETE FROM notice WHERE notice_id = #{notice_id}
+		SET foreign_key_checks = 0;
+		 DELETE FROM notice WHERE notice_id = #{notice_id};
+		SET foreign_key_checks = 1;
 	</delete>
 	
 	<update id="update">

@@ -34,9 +34,9 @@
                         <div class="col-md-12">
                             <div class="section-title text-left ">
                                 <h2 class="uppercase">Notice</h2>
-                                <sec:authorize access="hasRole('ROLE_ADMIN')">
+                                <c:if test="${member.adminCk == 1 }">
                                 	<a class="button extra-small button-black f-right" href='register'><span>Register</span></a>
-                                </sec:authorize>
+                               </c:if>
                                 <h6 class="mb-40">공지사항과 다양한 이벤트들을 확인해주세요.</h6>
                                 
                             </div>
@@ -49,14 +49,10 @@
                     	<c:forEach items="${notice }" var="notice" varStatus="varstatus">
                     	
                         <!-- blog-item start -->
-                        <div class="col-md-4 col-sm-6 col-xs-12">
+                       <div class="col-md-4 col-sm-6 col-xs-12">
                             <div class="blog-item" style="position:relative; padding-top:81%; display:block;">
                                 <img id="main-img${varstatus.index}" onError ="this.src='/resources/img/blog/1.jpg'" alt="error"
                                 style="position:absolute; top:0; width:100%;height:100%">
-                                <div class="read-more" style="position: absolute; top:50%;left:50%; transform:translate(-50%,-50%)">
-                                        <a href="get?notice_id=${notice.notice_id }">Read more</a>
-                                    </div>
-                                    
                                 <script>
                                   	var imageName = encodeURIComponent('${notice.notice_image.image_uploadPath}'+'/'+'${notice.notice_image.image_uuid}'+'_'+'${notice.notice_image.image_name}');
                                   	var realSrc = '/display?fileName='+imageName;
@@ -66,7 +62,10 @@
                                 <div class="blog-desc">
                                     <h5 class="blog-title"><a href="get?notice_id=${notice.notice_id}"><c:out value="${notice.notice_title }"/></a></h5>
                                     <p>${notice.notice_information }</p>
-                                   
+                                    <div class="read-more">
+                                        <a href="get?notice_id=${notice.notice_id }">Read more</a>
+                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -128,6 +127,8 @@ aria-lablelledby="myModalLabel" aria-hidden="true">
 </div>
 
 <%@include file="/WEB-INF/views/layout/foot.jsp" %>
+
+
 <script type="text/javascript">
 $(document).ready(function(){
 	var result = '<c:out value="${result}"/>';

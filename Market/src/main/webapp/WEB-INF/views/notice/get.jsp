@@ -89,10 +89,10 @@
                                 <!-- blog-description -->
                                 <div class="blog-description mb-60">                                  
                                     <p><pre style="background-color:transparent; border: none"> ${notice.notice_description} </pre>
-                                	<sec:authorize access="hasRole('ROLE_ADMIN')">
+                                	<c:if test="${member.adminCk == 1 }">
                                 		<a class="button extra-small button-white f-right" href='modify?notice_id=${notice.notice_id }'><span>수정</span></a>
                                 		<a class="button extra-small button-white f-right" href='javascript:remove()'><span>삭제</span></a>
-                                	</sec:authorize>
+                                	</c:if>
                                 </div>
                                 <hr style="border-bottom:2px solid #eeeeee">
                                 <div class="text-center"> <a class="button extra-small button-black mb-20" href="list"><span>LIST</span></a></div>
@@ -125,16 +125,15 @@
              </div>
          </section>
          
-<form id='operForm' action='remove' method='post'>
+<form id='operForm' action='/notice/remove' method='post'>
 	<input type="hidden" id='notice_id' name='notice_id' value='<c:out value="${ notice.notice_id}"/>'>
 </form>
 
 <%@include file="/WEB-INF/views/layout/foot.jsp" %>
 
 <script>
-$(document).ready(function(){
+
 	function remove(){
 		$("#operForm").submit();
 	}
-});
 </script>

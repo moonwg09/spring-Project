@@ -132,7 +132,7 @@ public class NoticeController {
 		try {
 			Path file = Paths.get("C:\\upload\\temp\\"+
 					image.getImage_uploadPath().replace("/", "\\")+"\\"+image.getImage_uuid()+"_"+image.getImage_name());
-			String path = "C:\\upload\\temp"+
+			String path = "C:\\upload\\temp\\"+
 					image.getImage_uploadPath().replace("/", "\\")+"\\"+image.getImage_uuid()+"_"+image.getImage_name();
 			log.info(path);
 			Files.deleteIfExists(file);

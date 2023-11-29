@@ -21,7 +21,6 @@ import com.vam.VO.ChattingVO;
 =======
 import com.vam.VO.ChatVO;
 import com.vam.VO.NoticeImageVO;
-import com.vam.VO.ProductImageVO;
 import com.vam.VO.ProductVO;
 >>>>>>> 7219e16909f559683a992068b9cd5edb568a4bd9
 import com.vam.service.MemberService;
@@ -78,37 +77,11 @@ public class TransationController {
 	}
 
 	@RequestMapping(value = "/writeProduct", method = RequestMethod.POST)
-	public String writeProductPost(ProductVO pvo, @RequestParam("productImages") MultipartFile[] productImages)
-			throws Exception {
-
+	public void writeProductPost(ProductVO pvo) throws Exception {
 		logger.info("writeProductPost ¡¯¿‘");
-		List<ProductImageVO> images = processProductImages(productImages);
-		pvo.setImg(images);
-		productservice.writeProductPost(pvo);
-
-		return "redirect:/transation/usedTransation";
 	}
 
-	private List<ProductImageVO> processProductImages(MultipartFile[] productImages) {
-		List<ProductImageVO> images = new ArrayList<>();
-
-		for (MultipartFile imageFile : productImages) {
-			if (imageFile != null && !imageFile.isEmpty()) {
-				// Process each image file and save it
-				ProductImageVO productImage = saveProductImage(imageFile);
-				images.add(productImage);
-			}
-		}
-
-		return images;
-	}
-
-	private ProductImageVO saveProductImage(MultipartFile imageFile) {
-		// Your logic to save the image file and create a ProductImageVO
-		// ...
-
-		return productImage;
-	}
+	
 
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
 	public String deleteComment(int chatNo, int productNo) throws Exception {

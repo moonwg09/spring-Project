@@ -52,7 +52,7 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 	<div id="header">
 		<jsp:include page="../header.jsp"></jsp:include>
 	</div>
-	<form action="writeProduct" method="post"
+	<form action="transation/writeProduct" method="post"
 		style="width: 100%">
 		<div class="modal_button_div"
 			style="display: block; margin-top: 100px;">
@@ -73,7 +73,7 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 				<div id="imagePreviewContainer" style="display: flex"></div>
 			</div>
 			<div class="product_write_title" style="margin-bottom: 3%">
-				<input type="text" placeholder="상품명" name="title" />
+				<input type="text" placeholder="상품명" />
 			</div>
 			<div class="write_category_container">
 				<div class="write_category_div">
@@ -93,65 +93,65 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 				<div class="write_category_div">
 					<ul class="write_category_ul first">
 						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							여성의류 <input type="checkbox" name="categori" value="1">
+							여성의류 <input type="checkbox" name="category" value="1">
 						</li>
 						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							남성의류 <input type="checkbox" name="categori" value="2">
+							남성의류 <input type="checkbox" name="category" value="2">
 						</li>
 					</ul>
 					<ul class="write_category_ul second">
 						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							여성신발 <input type="checkbox" name="categori" value="3">
+							여성신발 <input type="checkbox" name="category" value="3">
 						</li>
 						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							남성신발 <input type="checkbox" name="categori" value="4">
+							남성신발 <input type="checkbox" name="category" value="4">
 						</li>
 						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							시계 <input type="checkbox" name="categori" value="5">
+							시계 <input type="checkbox" name="category" value="5">
 						</li>
 						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							기타잡화 <input type="checkbox" name="categori" value="6">
+							기타잡화 <input type="checkbox" name="category" value="6">
 						</li>
 					</ul>
 					<ul class="write_category_ul third">
 						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							노트북 <input type="checkbox" name="categori" value="7">
+							노트북 <input type="checkbox" name="category" value="7">
 						</li>
 						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							데스크탑/본체 <input type="checkbox" name="categori" value="8">
+							데스크탑/본체 <input type="checkbox" name="category" value="8">
 						</li>
 						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							마우스 <input type="checkbox" name="categori" value="9">
+							마우스 <input type="checkbox" name="category" value="9">
 						</li>
 						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							모니터/키보드/헤드셋 <input type="checkbox" name="categori" value="10">
+							모니터/키보드/헤드셋 <input type="checkbox" name="category[]" value="10">
 						</li>
 						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							기타<input type="checkbox" name="categori" value="11">
+							기타<input type="checkbox" name="category" value="11">
 						</li>
 
 					</ul>
 					<ul class="write_category_ul fourth">
 						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							냉장고 <input type="checkbox" name="categori" value="12">
+							냉장고 <input type="checkbox" name="category" value="12">
 						</li>
 						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							TV <input type="checkbox" name="categori" value="13">
+							TV <input type="checkbox" name="category" value="13">
 						</li>
 						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							세탁기/건조기 <input type="checkbox" name="categori" value="14">
+							세탁기/건조기 <input type="checkbox" name="category" value="14">
 						</li>
 						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							주방가전 <input type="checkbox" name="categori" value="15">
+							주방가전 <input type="checkbox" name="category" value="15">
 						</li>
 						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							기타가전제품<input type="checkbox" name="categori" value="16">
+							기타가전제품<input type="checkbox" name="category" value="16">
 						</li>
 
 					</ul>
 					<ul class="write_category_ul fifth">
 						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							무료나눔 <input type="checkbox" name="categori" value="17">
+							무료나눔 <input type="checkbox" name="category" value="17">
 						</li>
 
 					</ul>
@@ -184,7 +184,7 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 
 				<input type="text" class="signup_input_box_3"
 					style="border: 1px solid rgba(0, 0, 0, 0.3); background-color: white"
-					placeholder="상세주소를 입력해주세요" name="address" readonly="readonly">
+					placeholder="상세주소를 입력해주세요" name="addr2" readonly="readonly">
 
 				<p class="final_addr_ck">주소를 입력해주세요.</p>
 			</div>

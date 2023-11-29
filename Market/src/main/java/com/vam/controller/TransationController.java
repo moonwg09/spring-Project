@@ -16,13 +16,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-<<<<<<< HEAD
-import com.vam.VO.ChattingVO;
-=======
+
 import com.vam.VO.ChatVO;
 import com.vam.VO.NoticeImageVO;
 import com.vam.VO.ProductVO;
->>>>>>> 7219e16909f559683a992068b9cd5edb568a4bd9
+
 import com.vam.service.MemberService;
 import com.vam.service.TransationService;
 
@@ -64,7 +62,7 @@ public class TransationController {
 =======
 	@RequestMapping(value = "/chat", method = RequestMethod.POST)
 	public String insertChat(ChatVO cvo, int productNo, int memberNo) throws Exception {
-		logger.info("insertChat ÁøÀÔ");
+		logger.info("insertChat ï¿½ï¿½ï¿½ï¿½");
 		productservice.insertChat(cvo);
 		return "redirect:/transation/detailProduct?productNo=" + cvo.getProductNo();
 	}
@@ -72,13 +70,13 @@ public class TransationController {
 	@RequestMapping(value = "/writeProduct", method = RequestMethod.GET)
 	public void writeProduct() throws Exception {
 
-		logger.info("writeProduct ÁøÀÔ");
+		logger.info("writeProduct ï¿½ï¿½ï¿½ï¿½");
 >>>>>>> 7219e16909f559683a992068b9cd5edb568a4bd9
 	}
 
 	@RequestMapping(value = "/writeProduct", method = RequestMethod.POST)
 	public void writeProductPost(ProductVO pvo) throws Exception {
-		logger.info("writeProductPost ÁøÀÔ");
+		logger.info("writeProductPost ï¿½ï¿½ï¿½ï¿½");
 	}
 
 	
@@ -90,7 +88,7 @@ public class TransationController {
 		logger.info("deleteComment ï¿½ï¿½ï¿½ï¿½");
 =======
 
-		logger.info("deleteComment ÁøÀÔ");
+		logger.info("deleteComment ï¿½ï¿½ï¿½ï¿½");
 >>>>>>> 7219e16909f559683a992068b9cd5edb568a4bd9
 		productservice.deleteComment(chatNo);
 		return "redirect:/transation/detailProduct?productNo=" + productNo;

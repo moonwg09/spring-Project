@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.vam.VO.MemberVO;
 import com.vam.VO.ProductVO;
-import com.vam.VO.ChattingVO;
+import com.vam.VO.ChatVO;
 
 public interface TransationMapper {
 	// �Խñ� ��ü����

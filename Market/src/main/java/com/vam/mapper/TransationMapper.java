@@ -7,22 +7,22 @@ import com.vam.VO.ProductVO;
 import com.vam.VO.ChatVO;
 
 public interface TransationMapper {
-	// �Խñ� ��ü����
+	// 占쌉시깍옙 占쏙옙체占쏙옙占쏙옙
 	public List<ProductVO> productList(int categori);
 	
-	// �Խñ� �󼼺���
+	// 占쌉시깍옙 占쏢세븝옙占쏙옙
 	public ProductVO productGetDetail(int productNo);
 	
-	// �Խñ� �ۼ��� ���� ���� �ҷ�����
+	// 占쌉시깍옙 占쌜쇽옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙 占쌀뤄옙占쏙옙占쏙옙
 	public ProductVO getMemberAndProduct(int productNo);
 	
-	// �Խñ� ��ȸ�� ����
+	// 占쌉시깍옙 占쏙옙회占쏙옙 占쏙옙占쏙옙
 	public int increaseViewCount(int productNo);
 	
-	// ��� ���
-	public void insertChat(ChattingVO cvo);
+	// 占쏙옙占� 占쏙옙占�
+	public void insertChat(ChatVO cvo);
 
-	public List<ChattingVO> selectChat(int productNo);
+	public List<ChatVO> selectChat(int productNo);
 	
 	public void deleteComment(int chatNo);
 	

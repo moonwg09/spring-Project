@@ -9,35 +9,17 @@ public class ProductVO {
 	
 	private Date regDate;
 	
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img; 
+	}
+
 	private MemberVO mvo;
 	
-<<<<<<< HEAD
-	private ChattingVO cvo;
-	
-=======
 	private ChatVO cvo;
-<<<<<<< HEAD
-	private List<ProductImageVO> img;
->>>>>>> 7219e16909f559683a992068b9cd5edb568a4bd9
-=======
-	
->>>>>>> parent of 7219e16 (글 등록90퍼 완성)
-
-	public ChattingVO getCvo() {
-		return cvo;
-	}
-
-	public void setCvo(ChattingVO cvo) {
-		this.cvo = cvo;
-	}
-
-	public MemberVO getMvo() {
-		return mvo;
-	}
-
-	public void setMvo(MemberVO mvo) {
-		this.mvo = mvo;
-	}
 
 	public String getTitle() {
 		return title;
@@ -45,14 +27,6 @@ public class ProductVO {
 
 	public void setTitle(String title) {
 		this.title = title;
-	}
-
-	public String getImg() {
-		return img;
-	}
-
-	public void setImg(String img) {
-		this.img = img;
 	}
 
 	public String getContent() {
@@ -135,6 +109,22 @@ public class ProductVO {
 		this.regDate = regDate;
 	}
 
+	public MemberVO getMvo() {
+		return mvo;
+	}
+
+	public void setMvo(MemberVO mvo) {
+		this.mvo = mvo;
+	}
+
+	public ChatVO getCvo() {
+		return cvo;
+	}
+
+	public void setCvo(ChatVO cvo) {
+		this.cvo = cvo;
+	}
+
 	@Override
 	public String toString() {
 		return "ProductVO [title=" + title + ", img=" + img + ", content=" + content + ", address=" + address
@@ -142,6 +132,9 @@ public class ProductVO {
 				+ ", viewcount=" + viewcount + ", chatcount=" + chatcount + ", likecount=" + likecount + ", regDate="
 				+ regDate + ", mvo=" + mvo + ", cvo=" + cvo + "]";
 	}
-	
+
+
+
+
 	
 }

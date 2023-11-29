@@ -54,12 +54,8 @@ public class TransationController {
 		model.addAttribute("productDetail", productservice.productGetDetail(productNo));
 	}
 
-<<<<<<< HEAD
-	@RequestMapping(value = "/writeProduct", method = RequestMethod.GET)
-	public void writeProduct() throws Exception {
-		
-		logger.info("writeProduct ����");
-=======
+
+
 	@RequestMapping(value = "/chat", method = RequestMethod.POST)
 	public String insertChat(ChatVO cvo, int productNo, int memberNo) throws Exception {
 		logger.info("insertChat ����");
@@ -71,25 +67,23 @@ public class TransationController {
 	public void writeProduct() throws Exception {
 
 		logger.info("writeProduct ����");
->>>>>>> 7219e16909f559683a992068b9cd5edb568a4bd9
+
 	}
 
 	@RequestMapping(value = "/writeProduct", method = RequestMethod.POST)
-	public void writeProductPost(ProductVO pvo) throws Exception {
+	public String writeProductPost(ProductVO pvo) throws Exception {
 		logger.info("writeProductPost ����");
+		productservice.writeProductPost(pvo);
+		return "redirect:/transation/usedTransation";
 	}
 
 	
 
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
 	public String deleteComment(int chatNo, int productNo) throws Exception {
-<<<<<<< HEAD
-		
-		logger.info("deleteComment ����");
-=======
 
 		logger.info("deleteComment ����");
->>>>>>> 7219e16909f559683a992068b9cd5edb568a4bd9
+
 		productservice.deleteComment(chatNo);
 		return "redirect:/transation/detailProduct?productNo=" + productNo;
 	}

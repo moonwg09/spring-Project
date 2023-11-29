@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.vam.VO.ChatVO;
+import com.vam.VO.ChattingVO;
 import com.vam.service.MemberService;
 import com.vam.service.TransationService;
 
@@ -28,14 +28,14 @@ public class TransationController {
 
 	@RequestMapping(value = "/usedTransation", method = RequestMethod.GET)
 	public void usedTransation(@RequestParam(defaultValue = "1") int categori, Model model) throws Exception {
-		logger.info("usedTransation ÁøÀÔ");
+		logger.info("usedTransation ï¿½ï¿½ï¿½ï¿½");
 		System.out.println(productservice.productList(categori));
 		model.addAttribute("product", productservice.productList(categori));
 	}
 
 	@RequestMapping(value = "/detailProduct", method = RequestMethod.GET)
 	public void detailProduct(int productNo, Model model) throws Exception {
-		logger.info("detailProduct ÁøÀÔ");
+		logger.info("detailProduct ï¿½ï¿½ï¿½ï¿½");
 		System.out.println(productservice.productGetDetail(productNo));
 		System.out.println(productservice.getMemberAndProduct(productNo));
 		productservice.increaseViewCount(productNo);
@@ -46,21 +46,15 @@ public class TransationController {
 		model.addAttribute("productDetail", productservice.productGetDetail(productNo));
 	}
 
-	@RequestMapping(value = "/chat", method = RequestMethod.POST)
-	public String insertChat(ChatVO cvo, int productNo,int memberNo) throws Exception {
-		logger.info("insertChat ÁøÀÔ");
-		productservice.insertChat(cvo);
-		return "redirect:/transation/detailProduct?productNo=" + cvo.getProductNo();
-	}
 	@RequestMapping(value = "/writeProduct", method = RequestMethod.GET)
 	public void writeProduct() throws Exception {
 		
-		logger.info("writeProduct ÁøÀÔ");
+		logger.info("writeProduct ï¿½ï¿½ï¿½ï¿½");
 	}
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
 	public String deleteComment(int chatNo, int productNo) throws Exception {
 		
-		logger.info("deleteComment ÁøÀÔ");
+		logger.info("deleteComment ï¿½ï¿½ï¿½ï¿½");
 		productservice.deleteComment(chatNo);
 		return "redirect:/transation/detailProduct?productNo=" + productNo;
 	}

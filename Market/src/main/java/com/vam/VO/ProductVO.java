@@ -11,14 +11,14 @@ public class ProductVO {
 	
 	private MemberVO mvo;
 	
-	private ChatVO cvo;
+	private ChattingVO cvo;
 	
 
-	public ChatVO getCvo() {
+	public ChattingVO getCvo() {
 		return cvo;
 	}
 
-	public void setCvo(ChatVO cvo) {
+	public void setCvo(ChattingVO cvo) {
 		this.cvo = cvo;
 	}
 

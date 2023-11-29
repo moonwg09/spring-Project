@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.vam.VO.ChatVO;
+import com.vam.VO.ChattingVO;
 import com.vam.VO.ProductVO;
 
 @RunWith(SpringJUnit4ClassRunner.class)

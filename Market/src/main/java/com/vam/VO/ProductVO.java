@@ -1,9 +1,10 @@
 package com.vam.VO;
 
 import java.sql.Date;
+import java.util.List;
 
 public class ProductVO {
-	private String title,img,content,address,writer;
+	private String title,content,address,writer;
 
 	private int productNo,categori,price,viewcount,chatcount,likecount;
 	
@@ -12,7 +13,7 @@ public class ProductVO {
 	private MemberVO mvo;
 	
 	private ChatVO cvo;
-	
+	private List<ProductImageVO> img;
 
 	public ChatVO getCvo() {
 		return cvo;
@@ -38,11 +39,11 @@ public class ProductVO {
 		this.title = title;
 	}
 
-	public String getImg() {
+	public List<ProductImageVO> getImg() {
 		return img;
 	}
 
-	public void setImg(String img) {
+	public void setImg(List<ProductImageVO> img) {
 		this.img = img;
 	}
 

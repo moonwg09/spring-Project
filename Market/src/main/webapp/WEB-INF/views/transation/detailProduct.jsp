@@ -152,9 +152,7 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 					</div>
 					<hr />
 					<div class="detail_product_info_div">
-						<span> 하타케야마 m62 카이타쿠야모델 판매합니다.(글러브 주머니 포함) 20년12월 구매하여
-							3년동안 하타케야마 전용 왁스 바르며 잘관리 하였고 웹부분 살짝 까짐 있습니다. 사진 확인 부탁드립니다. 필요하시면
-							사용하던 하타케야마 전용 왁스도 같이 보내드립니다. 대구 직거래 택배거래 가능합니다. </span>
+						<span> ${productDetail.content} </span>
 					</div>
 				</div>
 				<div class="detail_info_right">
@@ -175,7 +173,67 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 								<i class="fa-regular fa-clipboard"
 									style="color: #b2b2b2; margin-right: 5%"></i><span>카테고리</span>
 							</div>
-							<div class="address_info">글러브</div>
+							<div class="address_info">
+								<c:choose>
+									<c:when test="${productDetail.categori == 1}">
+                인기매물
+            </c:when>
+									<c:when test="${productDetail.categori == 2}">
+                여성의류
+            </c:when>
+									<c:when test="${productDetail.categori == 3}">
+                남성의류
+            </c:when>
+									<c:when test="${productDetail.categori == 4}">
+                여성신발
+            </c:when>
+									<c:when test="${productDetail.categori == 5}">
+                남성신발
+            </c:when>
+									<c:when test="${productDetail.categori == 6}">
+                시계
+            </c:when>
+									<c:when test="${productDetail.categori == 7}">
+                기타잡화
+            </c:when>
+									<c:when test="${productDetail.categori == 8}">
+                노트북
+            </c:when>
+									<c:when test="${productDetail.categori == 9}">
+                데스크탑/본체
+            </c:when>
+									<c:when test="${productDetail.categori == 10}">
+                모니터
+            </c:when>
+									<c:when test="${productDetail.categori == 12}">
+               기타
+            </c:when>
+									<c:when test="${productDetail.categori == 13}">
+                냉장고
+            </c:when>
+									<c:when test="${productDetail.categori == 14}">
+                TV
+            </c:when>
+									<c:when test="${productDetail.categori == 15}">
+                세탁기/건조기
+            </c:when>
+									<c:when test="${productDetail.categori == 16}">
+                주방가전
+            </c:when>
+									<c:when test="${productDetail.categori == 17}">
+                기타 가전제품
+            </c:when>
+									<c:when test="${productDetail.categori == 18}">
+                무료나눔
+            </c:when>
+
+
+
+									<c:otherwise>
+                기타 카테고리
+            </c:otherwise>
+								</c:choose>
+							</div>
 						</div>
 					</div>
 					<div class="product_detail_button_div">
@@ -207,17 +265,18 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 								</div>
 								<c:if test="${member.nickName eq chatItem.mvo.nickName}">
 
-									
-									
-										<div style="width: 100%; height: 100%; text-align: end;"
-											class="detailProduct_deleteBtn">
-											
-											<a href="/transation/delete?chatNo=${chatItem.chatNo}&productNo=${chatItem.pvo.productNo}"><i class="fa-solid fa-trash-can"
-												style="color: black; cursor: pointer;"
-												></i></a>
-										</div>
 
-									
+
+									<div style="width: 100%; height: 100%; text-align: end;"
+										class="detailProduct_deleteBtn">
+
+										<a
+											href="/transation/delete?chatNo=${chatItem.chatNo}&productNo=${chatItem.pvo.productNo}"><i
+											class="fa-solid fa-trash-can"
+											style="color: black; cursor: pointer;"></i></a>
+									</div>
+
+
 								</c:if>
 							</div>
 							<p class="comment_Ptag">${chatItem.content}</p>
@@ -306,12 +365,12 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 	</c:if>
 	<hr style="width: 100%">
 	<script>
-    function submitForm() {
-        // 폼 서브밋 버튼 클릭
-        document.getElementById("submitButton").click();
-    }
-</script>
-	
+		function submitForm() {
+			// 폼 서브밋 버튼 클릭
+			document.getElementById("submitButton").click();
+		}
+	</script>
+
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7829d38593feb9a538108e0c91873472&libraries=services"></script>
 

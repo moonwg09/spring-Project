@@ -18,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.vam.VO.ChatVO;
 import com.vam.VO.NoticeImageVO;
+import com.vam.VO.ProductImageVO;
 import com.vam.VO.ProductVO;
 import com.vam.service.MemberService;
 import com.vam.service.TransationService;
@@ -66,11 +67,37 @@ public class TransationController {
 	}
 
 	@RequestMapping(value = "/writeProduct", method = RequestMethod.POST)
-	public void writeProductPost(ProductVO pvo) throws Exception {
+	public String writeProductPost(ProductVO pvo, @RequestParam("productImages") MultipartFile[] productImages)
+			throws Exception {
+
 		logger.info("writeProductPost ¡¯¿‘");
+		List<ProductImageVO> images = processProductImages(productImages);
+		pvo.setImg(images);
+		productservice.writeProductPost(pvo);
+
+		return "redirect:/transation/usedTransation";
 	}
 
-	
+	private List<ProductImageVO> processProductImages(MultipartFile[] productImages) {
+		List<ProductImageVO> images = new ArrayList<>();
+
+		for (MultipartFile imageFile : productImages) {
+			if (imageFile != null && !imageFile.isEmpty()) {
+				// Process each image file and save it
+				ProductImageVO productImage = saveProductImage(imageFile);
+				images.add(productImage);
+			}
+		}
+
+		return images;
+	}
+
+	private ProductImageVO saveProductImage(MultipartFile imageFile) {
+		// Your logic to save the image file and create a ProductImageVO
+		// ...
+
+		return productImage;
+	}
 
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
 	public String deleteComment(int chatNo, int productNo) throws Exception {

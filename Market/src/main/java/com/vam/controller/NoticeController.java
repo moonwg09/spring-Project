@@ -6,6 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.UUID;
 
@@ -44,7 +45,7 @@ public class NoticeController {
 	
 	@PostMapping("/register")
 	public String regitser(NoticeVO notice, RedirectAttributes rttr, MultipartFile noticeImage) {
-				
+			
 		if(noticeImage!=null && !noticeImage.isEmpty()) {
 			NoticeImageVO image = imageFolderSave(noticeImage);
 			log.info("Register Notice image "+ image);

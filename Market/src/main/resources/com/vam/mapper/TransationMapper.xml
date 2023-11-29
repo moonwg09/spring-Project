@@ -75,6 +75,9 @@
 	<delete id="deleteComment">
 		delete from chat where chat.chatNo=#{chatNo}
 	</delete>
+	<insert id="writeProductPost">
+		insert into product (productNo, writer, title, categori, price, content ,address, regDate) values(null, #{writer}, #{title}, #{categori}, #{price}, #{content}, #{address},now())
+	</insert>
 </mapper>
 
   

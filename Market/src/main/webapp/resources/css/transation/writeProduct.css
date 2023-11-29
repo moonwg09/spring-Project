@@ -1,0 +1,124 @@
+@charset "UTF-8";
+.modal_button_div {
+  width: 50%;
+  height: auto;
+
+  margin: 0 auto;
+}
+
+.comment_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #1475cf;
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.product_write_img_p {
+  font-size: 15px;
+}
+.product_write_img_span {
+  font-size: 10px;
+  color: red;
+}
+.product_write_title {
+  margin-top: 3%;
+}
+.product_write_title > input {
+  padding: 15px 15px;
+  border-radius: 5px;
+  font-size: 12px;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.write_category_container {
+  display: flex;
+  width: 100%;
+}
+.write_category_ul {
+  list-style: none;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 0px;
+}
+.write_category_div {
+  width: 49%;
+  text-align: start;
+}
+.write_category_li {
+  padding: 5px 5px;
+}
+.write_category_li:hover {
+  padding: 5px 5px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.write_category_li_span {
+  padding: 10px 10px;
+  cursor: pointer;
+}
+.write_category_ul.first {
+  display: none;
+  width: 100%;
+  cursor: pointer;
+}
+.write_category_ul.second {
+  display: none;
+  width: 100%;
+  cursor: pointer;
+}
+.write_category_ul.third {
+  display: none;
+  width: 100%;
+  cursor: pointer;
+}
+.write_category_ul.fourth {
+  display: none;
+  width: 100%;
+  cursor: pointer;
+}
+.write_category_ul.fifth {
+  display: none;
+  width: 100%;
+  cursor: pointer;
+}
+.write_category_ul.sixth {
+  display: none;
+  width: 100%;
+  cursor: pointer;
+}
+.product_write_price > input {
+  padding: 15px 15px;
+  border-radius: 5px;
+  font-size: 12px;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.product_write_content_textarea {
+  width: 100%;
+  resize: none;
+}
+.write_product_button_container {
+  width: 100%;
+  margin: 0 auto;
+}
+.write_button_input {
+  padding: 3px 20px;
+  margin: 10px 3px;
+  cursor: pointer;
+  font-weight: 700;
+  border: none;
+  background-color: #fa6616;
+  color: white;
+}
+.no_write {
+  padding: 3px 20px;
+  margin: 10px 3px;
+  cursor: pointer;
+  font-weight: 700;
+  border: none;
+  background-color: black;
+  color: white;
+}

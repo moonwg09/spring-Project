@@ -19,4 +19,6 @@ public interface TransationService {
 	public List<ChattingVO> selectChat(int productNo) throws Exception;
 	
 	public void deleteComment(int chatNo) throws Exception;
+	
+	public void writeProductPost(ProductVO pvo) throws Exception;
 }

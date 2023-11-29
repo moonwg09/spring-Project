@@ -59,4 +59,9 @@ public class TransationServiceImpl implements TransationService {
 		productmapper.deleteComment(chatNo);
 		
 	}
+	@Override
+	public void writeProductPost(ProductVO pvo) throws Exception {
+		productmapper.writeProductPost(pvo);
+		
+	}
 }

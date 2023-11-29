@@ -55,10 +55,25 @@ public class TransationMapperTests {
 //		System.out.println(productmapper.selectChat(2));
 //	}
 	
+//	@Test
+//	public void deleteChatTest() throws Exception{
+//		productmapper.deleteComment(112);
+//		
+//
+//	}
+	
 	@Test
-	public void deleteChatTest() throws Exception{
-		productmapper.deleteComment(112);
+	public void writeProductTest() throws Exception {
+		ProductVO chat = new ProductVO();
+		chat.setProductNo(3);
+		chat.setWriter("qkaxhf102");
+		chat.setTitle("test");
+		chat.setCategori(3);
+		chat.setPrice(150000);
+		chat.setContent("sdssddsdsd");
+		chat.setAddress("dsad");
 		
-
+		productmapper.writeProductPost(chat);
+		
 	}
 }

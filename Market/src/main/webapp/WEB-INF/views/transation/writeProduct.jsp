@@ -162,7 +162,7 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 			</div>
 
 			<div class="product_write_content_container">
-				<p>상품내용</p>
+				<p>상품내용2</p>
 				<textarea rows="20" class="product_write_content_textarea"
 					name="content"></textarea>
 			</div>

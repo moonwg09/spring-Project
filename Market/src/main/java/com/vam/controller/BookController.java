@@ -69,5 +69,10 @@ public class BookController {
 		return new ResponseEntity<List<AttachImageVO>>(attachService.getAttachList(bookId), HttpStatus.OK);
 		
 	}
+	
+	@RequestMapping(value = "/chat", method = RequestMethod.GET)
+	public String chat() {
+		return "chat";
+	}
 
 }

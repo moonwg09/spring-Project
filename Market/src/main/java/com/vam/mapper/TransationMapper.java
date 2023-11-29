@@ -4,25 +4,25 @@ import java.util.List;
 
 import com.vam.VO.MemberVO;
 import com.vam.VO.ProductVO;
-import com.vam.VO.ChatVO;
+import com.vam.VO.ChattingVO;
 
 public interface TransationMapper {
-	// °Ô½Ã±Û ÀüÃ¼º¸±â
+	// ï¿½Ô½Ã±ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½
 	public List<ProductVO> productList(int categori);
 	
-	// °Ô½Ã±Û »ó¼¼º¸±â
+	// ï¿½Ô½Ã±ï¿½ ï¿½ó¼¼ºï¿½ï¿½ï¿½
 	public ProductVO productGetDetail(int productNo);
 	
-	// °Ô½Ã±Û ÀÛ¼ºÇÑ À¯Àú Á¤º¸ ºÒ·¯¿À±â
+	// ï¿½Ô½Ã±ï¿½ ï¿½Û¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½
 	public ProductVO getMemberAndProduct(int productNo);
 	
-	// °Ô½Ã±Û Á¶È¸¼ö Áõ°¡
+	// ï¿½Ô½Ã±ï¿½ ï¿½ï¿½È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	public int increaseViewCount(int productNo);
 	
-	// ´ñ±Û µî·Ï
-	public void insertChat(ChatVO cvo);
+	// ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+	public void insertChat(ChattingVO cvo);
 
-	public List<ChatVO> selectChat(int productNo);
+	public List<ChattingVO> selectChat(int productNo);
 	
 	public void deleteComment(int chatNo);
 	

@@ -57,7 +57,7 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
           </div>
         </div>
         <div class="icon_div2">
-          <div class="icon_detail_div2">
+          <div class="icon_detail_div2" onclick="window.location.href = '/main/chat'">
             <i
               class="fa-solid fa-comments"
               style="color: #f2991c; font-size: 20px"
@@ -101,7 +101,7 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
           </div>
         </div>
         <div class="icon_div2">
-          <div class="icon_detail_div2">
+          <div class="icon_detail_div2" onclick="window.location.href = '/chat'">
             <i
               class="fa-solid fa-comments"
               style="color: #f2991c; font-size: 20px"

@@ -1,10 +1,9 @@
 package com.vam.VO;
 
 import java.sql.Date;
-import java.util.List;
 
 public class ProductVO {
-	private String title,content,address,writer;
+	private String title,img,content,address,writer;
 
 	private int productNo,categori,price,viewcount,chatcount,likecount;
 	
@@ -12,14 +11,23 @@ public class ProductVO {
 	
 	private MemberVO mvo;
 	
+<<<<<<< HEAD
+	private ChattingVO cvo;
+	
+=======
 	private ChatVO cvo;
+<<<<<<< HEAD
 	private List<ProductImageVO> img;
+>>>>>>> 7219e16909f559683a992068b9cd5edb568a4bd9
+=======
+	
+>>>>>>> parent of 7219e16 (글 등록90퍼 완성)
 
-	public ChatVO getCvo() {
+	public ChattingVO getCvo() {
 		return cvo;
 	}
 
-	public void setCvo(ChatVO cvo) {
+	public void setCvo(ChattingVO cvo) {
 		this.cvo = cvo;
 	}
 
@@ -39,11 +47,11 @@ public class ProductVO {
 		this.title = title;
 	}
 
-	public List<ProductImageVO> getImg() {
+	public String getImg() {
 		return img;
 	}
 
-	public void setImg(List<ProductImageVO> img) {
+	public void setImg(String img) {
 		this.img = img;
 	}
 

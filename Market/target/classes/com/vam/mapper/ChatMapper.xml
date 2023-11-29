@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.vam.mapper.ChatMapper">
+	<select id="list" resultType="com.vam.VO.ChattingVO">
+		select * from tbl_chat
+	</select>
+	
+	<insert id="insert">
+			SET foreign_key_checks = 0;
+			insert into tbl_chat(sender,message) values(#{sender},#{message});
+			SET foreign_key_checks = 1;
+	</insert>
+</mapper>

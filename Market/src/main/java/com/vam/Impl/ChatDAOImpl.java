@@ -26,6 +26,17 @@ public class ChatDAOImpl implements ChatDAO {
 		session.insert(namespace+".insert", vo);
 		
 	}
+
+	@Override
+	public void delete(int id) {
+		session.delete(namespace+".delete", id);
+		
+	}
+
+	@Override
+	public int last() {
+		return session.selectOne(namespace+".last");
+	}
 	
 	
 }

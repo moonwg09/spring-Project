@@ -2,13 +2,23 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.vam.mapper.ChatMapper">
+
 	<select id="list" resultType="com.vam.VO.ChattingVO">
-		select * from tbl_chat
+		SELECT * FROM tbl_chat
 	</select>
 	
 	<insert id="insert">
 			SET foreign_key_checks = 0;
-			insert into tbl_chat(sender,message) values(#{sender},#{message});
+			INSERT INTO tbl_chat(sender,message) VALUES(#{sender},#{message});
 			SET foreign_key_checks = 1;
 	</insert>
+	
+	<delete id="delete">
+			DELETE FROM tbl_chat WHERE id=#{id}
+	</delete>
+	
+	<select resultType="int" id="last">
+			SELECT MAX(id) FROM tbl_chat
+	</select>
+	
 </mapper>

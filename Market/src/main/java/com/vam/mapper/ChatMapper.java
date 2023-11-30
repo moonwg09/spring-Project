@@ -1,10 +1,11 @@
-package com.vam.service;
+package com.vam.mapper;
 
 import java.util.List;
 
 import com.vam.VO.ChattingVO;
 
-public interface ChatDAO {
+public interface ChatMapper {
+	
 	public List<ChattingVO> list();
 	
 	public void insert(ChattingVO vo);
@@ -12,4 +13,5 @@ public interface ChatDAO {
 	public void delete(int id);
 	
 	public int last();
+
 }

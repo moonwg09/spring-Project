@@ -1,5 +1,11 @@
 package com.vam.controller;
 
+import java.io.FileInputStream;
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,12 +17,30 @@ import com.vam.service.ChatDAO;
 @RestController
 public class ChatController {
 	
+
 	@Autowired
 	private ChatDAO dao;
 	
-	@RequestMapping(value="/chat/insert", method = RequestMethod.POST)
-	public void insert(ChattingVO vo) {
-		dao.insert(vo);
+
+	
+	@RequestMapping("/chat.json")
+	public List<ChattingVO> list(){
+		return dao.list();
 	}
+	
+	@RequestMapping(value="/chat/insert", method = RequestMethod.POST)
+	public int insert(ChattingVO vo) {
+		dao.insert(vo);
+		int last=dao.last();
+		System.out.println("......................" + last);
+		return last;
+	}
+	
+	@RequestMapping(value="/chat/delete", method=RequestMethod.POST)
+	public void delete(int id) {
+		dao.delete(id);
+	}
+	
+
 
 }

@@ -1,25 +1,23 @@
 package com.vam.VO;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProductVO {
-	private String title,img,content,address,writer;
+	private String title,content,address,writer;
 
-	private int productNo,categori,price,viewcount,chatcount,likecount;
+	private int categori,price,viewcount,chatcount,likecount;
+	
+	private Long productNo;
 	
 	private Date regDate;
 	
-	public String getImg() {
-		return img;
-	}
-
-	public void setImg(String img) {
-		this.img = img; 
-	}
-
-	private MemberVO mvo;
+	private List<ProductImageVO> product_imageList;
 	
-	private ChatVO cvo;
+	public ProductVO() {
+		this.product_imageList = new ArrayList<>();
+	}
 
 	public String getTitle() {
 		return title;
@@ -51,14 +49,6 @@ public class ProductVO {
 
 	public void setWriter(String writer) {
 		this.writer = writer;
-	}
-
-	public int getProductNo() {
-		return productNo;
-	}
-
-	public void setProductNo(int productNo) {
-		this.productNo = productNo;
 	}
 
 	public int getCategori() {
@@ -101,6 +91,14 @@ public class ProductVO {
 		this.likecount = likecount;
 	}
 
+	public Long getProductNo() {
+		return productNo;
+	}
+
+	public void setProductNo(Long productNo) {
+		this.productNo = productNo;
+	}
+
 	public Date getRegDate() {
 		return regDate;
 	}
@@ -109,30 +107,27 @@ public class ProductVO {
 		this.regDate = regDate;
 	}
 
-	public MemberVO getMvo() {
-		return mvo;
+	public List<ProductImageVO> getProduct_imageList() {
+		return product_imageList;
 	}
 
-	public void setMvo(MemberVO mvo) {
-		this.mvo = mvo;
-	}
-
-	public ChatVO getCvo() {
-		return cvo;
-	}
-
-	public void setCvo(ChatVO cvo) {
-		this.cvo = cvo;
+	public void setProduct_imageList(List<ProductImageVO> product_imageList) {
+		this.product_imageList = product_imageList;
 	}
 
 	@Override
 	public String toString() {
-		return "ProductVO [title=" + title + ", img=" + img + ", content=" + content + ", address=" + address
-				+ ", writer=" + writer + ", productNo=" + productNo + ", categori=" + categori + ", price=" + price
-				+ ", viewcount=" + viewcount + ", chatcount=" + chatcount + ", likecount=" + likecount + ", regDate="
-				+ regDate + ", mvo=" + mvo + ", cvo=" + cvo + "]";
+		return "ProductVO [title=" + title + ", content=" + content + ", address=" + address + ", writer=" + writer
+				+ ", categori=" + categori + ", price=" + price + ", viewcount=" + viewcount + ", chatcount="
+				+ chatcount + ", likecount=" + likecount + ", productNo=" + productNo + ", regDate=" + regDate
+				+ ", product_imageList=" + product_imageList + "]";
 	}
 
+	
+	
+	
+	
+	
 
 
 

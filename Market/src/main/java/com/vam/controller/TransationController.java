@@ -1,7 +1,13 @@
 package com.vam.controller;
 
 import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.io.FileOutputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -15,17 +21,24 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.vam.VO.ChatVO;
-import com.vam.VO.NoticeImageVO;
+import com.vam.VO.ProductImageVO;
 import com.vam.VO.ProductVO;
 
 import com.vam.service.MemberService;
+import com.vam.service.NoticeService;
 import com.vam.service.TransationService;
 
-@Controller
+import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j;
+import net.coobird.thumbnailator.Thumbnailator;
+
+@Log4j
 @RequestMapping(value = "/transation")
+@RequiredArgsConstructor
+@Controller
 public class TransationController {
 	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 	@Autowired
@@ -71,11 +84,67 @@ public class TransationController {
 	}
 
 	@RequestMapping(value = "/writeProduct", method = RequestMethod.POST)
-	public String writeProductPost(ProductVO pvo) throws Exception {
-		logger.info("writeProductPost ����");
+	public String writeProductPost(ProductVO pvo, RedirectAttributes rttr, MultipartFile mainImage, MultipartFile[] subImage) throws Exception {
+		log.info("writeProductPost ����");
+		List<ProductImageVO> imagelist = new ArrayList<>();
+		if(mainImage!=null && !mainImage.isEmpty()) {
+			imageFolderSave(mainImage, imagelist, "mainImage");
+		}
+		
+		for(MultipartFile multipartFile : subImage) {
+			if(!multipartFile.isEmpty()) {
+				imageFolderSave(multipartFile, imagelist, "subImage");
+			}
+		}
+		
+		pvo.setProduct_imageList(imagelist);
+		
 		productservice.writeProductPost(pvo);
+		
+		rttr.addFlashAttribute("result", pvo.getProductNo());
+		// use RedirectAttributes to transmit with new product id
+		
 		return "redirect:/transation/usedTransation";
 	}
+	
+	// year/month/day folder create
+		private String getFolder() {
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+			Date date = new Date();
+			String str = sdf.format(date);
+			return str.replace("-", File.separator);
+		}
+		
+		
+		private void imageFolderSave(MultipartFile mainImage, List<ProductImageVO> imagelist, String imageType) {
+			
+			String uploadFolder = "c:\\upload\\temp";
+			
+			// make folder
+			String uploadFolderPath = getFolder();
+			File uploadPath = new File(uploadFolder, uploadFolderPath);
+			if(!uploadPath.exists()) {
+				uploadPath.mkdirs();
+			}
+
+			UUID uuid = UUID.randomUUID();
+			String uploadImageName = uuid.toString()+"_"+mainImage.getOriginalFilename();
+			try {
+				// original image save
+				File saveImage = new File(uploadPath, uploadImageName);
+				mainImage.transferTo(saveImage);
+				
+				if(imageType.equals("mainImage")) {
+					FileOutputStream thumbnail = new FileOutputStream(new File(uploadPath, "s_"+uploadImageName));
+					Thumbnailator.createThumbnail(mainImage.getInputStream(), thumbnail, 400, 333);
+					thumbnail.close();
+				}
+				
+				// productImageVO create
+				imagelist.add(new ProductImageVO(uuid.toString(), uploadFolderPath.toString().replace("\\", "/"), mainImage.getOriginalFilename(), imageType,null));
+
+			}catch(Exception e){log.error(e.getMessage());}
+		}
 
 	
 

@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.vam.VO.ChatVO;
 import com.vam.VO.ChattingVO;
+import com.vam.VO.ProductImageVO;
 import com.vam.VO.ProductVO;
+import com.vam.mapper.TransationImageMapper;
 import com.vam.mapper.TransationMapper;
 import com.vam.VO.ChattingVO;
 import com.vam.service.TransationService;
@@ -19,6 +21,9 @@ public class TransationServiceImpl implements TransationService {
 
 	@Autowired
 	TransationMapper productmapper;
+	
+	@Autowired
+	TransationImageMapper imageListmapper;
 
 	// ��ǰ ��ü����
 	@Override
@@ -64,5 +69,10 @@ public class TransationServiceImpl implements TransationService {
 	public void writeProductPost(ProductVO pvo) throws Exception {
 		productmapper.writeProductPost(pvo);
 		
+	}
+
+	@Override
+	public List<ProductImageVO> getImageList(long productNo) {
+		return imageListmapper.findById(productNo);
 	}
 }

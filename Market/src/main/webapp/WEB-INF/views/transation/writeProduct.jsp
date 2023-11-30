@@ -53,7 +53,7 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 		<jsp:include page="../header.jsp"></jsp:include>
 	</div>
 	<form action="writeProduct" method="post"  enctype="multipart/form-data"
-		style="width: 100%">
+		style="width: 100%" multiple>
 		<div class="modal_button_div"
 			style="display: block; margin-top: 100px;">
 			<span style="font-weight: 700; font-size: 20px">판매글 작성</span>

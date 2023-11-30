@@ -3,6 +3,7 @@ package com.vam.mapper;
 import java.util.List;
 
 import com.vam.VO.MemberVO;
+import com.vam.VO.ProductImageVO;
 import com.vam.VO.ProductVO;
 import com.vam.VO.ChatVO;
 

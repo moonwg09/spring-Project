@@ -152,9 +152,7 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 					</div>
 					<hr />
 					<div class="detail_product_info_div">
-						<span> 하타케야마 m62 카이타쿠야모델 판매합니다.(글러브 주머니 포함) 20년12월 구매하여
-							3년동안 하타케야마 전용 왁스 바르며 잘관리 하였고 웹부분 살짝 까짐 있습니다. 사진 확인 부탁드립니다. 필요하시면
-							사용하던 하타케야마 전용 왁스도 같이 보내드립니다. 대구 직거래 택배거래 가능합니다. </span>
+						<span> ${productDetail.content}</span>
 					</div>
 				</div>
 				<div class="detail_info_right">

@@ -95,6 +95,12 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 								type="number" pattern="#,##0" />
 							<span>${formattedPrice}원</span>
 						</div>
+						<c:if test="${member.nickName eq writerProductInfo.mvo.nickName}">
+							<div>
+							<button>삭제하기</button>
+							<button>수정하기</button>
+							</div>
+						</c:if>
 						<hr />
 						<div class="detail_info_sub">
 							<div class="detail_font">
@@ -231,27 +237,7 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 			</div>
 		</div>
 	</form>
-	<c:if test="${member ==null }">
-		<div class="container">
-			<div class="popup-wrap" id="popup">
-				<div class="modal_div">
-					<div class="circle-icon">
-						<i class="fa-solid fa-exclamation"></i>
-					</div>
-					<p class="modal_title">로그인후 이용 가능합니다.</p>
-					<p class="modal_title smft">로그인 하시겠습니까?</p>
-					<div class="modal_button_div">
-						<div class="modal_button yes">
-							<span onclick="window.location.href ='/member/login'">예</span>
-						</div>
-						<div class="modal_button no" id="close">
-							<span>아니요</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</c:if>
+	
 	<c:if test="${member ==null }">
 		<div class="container">
 			<div class="popup-wrap" id="popup">

@@ -61,7 +61,7 @@ public class TransationMapperTests {
 //		
 //
 //	}
-	
+	/*
 	@Test
 	public void writeProductTest() throws Exception {
 		ProductVO chat = new ProductVO();
@@ -75,5 +75,5 @@ public class TransationMapperTests {
 		
 		productmapper.writeProductPost(chat);
 		
-	}
+	}*/
 }

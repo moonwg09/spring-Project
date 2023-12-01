@@ -65,8 +65,8 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 			<div style="display: flex; margin-right: 1%">
 				<div class="comment_form"
 					onclick="document.querySelector('.input_filed').click()">
-					<input type="file" accept="image/*" class="input_filed" hidden
-						multiple onchange="readURL(this);" name="img"/> <i
+					<input type="file" accept = "image/jpg, image/jpeg, image/png, image/gif" class="input_filed" hidden
+						 multiple onchange="readURL(this);" name='img' id='img'/> <i
 						class="fa-solid fa-cloud-arrow-up"
 						style="color: #1475cf; font-size: 35px"></i>
 				</div>

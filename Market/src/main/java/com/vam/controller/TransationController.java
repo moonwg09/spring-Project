@@ -24,6 +24,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.vam.VO.ChatVO;
+import com.vam.VO.NoticeImageVO;
 import com.vam.VO.ProductImageVO;
 import com.vam.VO.ProductVO;
 
@@ -55,7 +56,7 @@ public class TransationController {
 	}
 
 	@RequestMapping(value = "/detailProduct", method = RequestMethod.GET)
-	public void detailProduct(int productNo, Model model) throws Exception {
+	public void detailProduct(Long productNo, Model model) throws Exception {
 		logger.info("detailProduct ����");
 		System.out.println(productservice.productGetDetail(productNo));
 		System.out.println(productservice.getMemberAndProduct(productNo));
@@ -70,7 +71,7 @@ public class TransationController {
 
 
 	@RequestMapping(value = "/chat", method = RequestMethod.POST)
-	public String insertChat(ChatVO cvo, int productNo, int memberNo) throws Exception {
+	public String insertChat(ChatVO cvo, Long productNo, int memberNo) throws Exception {
 		logger.info("insertChat ����");
 		productservice.insertChat(cvo);
 		return "redirect:/transation/detailProduct?productNo=" + cvo.getProductNo();
@@ -84,26 +85,23 @@ public class TransationController {
 	}
 
 	@RequestMapping(value = "/writeProduct", method = RequestMethod.POST)
-	public String writeProductPost(ProductVO pvo, RedirectAttributes rttr, MultipartFile mainImage, MultipartFile[] subImage) throws Exception {
-		log.info("writeProductPost ����");
+	public String writeProductPost(ProductVO pvo,  RedirectAttributes rttr, MultipartFile[] img) throws Exception {
 		List<ProductImageVO> imagelist = new ArrayList<>();
-		if(mainImage!=null && !mainImage.isEmpty()) {
-			imageFolderSave(mainImage, imagelist, "mainImage");
-		}
+		log.info(pvo.getProductNo());
+	
 		
-		for(MultipartFile multipartFile : subImage) {
+		for(MultipartFile multipartFile : img) {
 			if(!multipartFile.isEmpty()) {
-				imageFolderSave(multipartFile, imagelist, "subImage");
+				imageFolderSave(multipartFile, imagelist, "img");
 			}
 		}
-		
 		pvo.setProduct_imageList(imagelist);
-		
-		productservice.writeProductPost(pvo);
+		log.info("regiter : "+ pvo);
+		productservice.register(pvo);
 		
 		rttr.addFlashAttribute("result", pvo.getProductNo());
 		// use RedirectAttributes to transmit with new product id
-		
+			
 		return "redirect:/transation/usedTransation";
 	}
 	
@@ -135,21 +133,21 @@ public class TransationController {
 				mainImage.transferTo(saveImage);
 				
 				if(imageType.equals("mainImage")) {
+					// thumbnail image create, save
 					FileOutputStream thumbnail = new FileOutputStream(new File(uploadPath, "s_"+uploadImageName));
 					Thumbnailator.createThumbnail(mainImage.getInputStream(), thumbnail, 400, 333);
 					thumbnail.close();
 				}
 				
 				// productImageVO create
-				imagelist.add(new ProductImageVO(uuid.toString(), uploadFolderPath.toString().replace("\\", "/"), mainImage.getOriginalFilename(), imageType,null));
+				imagelist.add(new ProductImageVO(uuid.toString(), uploadFolderPath.toString().replace("\\", "/"), mainImage.getOriginalFilename(), imageType, null));
 
 			}catch(Exception e){log.error(e.getMessage());}
 		}
-
 	
 
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
-	public String deleteComment(int chatNo, int productNo) throws Exception {
+	public String deleteComment(int chatNo, Long productNo) throws Exception {
 
 		logger.info("deleteComment ����");
 

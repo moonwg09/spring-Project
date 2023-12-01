@@ -16,14 +16,19 @@ import com.vam.mapper.TransationMapper;
 import com.vam.VO.ChattingVO;
 import com.vam.service.TransationService;
 
+import lombok.AllArgsConstructor;
+import lombok.extern.log4j.Log4j;
+
 @Service
+@AllArgsConstructor
+@Log4j
 public class TransationServiceImpl implements TransationService {
 
 	@Autowired
 	TransationMapper productmapper;
 	
 	@Autowired
-	TransationImageMapper imageListmapper;
+	TransationImageMapper imagemapper;
 
 	// ��ǰ ��ü����
 	@Override
@@ -33,19 +38,19 @@ public class TransationServiceImpl implements TransationService {
 
 	// ��ǰ �󼼺���
 	@Override
-	public ProductVO productGetDetail(int productNo) throws Exception {
+	public ProductVO productGetDetail(Long productNo) throws Exception {
 
 		return productmapper.productGetDetail(productNo);
 	}
 
 	@Override
-	public ProductVO getMemberAndProduct(int productNo) {
+	public ProductVO getMemberAndProduct(Long productNo) {
 		// TODO Auto-generated method stub
 		return productmapper.getMemberAndProduct(productNo);
 	}
 
 	@Override
-	public int increaseViewCount(int productNo) {
+	public int increaseViewCount(Long productNo) {
 		return productmapper.increaseViewCount(productNo);
 	}
 
@@ -55,11 +60,15 @@ public class TransationServiceImpl implements TransationService {
 		
 	}
 	@Override
-	public List<ChatVO> selectChat(int productNo) throws Exception {
+	public List<ChatVO> selectChat(Long productNo) throws Exception {
 	
 		return productmapper.selectChat(productNo);
 
 	}
+	
+
+
+	
 	@Override
 	public void deleteComment(int chatNo) throws Exception {
 		productmapper.deleteComment(chatNo);
@@ -70,9 +79,29 @@ public class TransationServiceImpl implements TransationService {
 		productmapper.writeProductPost(pvo);
 		
 	}
+	@Override
+	public void register(ProductVO pvo) throws Exception {
+			productmapper.writeProductPost(pvo);
+		
+			// register on product_image
+			if(pvo.getProduct_imageList() != null || pvo.getProduct_imageList().size() > 0) {
+				pvo.getProduct_imageList().forEach(image->{
+					image.setProductNo(pvo.getProductNo());
+					
+					imagemapper.insert(image);
+					log.info("register imageList "+image);
+				});
+			}
+	}
 
 	@Override
-	public List<ProductImageVO> getImageList(long productNo) {
-		return imageListmapper.findById(productNo);
+	public List<ProductImageVO> getImageList(Long productNo) throws Exception {
+		return imagemapper.findById(productNo);
 	}
+
+
+	
+
+
+	
 }

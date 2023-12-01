@@ -14,10 +14,6 @@ public class ProductVO {
 	private Date regDate;
 	
 	private List<ProductImageVO> product_imageList;
-	
-	public ProductVO() {
-		this.product_imageList = new ArrayList<>();
-	}
 
 	public String getTitle() {
 		return title;
@@ -122,6 +118,9 @@ public class ProductVO {
 				+ chatcount + ", likecount=" + likecount + ", productNo=" + productNo + ", regDate=" + regDate
 				+ ", product_imageList=" + product_imageList + "]";
 	}
+
+	
+	
 
 	
 	

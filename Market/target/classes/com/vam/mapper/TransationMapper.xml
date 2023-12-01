@@ -85,7 +85,7 @@
 	<delete id="deleteComment">
 		delete from chat where chat.chatNo=#{chatNo}
 	</delete>
-	<insert id="writeProductPost">
+	<insert id="writeProductPost"  useGeneratedKeys="true" keyProperty="productNo" parameterType="com.vam.VO.ProductVO">
 		insert into product (writer, title, categori, price, content ,address, regDate) values(#{writer}, #{title}, #{categori}, #{price}, #{content}, #{address},now())
 	</insert>
 </mapper>

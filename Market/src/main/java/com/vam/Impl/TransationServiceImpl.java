@@ -1,11 +1,14 @@
 package com.vam.Impl;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
-
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.vam.VO.ChatVO;
 import com.vam.VO.ChattingVO;
@@ -26,7 +29,7 @@ public class TransationServiceImpl implements TransationService {
 
 	@Autowired
 	TransationMapper productmapper;
-	
+
 	@Autowired
 	TransationImageMapper imagemapper;
 
@@ -57,51 +60,59 @@ public class TransationServiceImpl implements TransationService {
 	@Override
 	public void insertChat(ChatVO cvo) throws Exception {
 		productmapper.insertChat(cvo);
-		
+
 	}
-	@Override
+
 	public List<ChatVO> selectChat(Long productNo) throws Exception {
 	
 		return productmapper.selectChat(productNo);
 
 	}
-	
 
-
-	
 	@Override
 	public void deleteComment(int chatNo) throws Exception {
 		productmapper.deleteComment(chatNo);
-		
+
 	}
+
 	@Override
 	public void writeProductPost(ProductVO pvo) throws Exception {
 		productmapper.writeProductPost(pvo);
-		
+
 	}
 	@Override
 	public void register(ProductVO pvo) throws Exception {
-			productmapper.writeProductPost(pvo);
-		
+			System.out.println(pvo.getProduct_imageList() +"*****************8");
+		productmapper.writeProductPost(pvo);
 			// register on product_image
 			if(pvo.getProduct_imageList() != null || pvo.getProduct_imageList().size() > 0) {
 				pvo.getProduct_imageList().forEach(image->{
 					image.setProductNo(pvo.getProductNo());
 					
 					imagemapper.insert(image);
+				
 					log.info("register imageList "+image);
+					System.out.println("register imageList  ##################" +image);
 				});
+			}else {
+				System.out.println("노이미지 저장##################");
 			}
 	}
 
 	@Override
+	public List<ProductImageVO> findById(Long productNo) {
+		// TODO Auto-generated method stub
+		return imagemapper.findById(productNo);
+	}
+	
+	@Override
 	public List<ProductImageVO> getImageList(Long productNo) throws Exception {
 		return imagemapper.findById(productNo);
 	}
-
-
+@Override
+public void deleteProduct(int proeuctNo) throws Exception {
+	productmapper.deleteProduct(proeuctNo);
 	
-
-
+}
 	
 }

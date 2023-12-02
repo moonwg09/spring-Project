@@ -135,7 +135,7 @@
 						</div>
 					</div>
 					<div>
-						<img src="../resources/image/transationimg.webp"
+						<img src="${productImage.image_uploadPath }"
 							style="width: 100%; height: 225px" />
 					</div>
 				</div>
@@ -159,15 +159,29 @@
 								style="padding: 10px 10px; width: 100%; height: 100%">
 								<ul
 									style="list-style: none; margin: 0 auto; width: 100%; height: 100%;">
-									<c:forEach items="${product}" var="product">
+									<c:forEach items="${product}" var="product"
+										varStatus="varstatus">
 										<li><a class="move"
-											href='<c:out value="${product.productNo}"/>'
+											href="detailProduct?productNo=${product.productNo}"
 											style="text-decoration: none; color: black">
 												<div>
 													<span style="text-align: center"><img
-														src="../resources/image/eximg.webp"
+														id="main-img${varstatus.index}"
 														style="width: 100%; height: auto" alt="" /></span>
-												</div>
+												</div> <script>
+													var imageUploadPath = '<c:out value="${product.product_imageList[0].image_uploadPath}" />';
+													var imageUuid = '<c:out value="${product.product_imageList[0].image_uuid}" />';
+													var imageName = '<c:out value="${product.product_imageList[0].image_name}" />';
+													var imageNameEncoded = encodeURIComponent(imageUploadPath
+															+ '/'
+															+ imageUuid
+															+ '_' + imageName);
+													var realSrc = '../display?fileName='
+															+ imageNameEncoded;
+
+													document
+															.getElementById('main-img${varstatus.index}').src = realSrc;
+												</script>
 												<p class="detail_font">${product.title}</p>
 												<div class="content_button_div">
 													<c:set var="formattedPrice" value="${product.price}" />
@@ -197,34 +211,30 @@
 					</div>
 				</div>
 			</div>
-	<div style="display: flex; justify-content: center;">
-	<jsp:include page="../footer.jsp"></jsp:include>
-		
-	</div>
+			<div style="display: flex; justify-content: center;">
+				<jsp:include page="../footer.jsp"></jsp:include>
+
+			</div>
 			<form id="moveForm" method="get"></form>
 		</div>
-		
+
 
 	</div>
-	
+
 	<script type="text/javascript">
-	let moveForm = $('#moveForm')
-	
-		$(".move").on("click", function(e){
-			e.preventDefault();
-			moveForm.append("<input type='hidden' name='productNo' value='"+ $(this).attr("href") +"'>");
-			moveForm.attr("action","detailProduct")
-			moveForm.submit();
-			  moveForm.find("input[name='productNo']").remove();
-	      
-		});
-	$(".category").on("click", function(e){
-		e.preventDefault();
-		moveForm.append("<input type='hidden' name='categori' value='"+ $(this).attr("href") +"'>");
-		moveForm.attr("action","usedTransation");
-		moveForm.submit();
-	});
-	
+		let moveForm = $('#moveForm')
+
+		$(".category")
+				.on(
+						"click",
+						function(e) {
+							e.preventDefault();
+							moveForm
+									.append("<input type='hidden' name='categori' value='"
+											+ $(this).attr("href") + "'>");
+							moveForm.attr("action", "usedTransation");
+							moveForm.submit();
+						});
 	</script>
 
 </body>

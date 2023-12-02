@@ -1,7 +1,7 @@
 package com.vam.VO;
 
 public class LocalBussinessVO {
-    private int productNo;
+    private Long productNo;
     private String img;
     private String title;
     private String writer;
@@ -11,33 +11,10 @@ public class LocalBussinessVO {
     private String menu;
     private String price;
     private int replyCount, revisitCount,subCategory;
-    
-    
-	public int getReplyCount() {
-		return replyCount;
-	}
-	public void setReplyCount(int replyCount) {
-		this.replyCount = replyCount;
-	}
-	public int getRevisitCount() {
-		return revisitCount;
-	}
-	public void setRevisitCount(int revisitCount) {
-		this.revisitCount = revisitCount;
-	}
-	public int getSubCategory() {
-		return subCategory;
-	}
-	public void setSubCategory(int subCategory) {
-		this.subCategory = subCategory;
-	}
-	public void setCategori(int categori) {
-		this.categori = categori;
-	}
-	public int getProductNo() {
+	public Long getProductNo() {
 		return productNo;
 	}
-	public void setProductNo(int productNo) {
+	public void setProductNo(Long productNo) {
 		this.productNo = productNo;
 	}
 	public String getImg() {
@@ -58,10 +35,10 @@ public class LocalBussinessVO {
 	public void setWriter(String writer) {
 		this.writer = writer;
 	}
-	public String getCategori() {
+	public int getCategori() {
 		return categori;
 	}
-	public void setCategori(String categori) {
+	public void setCategori(int categori) {
 		this.categori = categori;
 	}
 	public String getContent() {
@@ -88,6 +65,24 @@ public class LocalBussinessVO {
 	public void setPrice(String price) {
 		this.price = price;
 	}
+	public int getReplyCount() {
+		return replyCount;
+	}
+	public void setReplyCount(int replyCount) {
+		this.replyCount = replyCount;
+	}
+	public int getRevisitCount() {
+		return revisitCount;
+	}
+	public void setRevisitCount(int revisitCount) {
+		this.revisitCount = revisitCount;
+	}
+	public int getSubCategory() {
+		return subCategory;
+	}
+	public void setSubCategory(int subCategory) {
+		this.subCategory = subCategory;
+	}
 	@Override
 	public String toString() {
 		return "LocalBussinessVO [productNo=" + productNo + ", img=" + img + ", title=" + title + ", writer=" + writer
@@ -95,6 +90,6 @@ public class LocalBussinessVO {
 				+ ", price=" + price + ", replyCount=" + replyCount + ", revisitCount=" + revisitCount
 				+ ", subCategory=" + subCategory + "]";
 	}
-    
+	
     
 }

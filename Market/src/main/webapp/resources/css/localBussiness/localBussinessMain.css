@@ -175,6 +175,9 @@ a {
 	margin-left: 0.25rem;
 	font-size: 15px;
 	color: gray;
+	 overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
 }
 
 .Sub_wrapper span {

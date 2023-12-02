@@ -31,7 +31,8 @@
 		<result property="address" column="address" />
 		<result property="regDate" column="regDate" />
 		<result property="likecount" column="likecount" />
-		<association   property="product_imageList" resultMap = "imageMap" >
+		<association property="product_imageList"
+			resultMap="imageMap">
 		</association>
 		<collection property="mvo" resultMap="memberResultMap" />
 
@@ -44,18 +45,19 @@
 		<collection property="pvo" resultMap="productResultMap" />
 		<collection property="mvo" resultMap="memberResultMap" />
 	</resultMap>
-	
-	<resultMap type = "com.vam.VO.ProductImageVO" id = "imageMap">
-	<id property = "productNo" column="productNo"/>
-	<result property = "image_uuid" column = "image_uuid"/>
-	<result property="image_uploadPath" column = "image_uploadPath"/>
-	<result property="image_name" column="image_name"/>
-	<result property = "image_type" column="image_type"/>
+
+	<resultMap type="com.vam.VO.ProductImageVO" id="imageMap">
+		<id property="productNo" column="productNo" />
+		<result property="image_uuid" column="image_uuid" />
+		<result property="image_uploadPath" column="image_uploadPath" />
+		<result property="image_name" column="image_name" />
+		<result property="image_type" column="image_type" />
 	</resultMap>
 
-	<select id="productGetDetail" resultType="com.vam.VO.ProductVO">
+	<select id="productGetDetail" parameterType="java.lang.Long"
+		resultType="com.vam.VO.ProductVO">
 		select * from product
-		where productNo = #{productNo}
+		where productNo = #{productNo, jdbcType=BIGINT}
 	</select>
 
 	<select id="productList" resultType="com.vam.VO.ProductVO">
@@ -63,37 +65,46 @@
 		categori= #{categori}
 	</select>
 	<select id="getMemberAndProduct" resultMap="productResultMap">
-		select * from product JOIN member ON member.nickName = product.writer
+		select * from product
+		JOIN member ON member.nickName = product.writer
 		WHERE
-		productNo = #{productNo}
+		productNo =
+		#{productNo}
 	</select>
-	<update id="increaseViewCount" parameterType="int">
+	<update id="increaseViewCount" parameterType="java.lang.Long">
 		UPDATE product
-		SET viewcount = viewcount + 1
-		WHERE productNo = #{productNo}
+		SET
+		viewcount = viewcount + 1
+		WHERE productNo =  #{productNo, jdbcType=BIGINT}
 	</update>
-	
-	<insert id="insertChat" >
-		insert into chat (chatNo, productNo, content, memberNo) values (null, #{productNo}, #{content},#{memberNo})
+
+	<insert id="insertChat">
+		insert into chat (chatNo, productNo,
+		content, memberNo) values (null, #{productNo}, #{content},#{memberNo})
 	</insert>
 	<select id="selectChat" resultMap="chatResultMap">
-    SELECT chat.chatNo, chat.productNo, chat.content , chat.memberNo, member.nickName, member.addr2
-    FROM chat JOIN product ON chat.productNo = product.productNo JOIN member ON chat.memberNo = member.memberNo
-    WHERE chat.productNo =#{productNo} order by chatNo desc;
+		SELECT chat.chatNo, chat.productNo, chat.content , chat.memberNo,
+		member.nickName, member.addr2
+		FROM chat JOIN product ON chat.productNo = product.productNo JOIN member
+		ON chat.memberNo = member.memberNo
+		WHERE chat.productNo =#{productNo} order by chatNo desc;
 	</select>
-	
+
 	<delete id="deleteComment">
 		delete from chat where chat.chatNo=#{chatNo}
 	</delete>
-	<insert id="writeProductPost"  useGeneratedKeys="true" keyProperty="productNo" parameterType="com.vam.VO.ProductVO">
-		insert into product (writer, title, categori, price, content ,address, regDate) values(#{writer}, #{title}, #{categori}, #{price}, #{content}, #{address},now())
+	<insert id="writeProductPost" useGeneratedKeys="true"
+		keyProperty="productNo" parameterType="com.vam.VO.ProductVO">
+		insert into product (writer,
+		title, categori, price, content ,address, regDate) values(#{writer},
+		#{title}, #{categori}, #{price}, #{content}, #{address},now())
 	</insert>
-	
+
 	<delete id="deleteProduct">
 		delete from product where productNo =#{productNo}
 	</delete>
 	<update id="">
-		
+
 	</update>
 </mapper>
 

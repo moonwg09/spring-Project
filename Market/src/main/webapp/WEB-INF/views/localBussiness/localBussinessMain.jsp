@@ -34,7 +34,8 @@
 				</span>
 			</div>
 			<div class="Img">
-				<img src="../resources/image/local_logo.png" style="margin-left: 5%;">
+				<img src="../resources/image/local_logo.png"
+					style="margin-left: 5%;">
 			</div>
 
 		</section>
@@ -65,19 +66,21 @@
 							<c:if test="${local.categori == 1}">
 
 
-								<li class="A"><a class="a" href="#오떡순.html">
+								<li class="A"><a class="a"
+									href="localDetail?productNo=${local.productNo}"
+									style="width: 100%">
 										<div class="Menu_AA" style="display: flex;">
 											<div class="Main_Img">
 												<img src="image/오.png">
 											</div>
-											<div class="Sub_content">
+											<div class="Sub_content" style="width: 100%">
 												<div class="Sub_wrapper">
-													<span class="Sub_list">${local.title }</span> <span
-														class="Sub_list_region">${local.address }</span>
+													<p class="Sub_list">${local.title }</p>
+													<span class="Sub_list_region">${local.address }</span>
 												</div>
-												<span class="Sub_list_description">${local.content}
-													^^</span> <span class="Sub_list_infos">후기 307 ∙ 단골 1,914 ∙
-													떡볶이전문</span>
+												<span class="Sub_list_description">${local.content}</span> <span
+													class="Sub_list_infos">후기 ${local.replyCount} ∙ 단골
+													${local.revisitCount}</span>
 											</div>
 										</div>
 								</a></li>
@@ -92,19 +95,21 @@
 							<c:if test="${local.categori == 2}">
 
 
-								<li class="A"><a class="a" href="#오떡순.html">
+								<li class="A"><a class="a"
+									href="localDetail?productNo=${local.productNo}"
+									style="width: 100%">
 										<div class="Menu_AA" style="display: flex;">
 											<div class="Main_Img">
 												<img src="image/오.png">
 											</div>
-											<div class="Sub_content">
+											<div class="Sub_content" style="width: 100%">
 												<div class="Sub_wrapper">
-													<span class="Sub_list">${local.title }</span> <span
-														class="Sub_list_region">${local.address }</span>
+													<p class="Sub_list">${local.title }</p>
+													<span class="Sub_list_region">${local.address }</span>
 												</div>
-												<span class="Sub_list_description">${local.content}
-													^^</span> <span class="Sub_list_infos">후기 307 ∙ 단골 1,914 ∙
-													떡볶이전문</span>
+												<span class="Sub_list_description">${local.content}</span> <span
+													class="Sub_list_infos">후기 ${local.replyCount} ∙ 단골
+													${local.revisitCount}</span>
 											</div>
 										</div>
 								</a></li>
@@ -119,19 +124,21 @@
 							<c:if test="${local.categori == 3}">
 
 
-								<li class="A"><a class="a" href="#오떡순.html">
+								<li class="A"><a class="a"
+									href="localDetail?productNo=${local.productNo}"
+									style="width: 100%">
 										<div class="Menu_AA" style="display: flex;">
 											<div class="Main_Img">
 												<img src="image/오.png">
 											</div>
-											<div class="Sub_content">
+											<div class="Sub_content" style="width: 100%">
 												<div class="Sub_wrapper">
-													<span class="Sub_list">${local.title }</span> <span
-														class="Sub_list_region">${local.address }</span>
+													<p class="Sub_list">${local.title }</p>
+													<span class="Sub_list_region">${local.address }</span>
 												</div>
-												<span class="Sub_list_description">${local.content}
-													^^</span> <span class="Sub_list_infos">후기 307 ∙ 단골 1,914 ∙
-													떡볶이전문</span>
+												<span class="Sub_list_description">${local.content}</span> <span
+													class="Sub_list_infos">후기 ${local.replyCount} ∙ 단골
+													${local.revisitCount}</span>
 											</div>
 										</div>
 								</a></li>
@@ -148,19 +155,21 @@
 							<c:if test="${local.categori == 4}">
 
 
-								<li class="A"><a class="a" href="#오떡순.html">
+								<li class="A"><a class="a"
+									href="localDetail?productNo=${local.productNo}"
+									style="width: 100%">
 										<div class="Menu_AA" style="display: flex;">
 											<div class="Main_Img">
 												<img src="image/오.png">
 											</div>
-											<div class="Sub_content">
+											<div class="Sub_content" style="width: 100%">
 												<div class="Sub_wrapper">
-													<span class="Sub_list">${local.title }</span> <span
-														class="Sub_list_region">${local.address }</span>
+													<p class="Sub_list">${local.title }</p>
+													<span class="Sub_list_region">${local.address }</span>
 												</div>
-												<span class="Sub_list_description">${local.content}
-													^^</span> <span class="Sub_list_infos">후기 307 ∙ 단골 1,914 ∙
-													떡볶이전문</span>
+												<span class="Sub_list_description">${local.content}</span> <span
+													class="Sub_list_infos">후기 ${local.replyCount} ∙ 단골
+													${local.revisitCount}</span>
 											</div>
 										</div>
 								</a></li>
@@ -175,19 +184,21 @@
 							<c:if test="${local.categori == 5}">
 
 
-								<li class="A"><a class="a" href="#오떡순.html">
+								<li class="A"><a class="a"
+									href="localDetail?productNo=${local.productNo}"
+									style="width: 100%">
 										<div class="Menu_AA" style="display: flex;">
 											<div class="Main_Img">
 												<img src="image/오.png">
 											</div>
-											<div class="Sub_content">
+											<div class="Sub_content" style="width: 100%">
 												<div class="Sub_wrapper">
-													<span class="Sub_list">${local.title }</span> <span
-														class="Sub_list_region">${local.address }</span>
+													<p class="Sub_list">${local.title }</p>
+													<span class="Sub_list_region">${local.address }</span>
 												</div>
-												<span class="Sub_list_description">${local.content}
-													^^</span> <span class="Sub_list_infos">후기 307 ∙ 단골 1,914 ∙
-													떡볶이전문</span>
+												<span class="Sub_list_description">${local.content}</span> <span
+													class="Sub_list_infos">후기 ${local.replyCount} ∙ 단골
+													${local.revisitCount}</span>
 											</div>
 										</div>
 								</a></li>
@@ -202,19 +213,21 @@
 							<c:if test="${local.categori == 6}">
 
 
-								<li class="A"><a class="a" href="#오떡순.html">
+								<li class="A"><a class="a"
+									href="localDetail?productNo=${local.productNo}"
+									style="width: 100%">
 										<div class="Menu_AA" style="display: flex;">
 											<div class="Main_Img">
 												<img src="image/오.png">
 											</div>
-											<div class="Sub_content">
+											<div class="Sub_content" style="width: 100%">
 												<div class="Sub_wrapper">
-													<span class="Sub_list">${local.title }</span> <span
-														class="Sub_list_region">${local.address }</span>
+													<p class="Sub_list">${local.title }</p>
+													<span class="Sub_list_region">${local.address }</span>
 												</div>
-												<span class="Sub_list_description">${local.content}
-													^^</span> <span class="Sub_list_infos">후기 307 ∙ 단골 1,914 ∙
-													떡볶이전문</span>
+												<span class="Sub_list_description">${local.content}</span> <span
+													class="Sub_list_infos">후기 ${local.replyCount} ∙ 단골
+													${local.revisitCount}</span>
 											</div>
 										</div>
 								</a></li>

@@ -18,4 +18,16 @@ public class LocalBussinessImpl implements LocalBussinessService {
 	public List<LocalBussinessVO> localBussinessSelectAll() throws Exception{
 		return localmapper.localBussinessSelectAll();
 	}
+	
+@Override
+	public LocalBussinessVO localGetDetail(Long productNo) throws Exception {
+		
+		return localmapper.localGetDetail(productNo);
+		
+	}
+@Override
+public int increaseRevisitCount(Long productNo) throws Exception {
+	
+	return localmapper.increaseRevisitCount(productNo);
+}
 }

@@ -2,6 +2,8 @@ package com.vam.service;
 
 import java.util.List;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import com.vam.VO.ChatVO;
 import com.vam.VO.NoticeVO;
 import com.vam.VO.ProductImageVO;
@@ -11,6 +13,7 @@ public interface TransationService {
 	
 	public void register(ProductVO pvo) throws Exception;
 	
+	public List<ProductImageVO> findById(Long productNo);
 	public List<ProductVO> productList(int categori) throws Exception;
 	
 	public ProductVO productGetDetail(Long productNo) throws Exception;
@@ -28,4 +31,9 @@ public interface TransationService {
 	public void deleteComment(int chatNo) throws Exception;
 	
 	public void writeProductPost(ProductVO pvo) throws Exception;
+	
+
+	
+	
+	public void deleteProduct(int proeuctNo) throws Exception;
 }

@@ -11,5 +11,16 @@
 		insert into localBussiness (productNo, title, writer, categori, content, address, menu, price,subCategory)
 		values(null,#{title},#{writer},#{categori}, #{content}, #{address},#{menu},#{price},#{subCategory})
 	</insert>
+	<select id="localGetDetail" parameterType="java.lang.Long"
+		resultType="com.vam.VO.LocalBussinessVO">
+		select * from localBussiness
+		where productNo = #{productNo, jdbcType=BIGINT}
+	</select>
+	<update id="increaseRevisitCount" parameterType="java.lang.Long">
+	UPDATE localBussiness
+		SET
+		revisitCount = revisitCount + 1
+		WHERE productNo =  #{productNo, jdbcType=BIGINT}	
+	</update>
 	
 </mapper>

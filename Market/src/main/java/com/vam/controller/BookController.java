@@ -41,7 +41,7 @@ public class BookController {
 		
 		logger.info("getImage()........" + fileName);
 		
-		File file = new File("c:\\upload\\temp\\" + fileName);
+		File file = new File("C:\\upload\\temp\\" + fileName);
 	
 		ResponseEntity<byte[]> result = null;
 		

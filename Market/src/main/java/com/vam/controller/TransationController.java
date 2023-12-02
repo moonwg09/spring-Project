@@ -16,10 +16,15 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -36,6 +41,10 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j;
 import net.coobird.thumbnailator.Thumbnailator;
 
+import java.util.Base64;
+import java.util.Base64.Decoder;
+import java.util.Base64.Encoder;
+
 @Log4j
 @RequestMapping(value = "/transation")
 @RequiredArgsConstructor
@@ -51,12 +60,11 @@ public class TransationController {
 	@RequestMapping(value = "/usedTransation", method = RequestMethod.GET)
 	public void usedTransation(@RequestParam(defaultValue = "1") int categori, Model model) throws Exception {
 		logger.info("usedTransation 占쏙옙占쏙옙");
-		System.out.println(productservice.productList(categori));
 		model.addAttribute("product", productservice.productList(categori));
 	}
 
-	@RequestMapping(value = "/detailProduct", method = RequestMethod.GET)
-	public void detailProduct(Long productNo, Model model) throws Exception {
+	@GetMapping(value = "/detailProduct")
+	public void detailProduct(@RequestParam("productNo") Long productNo, Model model) throws Exception {
 		logger.info("detailProduct 占쏙옙占쏙옙");
 		System.out.println(productservice.productGetDetail(productNo));
 		System.out.println(productservice.getMemberAndProduct(productNo));
@@ -67,8 +75,6 @@ public class TransationController {
 		model.addAttribute("writerProductInfo", productservice.getMemberAndProduct(productNo));
 		model.addAttribute("productDetail", productservice.productGetDetail(productNo));
 	}
-
-
 
 	@RequestMapping(value = "/chat", method = RequestMethod.POST)
 	public String insertChat(ChatVO cvo, Long productNo, int memberNo) throws Exception {
@@ -84,8 +90,49 @@ public class TransationController {
 
 	}
 
+	/*
+	 * @RequestMapping(value = "/writeProduct", method = RequestMethod.POST) public
+	 * String writeProductPost(ProductVO pvo, RedirectAttributes rttr,
+	 * MultipartFile[] subImage) throws Exception {
+	 * log.info("writeProductPost 占쏙옙占쏙옙"); File file = new File("C:\\TESTPIC");
+	 * if(file.exists()) { if (file.mkdir() == true) {
+	 * System.out.println("디렉토리가 생성되었습니다."); } else {
+	 * System.out.println("디렉토리를 생성하지 못했습니다."); } } else {
+	 * System.out.println("디렉토리가 존재합니다."); }
+	 * 
+	 * byte[] encodeBase64; // for(MultipartFile f: subImage) { //
+	 * System.out.println("upload() POST 호출"); // //파일 이름을 String 값으로 반환한다 //
+	 * System.out.println("파일 이름(uploadfile.getOriginalFilename()) : "+
+	 * f.getOriginalFilename()); // //파일 크기를 반환한다 //
+	 * System.out.println("파일 크기(uploadfile.getSize()) : "+ f.getSize()); //
+	 * System.out.println("gmmddmdma : "+ f.get); // productservice.saveFile(f); //
+	 * }
+	 * 
+	 * // for(int i=0; i< subImage.length; i++) { //
+	 * System.out.println("파일 이름(uploadfile.getOriginalFilename()) : "+
+	 * subImage[i].getOriginalFilename()); //
+	 * System.out.println("파일 크기(uploadfile.getSize()) : "+ subImage[i].getSize());
+	 * // // System.out.println(binaryString); //
+	 * System.out.println("###########################"); // } for(MultipartFile
+	 * multipartFile : subImage) { 파일 이름 String uploadFileName =
+	 * multipartFile.getOriginalFilename(); String binaryString =
+	 * "data:image/png;base64," + new String(multipartFile.getBytes(), "UTF-8"); 파일
+	 * 위치, 파일 이름을 합친 File 객체 File saveFile = new File(binaryString, uploadFileName);
+	 * 
+	 * 파일 저장 try { multipartFile.transferTo(saveFile); } catch (Exception e) {
+	 * e.printStackTrace(); } }
+	 * 
+	 * 
+	 * 
+	 * productservice.writeProductPost(pvo);
+	 * 
+	 * 
+	 * return "redirect:/transation/usedTransation"; }
+	 */
+
 	@RequestMapping(value = "/writeProduct", method = RequestMethod.POST)
-	public String writeProductPost(ProductVO pvo,  RedirectAttributes rttr, MultipartFile[] img) throws Exception {
+
+	public String writeProductPost(ProductVO pvo,  RedirectAttributes rttr, MultipartFile[] img, Model model) throws Exception {
 		List<ProductImageVO> imagelist = new ArrayList<>();
 		log.info(pvo.getProductNo());
 	
@@ -100,8 +147,9 @@ public class TransationController {
 		productservice.register(pvo);
 		
 		rttr.addFlashAttribute("result", pvo.getProductNo());
-		// use RedirectAttributes to transmit with new product id
-			
+		log.info("Product Image List: " + pvo.getProduct_imageList());
+		 model.addAttribute("productImageList", pvo.getProduct_imageList());
+		System.out.println("이미지 경로 : " +productservice.findById(pvo.getProductNo()));
 		return "redirect:/transation/usedTransation";
 	}
 	
@@ -116,7 +164,7 @@ public class TransationController {
 		
 		private void imageFolderSave(MultipartFile mainImage, List<ProductImageVO> imagelist, String imageType) {
 			
-			String uploadFolder = "c:\\upload\\temp";
+			String uploadFolder = "C:\\upload\\temp";
 			
 			// make folder
 			String uploadFolderPath = getFolder();
@@ -146,6 +194,56 @@ public class TransationController {
 		}
 	
 
+
+//	public String writeProductPost(ProductVO pvo, RedirectAttributes rttr, MultipartFile[] subImage) throws Exception {
+//	    log.info("writeProductPost 실행");
+//
+//	    // ProductVO에서 productNo를 가져오는 메서드를 실제 메서드로 바꿔주세요
+//	    Long productNo = pvo.getProductNo(); // 예시로 가져오는 방법, 실제 메서드를 사용하세요
+//
+//	    File file = new File("C:\\upload");
+//	    if (file.exists()) {
+//	        if (file.mkdir()) {
+//	            System.out.println("디렉토리가 생성되었습니다.");
+//	        } else {
+//	            System.out.println("디렉토리를 생성하지 못했습니다.");
+//	        }
+//	    } else {
+//	        System.out.println("디렉토리가 존재합니다.");
+//	    }
+//
+//	    for (MultipartFile multipartFile : subImage) {
+//	        if (!multipartFile.isEmpty()) {
+//	            /* 파일 확장자 추출 */
+//	            String originalFilename = multipartFile.getOriginalFilename();
+//	            String fileExtension = originalFilename.substring(originalFilename.lastIndexOf("."));
+//
+//	            /* 생성된 파일명: productNo + 확장자 */
+//	            String uniqueFileName = productNo + fileExtension;
+//
+//	            /* 파일 위치, 파일 이름을 합친 File 객체 */
+//	            File saveFile = new File("C:\\upload", uniqueFileName);
+//
+//	            /* 파일 저장 */
+//	            try {
+//	                multipartFile.transferTo(saveFile);
+//	                System.out.println("파일 저장 성공: " + saveFile.getAbsolutePath());
+//
+//	                // 이제 데이터베이스에 파일 정보를 저장할 수 있습니다.
+//	                productservice.saveFile(multipartFile, productNo);
+//	            } catch (Exception e) {
+//	                e.printStackTrace();
+//	                System.out.println("파일 저장 실패: " + e.getMessage());
+//	            }
+//	        }
+//	    }
+//
+//	    // 다른 제품 정보를 저장하기 위해 productService 메서드 호출
+//	    productservice.writeProductPost(pvo);
+//
+//	    return "redirect:/transation/usedTransation";
+//	}
+
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
 	public String deleteComment(int chatNo, Long productNo) throws Exception {
 
@@ -153,5 +251,32 @@ public class TransationController {
 
 		productservice.deleteComment(chatNo);
 		return "redirect:/transation/detailProduct?productNo=" + productNo;
+	}
+	@RequestMapping(value = "/deleteProduct", method = RequestMethod.GET)
+	public String deleteProduct(int productNo) throws Exception {
+
+		logger.info("deleteProduct 占쏙옙占쏙옙");
+
+		productservice.deleteProduct(productNo);
+		return "redirect:/transation/usedTransation";
+	}
+	@RequestMapping(value = "/modifyProduct", method = RequestMethod.GET)
+	public String modifyProduct(int productNo) throws Exception {
+
+		logger.info("modifyProduct 占쏙옙占쏙옙");
+
+		productservice.deleteProduct(productNo);
+		return "redirect:/transation/detailProduct?productNo=" + productNo;
+	}
+	
+	
+	/* 이미지 정보 반환 */
+	@GetMapping(value="/getAttachList")
+	public ResponseEntity<List<ProductImageVO>> getAttachList(int bookId){
+		
+		logger.info("getAttachList.........." + bookId);
+		
+		return new ResponseEntity(attachMapper.getAttachList(bookId), HttpStatus.OK);
+		
 	}
 }

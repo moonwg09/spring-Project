@@ -61,19 +61,35 @@ public class TransationMapperTests {
 //		
 //
 //	}
+
 	/*
+
+	
+//	@Test
+//	public void writeProductTest() throws Exception {
+//		ProductVO chat = new ProductVO();
+//		chat.setProductNo(3);
+//		chat.setWriter("qkaxhf102");
+//		chat.setTitle("test");
+//		chat.setCategori(3);
+//		chat.setPrice(150000);
+//		chat.setContent("sdssddsdsd");
+//		chat.setAddress("dsad");
+//		
+//		productmapper.writeProductPost(chat);
+//		
+//	}
+	
+*/
 	@Test
-	public void writeProductTest() throws Exception {
-		ProductVO chat = new ProductVO();
-		chat.setProductNo(3);
-		chat.setWriter("qkaxhf102");
-		chat.setTitle("test");
-		chat.setCategori(3);
-		chat.setPrice(150000);
-		chat.setContent("sdssddsdsd");
-		chat.setAddress("dsad");
+	public void deleteProductTest() throws Exception{
+		productmapper.deleteProduct(7);
 		
-		productmapper.writeProductPost(chat);
-		
-	}*/
-}
+
+	}
+
+
+	}
+	
+
+

@@ -7,4 +7,9 @@
 		select * from localBussiness
 	</select>
 	
+	<insert id="localBussinessInsert">
+		insert into localBussiness (productNo, title, writer, categori, content, address, menu, price,subCategory)
+		values(null,#{title},#{writer},#{categori}, #{content}, #{address},#{menu},#{price},#{subCategory})
+	</insert>
+	
 </mapper>

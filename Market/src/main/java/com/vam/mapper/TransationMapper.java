@@ -28,4 +28,6 @@ public interface TransationMapper {
 	public void deleteComment(int chatNo);
 	
 	public void writeProductPost(ProductVO pvo);
+	
+	public void deleteProduct(int proeuctNo);
 }

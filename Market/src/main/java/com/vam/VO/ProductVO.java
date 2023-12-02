@@ -15,6 +15,30 @@ public class ProductVO {
 	
 	private List<ProductImageVO> product_imageList;
 
+	private MemberVO mvo;
+	private ChatVO cvo;
+	
+	public MemberVO getMvo() {
+		return mvo;
+	}
+
+	public void setMvo(MemberVO mvo) {
+		this.mvo = mvo;
+	}
+
+	public ChatVO getCvo() {
+		return cvo;
+	}
+
+	public void setCvo(ChatVO cvo) {
+		this.cvo = cvo;
+	}
+
+	public ProductVO() {
+		this.product_imageList = new ArrayList<>();
+	}
+
+
 	public String getTitle() {
 		return title;
 	}
@@ -116,7 +140,7 @@ public class ProductVO {
 		return "ProductVO [title=" + title + ", content=" + content + ", address=" + address + ", writer=" + writer
 				+ ", categori=" + categori + ", price=" + price + ", viewcount=" + viewcount + ", chatcount="
 				+ chatcount + ", likecount=" + likecount + ", productNo=" + productNo + ", regDate=" + regDate
-				+ ", product_imageList=" + product_imageList + "]";
+				+ ", product_imageList=" + product_imageList + ", mvo=" + mvo + ", cvo=" + cvo + "]";
 	}
 
 	

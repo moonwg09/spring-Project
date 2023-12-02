@@ -52,7 +52,7 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 	<div id="header">
 		<jsp:include page="../header.jsp"></jsp:include>
 	</div>
-	<form action="writeProduct" method="post"  enctype="multipart/form-data"
+	<form action="writeProduct" method="post" enctype="multipart/form-data"
 		style="width: 100%" multiple>
 		<div class="modal_button_div"
 			style="display: block; margin-top: 100px;">
@@ -65,9 +65,11 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 			<div style="display: flex; margin-right: 1%">
 				<div class="comment_form"
 					onclick="document.querySelector('.input_filed').click()">
-					<input type="file" accept = "image/jpg, image/jpeg, image/png, image/gif" class="input_filed" hidden
-						 multiple onchange="readURL(this);" name='img' id='img'/> <i
-						class="fa-solid fa-cloud-arrow-up"
+
+					<input type="file"
+						accept="image/jpg, image/jpeg, image/png, image/gif"
+						class="input_filed" hidden multiple onchange="readURL(this);"
+						name='img' id='img' /> <i class="fa-solid fa-cloud-arrow-up"
 						style="color: #1475cf; font-size: 35px"></i>
 				</div>
 				<div id="imagePreviewContainer" style="display: flex"></div>

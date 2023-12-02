@@ -94,13 +94,14 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 							<fmt:formatNumber var="formattedPrice" value="${formattedPrice}"
 								type="number" pattern="#,##0" />
 							<span>${formattedPrice}원</span>
-						</div>
-						<c:if test="${member.nickName eq writerProductInfo.mvo.nickName}">
-							<div>
-							<button>삭제하기</button>
-							<button>수정하기</button>
+							<c:if test="${member.nickName eq writerProductInfo.mvo.nickName}">
+							<div class="detailProduct_delete_modify_buttons"> 
+							<a href="/transation/deleteProduct?productNo=${writerProductInfo.productNo}">삭제하기</a>
+							<a href="/transation/modifyProduct?productNo=${writerProductInfo.productNo}">수정하기</a>
 							</div>
 						</c:if>
+						</div>
+						
 						<hr />
 						<div class="detail_info_sub">
 							<div class="detail_font">
@@ -327,7 +328,18 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 
 		var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
 		var geocoder = new kakao.maps.services.Geocoder();
+		
+		map.setDraggable(false);
+		map.setZoomable(false);
 
+		function setZoomable(zoomable) {
+		    // 마우스 휠로 지도 확대,축소 가능여부를 설정합니다
+		    map.setZoomable(zoomable);    
+		}
+		function setDraggable(draggable) {
+		    // 마우스 드래그로 지도 이동 가능여부를 설정합니다
+		    map.setDraggable(draggable);    
+		}
 		// 주소로 좌표를 검색합니다
 		geocoder.addressSearch(productAddress, function(result, status) {
 			// 정상적으로 검색이 완료됐으면
@@ -344,7 +356,10 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 				map.setCenter(coords);
 			}
 		});
-
+		var marker = new kakao.maps.Marker({
+		    zIndex: 0
+		});
+		marker.getZIndex(); // 4
 		var comentCheck = false;
 	</script>
 </body>

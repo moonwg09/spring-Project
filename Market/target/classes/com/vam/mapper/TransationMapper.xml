@@ -88,6 +88,13 @@
 	<insert id="writeProductPost"  useGeneratedKeys="true" keyProperty="productNo" parameterType="com.vam.VO.ProductVO">
 		insert into product (writer, title, categori, price, content ,address, regDate) values(#{writer}, #{title}, #{categori}, #{price}, #{content}, #{address},now())
 	</insert>
+	
+	<delete id="deleteProduct">
+		delete from product where productNo =#{productNo}
+	</delete>
+	<update id="">
+		
+	</update>
 </mapper>
 
   

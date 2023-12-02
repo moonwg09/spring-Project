@@ -5,11 +5,35 @@ public class LocalBussinessVO {
     private String img;
     private String title;
     private String writer;
-    private String categori;
+    private int categori;
     private String content;
     private String address;
     private String menu;
     private String price;
+    private int replyCount, revisitCount,subCategory;
+    
+    
+	public int getReplyCount() {
+		return replyCount;
+	}
+	public void setReplyCount(int replyCount) {
+		this.replyCount = replyCount;
+	}
+	public int getRevisitCount() {
+		return revisitCount;
+	}
+	public void setRevisitCount(int revisitCount) {
+		this.revisitCount = revisitCount;
+	}
+	public int getSubCategory() {
+		return subCategory;
+	}
+	public void setSubCategory(int subCategory) {
+		this.subCategory = subCategory;
+	}
+	public void setCategori(int categori) {
+		this.categori = categori;
+	}
 	public int getProductNo() {
 		return productNo;
 	}
@@ -68,7 +92,8 @@ public class LocalBussinessVO {
 	public String toString() {
 		return "LocalBussinessVO [productNo=" + productNo + ", img=" + img + ", title=" + title + ", writer=" + writer
 				+ ", categori=" + categori + ", content=" + content + ", address=" + address + ", menu=" + menu
-				+ ", price=" + price + "]";
+				+ ", price=" + price + ", replyCount=" + replyCount + ", revisitCount=" + revisitCount
+				+ ", subCategory=" + subCategory + "]";
 	}
     
     

@@ -20,7 +20,7 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
         <div class="logo_div"><img src="/resources/image/logo.jpg" alt="" onclick="window.location.href = '/main'" style="cursor: pointer;"/></div>
         <div class="header_content_div">
           <div class="content_div_font"><span onclick="window.location.href = '/transation/usedTransation'">중고거래</span></div>
-          <div class="content_div_font"><span>동네업체</span></div>
+          <div class="content_div_font"><span onclick="window.location.href ='/localBussiness/localBussinessMain'">동네업체</span></div>
           <div class="content_div_font"><span>알바</span></div>
           <div class="content_div_font"><span>부동산 직거래</span></div>
           <div class="content_div_font"><span onclick="window.location.href = '/notice/list'">이벤트</span></div>
@@ -43,7 +43,7 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
         <div class="logo_div2"><img src="/resources/image/logo.jpg" alt="" onclick="window.location.href = '/main'" style="cursor: pointer;"/></div>
         <div class="header_content_div2">
           <div class="content_div_font2"><span onclick="window.location.href ='/transation/usedTransation'">중고거래</span></div>
-          <div class="content_div_font2"><span>동네업체</span></div>
+          <div class="content_div_font2"><span onclick="window.location.href ='/localBussiness/localBussinessMain'">동네업체</span></div>
           <div class="content_div_font2"><span>알바</span></div>
           <div class="content_div_font2"><span>부동산 직거래</span></div>
           <div class="content_div_font2"><span onclick="window.location.href = '/notice/list'">이벤트</span></div>
@@ -64,13 +64,7 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
             ></i>
             <p style="font-size: 10px">채팅</p>
           </div>
-          <div class="icon_detail_div2" onclick="window.location.href ='/transation/writeProduct'">
-            <i
-              class="fa-solid fa-pen-to-square"
-              style="color: #eea811; font-size: 20px"
-            ></i>
-            <p style="font-size: 10px; text-align: center">판매</p>
-          </div>
+          
           <div class="icon_detail_div2">
             <i class="fa-solid fa-user" style=""></i>
             <p style="font-size: 10px; text-align: center">마이페이지</p>
@@ -86,7 +80,7 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
         <div class="logo_div2"><img src="/resources/image/logo.jpg" alt="" onclick="window.location.href = '/main'" style="cursor: pointer;"/></div>
         <div class="header_content_div2">
           <div class="content_div_font2"><span onclick="window.location.href ='/transation/usedTransation'">중고거래</span></div>
-          <div class="content_div_font2"><span>동네업체</span></div>
+          <div class="content_div_font2"><span onclick="window.location.href ='/localBussiness/localBussinessMain'">동네업체</span></div>
           <div class="content_div_font2"><span>알바</span></div>
           <div class="content_div_font2"><span onclick="window.location.href = '/notice/list'">이벤트</span></div>
           <div class="content_div_font2"><span onclick="window.location.href ='/admin/main'">관리자페이지</span></div>
@@ -108,13 +102,7 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
             ></i>
             <p style="font-size: 10px">채팅</p>
           </div>
-          <div class="icon_detail_div2">
-            <i
-              class="fa-solid fa-pen-to-square"
-              style="color: #eea811; font-size: 20px"
-            ></i>
-            <p style="font-size: 10px; text-align: center">판매</p>
-          </div>
+         
           <div class="icon_detail_div2">
             <i class="fa-solid fa-user" style=""></i>
             <p style="font-size: 10px; text-align: center">마이페이지</p>

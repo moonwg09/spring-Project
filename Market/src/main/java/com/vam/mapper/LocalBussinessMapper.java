@@ -6,4 +6,6 @@ import com.vam.VO.LocalBussinessVO;
 
 public interface LocalBussinessMapper {
 	public List<LocalBussinessVO> localBussinessSelectAll() throws Exception ;
+	
+	public void localBussinessInsert(LocalBussinessVO lbvo) throws Exception;
 }

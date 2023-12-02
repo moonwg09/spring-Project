@@ -197,10 +197,16 @@
 					</div>
 				</div>
 			</div>
+	<div style="display: flex; justify-content: center;">
+	<jsp:include page="../footer.jsp"></jsp:include>
+		
+	</div>
 			<form id="moveForm" method="get"></form>
 		</div>
+		
+
 	</div>
-	<jsp:include page="../footer.jsp"></jsp:include>
+	
 	<script type="text/javascript">
 	let moveForm = $('#moveForm')
 	

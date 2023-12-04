@@ -3,6 +3,7 @@ package com.vam.mapper;
 import java.util.List;
 
 import com.vam.VO.LocalBussinessVO;
+import com.vam.VO.ProductVO;
 
 public interface LocalBussinessMapper {
 	public List<LocalBussinessVO> localBussinessSelectAll() throws Exception ;
@@ -12,4 +13,5 @@ public interface LocalBussinessMapper {
 	public LocalBussinessVO localGetDetail(Long productNo) throws Exception;
 
 	public int increaseRevisitCount(Long productNo) throws Exception;
+	
 }

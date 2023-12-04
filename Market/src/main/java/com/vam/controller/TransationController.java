@@ -59,26 +59,28 @@ public class TransationController {
 
 	@RequestMapping(value = "/usedTransation", method = RequestMethod.GET)
 	public void usedTransation(@RequestParam(defaultValue = "1") int categori, Model model) throws Exception {
-		logger.info("usedTransation ����");
+		logger.info("usedTransation 占쏙옙占쏙옙");
 		model.addAttribute("product", productservice.productList(categori));
 	}
 
 	@GetMapping(value = "/detailProduct")
 	public void detailProduct(@RequestParam("productNo") Long productNo, Model model) throws Exception {
-		logger.info("detailProduct ����");
+		logger.info("detailProduct 占쏙옙占쏙옙");
+		System.out.println(productservice.productGetDetailImage(productNo));
 		System.out.println(productservice.productGetDetail(productNo));
 		System.out.println(productservice.getMemberAndProduct(productNo));
 		productservice.increaseViewCount(productNo);
 		productservice.selectChat(productNo);
-
+		
 		model.addAttribute("commentList", productservice.selectChat(productNo));
 		model.addAttribute("writerProductInfo", productservice.getMemberAndProduct(productNo));
 		model.addAttribute("productDetail", productservice.productGetDetail(productNo));
+		model.addAttribute("productDetailImage", productservice.productGetDetailImage(productNo));
 	}
 
 	@RequestMapping(value = "/chat", method = RequestMethod.POST)
 	public String insertChat(ChatVO cvo, Long productNo, int memberNo) throws Exception {
-		logger.info("insertChat ����");
+		logger.info("insertChat 占쏙옙占쏙옙");
 		productservice.insertChat(cvo);
 		return "redirect:/transation/detailProduct?productNo=" + cvo.getProductNo();
 	}
@@ -86,7 +88,7 @@ public class TransationController {
 	@RequestMapping(value = "/writeProduct", method = RequestMethod.GET)
 	public void writeProduct() throws Exception {
 
-		logger.info("writeProduct ����");
+		logger.info("writeProduct 占쏙옙占쏙옙");
 
 	}
 
@@ -94,32 +96,32 @@ public class TransationController {
 	 * @RequestMapping(value = "/writeProduct", method = RequestMethod.POST) public
 	 * String writeProductPost(ProductVO pvo, RedirectAttributes rttr,
 	 * MultipartFile[] subImage) throws Exception {
-	 * log.info("writeProductPost ����"); File file = new File("C:\\TESTPIC");
+	 * log.info("writeProductPost 占쏙옙占쏙옙"); File file = new File("C:\\TESTPIC");
 	 * if(file.exists()) { if (file.mkdir() == true) {
-	 * System.out.println("���丮�� �����Ǿ����ϴ�."); } else {
-	 * System.out.println("���丮�� �������� ���߽��ϴ�."); } } else {
-	 * System.out.println("���丮�� �����մϴ�."); }
+	 * System.out.println("占쏙옙占썰리占쏙옙 占쏙옙占쏙옙占실억옙占쏙옙占싹댐옙."); } else {
+	 * System.out.println("占쏙옙占썰리占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쌩쏙옙占싹댐옙."); } } else {
+	 * System.out.println("占쏙옙占썰리占쏙옙 占쏙옙占쏙옙占쌌니댐옙."); }
 	 * 
 	 * byte[] encodeBase64; // for(MultipartFile f: subImage) { //
-	 * System.out.println("upload() POST ȣ��"); // //���� �̸��� String ������ ��ȯ�Ѵ� //
-	 * System.out.println("���� �̸�(uploadfile.getOriginalFilename()) : "+
-	 * f.getOriginalFilename()); // //���� ũ�⸦ ��ȯ�Ѵ� //
-	 * System.out.println("���� ũ��(uploadfile.getSize()) : "+ f.getSize()); //
+	 * System.out.println("upload() POST 호占쏙옙"); // //占쏙옙占쏙옙 占싱몌옙占쏙옙 String 占쏙옙占쏙옙占쏙옙 占쏙옙환占싼댐옙 //
+	 * System.out.println("占쏙옙占쏙옙 占싱몌옙(uploadfile.getOriginalFilename()) : "+
+	 * f.getOriginalFilename()); // //占쏙옙占쏙옙 크占썩를 占쏙옙환占싼댐옙 //
+	 * System.out.println("占쏙옙占쏙옙 크占쏙옙(uploadfile.getSize()) : "+ f.getSize()); //
 	 * System.out.println("gmmddmdma : "+ f.get); // productservice.saveFile(f); //
 	 * }
 	 * 
 	 * // for(int i=0; i< subImage.length; i++) { //
-	 * System.out.println("���� �̸�(uploadfile.getOriginalFilename()) : "+
+	 * System.out.println("占쏙옙占쏙옙 占싱몌옙(uploadfile.getOriginalFilename()) : "+
 	 * subImage[i].getOriginalFilename()); //
-	 * System.out.println("���� ũ��(uploadfile.getSize()) : "+ subImage[i].getSize());
+	 * System.out.println("占쏙옙占쏙옙 크占쏙옙(uploadfile.getSize()) : "+ subImage[i].getSize());
 	 * // // System.out.println(binaryString); //
 	 * System.out.println("###########################"); // } for(MultipartFile
-	 * multipartFile : subImage) { ���� �̸� String uploadFileName =
+	 * multipartFile : subImage) { 占쏙옙占쏙옙 占싱몌옙 String uploadFileName =
 	 * multipartFile.getOriginalFilename(); String binaryString =
-	 * "data:image/png;base64," + new String(multipartFile.getBytes(), "UTF-8"); ����
-	 * ��ġ, ���� �̸��� ��ģ File ��ü File saveFile = new File(binaryString, uploadFileName);
+	 * "data:image/png;base64," + new String(multipartFile.getBytes(), "UTF-8"); 占쏙옙占쏙옙
+	 * 占쏙옙치, 占쏙옙占쏙옙 占싱몌옙占쏙옙 占쏙옙친 File 占쏙옙체 File saveFile = new File(binaryString, uploadFileName);
 	 * 
-	 * ���� ���� try { multipartFile.transferTo(saveFile); } catch (Exception e) {
+	 * 占쏙옙占쏙옙 占쏙옙占쏙옙 try { multipartFile.transferTo(saveFile); } catch (Exception e) {
 	 * e.printStackTrace(); } }
 	 * 
 	 * 
@@ -149,7 +151,7 @@ public class TransationController {
 		rttr.addFlashAttribute("result", pvo.getProductNo());
 		log.info("Product Image List: " + pvo.getProduct_imageList());
 		 model.addAttribute("productImageList", pvo.getProduct_imageList());
-		System.out.println("�̹��� ��� : " +productservice.findById(pvo.getProductNo()));
+		System.out.println("占싱뱄옙占쏙옙 占쏙옙占� : " +productservice.findById(pvo.getProductNo()));
 		return "redirect:/transation/usedTransation";
 	}
 	
@@ -196,49 +198,49 @@ public class TransationController {
 
 
 //	public String writeProductPost(ProductVO pvo, RedirectAttributes rttr, MultipartFile[] subImage) throws Exception {
-//	    log.info("writeProductPost ����");
+//	    log.info("writeProductPost 占쏙옙占쏙옙");
 //
-//	    // ProductVO���� productNo�� �������� �޼��带 ���� �޼���� �ٲ��ּ���
-//	    Long productNo = pvo.getProductNo(); // ���÷� �������� ���, ���� �޼��带 ����ϼ���
+//	    // ProductVO占쏙옙占쏙옙 productNo占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쌨쇽옙占썲를 占쏙옙占쏙옙 占쌨쇽옙占쏙옙占� 占쌕뀐옙占쌍쇽옙占쏙옙
+//	    Long productNo = pvo.getProductNo(); // 占쏙옙占시뤄옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占�, 占쏙옙占쏙옙 占쌨쇽옙占썲를 占쏙옙占쏙옙究占쏙옙占�
 //
 //	    File file = new File("C:\\upload");
 //	    if (file.exists()) {
 //	        if (file.mkdir()) {
-//	            System.out.println("���丮�� �����Ǿ����ϴ�.");
+//	            System.out.println("占쏙옙占썰리占쏙옙 占쏙옙占쏙옙占실억옙占쏙옙占싹댐옙.");
 //	        } else {
-//	            System.out.println("���丮�� �������� ���߽��ϴ�.");
+//	            System.out.println("占쏙옙占썰리占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쌩쏙옙占싹댐옙.");
 //	        }
 //	    } else {
-//	        System.out.println("���丮�� �����մϴ�.");
+//	        System.out.println("占쏙옙占썰리占쏙옙 占쏙옙占쏙옙占쌌니댐옙.");
 //	    }
 //
 //	    for (MultipartFile multipartFile : subImage) {
 //	        if (!multipartFile.isEmpty()) {
-//	            /* ���� Ȯ���� ���� */
+//	            /* 占쏙옙占쏙옙 확占쏙옙占쏙옙 占쏙옙占쏙옙 */
 //	            String originalFilename = multipartFile.getOriginalFilename();
 //	            String fileExtension = originalFilename.substring(originalFilename.lastIndexOf("."));
 //
-//	            /* ������ ���ϸ�: productNo + Ȯ���� */
+//	            /* 占쏙옙占쏙옙占쏙옙 占쏙옙占싹몌옙: productNo + 확占쏙옙占쏙옙 */
 //	            String uniqueFileName = productNo + fileExtension;
 //
-//	            /* ���� ��ġ, ���� �̸��� ��ģ File ��ü */
+//	            /* 占쏙옙占쏙옙 占쏙옙치, 占쏙옙占쏙옙 占싱몌옙占쏙옙 占쏙옙친 File 占쏙옙체 */
 //	            File saveFile = new File("C:\\upload", uniqueFileName);
 //
-//	            /* ���� ���� */
+//	            /* 占쏙옙占쏙옙 占쏙옙占쏙옙 */
 //	            try {
 //	                multipartFile.transferTo(saveFile);
-//	                System.out.println("���� ���� ����: " + saveFile.getAbsolutePath());
+//	                System.out.println("占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙: " + saveFile.getAbsolutePath());
 //
-//	                // ���� �����ͺ��̽��� ���� ������ ������ �� �ֽ��ϴ�.
+//	                // 占쏙옙占쏙옙 占쏙옙占쏙옙占싶븝옙占싱쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙 占쌍쏙옙占싹댐옙.
 //	                productservice.saveFile(multipartFile, productNo);
 //	            } catch (Exception e) {
 //	                e.printStackTrace();
-//	                System.out.println("���� ���� ����: " + e.getMessage());
+//	                System.out.println("占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙: " + e.getMessage());
 //	            }
 //	        }
 //	    }
 //
-//	    // �ٸ� ��ǰ ������ �����ϱ� ���� productService �޼��� ȣ��
+//	    // 占쌕몌옙 占쏙옙품 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占싹깍옙 占쏙옙占쏙옙 productService 占쌨쇽옙占쏙옙 호占쏙옙
 //	    productservice.writeProductPost(pvo);
 //
 //	    return "redirect:/transation/usedTransation";
@@ -247,7 +249,7 @@ public class TransationController {
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
 	public String deleteComment(int chatNo, Long productNo) throws Exception {
 
-		logger.info("deleteComment ����");
+		logger.info("deleteComment 占쏙옙占쏙옙");
 
 		productservice.deleteComment(chatNo);
 		return "redirect:/transation/detailProduct?productNo=" + productNo;
@@ -255,7 +257,7 @@ public class TransationController {
 	@RequestMapping(value = "/deleteProduct", method = RequestMethod.GET)
 	public String deleteProduct(int productNo) throws Exception {
 
-		logger.info("deleteProduct ����");
+		logger.info("deleteProduct 占쏙옙占쏙옙");
 
 		productservice.deleteProduct(productNo);
 		return "redirect:/transation/usedTransation";
@@ -263,7 +265,7 @@ public class TransationController {
 	@RequestMapping(value = "/modifyProduct", method = RequestMethod.GET)
 	public String modifyProduct(int productNo) throws Exception {
 
-		logger.info("modifyProduct ����");
+		logger.info("modifyProduct 占쏙옙占쏙옙");
 
 		productservice.deleteProduct(productNo);
 		return "redirect:/transation/detailProduct?productNo=" + productNo;

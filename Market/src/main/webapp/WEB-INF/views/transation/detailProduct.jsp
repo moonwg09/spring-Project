@@ -46,51 +46,49 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 	<form action="" method="" style="width: 90%">
 		<div class="detail_container">
 			<div class="detail_div">
-				<c:forEach items="${productDetail.product_imageList}" var="image"
-					varStatus="varstatus">
-					<div id="carouselExampleIndicators${varstatus.index}"
-						class="carousel slide" data-bs-ride="carousel" style="width: 50%"
-						data-interval="false">
-						<div class="carousel-indicators">
-							<c:forEach begin="0"
-								end="${fn:length(productDetail.product_imageList) - 1}" var="i">
-								<button type="button"
-									data-bs-target="#carouselExampleIndicators${varstatus.index}"
-									data-bs-slide-to="${i}" class="${i == 0 ? 'active' : ''}"
-									aria-current="${i == 0 ? 'true' : 'false'}"
-									aria-label="Slide ${i + 1}"></button>
-							</c:forEach>
-						</div>
-						<div class="carousel-inner">
-							<c:forEach items="${productDetail.product_imageList}" var="image"
-								varStatus="innerVarStatus">
-								<div
-									class="carousel-item ${innerVarStatus.index == 0 ? 'active' : ''}">
-									<img src="" class="d-block w-100"
-										id="main-img${varstatus.index}_${innerVarStatus.index}"
-										alt="..." style="width: 500px; height: 587px" />
-									<script>
-                        var imageName${varstatus.index}_${innerVarStatus.index} = encodeURIComponent('${image.image_uploadPath}' + '/' + '${image.image_uuid}' + '_' + '${image.image_name}');
-                        var realSrc${varstatus.index}_${innerVarStatus.index} = '/display?fileName=' + imageName${varstatus.index}_${innerVarStatus.index};
-                        document.getElementById("main-img${varstatus.index}_${innerVarStatus.index}").src = realSrc${varstatus.index}_${innerVarStatus.index};
-                    </script>
-								</div>
-							</c:forEach>
-						</div>
-						<button class="carousel-control-prev" type="button"
-							data-bs-target="#carouselExampleIndicators${varstatus.index}"
-							data-bs-slide="prev">
-							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-							<span class="visually-hidden">Previous</span>
-						</button>
-						<button class="carousel-control-next" type="button"
-							data-bs-target="#carouselExampleIndicators${varstatus.index}"
-							data-bs-slide="next">
-							<span class="carousel-control-next-icon" aria-hidden="true"></span>
-							<span class="visually-hidden">Next</span>
-						</button>
+
+				<div id="carouselExampleIndicators" class="carousel slide"
+					data-bs-ride="carousel" style="width: 50%" data-interval="false">
+					<div class="carousel-indicators">
+						<c:forEach items="${productDetailImage}" var="productDetailImage"
+							varStatus="varStatus">
+							<button type="button" data-bs-target="#carouselExampleIndicators"
+								data-bs-slide-to="${varStatus.index}"
+								class="${varStatus.index == 0 ? 'active' : ''}"
+								aria-current="${varStatus.index == 0 ? 'true' : 'false'}"
+								aria-label="Slide ${varStatus.index + 1}"></button>
+						</c:forEach>
 					</div>
-				</c:forEach>
+					<div class="carousel-inner">
+						<c:forEach items="${productDetailImage}" var="productDetailImage"
+							varStatus="varStatus">
+							<div
+								class="carousel-item ${varStatus.index == 0 ? 'active' : ''}">
+								<img src="" class="d-block w-100"
+									alt="Image ${varStatus.index + 1}"
+									style="width: 500px; height: 587px"
+									id="main-img${varStatus.index}" />
+								<script>
+                    var imageName${varStatus.index} = encodeURIComponent('${productDetailImage.product_imageList[0].image_uploadPath}' + '/' + '${productDetailImage.product_imageList[0].image_uuid}' + '_' + '${productDetailImage.product_imageList[0].image_name}');
+                    var realSrc${varStatus.index} = '/display?fileName=' + imageName${varStatus.index};
+                    document.getElementById("main-img${varStatus.index}").src = realSrc${varStatus.index};
+                </script>
+							</div>
+						</c:forEach>
+					</div>
+					<button class="carousel-control-prev" type="button"
+						data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button"
+						data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</div>
+
+
 				<div class="detail_infO_contaitner">
 					<div class="detail_info_div">
 						<div class="detail_info_categori">

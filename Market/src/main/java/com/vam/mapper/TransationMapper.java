@@ -14,6 +14,7 @@ public interface TransationMapper {
 	// 占쌉시깍옙 占쏢세븝옙占쏙옙
 	public ProductVO productGetDetail(Long productNo);
 	
+	public List<ProductVO> productGetDetailImage(Long productNo);
 	// 占쌉시깍옙 占쌜쇽옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙 占쌀뤄옙占쏙옙占쏙옙
 	public ProductVO getMemberAndProduct(Long productNo);
 	

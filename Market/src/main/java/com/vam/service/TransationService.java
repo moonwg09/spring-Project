@@ -17,7 +17,8 @@ public interface TransationService {
 	public List<ProductVO> productList(int categori) throws Exception;
 	
 	public ProductVO productGetDetail(Long productNo) throws Exception;
-
+	public List<ProductVO> productGetDetailImage(Long productNo);
+	
 	public ProductVO getMemberAndProduct(Long productNo) throws Exception;
 	
 	public int increaseViewCount(Long productNo)throws Exception;

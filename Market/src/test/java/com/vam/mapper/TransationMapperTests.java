@@ -23,10 +23,10 @@ public class TransationMapperTests {
 //		  System.out.println(productmapper.productList(1));
 //	}
 
-//	@Test
-//	public void productGetDetailTest() throws Exception{
-//		System.out.println(productmapper.productGetDetail(1));
-//	}
+	@Test
+	public void productGetDetailTest() throws Exception{
+		System.out.println(productmapper.productGetDetailImage(42L));
+	}
 
 //	@Test
 //	public void getMemberAndProductTest() throws Exception{
@@ -81,12 +81,12 @@ public class TransationMapperTests {
 //	}
 	
 */
-	@Test
-	public void deleteProductTest() throws Exception{
-		productmapper.deleteProduct(7);
-		
-
-	}
+//	@Test
+//	public void deleteProductTest() throws Exception{
+//		productmapper.deleteProduct(7);
+//		
+//
+//	}
 
 
 	}

@@ -31,9 +31,7 @@
 		<result property="address" column="address" />
 		<result property="regDate" column="regDate" />
 		<result property="likecount" column="likecount" />
-		<association property="product_imageList"
-			resultMap="imageMap">
-		</association>
+		 <collection property="product_imageList" ofType="com.vam.VO.ProductImageVO" resultMap="imageMap"/>
 		<collection property="mvo" resultMap="memberResultMap" />
 
 	</resultMap>
@@ -56,12 +54,21 @@
 
 	<select id="productGetDetail" parameterType="java.lang.Long"
 		resultMap="productResultMap">
-		select * from product join product_image on product.productNo = product_image.productNo
-		where product.productNo = #{product.productNo, jdbcType=BIGINT}
-	</select>	
+		SELECT *
+		FROM product
+		WHERE productNo = #{productNo ,jdbcType=BIGINT};
+	</select>
+	<select id="productGetDetailImage" parameterType="java.lang.Long"
+		resultMap="productResultMap">
+		SELECT product_image.image_uuid, product_image.image_uploadPath,product_image.image_name
+		FROM product
+		LEFT JOIN product_image ON product.productNo = product_image.productNo
+		WHERE product_image.productNo = #{productNo ,jdbcType=BIGINT};
+	</select>
 
 	<select id="productList" resultMap="productResultMap">
-		select * from product join product_image on product.productNo = product_image.productNo where 
+		select * from product join
+		product_image on product.productNo = product_image.productNo where
 		categori= #{categori}
 	</select>
 	<select id="getMemberAndProduct" resultMap="productResultMap">
@@ -75,19 +82,25 @@
 		UPDATE product
 		SET
 		viewcount = viewcount + 1
-		WHERE productNo =  #{productNo, jdbcType=BIGINT}
+		WHERE productNo = #{productNo,
+		jdbcType=BIGINT}
 	</update>
 
 	<insert id="insertChat">
 		insert into chat (chatNo, productNo,
-		content, memberNo) values (null, #{productNo}, #{content},#{memberNo})
+		content,
+		memberNo) values (null, #{productNo}, #{content},#{memberNo})
 	</insert>
 	<select id="selectChat" resultMap="chatResultMap">
-		SELECT chat.chatNo, chat.productNo, chat.content , chat.memberNo,
-		member.nickName, member.addr2
-		FROM chat JOIN product ON chat.productNo = product.productNo JOIN member
+		SELECT chat.chatNo,
+		chat.productNo, chat.content , chat.memberNo,
+		member.nickName,
+		member.addr2
+		FROM chat JOIN product ON chat.productNo =
+		product.productNo JOIN member
 		ON chat.memberNo = member.memberNo
-		WHERE chat.productNo =#{productNo} order by chatNo desc;
+		WHERE
+		chat.productNo =#{productNo} order by chatNo desc;
 	</select>
 
 	<delete id="deleteComment">

@@ -47,6 +47,12 @@ public class TransationServiceImpl implements TransationService {
 	}
 
 	@Override
+	public List<ProductVO> productGetDetailImage(Long productNo) {
+		// TODO Auto-generated method stub
+		return productmapper.productGetDetailImage(productNo);
+	}
+
+	@Override
 	public ProductVO getMemberAndProduct(Long productNo) {
 		// TODO Auto-generated method stub
 		return productmapper.getMemberAndProduct(productNo);
@@ -64,7 +70,7 @@ public class TransationServiceImpl implements TransationService {
 	}
 
 	public List<ChatVO> selectChat(Long productNo) throws Exception {
-	
+
 		return productmapper.selectChat(productNo);
 
 	}
@@ -80,23 +86,24 @@ public class TransationServiceImpl implements TransationService {
 		productmapper.writeProductPost(pvo);
 
 	}
+
 	@Override
 	public void register(ProductVO pvo) throws Exception {
-			System.out.println(pvo.getProduct_imageList() +"*****************8");
+		System.out.println(pvo.getProduct_imageList() + "*****************8");
 		productmapper.writeProductPost(pvo);
-			// register on product_image
-			if(pvo.getProduct_imageList() != null || pvo.getProduct_imageList().size() > 0) {
-				pvo.getProduct_imageList().forEach(image->{
-					image.setProductNo(pvo.getProductNo());
-					
-					imagemapper.insert(image);
-				
-					log.info("register imageList "+image);
-					System.out.println("register imageList  ##################" +image);
-				});
-			}else {
-				System.out.println("노이미지 저장##################");
-			}
+		// register on product_image
+		if (pvo.getProduct_imageList() != null || pvo.getProduct_imageList().size() > 0) {
+			pvo.getProduct_imageList().forEach(image -> {
+				image.setProductNo(pvo.getProductNo());
+
+				imagemapper.insert(image);
+
+				log.info("register imageList " + image);
+				System.out.println("register imageList  ##################" + image);
+			});
+		} else {
+			System.out.println("노이미지 저장##################");
+		}
 	}
 
 	@Override
@@ -104,15 +111,16 @@ public class TransationServiceImpl implements TransationService {
 		// TODO Auto-generated method stub
 		return imagemapper.findById(productNo);
 	}
-	
+
 	@Override
 	public List<ProductImageVO> getImageList(Long productNo) throws Exception {
 		return imagemapper.findById(productNo);
 	}
-@Override
-public void deleteProduct(int proeuctNo) throws Exception {
-	productmapper.deleteProduct(proeuctNo);
-	
-}
-	
+
+	@Override
+	public void deleteProduct(int proeuctNo) throws Exception {
+		productmapper.deleteProduct(proeuctNo);
+
+	}
+
 }

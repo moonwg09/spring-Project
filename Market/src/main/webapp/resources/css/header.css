@@ -185,9 +185,12 @@
   display: flex;
   width: 200px;
   justify-content: space-between;
+  position:relative;
 }
 .icon_detail_div2 {
-  width: 50px;
+  width: 100%;
+  display:flex;
+  justify-content:center;
   text-align: center;
   font-weight: 700;
   cursor: pointer;

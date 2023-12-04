@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
 PUBLIC "=//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.vam.mapper.LocalBussinessMapper">
+<mapper namespace="com.vam.mapper.LocalBussinessImageMapper">
 	
 	<insert id="insert">
 		INSERT INTO local_image (image_uuid, image_uploadPath, image_name, image_type, productNo)

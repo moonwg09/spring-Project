@@ -59,14 +59,15 @@
 		select * from localBussiness
 	</select>
 	
-	<insert id="localBussinessInsert">
+	<insert id="localBussinessInsert" useGeneratedKeys="true"
+		keyProperty="productNo" parameterType="com.vam.VO.LocalBussinessVO">
 		insert into localBussiness (productNo, title, writer, categori, content, address, menu, price,subCategory)
 		values(null,#{title},#{writer},#{categori}, #{content}, #{address},#{menu},#{price},#{subCategory})
 	</insert>
 	<select id="localGetDetail" parameterType="java.lang.Long"
-		resultType="com.vam.VO.LocalBussinessVO">
-		select * from localBussiness
-		where productNo = #{productNo, jdbcType=BIGINT}
+		resultMap="localResultMap">
+		select * from product join local_image on localbussiness.productNo = local_image.productNo
+		where localbussiness.productNo = #{localbussiness.productNo, jdbcType=BIGINT}
 	</select>
 	<update id="increaseRevisitCount" parameterType="java.lang.Long">
 	UPDATE localBussiness
@@ -74,5 +75,7 @@
 		revisitCount = revisitCount + 1
 		WHERE productNo =  #{productNo, jdbcType=BIGINT}	
 	</update>
+	
+	
 	
 </mapper>

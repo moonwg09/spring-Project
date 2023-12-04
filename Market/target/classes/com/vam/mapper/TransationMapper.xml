@@ -55,13 +55,13 @@
 	</resultMap>
 
 	<select id="productGetDetail" parameterType="java.lang.Long"
-		resultType="com.vam.VO.ProductVO">
-		select * from product
-		where productNo = #{productNo, jdbcType=BIGINT}
-	</select>
+		resultMap="productResultMap">
+		select * from product join product_image on product.productNo = product_image.productNo
+		where product.productNo = #{product.productNo, jdbcType=BIGINT}
+	</select>	
 
-	<select id="productList" resultType="com.vam.VO.ProductVO">
-		select * from product where
+	<select id="productList" resultMap="productResultMap">
+		select * from product join product_image on product.productNo = product_image.productNo where 
 		categori= #{categori}
 	</select>
 	<select id="getMemberAndProduct" resultMap="productResultMap">

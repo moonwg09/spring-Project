@@ -96,30 +96,30 @@ public class TransationController {
 	 * MultipartFile[] subImage) throws Exception {
 	 * log.info("writeProductPost ï¿½ï¿½ï¿½ï¿½"); File file = new File("C:\\TESTPIC");
 	 * if(file.exists()) { if (file.mkdir() == true) {
-	 * System.out.println("µð·ºÅä¸®°¡ »ý¼ºµÇ¾ú½À´Ï´Ù."); } else {
-	 * System.out.println("µð·ºÅä¸®¸¦ »ý¼ºÇÏÁö ¸øÇß½À´Ï´Ù."); } } else {
-	 * System.out.println("µð·ºÅä¸®°¡ Á¸ÀçÇÕ´Ï´Ù."); }
+	 * System.out.println("ï¿½ï¿½ï¿½ä¸®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½."); } else {
+	 * System.out.println("ï¿½ï¿½ï¿½ä¸®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½."); } } else {
+	 * System.out.println("ï¿½ï¿½ï¿½ä¸®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½."); }
 	 * 
 	 * byte[] encodeBase64; // for(MultipartFile f: subImage) { //
-	 * System.out.println("upload() POST È£Ãâ"); // //ÆÄÀÏ ÀÌ¸§À» String °ªÀ¸·Î ¹ÝÈ¯ÇÑ´Ù //
-	 * System.out.println("ÆÄÀÏ ÀÌ¸§(uploadfile.getOriginalFilename()) : "+
-	 * f.getOriginalFilename()); // //ÆÄÀÏ Å©±â¸¦ ¹ÝÈ¯ÇÑ´Ù //
-	 * System.out.println("ÆÄÀÏ Å©±â(uploadfile.getSize()) : "+ f.getSize()); //
+	 * System.out.println("upload() POST È£ï¿½ï¿½"); // //ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ String ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ñ´ï¿½ //
+	 * System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½(uploadfile.getOriginalFilename()) : "+
+	 * f.getOriginalFilename()); // //ï¿½ï¿½ï¿½ï¿½ Å©ï¿½â¸¦ ï¿½ï¿½È¯ï¿½Ñ´ï¿½ //
+	 * System.out.println("ï¿½ï¿½ï¿½ï¿½ Å©ï¿½ï¿½(uploadfile.getSize()) : "+ f.getSize()); //
 	 * System.out.println("gmmddmdma : "+ f.get); // productservice.saveFile(f); //
 	 * }
 	 * 
 	 * // for(int i=0; i< subImage.length; i++) { //
-	 * System.out.println("ÆÄÀÏ ÀÌ¸§(uploadfile.getOriginalFilename()) : "+
+	 * System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½(uploadfile.getOriginalFilename()) : "+
 	 * subImage[i].getOriginalFilename()); //
-	 * System.out.println("ÆÄÀÏ Å©±â(uploadfile.getSize()) : "+ subImage[i].getSize());
+	 * System.out.println("ï¿½ï¿½ï¿½ï¿½ Å©ï¿½ï¿½(uploadfile.getSize()) : "+ subImage[i].getSize());
 	 * // // System.out.println(binaryString); //
 	 * System.out.println("###########################"); // } for(MultipartFile
-	 * multipartFile : subImage) { ÆÄÀÏ ÀÌ¸§ String uploadFileName =
+	 * multipartFile : subImage) { ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ String uploadFileName =
 	 * multipartFile.getOriginalFilename(); String binaryString =
-	 * "data:image/png;base64," + new String(multipartFile.getBytes(), "UTF-8"); ÆÄÀÏ
-	 * À§Ä¡, ÆÄÀÏ ÀÌ¸§À» ÇÕÄ£ File °´Ã¼ File saveFile = new File(binaryString, uploadFileName);
+	 * "data:image/png;base64," + new String(multipartFile.getBytes(), "UTF-8"); ï¿½ï¿½ï¿½ï¿½
+	 * ï¿½ï¿½Ä¡, ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½Ä£ File ï¿½ï¿½Ã¼ File saveFile = new File(binaryString, uploadFileName);
 	 * 
-	 * ÆÄÀÏ ÀúÀå try { multipartFile.transferTo(saveFile); } catch (Exception e) {
+	 * ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ try { multipartFile.transferTo(saveFile); } catch (Exception e) {
 	 * e.printStackTrace(); } }
 	 * 
 	 * 
@@ -149,7 +149,7 @@ public class TransationController {
 		rttr.addFlashAttribute("result", pvo.getProductNo());
 		log.info("Product Image List: " + pvo.getProduct_imageList());
 		 model.addAttribute("productImageList", pvo.getProduct_imageList());
-		System.out.println("ÀÌ¹ÌÁö °æ·Î : " +productservice.findById(pvo.getProductNo()));
+		System.out.println("ï¿½Ì¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ : " +productservice.findById(pvo.getProductNo()));
 		return "redirect:/transation/usedTransation";
 	}
 	
@@ -196,49 +196,49 @@ public class TransationController {
 
 
 //	public String writeProductPost(ProductVO pvo, RedirectAttributes rttr, MultipartFile[] subImage) throws Exception {
-//	    log.info("writeProductPost ½ÇÇà");
+//	    log.info("writeProductPost ï¿½ï¿½ï¿½ï¿½");
 //
-//	    // ProductVO¿¡¼­ productNo¸¦ °¡Á®¿À´Â ¸Þ¼­µå¸¦ ½ÇÁ¦ ¸Þ¼­µå·Î ¹Ù²ãÁÖ¼¼¿ä
-//	    Long productNo = pvo.getProductNo(); // ¿¹½Ã·Î °¡Á®¿À´Â ¹æ¹ý, ½ÇÁ¦ ¸Þ¼­µå¸¦ »ç¿ëÇÏ¼¼¿ä
+//	    // ProductVOï¿½ï¿½ï¿½ï¿½ productNoï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½å¸¦ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½
+//	    Long productNo = pvo.getProductNo(); // ï¿½ï¿½ï¿½Ã·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½å¸¦ ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½
 //
 //	    File file = new File("C:\\upload");
 //	    if (file.exists()) {
 //	        if (file.mkdir()) {
-//	            System.out.println("µð·ºÅä¸®°¡ »ý¼ºµÇ¾ú½À´Ï´Ù.");
+//	            System.out.println("ï¿½ï¿½ï¿½ä¸®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 //	        } else {
-//	            System.out.println("µð·ºÅä¸®¸¦ »ý¼ºÇÏÁö ¸øÇß½À´Ï´Ù.");
+//	            System.out.println("ï¿½ï¿½ï¿½ä¸®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
 //	        }
 //	    } else {
-//	        System.out.println("µð·ºÅä¸®°¡ Á¸ÀçÇÕ´Ï´Ù.");
+//	        System.out.println("ï¿½ï¿½ï¿½ä¸®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 //	    }
 //
 //	    for (MultipartFile multipartFile : subImage) {
 //	        if (!multipartFile.isEmpty()) {
-//	            /* ÆÄÀÏ È®ÀåÀÚ ÃßÃâ */
+//	            /* ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ */
 //	            String originalFilename = multipartFile.getOriginalFilename();
 //	            String fileExtension = originalFilename.substring(originalFilename.lastIndexOf("."));
 //
-//	            /* »ý¼ºµÈ ÆÄÀÏ¸í: productNo + È®ÀåÀÚ */
+//	            /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï¸ï¿½: productNo + È®ï¿½ï¿½ï¿½ï¿½ */
 //	            String uniqueFileName = productNo + fileExtension;
 //
-//	            /* ÆÄÀÏ À§Ä¡, ÆÄÀÏ ÀÌ¸§À» ÇÕÄ£ File °´Ã¼ */
+//	            /* ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡, ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½Ä£ File ï¿½ï¿½Ã¼ */
 //	            File saveFile = new File("C:\\upload", uniqueFileName);
 //
-//	            /* ÆÄÀÏ ÀúÀå */
+//	            /* ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ */
 //	            try {
 //	                multipartFile.transferTo(saveFile);
-//	                System.out.println("ÆÄÀÏ ÀúÀå ¼º°ø: " + saveFile.getAbsolutePath());
+//	                System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½: " + saveFile.getAbsolutePath());
 //
-//	                // ÀÌÁ¦ µ¥ÀÌÅÍº£ÀÌ½º¿¡ ÆÄÀÏ Á¤º¸¸¦ ÀúÀåÇÒ ¼ö ÀÖ½À´Ï´Ù.
+//	                // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½.
 //	                productservice.saveFile(multipartFile, productNo);
 //	            } catch (Exception e) {
 //	                e.printStackTrace();
-//	                System.out.println("ÆÄÀÏ ÀúÀå ½ÇÆÐ: " + e.getMessage());
+//	                System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½: " + e.getMessage());
 //	            }
 //	        }
 //	    }
 //
-//	    // ´Ù¸¥ Á¦Ç° Á¤º¸¸¦ ÀúÀåÇÏ±â À§ÇØ productService ¸Þ¼­µå È£Ãâ
+//	    // ï¿½Ù¸ï¿½ ï¿½ï¿½Ç° ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ productService ï¿½Þ¼ï¿½ï¿½ï¿½ È£ï¿½ï¿½
 //	    productservice.writeProductPost(pvo);
 //
 //	    return "redirect:/transation/usedTransation";
@@ -270,13 +270,4 @@ public class TransationController {
 	}
 	
 	
-	/* ÀÌ¹ÌÁö Á¤º¸ ¹ÝÈ¯ */
-	@GetMapping(value="/getAttachList")
-	public ResponseEntity<List<ProductImageVO>> getAttachList(int bookId){
-		
-		logger.info("getAttachList.........." + bookId);
-		
-		return new ResponseEntity(attachMapper.getAttachList(bookId), HttpStatus.OK);
-		
-	}
 }

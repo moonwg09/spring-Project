@@ -1,7 +1,9 @@
+
 <%@page import="com.vam.VO.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%
 HttpSession sessi = request.getSession();
@@ -44,37 +46,51 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 	<form action="" method="" style="width: 90%">
 		<div class="detail_container">
 			<div class="detail_div">
-				<div id="carouselExampleIndicators" class="carousel slide"
-					data-bs-ride="carousel" style="width: 50%" data-interval="false">
-					<div class="carousel-indicators">
-						<button type="button" data-bs-target="#carouselExampleIndicators"
-							data-bs-slide-to="0" class="active" aria-current="true"
-							aria-label="Slide 1"></button>
-						<button type="button" data-bs-target="#carouselExampleIndicators"
-							data-bs-slide-to="1" aria-label="Slide 2"></button>
-					</div>
-					<div class="carousel-inner">
-						<div class="carousel-item active">
-							<img src="../resources/image/eximg.webp" class="d-block w-100"
-								alt="..." style="width: 500px; height: 587px" />
+				<c:forEach items="${productDetail.product_imageList}" var="image"
+					varStatus="varstatus">
+					<div id="carouselExampleIndicators${varstatus.index}"
+						class="carousel slide" data-bs-ride="carousel" style="width: 50%"
+						data-interval="false">
+						<div class="carousel-indicators">
+							<c:forEach begin="0"
+								end="${fn:length(productDetail.product_imageList) - 1}" var="i">
+								<button type="button"
+									data-bs-target="#carouselExampleIndicators${varstatus.index}"
+									data-bs-slide-to="${i}" class="${i == 0 ? 'active' : ''}"
+									aria-current="${i == 0 ? 'true' : 'false'}"
+									aria-label="Slide ${i + 1}"></button>
+							</c:forEach>
 						</div>
-						<div class="carousel-item">
-							<img src="../resources/image/transationimg.webp"
-								class="d-block w-100" style="width: 500px; height: 587px"
-								alt="..." />
+						<div class="carousel-inner">
+							<c:forEach items="${productDetail.product_imageList}" var="image"
+								varStatus="innerVarStatus">
+								<div
+									class="carousel-item ${innerVarStatus.index == 0 ? 'active' : ''}">
+									<img src="" class="d-block w-100"
+										id="main-img${varstatus.index}_${innerVarStatus.index}"
+										alt="..." style="width: 500px; height: 587px" />
+									<script>
+                        var imageName${varstatus.index}_${innerVarStatus.index} = encodeURIComponent('${image.image_uploadPath}' + '/' + '${image.image_uuid}' + '_' + '${image.image_name}');
+                        var realSrc${varstatus.index}_${innerVarStatus.index} = '/display?fileName=' + imageName${varstatus.index}_${innerVarStatus.index};
+                        document.getElementById("main-img${varstatus.index}_${innerVarStatus.index}").src = realSrc${varstatus.index}_${innerVarStatus.index};
+                    </script>
+								</div>
+							</c:forEach>
 						</div>
+						<button class="carousel-control-prev" type="button"
+							data-bs-target="#carouselExampleIndicators${varstatus.index}"
+							data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						</button>
+						<button class="carousel-control-next" type="button"
+							data-bs-target="#carouselExampleIndicators${varstatus.index}"
+							data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Next</span>
+						</button>
 					</div>
-					<button class="carousel-control-prev" type="button"
-						data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">Previous</span>
-					</button>
-					<button class="carousel-control-next" type="button"
-						data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">Next</span>
-					</button>
-				</div>
+				</c:forEach>
 				<div class="detail_infO_contaitner">
 					<div class="detail_info_div">
 						<div class="detail_info_categori">
@@ -95,13 +111,15 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 								type="number" pattern="#,##0" />
 							<span>${formattedPrice}원</span>
 							<c:if test="${member.nickName eq writerProductInfo.mvo.nickName}">
-							<div class="detailProduct_delete_modify_buttons"> 
-							<a href="/transation/deleteProduct?productNo=${writerProductInfo.productNo}">삭제하기</a>
-							<a href="/transation/modifyProduct?productNo=${writerProductInfo.productNo}">수정하기</a>
-							</div>
-						</c:if>
+								<div class="detailProduct_delete_modify_buttons">
+									<a
+										href="/transation/deleteProduct?productNo=${writerProductInfo.productNo}">삭제하기</a>
+									<a
+										href="/transation/modifyProduct?productNo=${writerProductInfo.productNo}">수정하기</a>
+								</div>
+							</c:if>
 						</div>
-						
+
 						<hr />
 						<div class="detail_info_sub">
 							<div class="detail_font">
@@ -212,17 +230,18 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 								</div>
 								<c:if test="${member.nickName eq chatItem.mvo.nickName}">
 
-									
-									
-										<div style="width: 100%; height: 100%; text-align: end;"
-											class="detailProduct_deleteBtn">
-											
-											<a href="/transation/delete?chatNo=${chatItem.chatNo}&productNo=${chatItem.pvo.productNo}"><i class="fa-solid fa-trash-can"
-												style="color: black; cursor: pointer;"
-												></i></a>
-										</div>
 
-									
+
+									<div style="width: 100%; height: 100%; text-align: end;"
+										class="detailProduct_deleteBtn">
+
+										<a
+											href="/transation/delete?chatNo=${chatItem.chatNo}&productNo=${chatItem.pvo.productNo}"><i
+											class="fa-solid fa-trash-can"
+											style="color: black; cursor: pointer;"></i></a>
+									</div>
+
+
 								</c:if>
 							</div>
 							<p class="comment_Ptag">${chatItem.content}</p>
@@ -238,7 +257,7 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 			</div>
 		</div>
 	</form>
-	
+
 	<c:if test="${member ==null }">
 		<div class="container">
 			<div class="popup-wrap" id="popup">
@@ -291,12 +310,12 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 	</c:if>
 	<hr style="width: 100%">
 	<script>
-    function submitForm() {
-        // 폼 서브밋 버튼 클릭
-        document.getElementById("submitButton").click();
-    }
-</script>
-	
+		function submitForm() {
+			// 폼 서브밋 버튼 클릭
+			document.getElementById("submitButton").click();
+		}
+	</script>
+
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7829d38593feb9a538108e0c91873472&libraries=services"></script>
 
@@ -328,17 +347,17 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 
 		var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
 		var geocoder = new kakao.maps.services.Geocoder();
-		
+
 		map.setDraggable(false);
 		map.setZoomable(false);
 
 		function setZoomable(zoomable) {
-		    // 마우스 휠로 지도 확대,축소 가능여부를 설정합니다
-		    map.setZoomable(zoomable);    
+			// 마우스 휠로 지도 확대,축소 가능여부를 설정합니다
+			map.setZoomable(zoomable);
 		}
 		function setDraggable(draggable) {
-		    // 마우스 드래그로 지도 이동 가능여부를 설정합니다
-		    map.setDraggable(draggable);    
+			// 마우스 드래그로 지도 이동 가능여부를 설정합니다
+			map.setDraggable(draggable);
 		}
 		// 주소로 좌표를 검색합니다
 		geocoder.addressSearch(productAddress, function(result, status) {
@@ -357,7 +376,7 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 			}
 		});
 		var marker = new kakao.maps.Marker({
-		    zIndex: 0
+			zIndex : 0
 		});
 		marker.getZIndex(); // 4
 		var comentCheck = false;

@@ -166,21 +166,13 @@
 											style="text-decoration: none; color: black">
 												<div>
 													<span style="text-align: center"><img
-														id="main-img${varstatus.index}"
+														id="main-img${varstatus.index}" src=""
 														style="width: 100%; height: auto" alt="" /></span>
 												</div> <script>
-													var imageUploadPath = '<c:out value="${product.product_imageList[0].image_uploadPath}" />';
-													var imageUuid = '<c:out value="${product.product_imageList[0].image_uuid}" />';
-													var imageName = '<c:out value="${product.product_imageList[0].image_name}" />';
-													var imageNameEncoded = encodeURIComponent(imageUploadPath
-															+ '/'
-															+ imageUuid
-															+ '_' + imageName);
-													var realSrc = '../display?fileName='
-															+ imageNameEncoded;
-
-													document
-															.getElementById('main-img${varstatus.index}').src = realSrc;
+													console.log("sa");
+													var imageName = encodeURIComponent('${product.product_imageList[0].image_uploadPath}'+'/'+'${product.product_imageList[0].image_uuid}'+'_'+'${product.product_imageList[0].image_name}');
+													var realSrc = '/display?fileName='+imageName;
+													document.getElementById("main-img${varstatus.index}").src = realSrc;
 												</script>
 												<p class="detail_font">${product.title}</p>
 												<div class="content_button_div">

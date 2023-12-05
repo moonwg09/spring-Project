@@ -2,25 +2,66 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-    <mapper namespace="com.vam.mapper.MemberMapper">
-       <insert id="memberJoin">
-        <!-- Specify column names in the VALUES clause -->
-        INSERT INTO member (memberNo, id, password, nickName, email, addr1, addr2, phone, regDate, adminCk)
-        VALUES (NULL, #{id}, #{password}, #{nickName}, #{email}, #{addr1}, #{addr2}, #{phone}, now(), 0)
-    </insert>
-    
-    <!-- 아이디 중복검사 -->
-    <select id="idCheck" resultType="int">
-    	select count(*) from member where id = #{id}
-    </select>
-    
-    <!-- 로그인 -->
-    <select id="memberLogin" resultType="com.vam.VO.MemberVO">
 
-    	select id, nickname, adminCk, manner, addr2,memberNo from member where id = #{id} and password = #{password} 
-    </select>
-    
-    <select id="memberGet" resultType="com.vam.VO.MemberVO">
-    	select * from member
-    </select>
-    </mapper>
+<mapper namespace="com.vam.mapper.MemberMapper">
+	<resultMap id="mypageResultMap" type="com.vam.VO.MemberVO">
+		<id property="memberNo" column="memberNo" />
+		<result property="id" column="id" />
+		<result property="password" column="password" />
+		<result property="nickName" column="nickName" />
+		<result property="email" column="email" />
+		<result property="addr1" column="addr1" />
+		<result property="addr2" column="addr2" />
+		<result property="phone" column="phone" />
+		<result property="adminCk" column="adminCk" />
+		<result property="regDate" column="regDate" />
+		<result property="image" column="image" />
+		<result property="manner" column="manner" />
+		<collection property="pvo" resultMap="productResultMap" />
+	</resultMap>
+	<resultMap id="productResultMap" type="com.vam.VO.ProductVO">
+		<id property="productNo" column="productNo" />
+		<result property="writer" column="writer" />
+		<result property="title" column="title" />
+		<result property="img" column="img" />
+		<result property="categori" column="categori" />
+		<result property="price" column="price" />
+		<result property="content" column="content" />
+		<result property="viewcount" column="viewcount" />
+		<result property="chatcount" column="chatcount" />
+		<result property="address" column="address" />
+		<result property="regDate" column="regDate" />
+		<result property="likecount" column="likecount" />
+	</resultMap>
+	<insert id="memberJoin">
+		<!-- Specify column names in the VALUES clause -->
+		INSERT INTO member (memberNo, id, password, nickName, email, addr1,
+		addr2, phone, regDate, adminCk)
+		VALUES (NULL, #{id}, #{password},
+		#{nickName}, #{email}, #{addr1}, #{addr2},
+		#{phone}, now(), 0)
+	</insert>
+
+	<!-- 아이디 중복검사 -->
+	<select id="idCheck" resultType="int">
+		select count(*) from member
+		where id = #{id}
+	</select>
+
+	<!-- 로그인 -->
+	<select id="memberLogin" resultType="com.vam.VO.MemberVO">
+
+		select * from member where
+		id = #{id} and password = #{password}
+	</select>
+
+	<select id="memberGet" resultType="com.vam.VO.MemberVO">
+		select * from member
+	</select>
+
+	<select id="mypageList" resultMap="mypageResultMap">
+		SELECT * FROM member
+		LEFT JOIN product ON member.nickName = product.writer
+		WHERE member.nickName = #{nickName}
+	</select>
+</mapper>

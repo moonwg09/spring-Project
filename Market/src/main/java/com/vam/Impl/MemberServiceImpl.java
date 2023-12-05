@@ -65,4 +65,9 @@ public class MemberServiceImpl implements MemberService {
 		
 		return membermapper.memberGet();
 	}
+	@Override
+	public List<MemberVO> mypageList(String nickName) throws Exception {
+		
+		return membermapper.mypageList(nickName);
+	}
 }

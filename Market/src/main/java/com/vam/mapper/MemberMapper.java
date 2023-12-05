@@ -16,4 +16,13 @@ public interface MemberMapper {
 	
 	// 유저 정보 가져오기
 	public List<MemberVO> memberGet();
+	
+
+	public List<MemberVO> mypageList(String nickName);
+
+
+
+	
+
+
 }

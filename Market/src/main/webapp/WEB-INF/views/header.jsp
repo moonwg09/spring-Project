@@ -87,12 +87,7 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 				</div>
 			</form>
 			<div class="icon_div2">
-				<div class="icon_detail_div2"
-					onclick="window.location.href = '/chat'">
-					<i class="fa-solid fa-comments"
-						style="color: #f2991c; font-size: 20px"></i>
-					<p style="font-size: 10px">채팅</p>
-				</div>
+
 
 				<div class="icon_detail_div2">
 					<i class="fa-solid fa-user" style=""></i>
@@ -140,19 +135,28 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 				</div>
 			</form>
 			<div class="icon_div2">
-				<div class="icon_detail_div2"
-					onclick="window.location.href = '/chat'">
-					<i class="fa-solid fa-comments"
-						style="color: #f2991c; font-size: 20px"></i>
-					<p style="font-size: 10px">채팅</p>
-				</div>
 
-				<div class="icon_detail_div2">
+
+				<div class="icon_detail_div2" id="modal_click">
 					<i class="fa-solid fa-user" style=""></i>
 					<p style="font-size: 10px; text-align: center">마이페이지</p>
 				</div>
+				<div class="header_modal_container" id="header_mypage_container"> 
+					<div class="header_modal_div">
+						<div class="header_modal_info">
+							<span>${member.nickName}</span> <p>${member.email}</p>
+						</div>
+						<div class="header_mypage_move">
+							<i class="fa-solid fa-user" style="margin-right: 5%"></i> <a href="/member/mypage?nickName=${member.nickName}">마이페이지</a>
+						</div>
+						<div class="header_mypage_logout">
+							<i class="fa-solid fa-power-off" style="margin-right: 5%;"></i><a href="/main">로그아웃</a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 </c:if>
 <script src="https://code.jquery.com/jquery-3.4.1.js"
@@ -171,4 +175,19 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 			// encodeURIComponent를 사용하여 URL 파라미터 인코딩
 		}
 	}
+</script>
+<script>
+	document.getElementById("modal_click").addEventListener(
+			"click",
+			function() {
+				var headerMypageContainer = document
+						.getElementById("header_mypage_container");
+
+				if (headerMypageContainer.style.display === "none"
+						|| headerMypageContainer.style.display === "") {
+					headerMypageContainer.style.display = "block";
+				} else {
+					headerMypageContainer.style.display = "none";
+				}
+			});
 </script>

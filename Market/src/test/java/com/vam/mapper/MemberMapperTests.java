@@ -32,12 +32,19 @@ public class MemberMapperTests {
 //	  
 //	  }
 	
-	//아이디 중복검사
+//	//아이디 중복검사
+//	@Test
+//	public void idCheck() throws Exception{
+//		String id = "test3";
+//		String id2 = "test1234";
+//		membermapper.idCheck(id);
+//		membermapper.idCheck(id2);
+//	}
 	@Test
-	public void idCheck() throws Exception{
-		String id = "test3";
-		String id2 = "test1234";
-		membermapper.idCheck(id);
-		membermapper.idCheck(id2);
+	public void mypageTest() throws Exception{
+		
+		
+		
+		System.out.println(membermapper.mypageList("용호2"));
 	}
 }

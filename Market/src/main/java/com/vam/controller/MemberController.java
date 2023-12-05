@@ -25,6 +25,7 @@ import com.vam.VO.KakaoDTO;
 import com.vam.VO.MemberVO;
 import com.vam.service.KakaoService;
 import com.vam.service.MemberService;
+import com.vam.service.TransationService;
 
 @Controller
 @RequestMapping(value = "/member")
@@ -35,6 +36,8 @@ public class MemberController {
 	@Autowired
 	MemberService memberservice;
 	
+	@Autowired
+	TransationService productservice;
 	@Autowired
 	private KakaoService kakaoService;
 	
@@ -190,6 +193,16 @@ public class MemberController {
 		
 		return "redirect:/main";
 
+	}
+	
+	// 占싸깍옙占쏙옙
+	@RequestMapping(value="mypage", method=RequestMethod.GET)
+	public void mypage(HttpServletRequest request, MemberVO mvo, RedirectAttributes rttr, Model model, String nickName) throws Exception{
+		memberservice.mypageList(nickName);
+		model.addAttribute("mypageList", memberservice.mypageList(nickName));
+		
+		System.out.println(nickName);
+		System.out.println(memberservice.mypageList(nickName));
 	}
 	
 //	@RequestMapping(value="/kakao", method=RequestMethod.GET)

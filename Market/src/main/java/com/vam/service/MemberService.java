@@ -30,4 +30,6 @@ public interface MemberService {
 	// 유저정보 가져오기
 	public List<MemberVO> memberGet() throws Exception;
 	
+	public List<MemberVO> mypageList(String nickName) throws Exception;
+	
 }

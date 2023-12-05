@@ -13,7 +13,7 @@ PUBLIC "=//mybatis.org//DTD Mapper 3.0//EN"
 		DELETE FROM local_image WHERE image_uuid = #{image_uuid}
 	</delete>
 	
-	<select id="findById" resultType = "com.vam.VO.ProductImageVO">
+	<select id="findById" resultType = "com.vam.VO.LocalBussinessImageVO">
 		SELECT * FROM local_image WHERE productNo = #{productNo}
 	</select>
 	

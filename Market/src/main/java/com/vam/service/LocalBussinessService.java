@@ -2,13 +2,13 @@ package com.vam.service;
 
 import java.util.List;
 
+import com.vam.VO.LocalBussinessImageVO;
 import com.vam.VO.LocalBussinessVO;
-import com.vam.VO.ProductImageVO;
-import com.vam.VO.ProductVO;
+
 
 public interface LocalBussinessService {
 	
-	public List<ProductImageVO> findById(Long productNo);
+	public List<LocalBussinessImageVO> findById(Long productNo);
 	
 	public void register(LocalBussinessVO lbvo) throws Exception;
 	

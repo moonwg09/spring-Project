@@ -3,9 +3,10 @@ package com.vam.mapper;
 import java.util.List;
 
 import com.vam.VO.LocalBussinessVO;
-import com.vam.VO.ProductVO;
+
 
 public interface LocalBussinessMapper {
+	
 	public List<LocalBussinessVO> localBussinessSelectAll() throws Exception ;
 	
 	public void localBussinessInsert(LocalBussinessVO lbvo) throws Exception;

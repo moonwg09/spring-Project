@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.vam.VO.LocalBussinessImageVO;
 import com.vam.VO.LocalBussinessVO;
 import com.vam.VO.ProductImageVO;
 import com.vam.VO.ProductVO;
@@ -63,7 +64,7 @@ public class LocalBussinessController {
 	@RequestMapping(value = "/localInsert", method = RequestMethod.POST)
 
 	public String localBussinessInsert(LocalBussinessVO lbvo,  RedirectAttributes rttr, MultipartFile[] img, Model model) throws Exception {
-		List<ProductImageVO> imagelist = new ArrayList<>();
+		List<LocalBussinessImageVO> imagelist = new ArrayList<>();
 		log.info(lbvo.getProductNo());
 	
 		
@@ -92,7 +93,7 @@ public class LocalBussinessController {
 		}
 		
 		
-		private void imageFolderSave(MultipartFile mainImage, List<ProductImageVO> imagelist, String imageType) {
+		private void imageFolderSave(MultipartFile mainImage, List<LocalBussinessImageVO> imagelist, String imageType) {
 			
 			String uploadFolder = "C:\\upload\\temp";
 			
@@ -118,7 +119,7 @@ public class LocalBussinessController {
 				}
 				
 				// productImageVO create
-				imagelist.add(new ProductImageVO(uuid.toString(), uploadFolderPath.toString().replace("\\", "/"), mainImage.getOriginalFilename(), imageType, null));
+				imagelist.add(new LocalBussinessImageVO(uuid.toString(), uploadFolderPath.toString().replace("\\", "/"), mainImage.getOriginalFilename(), imageType, null));
 
 			}catch(Exception e){log.error(e.getMessage());}
 		}

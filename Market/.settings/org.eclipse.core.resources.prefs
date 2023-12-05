@@ -3,4 +3,5 @@ encoding//src/main/java/com/vam/controller/BookController.java=UTF-8
 encoding//src/main/java/com/vam/controller/MemberController.java=UTF-8
 encoding//src/main/java/com/vam/controller/TransationController.java=UTF-8
 encoding//src/main/java/com/vam/mapper/TransationMapper.java=UTF-8
+encoding//src/main/webapp/WEB-INF/views/member/pass.jsp=UTF-8
 separateDerivedEncodings=true

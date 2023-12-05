@@ -1,0 +1,152 @@
+@charset "UTF-8";
+.pass_form{
+    margin: 0 auto;
+    
+    width: 100%;
+}
+
+.pass_container{
+    width: 25%;
+    background-color: white;
+    margin: 0 auto;
+    
+}
+
+
+
+.pass_main_form{
+    border: 1px solid gainsboro;
+    width: 100%;
+    border-radius: 7px;
+    padding: 7%;
+}
+
+.pass_main_top{
+    display: flex;
+    width: 100%;
+}
+
+.pass_main_top_1{
+    width: 10%;
+    font-weight: 900;
+    cursor: pointer;
+
+}
+.pass_main_top_2{
+    width: 85%;
+    text-align: center;
+    font-weight: 600;
+}
+
+.pass_main_title{
+    margin-top: 12%;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.pass_main_name{
+    margin-top: 8%;
+}
+
+.pass_main_name_text{
+    font-weight: 500;
+    
+    font-size: 14px;
+}
+
+.pass_main_name_box{
+    margin-top: 4%;
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 3.5% 4%;
+    border: 1px solid gainsboro;
+    width: 90%;
+    
+}
+
+
+
+.pass_main_email{
+    margin-top: 7%;
+}
+
+.pass_main_email_text{
+    font-weight: 500;
+    
+    font-size: 14px;
+}
+
+.pass_main_email_box{
+    margin-top: 4%;
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 3.5% 4%;
+    border: 1px solid gainsboro;
+    width: 90%;
+    
+}
+
+
+.pass_main_add{
+    margin-top: 7%;
+}
+
+.pass_main_add_text{
+    font-weight: 500;
+    
+    font-size: 14px;
+}
+
+.pass_main_add_box{
+    margin-top: 4%;
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 3.5% 4%;
+    border: 1px solid gainsboro;
+    width: 90%;
+    
+}
+.pass_main_add_inputbtnbox{
+    display: flex;
+    margin-top: 4%;
+
+}
+
+.pass_main_add_input{
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 3.5% 4%;
+    width: 65%;
+}
+
+.pass_main_add_btn{
+    border: 1px solid gainsboro;
+    margin-left: 5%;
+    width: 20%;
+    border-radius: 5px;
+    text-align: center;
+    background-color: rgba(128, 128, 128, 0.823);
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.pass_main_add_btn_text{
+    font-size: 11px;
+    margin-top: 15%;
+}
+
+
+.pass_main_btn{
+    margin-top: 30%;
+    border: 1px solid gainsboro;
+    background-color: rgba(128, 128, 128, 0.823);
+    color: white;
+    font-weight: 600;
+    font-size: 13px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 3.5% 0%;
+    cursor: pointer;
+}

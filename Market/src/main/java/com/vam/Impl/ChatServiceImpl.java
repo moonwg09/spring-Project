@@ -1,3 +1,4 @@
+
 package com.vam.Impl;
 
 import java.util.List;
@@ -7,10 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.vam.VO.ChattingVO;
-import com.vam.service.ChatDAO;
+import com.vam.service.ChatService;
 
 @Repository
-public class ChatDAOImpl implements ChatDAO {
+public class ChatServiceImpl implements ChatService {
 	
 	@Autowired
 	SqlSession session;

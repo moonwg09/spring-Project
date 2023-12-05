@@ -11,12 +11,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.vam.VO.ChatVO;
-import com.vam.VO.ChattingVO;
 import com.vam.VO.ProductImageVO;
 import com.vam.VO.ProductVO;
 import com.vam.mapper.TransationImageMapper;
 import com.vam.mapper.TransationMapper;
-import com.vam.VO.ChattingVO;
 import com.vam.service.TransationService;
 
 import lombok.AllArgsConstructor;
@@ -102,7 +100,7 @@ public class TransationServiceImpl implements TransationService {
 				System.out.println("register imageList  ##################" + image);
 			});
 		} else {
-			System.out.println("³ëÀÌ¹ÌÁö ÀúÀå##################");
+			System.out.println("ï¿½ï¿½ï¿½Ì¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½##################");
 		}
 	}
 

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.vam.VO.LocalBussinessImageVO;
 import com.vam.VO.LocalBussinessVO;
 import com.vam.VO.ProductImageVO;
 import com.vam.mapper.LocalBussinessImageMapper;
@@ -57,7 +58,7 @@ public void register(LocalBussinessVO lbvo) throws Exception {
 }
 
 @Override
-public List<ProductImageVO> findById(Long productNo) {
+public List<LocalBussinessImageVO> findById(Long productNo) {
 	// TODO Auto-generated method stub
 	return imagemapper.findById(productNo);
 }

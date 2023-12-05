@@ -2,17 +2,17 @@ package com.vam.mapper;
 
 import java.util.List;
 
-import com.vam.VO.LocalBussinessVO;
-import com.vam.VO.ProductImageVO;
+import com.vam.VO.LocalBussinessImageVO;
+
 
 public interface LocalBussinessImageMapper {
 	
 	
-	public void insert(ProductImageVO pvo);
+	public void insert(LocalBussinessImageVO pvo);
 	
 	public void delete(String uuid);
 	
-	public List<ProductImageVO> findById(Long productNo);
+	public List<LocalBussinessImageVO> findById(Long productNo);
 	
 	public void deleteAll(int productNo);
 }

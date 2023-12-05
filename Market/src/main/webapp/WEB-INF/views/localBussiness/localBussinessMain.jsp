@@ -71,7 +71,16 @@
 									style="width: 100%">
 										<div class="Menu_AA" style="display: flex;">
 											<div class="Main_Img">
-												<img src="image/오.png">
+												<div>
+													<span style="text-align: center"><img
+														id="main-img${loop.index}" src=""
+														style="width: 100%; height: auto" alt="" /></span>
+												</div> <script>
+													console.log(2);
+													var imageName = encodeURIComponent('${local.local_imageList[0].image_uploadPath}'+'/'+'${local.local_imageList[0].image_uuid}'+'_'+'${local.local_imageList[0].image_name}');
+													var realSrc = '/display?fileName='+imageName;
+													document.getElementById("main-img${loop.index}").src = realSrc;
+												</script>
 											</div>
 											<div class="Sub_content" style="width: 100%">
 												<div class="Sub_wrapper">
@@ -252,7 +261,20 @@
 							<div class="B">
 								<!--미소 프로필 전체-->
 								<div class="BImg">
-									<img src="image/프.png" class="B-Img">
+								<c:forEach items="${localbussiness}" var="local"
+										varStatus="varstatus">
+										
+												<div>
+													<span style="text-align: center"><img
+														id="main-img${varstatus.index}" src=""
+														style="width: 100%; height: auto" alt="" /></span>
+												</div> <script>
+												
+													var imageName = encodeURIComponent('${localbussiness.local_imageList[0].image_uploadPath}'+'/'+'${localbussiness.local_imageList[0].image_uuid}'+'_'+'${localbussiness.local_imageList[0].image_name}');
+													var realSrc = '/display?fileName='+imageName;
+													document.getElementById("main-img${varstatus.index}").src = realSrc;
+												</script>
+									</c:forEach>
 								</div>
 								<div class="B-2">
 									<span class="Nick">미소</span> <span class="btn">단골</span><br>

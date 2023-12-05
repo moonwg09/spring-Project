@@ -13,7 +13,7 @@ public class LocalBussinessVO {
     private String price;
     private int replyCount, revisitCount,subCategory;
 	
-    private List<ProductImageVO> local_imageList;
+    private List<LocalBussinessImageVO> local_imageList;
 
 	public Long getProductNo() {
 		return productNo;
@@ -103,11 +103,11 @@ public class LocalBussinessVO {
 		this.subCategory = subCategory;
 	}
 
-	public List<ProductImageVO> getLocal_imageList() {
+	public List<LocalBussinessImageVO> getLocal_imageList() {
 		return local_imageList;
 	}
 
-	public void setLocal_imageList(List<ProductImageVO> local_imageList) {
+	public void setLocal_imageList(List<LocalBussinessImageVO> local_imageList) {
 		this.local_imageList = local_imageList;
 	}
 
@@ -118,7 +118,7 @@ public class LocalBussinessVO {
 				+ ", replyCount=" + replyCount + ", revisitCount=" + revisitCount + ", subCategory=" + subCategory
 				+ ", local_imageList=" + local_imageList + "]";
 	}
-    
-    
+
+	
     
 }

@@ -56,13 +56,14 @@
 
 
 	<select id="localBussinessSelectAll" resultType="com.vam.VO.LocalBussinessVO">
-		select * from localBussiness
+		select * from localbussiness
+	
 	</select>
 	
 	<insert id="localBussinessInsert" useGeneratedKeys="true"
 		keyProperty="productNo" parameterType="com.vam.VO.LocalBussinessVO">
-		insert into localBussiness (productNo, title, writer, categori, content, address, menu, price,subCategory)
-		values(null,#{title},#{writer},#{categori}, #{content}, #{address},#{menu},#{price},#{subCategory})
+		insert into localBussiness (title, writer, categori, content, address, price)
+		values(#{title},#{writer},#{categori}, #{content}, #{address},#{price})
 	</insert>
 	<select id="localGetDetail" parameterType="java.lang.Long"
 		resultMap="localResultMap">

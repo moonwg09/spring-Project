@@ -85,9 +85,9 @@ public class LocalBussinessController {
 		
 		rttr.addFlashAttribute("result", lbvo.getProductNo());
 		log.info("Product Image List: " + lbvo.getLocal_imageList());
-		 model.addAttribute("productImageList", lbvo.getLocal_imageList());
+		 model.addAttribute("localImageList", lbvo.getLocal_imageList());
 		System.out.println("占싱뱄옙占쏙옙 占쏙옙占� : " +localservice.findById(lbvo.getProductNo()));
-		return "redirect:/transation/usedTransation";
+		return "redirect:/localBussiness/localBussinessMain";
 	}
 	
 	// year/month/day folder create

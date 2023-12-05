@@ -76,7 +76,7 @@
 														id="main-img${loop.index}" src=""
 														style="width: 100%; height: auto" alt="" /></span>
 												</div> <script>
-													console.log(2);
+													console.log("${local}");
 													var imageName = encodeURIComponent('${local.local_imageList[0].image_uploadPath}'+'/'+'${local.local_imageList[0].image_uuid}'+'_'+'${local.local_imageList[0].image_name}');
 													var realSrc = '/display?fileName='+imageName;
 													document.getElementById("main-img${loop.index}").src = realSrc;
@@ -84,7 +84,7 @@
 											</div>
 											<div class="Sub_content" style="width: 100%">
 												<div class="Sub_wrapper">
-													<p class="Sub_list">${local.title }</p>
+													<p class="Sub_list">${local.title}</p>
 													<span class="Sub_list_region">${local.address }</span>
 												</div>
 												<span class="Sub_list_description">${local.content}</span> <span

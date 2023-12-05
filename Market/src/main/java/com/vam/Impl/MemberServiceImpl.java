@@ -7,6 +7,7 @@ import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.vam.VO.LikeProductVO;
 import com.vam.VO.MemberVO;
 import com.vam.mapper.MemberMapper;
 import com.vam.service.MemberService;
@@ -56,18 +57,51 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public MemberVO memberLogin(MemberVO mvo) throws Exception {
-			
+
 		return membermapper.memberLogin(mvo);
+	}
+
+	@Override
+	public List<MemberVO> memberGet() throws Exception {
+
+		return membermapper.memberGet();
+	}
+
+	@Override
+	public List<MemberVO> mypageList(String nickName) throws Exception {
+
+		return membermapper.mypageList(nickName);
+	}
+
+	@Override
+	public int mypageWriteCount(String nickName) throws Exception {
+		
+		return membermapper.mypageWriteCount(nickName);
+	}
+	@Override
+	public int mypageChatCount(String nickName) throws Exception {
+		
+		return membermapper.mypageChatCount(nickName);
+	}
+	@Override
+	public int mypageReplyCount(String nickName) throws Exception {
+		
+		return membermapper.mypageReplyCount(nickName);
 	}
 	
 	@Override
-	public List<MemberVO> memberGet() throws Exception {
-		
-		return membermapper.memberGet();
+	public void mypageLikeProduct(String nickName, Long productNo) throws Exception {
+		membermapper.mypageLikeProduct(nickName, productNo);
+	}
+	
+	@Override
+	public List<MemberVO> mypageLikeProductList(String nickName) throws Exception {
+	
+		return membermapper.mypageLikeProductList(nickName);
 	}
 	@Override
-	public List<MemberVO> mypageList(String nickName) throws Exception {
-		
-		return membermapper.mypageList(nickName);
+	public List<LikeProductVO> mypageLikeProductLists(String nickName) throws Exception {
+		// TODO Auto-generated method stub
+		return membermapper.mypageLikeProductLists(nickName);
 	}
 }

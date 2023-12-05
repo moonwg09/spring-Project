@@ -199,12 +199,14 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 							<div class="address_info">글러브</div>
 						</div>
 					</div>
+					<c:if test="${member != null }">
 					<div class="product_detail_button_div">
 						<div class="product_detail_button">
-							<button class="likeButton">관심</button>
-							<button class="chatButton">대화하기</button>
+							<a class="likeButton" href="/member/likeProduct?productNo=${productDetail.productNo}&nickName=${member.nickName}">관심</a>
+							<a class="chatButton" href="/member/chatting">대화하기</a>
 						</div>
 					</div>
+					</c:if>
 				</div>
 			</div>
 		</div>

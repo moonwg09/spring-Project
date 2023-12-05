@@ -18,6 +18,8 @@
 		<result property="image" column="image" />
 		<result property="manner" column="manner" />
 		<collection property="pvo" resultMap="productResultMap" />
+		<collection property="lpvo"
+			resultMap="likeProductResultMap" />
 	</resultMap>
 	<resultMap id="productResultMap" type="com.vam.VO.ProductVO">
 		<id property="productNo" column="productNo" />
@@ -32,6 +34,13 @@
 		<result property="address" column="address" />
 		<result property="regDate" column="regDate" />
 		<result property="likecount" column="likecount" />
+	</resultMap>
+	<resultMap id="likeProductResultMap"
+		type="com.vam.VO.LikeProductVO">
+		<id property="likeproduct" column="likeproduct" />
+		<result property="nickName" column="nickName" />
+		<result property="productNo" column="productNo" />
+		<collection property="pvo" resultMap="productResultMap" />
 	</resultMap>
 	<insert id="memberJoin">
 		<!-- Specify column names in the VALUES clause -->
@@ -61,7 +70,54 @@
 
 	<select id="mypageList" resultMap="mypageResultMap">
 		SELECT * FROM member
+		LEFT JOIN
+		product ON member.nickName = product.writer
+		WHERE member.nickName =
+		#{nickName}
+	</select>
+
+	<select id="mypageWriteCount" resultType="int">
+		SELECT COUNT(*)
+		FROM
+		member
 		LEFT JOIN product ON member.nickName = product.writer
-		WHERE member.nickName = #{nickName}
+		WHERE
+		member.nickName = #{nickName};
+	</select>
+
+	<select id="mypageChatCount" resultType="int">
+		SELECT
+		COALESCE(SUM(chatCount), 0) FROM member LEFT JOIN product ON
+		member.nickName = product.writer WHERE member.nickName = #{nickName};
+	</select>
+
+	<select id="mypageReplyCount" resultType="int">
+		select
+		count(chat.content) from
+		member join chat on member.memberNo =
+		chat.memberNo
+		where member.nickName = #{nickName};
+	</select>
+
+	<insert id="mypageLikeProduct">
+		INSERT INTO likeproduct (nickName,
+		productNo,likeproduct) VALUES (#{nickName},
+		#{productNo},null)
+	</insert>
+
+	<select id="mypageLikeProductList" resultMap="mypageResultMap">
+		select * from
+		member join
+		likeProduct
+		on member.nickName = likeProduct.nickName where
+		likeProduct.nickName=#{nickName};
+	</select>
+
+	<select id="mypageLikeProductLists"
+		resultMap="likeProductResultMap">
+		select *from likeproduct join product on
+		likeproduct.productNo =
+		product.productNo where likeproduct.nickName =
+		#{nickName};
 	</select>
 </mapper>

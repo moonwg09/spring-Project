@@ -1,6 +1,7 @@
 package com.vam.controller;
 
 
+import java.net.URLEncoder;
 import java.util.Random;
 
 
@@ -8,6 +9,7 @@ import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.annotations.Param;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -198,13 +200,26 @@ public class MemberController {
 	// 占싸깍옙占쏙옙
 	@RequestMapping(value="mypage", method=RequestMethod.GET)
 	public void mypage(HttpServletRequest request, MemberVO mvo, RedirectAttributes rttr, Model model, String nickName) throws Exception{
-		memberservice.mypageList(nickName);
-		model.addAttribute("mypageList", memberservice.mypageList(nickName));
 		
+		memberservice.mypageList(nickName);
+		
+		model.addAttribute("likeProductList", memberservice.mypageLikeProductList(nickName));
+		model.addAttribute("mypageList", memberservice.mypageList(nickName));
+		model.addAttribute("myWriteCount", memberservice.mypageWriteCount(nickName));
+		model.addAttribute("mypageChatCount", memberservice.mypageChatCount(nickName));
+		model.addAttribute("mypageReplyCount", memberservice.mypageReplyCount(nickName));
+		model.addAttribute("likeProductLists", memberservice.mypageLikeProductLists(nickName));
 		System.out.println(nickName);
+		System.out.println("mypage ####################입장");
 		System.out.println(memberservice.mypageList(nickName));
+		System.out.println(memberservice.mypageWriteCount(nickName));
 	}
-	
+	@RequestMapping(value="likeProduct", method=RequestMethod.GET,produces = "text/html; charset=UTF-8")
+	public String mypageLikeProduct( Model model, @RequestParam(name = "nickName") String nickName, @RequestParam(name = "productNo") Long productNo) throws Exception{
+		System.out.println(productNo);
+		memberservice.mypageLikeProduct(nickName, productNo);
+		return "redirect:/member/mypage?nickName=" + URLEncoder.encode(nickName, "UTF-8");
+	}
 //	@RequestMapping(value="/kakao", method=RequestMethod.GET)
 //	public String kakaoLogin(@RequestParam(value = "code", required = false) String code, Model model) throws Exception{
 //	

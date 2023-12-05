@@ -40,11 +40,56 @@ public class MemberMapperTests {
 //		membermapper.idCheck(id);
 //		membermapper.idCheck(id2);
 //	}
+//	@Test
+//	public void mypageTest() throws Exception{
+//		
+//		
+//		
+//		System.out.println(membermapper.mypageList("용호2"));
+//	}
+	
+//	@Test
+//	public void mypageCountTest() throws Exception{
+//		
+//		
+//		
+//		System.out.println(membermapper.mypageWriteCount("용호2"));
+//	}
+	
+//	@Test
+//	public void mypageChatCountTest() throws Exception{
+//		
+//		
+//		
+//		System.out.println(membermapper.mypageChatCount("용호2"));
+//	}
+
+//	@Test
+//	public void mypageChatCountTest() throws Exception{
+//		
+//		
+//		
+//		System.out.println(membermapper.mypageReplyCount("용호2"));
+//	}
+
+//	@Test
+//	public void mypageChatCountTest() throws Exception{
+//		
+//		Long id = 42L;
+//		int id2 = 22;
+//		
+//	 membermapper.mypageLikeProduct(id2, id);
+//		}
+
+//	
+//	@Test
+//	public void mypageChatCountTest() throws Exception{
+//		
+//		System.out.println(membermapper.mypageLikeProductList("용호2"));
+//		}
 	@Test
-	public void mypageTest() throws Exception{
+	public void mypageChatCountTest() throws Exception{
 		
-		
-		
-		System.out.println(membermapper.mypageList("용호2"));
-	}
+		System.out.println(membermapper.mypageLikeProductLists("용호2"));
+		}
 }

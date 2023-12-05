@@ -12,6 +12,8 @@ public class MemberVO {
 	private Date regDate;
 	
 	private List<ProductVO> pvo;
+	
+	private List<LikeProductVO> lpvo;
 
 	public String getId() {
 		return id;
@@ -117,13 +119,22 @@ public class MemberVO {
 		this.pvo = pvo;
 	}
 
+	public List<LikeProductVO> getLpvo() {
+		return lpvo;
+	}
+
+	public void setLpvo(List<LikeProductVO> lpvo) {
+		this.lpvo = lpvo;
+	}
+
 	@Override
 	public String toString() {
 		return "MemberVO [id=" + id + ", password=" + password + ", nickName=" + nickName + ", email=" + email
 				+ ", addr1=" + addr1 + ", addr2=" + addr2 + ", phone=" + phone + ", image=" + image + ", manner="
 				+ manner + ", memberNo=" + memberNo + ", adminCk=" + adminCk + ", regDate=" + regDate + ", pvo=" + pvo
-				+ "]";
+				+ ", lpvo=" + lpvo + "]";
 	}
+	
 	
 
 	

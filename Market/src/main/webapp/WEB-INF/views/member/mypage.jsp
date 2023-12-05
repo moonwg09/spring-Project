@@ -85,7 +85,7 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 								<span>채팅</span>
 							</div>
 							<div>
-								<span>0</span>
+								<span>${mypageChatCount}</span>
 							</div>
 						</div>
 						<div class="mypage_chatCount_div">
@@ -93,7 +93,7 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 								<span>작성한 상품</span>
 							</div>
 							<div>
-								<span>0</span>
+								<span>${myWriteCount}</span>
 							</div>
 						</div>
 						<div class="mypage_chatCount_div">
@@ -101,7 +101,7 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 								<span>후기</span>
 							</div>
 							<div>
-								<span>0</span>
+								<span>${mypageReplyCount }</span>
 							</div>
 						</div>
 					</div>
@@ -121,13 +121,13 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 									style="width: 100px; height: 100px" />
 							</div>
 							<div class="myapge_write_product_title">
-								<p>${product.title}</p>
+								<a href="/transation/detailProduct?productNo=${product.productNo}" style="text-decoration: none; color:black;">${product.title}</a>
 								<p>${member.nickName}</p>
 								<c:set var="formattedPrice" value="${product.price}" />
 								<fmt:formatNumber var="formattedPrice" value="${formattedPrice}"
-								type="number" pattern="#,##0" />
-							<p>${formattedPrice}원</p>
-								
+									type="number" pattern="#,##0" />
+								<p>${formattedPrice}원</p>
+
 							</div>
 						</div>
 					</c:forEach>
@@ -137,28 +137,25 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 		<div class="myapge_write_product">
 			<div class="myapge_write_product_container">
 				<span>관심상품</span>
-				<div class="myapge_write_product_div">
-					<div class="myapge_write_product_img">
-						<img src="image/logo.jpg" alt=""
-							style="width: 100px; height: 100px" />
-					</div>
-					<div class="myapge_write_product_title">
-						<p>taktjdxlql</p>
-						<p>용호</p>
-						<p>150000원</p>
-					</div>
-				</div>
-				<div class="myapge_write_product_div">
-					<div class="myapge_write_product_img">
-						<img src="image/logo.jpg" alt=""
-							style="width: 100px; height: 100px" />
-					</div>
-					<div class="myapge_write_product_title">
-						<p>taktjdxlql</p>
-						<p>용호</p>
-						<p>150000원</p>
-					</div>
-				</div>
+				<c:forEach items="${likeProductLists}" var="likeProductLists">
+					<c:forEach items="${likeProductLists.pvo}" var="likeProductLists">
+						<div class="myapge_write_product_div">
+							<div class="myapge_write_product_img">
+								<img src="image/logo.jpg" alt=""
+									style="width: 100px; height: 100px" />
+							</div>
+							<div class="myapge_write_product_title">
+								<a href="/transation/detailProduct?productNo=${likeProductLists.productNo}">${likeProductLists.title }</a>
+								<p>용호</p>
+								<c:set var="formattedPrice" value="${likeProductLists.price}" />
+								<fmt:formatNumber var="formattedPrice" value="${formattedPrice}"
+									type="number" pattern="#,##0" />
+								<p>${formattedPrice}원</p>
+							</div>
+						</div>
+					</c:forEach>
+				</c:forEach>
+			
 			</div>
 		</div>
 		<div style="display: flex; justify-content: center;">

@@ -12,6 +12,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.JsonParser;
+import com.vam.VO.LikeProductVO;
 import com.vam.VO.MemberVO;
 
 public interface MemberService {
@@ -31,5 +32,17 @@ public interface MemberService {
 	public List<MemberVO> memberGet() throws Exception;
 	
 	public List<MemberVO> mypageList(String nickName) throws Exception;
+	
+	public int mypageWriteCount(String nickName) throws Exception;
+	
+	public int mypageChatCount(String nickName) throws Exception;
+	
+	public int mypageReplyCount(String nickName) throws Exception;
+	
+	public void mypageLikeProduct(String nickName , Long productNo) throws Exception;
+	
+	public List<MemberVO> mypageLikeProductList(String nickName) throws Exception;
+	
+	public List<LikeProductVO> mypageLikeProductLists(String nickName) throws Exception;
 	
 }

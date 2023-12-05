@@ -267,16 +267,27 @@ hr {
 }
 
 .likeButton {
-	padding: 10px 25px;
+	text-decoration:none;
+	
+	padding: 10px 35px;
 	width: 40%;
 	border: none;
 	font-weight: 700;
 	background-color: #fa6616;
 	color: white;
 }
-
+.likeButton:hover{
+		text-decoration:none;
+	padding: 10px 35px;
+	width: 40%;
+	border: none;
+	font-weight: 700;
+	background-color: #fa6616;
+	color: white;
+}
 .chatButton {
-	padding: 10px 25px;
+	text-decoration:none;
+	padding: 10px 35px;
 	width: 40%;
 	border: none;
 	font-weight: 700;
@@ -284,6 +295,15 @@ hr {
 	background-color: #f70000;
 }
 
+.chatButton:hover{
+	text-decoration:none;
+	padding: 10px 35px;
+	width: 40%;
+	border: none;
+	font-weight: 700;
+	color: white;
+	background-color: #f70000;
+}
 .detail_info_content_div_comment {
 	width: 60%;
 	margin: 0 auto;

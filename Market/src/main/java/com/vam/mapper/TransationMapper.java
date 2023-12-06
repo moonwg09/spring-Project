@@ -31,4 +31,6 @@ public interface TransationMapper {
 	public void writeProductPost(ProductVO pvo);
 	
 	public void deleteProduct(int proeuctNo);
+	
+	public List<ProductVO> getSearch(String searchKeyword);
 }

@@ -271,5 +271,12 @@ public class TransationController {
 		return "redirect:/transation/detailProduct?productNo=" + productNo;
 	}
 	
+	 @GetMapping("/searchRes")
+	    public String getSearch(@RequestParam(name = "keyword") String searchKeyword, Model model) throws Exception {
+	        List<ProductVO> products = productservice.getSearch(searchKeyword);
+	        model.addAttribute("products", products);
+	        return "searchRes"; // 뷰의 이름
+	    }
+	
 	
 }

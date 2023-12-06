@@ -121,12 +121,4 @@
 		#{nickName};
 	</select>
 	
-	<select id="getSearch" resultMap="productResultMap">
-		SELECT * FROM (
-        SELECT productNo, address, title
-        FROM product
-        WHERE title LIKE '%' || #{searchKeyword} || '%' OR address LIKE '%' || #{searchKeyword} || '%'
-        ORDER BY productNo DESC
-    ) AS T1
-	</select>
 </mapper>

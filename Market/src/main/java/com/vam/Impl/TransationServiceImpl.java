@@ -121,4 +121,9 @@ public class TransationServiceImpl implements TransationService {
 
 	}
 
+	@Override
+	public List<ProductVO> getSearch(String searchKeyword) throws Exception {
+		return productmapper.getSearch(searchKeyword);
+	}
+
 }

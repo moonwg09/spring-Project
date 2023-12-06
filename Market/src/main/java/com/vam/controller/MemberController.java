@@ -2,6 +2,7 @@ package com.vam.controller;
 
 
 import java.net.URLEncoder;
+import java.util.List;
 import java.util.Random;
 
 
@@ -27,6 +28,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.vam.VO.KakaoDTO;
 import com.vam.VO.MemberVO;
+import com.vam.VO.ProductVO;
 import com.vam.service.KakaoService;
 import com.vam.service.MemberService;
 import com.vam.service.TransationService;
@@ -252,7 +254,8 @@ public class MemberController {
 			return "redirect:/main";
 		}
 		
-	
+		
 		
 
+		
 }

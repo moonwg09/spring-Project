@@ -10,10 +10,10 @@
 	crossorigin="anonymous"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" type="text/css" href="resources/css/header.css">
-<link rel="stylesheet" type="text/css" href="resources/css/main.css">
-<link rel="stylesheet" type="text/css" href="resources/css/footer.css">
-<link rel="stylesheet" type="text/css" href="resources/css/searchRes.css">
+<link rel="stylesheet" type="text/css" href="/resources/css/header.css">
+<link rel="stylesheet" type="text/css" href="/resources/css/main.css">
+<link rel="stylesheet" type="text/css" href="/resources/css/footer.css">
+<link rel="stylesheet" type="text/css" href="/resources/css/searchRes.css">
 
 </head>
 <body>
@@ -55,114 +55,28 @@
                           height: 100%;
                         "
                       >
+                      <c:forEach items="${products }" var="products">
+                      
                         <li>
                           <div>
                             <span style="text-align: center"
                               ><img
-                                src="img/eximg.webp"
+                                src="/resources/image/logo.png"
                                 style="width: 100%; height: auto"
                                 alt=""
                             /></span>
                           </div>
-                          <p class="detail_font">삼성텔레비전60인치</p>
+                          <p class="detail_font">${products.title}</p>
                           <div class="content_button_div">
-                            <p class="price">150,000원</p>
-                            <p class="pTag">서울 서초구 반포2동</p>
+                            <p class="price">${products.price}</p>
+                            <p class="pTag">${products.address}</p>
                             <div class="button_div2" style="display: flex">
                               <span>관심</span><span>∙</span> <span>채팅</span>
                             </div>
                           </div>
                         </li>
-                        <li>
-                          <div>
-                            <span style="text-align: center"
-                              ><img
-                                src="img/eximg.webp"
-                                style="width: 100%; height: auto"
-                                alt=""
-                            /></span>
-                          </div>
-                          <p class="detail_font">삼성텔레비전60인치</p>
-                          <div class="content_button_div">
-                            <p class="price">150,000원</p>
-                            <p class="pTag">서울 서초구 반포2동</p>
-                            <div class="button_div2" style="display: flex">
-                              <span>관심</span><span>∙</span> <span>채팅</span>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div>
-                            <span style="text-align: center"
-                              ><img
-                                src="img/eximg.webp"
-                                style="width: 100%; height: auto"
-                                alt=""
-                            /></span>
-                          </div>
-                          <p class="detail_font">삼성텔레비전60인치</p>
-                          <div class="content_button_div">
-                            <p class="price">150,000원</p>
-                            <p class="pTag">서울 서초구 반포2동</p>
-                            <div class="button_div2" style="display: flex">
-                              <span>관심</span><span>∙</span> <span>채팅</span>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div>
-                            <span style="text-align: center"
-                              ><img
-                                src="img/eximg.webp"
-                                style="width: 100%; height: auto"
-                                alt=""
-                            /></span>
-                          </div>
-                          <p class="detail_font">삼성텔레비전60인치</p>
-                          <div class="content_button_div">
-                            <p class="price">150,000원</p>
-                            <p class="pTag">서울 서초구 반포2동</p>
-                            <div class="button_div2" style="display: flex">
-                              <span>관심</span><span>∙</span> <span>채팅</span>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div>
-                            <span style="text-align: center"
-                              ><img
-                                src="img/eximg.webp"
-                                style="width: 100%; height: auto"
-                                alt=""
-                            /></span>
-                          </div>
-                          <p class="detail_font">삼성텔레비전60인치</p>
-                          <div class="content_button_div">
-                            <p class="price">150,000원</p>
-                            <p class="pTag">서울 서초구 반포2동</p>
-                            <div class="button_div2" style="display: flex">
-                              <span>관심</span><span>∙</span> <span>채팅</span>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div>
-                            <span style="text-align: center"
-                              ><img
-                                src="img/eximg.webp"
-                                style="width: 100%; height: auto"
-                                alt=""
-                            /></span>
-                          </div>
-                          <p class="detail_font">삼성텔레비전60인치</p>
-                          <div class="content_button_div">
-                            <p class="price">150,000원</p>
-                            <p class="pTag">서울 서초구 반포2동</p>
-                            <div class="button_div2" style="display: flex">
-                              <span>관심</span><span>∙</span> <span>채팅</span>
-                            </div>
-                          </div>
-                        </li>
+                        </c:forEach>
+                       
                       </ul>
                     </div>
                   </div>
@@ -170,7 +84,8 @@
               </div>
             </div>
           </div>
+  
         </div>
-        <jsp:include page="footer.jsp"></jsp:include>
+        
 </body>
 </html>

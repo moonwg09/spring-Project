@@ -33,8 +33,7 @@ public interface TransationService {
 	
 	public void writeProductPost(ProductVO pvo) throws Exception;
 	
-
-	
-	
 	public void deleteProduct(int proeuctNo) throws Exception;
+	
+	public List<ProductVO> getSearch(String searchKeyword) throws Exception;
 }

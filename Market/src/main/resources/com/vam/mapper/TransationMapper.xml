@@ -119,6 +119,15 @@
 	<update id="">
 
 	</update>
+	
+	<select id="getSearch" resultType="com.vam.VO.ProductVO">
+    <![CDATA[
+    SELECT *
+    FROM product
+    WHERE title LIKE CONCAT('%', #{searchKeyword}, '%')
+    ORDER BY productNo DESC
+    ]]>
+</select>
 </mapper>
 
   

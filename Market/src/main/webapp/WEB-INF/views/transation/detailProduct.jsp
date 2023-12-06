@@ -267,11 +267,9 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 					<p class="modal_title smft">로그인 하시겠습니까?</p>
 					<div class="modal_button_div">
 						<div class="modal_button yes">
-<<<<<<< Updated upstream
+
 							<span><a href="/member/login" style="text-decoration: none; color:white">예</a></span>
-=======
-							<span><a href="/main">예</a></span>
->>>>>>> Stashed changes
+					
 						</div>
 						<div class="modal_button no" id="close">
 							<span>아니요</span>

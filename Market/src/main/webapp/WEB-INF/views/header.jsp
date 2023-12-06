@@ -125,10 +125,10 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 			<form>
 				<div class="search_div2">
 					<div class="header_input_div2">
-						<input type="text" placeholder="물품이나 동네를 검색해보세요" />
+						<input type="text" name="keyword" placeholder="물품이나 동네를 검색해보세요" />
 					</div>
 					<div class="header_button_div2">
-						<button>검색하기</button>
+						<input class="button" type="button" onclick="getSearchList()" value="검색" />
 					</div>
 				</div>
 			</form>

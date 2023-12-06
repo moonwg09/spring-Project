@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import com.fasterxml.jackson.core.JsonParser;
 import com.vam.VO.LikeProductVO;
 import com.vam.VO.MemberVO;
+import com.vam.VO.ProductVO;
 
 public interface MemberService {
 	// È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
@@ -28,7 +29,7 @@ public interface MemberService {
 	// ï¿½Î±ï¿½ï¿½ï¿½
 	public MemberVO memberLogin(MemberVO mvo) throws Exception;
 	
-	// À¯ÀúÁ¤º¸ °¡Á®¿À±â
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public List<MemberVO> memberGet() throws Exception;
 	
 	public List<MemberVO> mypageList(String nickName) throws Exception;
@@ -44,5 +45,6 @@ public interface MemberService {
 	public List<MemberVO> mypageLikeProductList(String nickName) throws Exception;
 	
 	public List<LikeProductVO> mypageLikeProductLists(String nickName) throws Exception;
+	
 	
 }

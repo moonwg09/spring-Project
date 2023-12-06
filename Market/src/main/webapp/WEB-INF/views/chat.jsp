@@ -246,7 +246,7 @@
 	}
 
 	//웹소켓 생성
-	var sock = new SockJS("http://localhost:8081/echo/");
+	var sock = new SockJS("http://localhost:8081/echo");
 	sock.onmessage = onMessage;
 
 	//서버로부터 메세지 받기...

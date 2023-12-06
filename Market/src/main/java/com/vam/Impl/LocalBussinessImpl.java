@@ -80,4 +80,21 @@ public class LocalBussinessImpl implements LocalBussinessService {
 		localmapper.insertChat(rvo);
 
 	}
+	
+	@Override
+	public List<ReplyVO> selectChat(Long productNo) throws Exception {
+		// TODO Auto-generated method stub
+		return localmapper.selectChat(productNo);
+	}
+	@Override
+	public void deleteComment(int replyNo) throws Exception {
+		localmapper.deleteComment(replyNo);
+		
+	}
+	
+@Override
+	public List<ReplyVO> selectChatAll() throws Exception {
+
+		return localmapper.selectChatAll();
+	}
 }

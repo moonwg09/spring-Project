@@ -37,6 +37,6 @@ public class LocalBussinessMapperTests {
 	
 	@Test
 	public void localGetDetail() throws Exception{
-		 System.out.println(localmapper.selectChat(5));
+		 System.out.println(localmapper.selectChat(5L));
 	}
 }

@@ -270,6 +270,7 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 
 							<span><a href="/member/login" style="text-decoration: none; color:white">예</a></span>
 					
+
 						</div>
 						<div class="modal_button no" id="close">
 							<span>아니요</span>

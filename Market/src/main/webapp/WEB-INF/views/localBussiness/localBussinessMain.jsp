@@ -73,8 +73,7 @@
 										<div class="Menu_AA" style="display: flex;">
 											<div class="Main_Img">
 
-												<img id="main-img${loop.index}" src=""
-													 alt="Image not found" />
+												<img id="main-img${loop.index}" src="" alt="Image not found" />
 												<script>
 													console.log("${imgList}");
 													var imageName = encodeURIComponent('${imgList.local_imageList[0].image_uploadPath}'
@@ -107,25 +106,39 @@
 				</div>
 				<div id="nation2">
 					<ul class="menu_all" style="display: flex;">
-						<c:forEach items="${local}" var="local" varStatus="loop">
-							<c:if test="${local.categori == 2}">
+						<c:forEach items="${imgList}" var="imgList" varStatus="loop">
+							<c:if test="${imgList.categori == 2}">
 
 
 								<li class="A"><a class="a"
-									href="localDetail?productNo=${local.productNo}"
+									href="localDetail?productNo=${imgList.productNo}"
 									style="width: 100%">
 										<div class="Menu_AA" style="display: flex;">
 											<div class="Main_Img">
-												<img src="image/오.png">
+
+												<img id="main-img${loop.index}" src="" alt="Image not found" />
+												<script>
+													console.log("${imgList}");
+													var imageName = encodeURIComponent('${imgList.local_imageList[0].image_uploadPath}'
+															+ '/'
+															+ '${imgList.local_imageList[0].image_uuid}'
+															+ '_'
+															+ '${imgList.local_imageList[0].image_name}');
+													var realSrc = '/display?fileName='
+															+ imageName;
+													document
+															.getElementById("main-img${loop.index}").src = realSrc;
+													console.log(realSrc);
+												</script>
 											</div>
 											<div class="Sub_content" style="width: 100%">
 												<div class="Sub_wrapper">
-													<p class="Sub_list">${local.title }</p>
-													<span class="Sub_list_region">${local.address }</span>
+													<p class="Sub_list">${imgList.title}</p>
+													<span class="Sub_list_region">${imgList.address }</span>
 												</div>
-												<span class="Sub_list_description">${local.content}</span> <span
-													class="Sub_list_infos">후기 ${local.replyCount} ∙ 단골
-													${local.revisitCount}</span>
+												<span class="Sub_list_description">${imgList.content}</span>
+												<span class="Sub_list_infos">후기 ${imgList.replyCount}
+													∙ 단골 ${imgList.revisitCount}</span>
 											</div>
 										</div>
 								</a></li>
@@ -136,56 +149,83 @@
 				</div>
 				<div id="nation3">
 					<ul class="menu_all" style="display: flex;">
-						<c:forEach items="${local}" var="local" varStatus="loop">
-							<c:if test="${local.categori == 3}">
+						<c:forEach items="${imgList}" var="imgList" varStatus="loop">
+							<c:if test="${imgList.categori == 3}">
 
 
 								<li class="A"><a class="a"
-									href="localDetail?productNo=${local.productNo}"
+									href="localDetail?productNo=${imgList.productNo}"
 									style="width: 100%">
 										<div class="Menu_AA" style="display: flex;">
 											<div class="Main_Img">
-												<img src="image/오.png">
+
+												<img id="main-img${loop.index}" src="" alt="Image not found" />
+												<script>
+													console.log("${imgList}");
+													var imageName = encodeURIComponent('${imgList.local_imageList[0].image_uploadPath}'
+															+ '/'
+															+ '${imgList.local_imageList[0].image_uuid}'
+															+ '_'
+															+ '${imgList.local_imageList[0].image_name}');
+													var realSrc = '/display?fileName='
+															+ imageName;
+													document
+															.getElementById("main-img${loop.index}").src = realSrc;
+													console.log(realSrc);
+												</script>
 											</div>
 											<div class="Sub_content" style="width: 100%">
 												<div class="Sub_wrapper">
-													<p class="Sub_list">${local.title }</p>
-													<span class="Sub_list_region">${local.address }</span>
+													<p class="Sub_list">${imgList.title}</p>
+													<span class="Sub_list_region">${imgList.address }</span>
 												</div>
-												<span class="Sub_list_description">${local.content}</span> <span
-													class="Sub_list_infos">후기 ${local.replyCount} ∙ 단골
-													${local.revisitCount}</span>
+												<span class="Sub_list_description">${imgList.content}</span>
+												<span class="Sub_list_infos">후기 ${imgList.replyCount}
+													∙ 단골 ${imgList.revisitCount}</span>
 											</div>
 										</div>
 								</a></li>
 
 							</c:if>
-
 						</c:forEach>
 
 					</ul>
 				</div>
 				<div id="nation4">
 					<ul class="menu_all" style="display: flex;">
-						<c:forEach items="${local}" var="local" varStatus="loop">
-							<c:if test="${local.categori == 4}">
+						<c:forEach items="${imgList}" var="imgList" varStatus="loop">
+							<c:if test="${imgList.categori == 4}">
 
 
 								<li class="A"><a class="a"
-									href="localDetail?productNo=${local.productNo}"
+									href="localDetail?productNo=${imgList.productNo}"
 									style="width: 100%">
 										<div class="Menu_AA" style="display: flex;">
 											<div class="Main_Img">
-												<img src="image/오.png">
+
+												<img id="main-img${loop.index}" src="" alt="Image not found" />
+												<script>
+													console.log("${imgList}");
+													var imageName = encodeURIComponent('${imgList.local_imageList[0].image_uploadPath}'
+															+ '/'
+															+ '${imgList.local_imageList[0].image_uuid}'
+															+ '_'
+															+ '${imgList.local_imageList[0].image_name}');
+													var realSrc = '/display?fileName='
+															+ imageName;
+													document
+															.getElementById("main-img${loop.index}").src = realSrc;
+													console.log(realSrc);
+												</script>
 											</div>
 											<div class="Sub_content" style="width: 100%">
 												<div class="Sub_wrapper">
-													<p class="Sub_list">${local.title }</p>
-													<span class="Sub_list_region">${local.address }</span>
+													<p class="Sub_list">${imgList.title}</p>
+													<span class="Sub_list_region">${imgList.address }</span>
 												</div>
-												<span class="Sub_list_description">${local.content}</span> <span
-													class="Sub_list_infos">후기 ${local.replyCount} ∙ 단골
-													${local.revisitCount}</span>
+												<span class="Sub_list_description">${imgList.content}</span>
+												<span class="Sub_list_infos">후기 ${imgList.replyCount}
+													∙ 단골 ${imgList.revisitCount}</span>
 											</div>
 										</div>
 								</a></li>
@@ -196,25 +236,39 @@
 				</div>
 				<div id="nation5">
 					<ul class="menu_all" style="display: flex;">
-						<c:forEach items="${local}" var="local" varStatus="loop">
-							<c:if test="${local.categori == 5}">
+						<c:forEach items="${imgList}" var="imgList" varStatus="loop">
+							<c:if test="${imgList.categori == 5}">
 
 
 								<li class="A"><a class="a"
-									href="localDetail?productNo=${local.productNo}"
+									href="localDetail?productNo=${imgList.productNo}"
 									style="width: 100%">
 										<div class="Menu_AA" style="display: flex;">
 											<div class="Main_Img">
-												<img src="image/오.png">
+
+												<img id="main-img${loop.index}" src="" alt="Image not found" />
+												<script>
+													console.log("${imgList}");
+													var imageName = encodeURIComponent('${imgList.local_imageList[0].image_uploadPath}'
+															+ '/'
+															+ '${imgList.local_imageList[0].image_uuid}'
+															+ '_'
+															+ '${imgList.local_imageList[0].image_name}');
+													var realSrc = '/display?fileName='
+															+ imageName;
+													document
+															.getElementById("main-img${loop.index}").src = realSrc;
+													console.log(realSrc);
+												</script>
 											</div>
 											<div class="Sub_content" style="width: 100%">
 												<div class="Sub_wrapper">
-													<p class="Sub_list">${local.title }</p>
-													<span class="Sub_list_region">${local.address }</span>
+													<p class="Sub_list">${imgList.title}</p>
+													<span class="Sub_list_region">${imgList.address }</span>
 												</div>
-												<span class="Sub_list_description">${local.content}</span> <span
-													class="Sub_list_infos">후기 ${local.replyCount} ∙ 단골
-													${local.revisitCount}</span>
+												<span class="Sub_list_description">${imgList.content}</span>
+												<span class="Sub_list_infos">후기 ${imgList.replyCount}
+													∙ 단골 ${imgList.revisitCount}</span>
 											</div>
 										</div>
 								</a></li>
@@ -225,25 +279,39 @@
 				</div>
 				<div id="nation6">
 					<ul class="menu_all" style="display: flex;">
-						<c:forEach items="${local}" var="local" varStatus="loop">
-							<c:if test="${local.categori == 6}">
+						<c:forEach items="${imgList}" var="imgList" varStatus="loop">
+							<c:if test="${imgList.categori == 6}">
 
 
 								<li class="A"><a class="a"
-									href="localDetail?productNo=${local.productNo}"
+									href="localDetail?productNo=${imgList.productNo}"
 									style="width: 100%">
 										<div class="Menu_AA" style="display: flex;">
 											<div class="Main_Img">
-												<img src="image/오.png">
+
+												<img id="main-img${loop.index}" src="" alt="Image not found" />
+												<script>
+													console.log("${imgList}");
+													var imageName = encodeURIComponent('${imgList.local_imageList[0].image_uploadPath}'
+															+ '/'
+															+ '${imgList.local_imageList[0].image_uuid}'
+															+ '_'
+															+ '${imgList.local_imageList[0].image_name}');
+													var realSrc = '/display?fileName='
+															+ imageName;
+													document
+															.getElementById("main-img${loop.index}").src = realSrc;
+													console.log(realSrc);
+												</script>
 											</div>
 											<div class="Sub_content" style="width: 100%">
 												<div class="Sub_wrapper">
-													<p class="Sub_list">${local.title }</p>
-													<span class="Sub_list_region">${local.address }</span>
+													<p class="Sub_list">${imgList.title}</p>
+													<span class="Sub_list_region">${imgList.address }</span>
 												</div>
-												<span class="Sub_list_description">${local.content}</span> <span
-													class="Sub_list_infos">후기 ${local.replyCount} ∙ 단골
-													${local.revisitCount}</span>
+												<span class="Sub_list_description">${imgList.content}</span>
+												<span class="Sub_list_infos">후기 ${imgList.replyCount}
+													∙ 단골 ${imgList.revisitCount}</span>
 											</div>
 										</div>
 								</a></li>
@@ -268,26 +336,7 @@
 							<div class="B">
 								<!--미소 프로필 전체-->
 								<div class="BImg">
-									<c:forEach items="${localbussiness}" var="local"
-										varStatus="varstatus">
-
-										<div>
-											<span style="text-align: center"><img
-												id="main-img${varstatus.index}" src=""
-												style="width: 100%; height: auto" alt="" /></span>
-										</div>
-										<script>
-											var imageName = encodeURIComponent('${localbussiness.local_imageList[0].image_uploadPath}'
-													+ '/'
-													+ '${localbussiness.local_imageList[0].image_uuid}'
-													+ '_'
-													+ '${localbussiness.local_imageList[0].image_name}');
-											var realSrc = '/display?fileName='
-													+ imageName;
-											document
-													.getElementById("main-img${varstatus.index}").src = realSrc;
-										</script>
-									</c:forEach>
+									<img src="../resources/image/defaultprofile.png" class="B-Img">
 								</div>
 								<div class="B-2">
 									<span class="Nick">미소</span> <span class="btn">단골</span><br>
@@ -304,7 +353,7 @@
 						</a> <a href="#" class="bLink">
 							<div class="ReviewBox">
 								<div class="BoxImg">
-									<img src="image/리뷰1.png" class="BoxImgaa">
+									<img src="../resources/image/imgtest/리뷰1.png" class="BoxImgaa">
 								</div>
 								<div class="BoxText">
 									<span class="BoxT">다이어트뷰티카페 미타임</span><br> <span
@@ -323,7 +372,7 @@
 							<div class="B">
 								<!--미소 프로필 전체-->
 								<div class="BImg">
-									<img src="image/프사.png" class="B-Img">
+									<img src="../resources/image/defaultprofile.png" class="B-Img">
 								</div>
 								<div class="B-2">
 									<span class="Nick">ABC쥬스맛있어</span><br> <span
@@ -339,7 +388,7 @@
 					<a href="#" class="bLink">
 						<div class="ReviewBox">
 							<div class="BoxImg">
-								<img src="image/리뷰2.png" class="BoxImgaa">
+								<img src="../resources/image/imgtest/리뷰2.png" class="BoxImgaa">
 							</div>
 							<div class="BoxText">
 								<span class="BoxT">디테일링K</span><br> <span class="Boxt">후기
@@ -359,7 +408,7 @@
 						<div class="B">
 							<!--미소 프로필 전체-->
 							<div class="BImg">
-								<img src="image/프사.png" class="B-Img">
+								<img src="../resources/image/defaultprofile.png" class="B-Img">
 							</div>
 							<div class="B-2">
 								<span class="Nick">톨이</span> <span class="btn">단골</span><br>
@@ -374,7 +423,7 @@
 				<a href="#" class="bLink">
 					<div class="ReviewBox">
 						<div class="BoxImg">
-							<img src="image/리뷰3.png" class="BoxImgaa">
+							<img src="../resources/image/imgtest/리뷰3.png" class="BoxImgaa">
 						</div>
 						<div class="BoxText">
 							<span class="BoxT">트라이 플라워</span><br> <span class="Boxt">후기
@@ -385,35 +434,37 @@
 			</div>
 
 
-			<!--제이 리뷰-->
-			<div class="Ba">
-				<a href="#" class="aLink"> <!--플렉스-->
-					<div class="B">
-						<!--미소 프로필 전체-->
-						<div class="BImg">
-							<img src="image/프사.png" class="B-Img">
-						</div>
-						<div class="B-2">
-							<span class="Nick">제이</span> <span class="btn">단골</span><br>
-							<span class="Nick-1">물금읍 인증 12회</span>
-						</div>
-					</div>
 
-					<div class="Text">
-						<p>케어도 너무 시원하고깔끔하게 해주시고 감각짱~^^ 담에 또뵐께요. 이따 꼭 식사 맛나게 하세요♡</p></a>
-			</div>
+				<!--제이 리뷰-->
+				<div class="Ba">
+					<a href="#" class="aLink"> <!--플렉스-->
+						<div class="B">
+							<!--미소 프로필 전체-->
+							<div class="BImg">
+								<img src="../resources/image/defaultprofile.png" class="B-Img">
+							</div>
+							<div class="B-2">
+								<span class="Nick">투느</span> <span class="btn">단골</span><br>
+								<span class="Nick-1">물금읍 인증 12회</span>
+							</div>
+						</div>
 
-			<a href="#" class="bLink">
-				<div class="ReviewBox">
-					<div class="BoxImg">
-						<img src="image/리뷰4.png" class="BoxImgaa">
-					</div>
-					<div class="BoxText">
-						<span class="BoxT">양산 진짜 저렴한 네일~!!!</span><br> <span
-							class="Boxt">후기 114 ∙ 단골 811 ∙ 네일샵</span>
-					</div>
+						<div class="Text">
+							<p>케어도 너무 시원하고깔끔하게 해주시고 감각짱~^^ 담에 또뵐께요. 이따 꼭 식사 맛나게 하세요♡</p></a>
 				</div>
-			</a>
+
+				<a href="#" class="bLink">
+					<div class="ReviewBox">
+						<div class="BoxImg">
+							<img src="../resources/image/imgtest/리뷰4.png" class="BoxImgaa">
+						</div>
+						<div class="BoxText">
+							<span class="BoxT">양산 진짜 저렴한 네일~!!!</span><br> <span
+								class="Boxt">후기 114 ∙ 단골 811 ∙ 네일샵</span>
+						</div>
+					</div>
+				</a>
+
 		</div>
 	</div>
 

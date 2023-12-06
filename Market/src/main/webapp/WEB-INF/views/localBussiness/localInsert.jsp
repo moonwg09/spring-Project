@@ -78,86 +78,28 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 				<input type="text" placeholder="상품명" name="title" />
 			</div>
 			<div class="write_category_container">
-				<div class="write_category_div">
-					<ul class="write_category_ul">
-						<li class="write_category_li"><span
-							class="write_category_li_span first">패션의류</span></li>
-						<li class="write_category_li"><span
-							class="write_category_li_span second">패션잡화</span></li>
-						<li class="write_category_li"><span
-							class="write_category_li_span third">노트북/PC</span></li>
-						<li class="write_category_li"><span
-							class="write_category_li_span fourth">가전제품</span></li>
-						<li class="write_category_li"><span
-							class="write_category_li_span fifth">무료나눔</span></li>
-					</ul>
-				</div>
-				<div class="write_category_div">
-					<ul class="write_category_ul first">
-						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							여성의류 <input type="checkbox" name="categori" value="1">
-						</li>
-						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							남성의류 <input type="checkbox" name="categori" value="2">
-						</li>
-					</ul>
-					<ul class="write_category_ul second">
-						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							여성신발 <input type="checkbox" name="categori" value="3">
-						</li>
-						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							남성신발 <input type="checkbox" name="categori" value="4">
-						</li>
-						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							시계 <input type="checkbox" name="categori" value="5">
-						</li>
-						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							기타잡화 <input type="checkbox" name="categori" value="6">
-						</li>
-					</ul>
-					<ul class="write_category_ul third">
-						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							노트북 <input type="checkbox" name="categori" value="7">
-						</li>
-						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							데스크탑/본체 <input type="checkbox" name="categori" value="8">
-						</li>
-						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							마우스 <input type="checkbox" name="categori" value="9">
-						</li>
-						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							모니터/키보드/헤드셋 <input type="checkbox" name="categori" value="10">
-						</li>
-						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							기타<input type="checkbox" name="categori" value="11">
-						</li>
 
+					<ul class="write_category_ul first" style="display: block ;width:100%;">
+						<li class="write_category_li"><input type="checkbox"
+							name="categori" value="1">전체</li>
+						<li class="write_category_li">식당 <input type="checkbox"
+							name="categori" value="2">
+						</li>
+			
+						<li class="write_category_li">카페 <input type="checkbox"
+							name="categori" value="3">
+						</li>
+						<li class="write_category_li">용달/이사 <input type="checkbox"
+							name="categori" value="4">
+						</li>
+						<li class="write_category_li">뷰티/미용 <input type="checkbox"
+							name="categori" value="5">
+						</li>
+						<li class="write_category_li">헬스/필라테스/요가 <input
+							type="checkbox" name="categori" value="6">
+						</li>
 					</ul>
-					<ul class="write_category_ul fourth">
-						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							냉장고 <input type="checkbox" name="categori" value="12">
-						</li>
-						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							TV <input type="checkbox" name="categori" value="13">
-						</li>
-						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							세탁기/건조기 <input type="checkbox" name="categori" value="14">
-						</li>
-						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							주방가전 <input type="checkbox" name="categori" value="15">
-						</li>
-						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							기타가전제품<input type="checkbox" name="categori" value="16">
-						</li>
-
-					</ul>
-					<ul class="write_category_ul fifth">
-						<li class="write_category_li" onclick="toggleCheckbox(this)">
-							무료나눔 <input type="checkbox" name="categori" value="17">
-						</li>
-
-					</ul>
-				</div>
+				
 			</div>
 			<div class="product_write_price">
 				<input type="text" placeholder="상품가격" name="price" />
@@ -198,63 +140,7 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 			</div>
 		</div>
 	</form>
-	<script>
-		document
-				.querySelector('.write_category_li_span.first')
-				.addEventListener(
-						'click',
-						function() {
-							document.querySelector('.write_category_ul.first').style.display = 'block';
-							document.querySelector('.write_category_ul.second').style.display = 'none';
-							document.querySelector('.write_category_ul.third').style.display = 'none';
-							document.querySelector('.write_category_ul.fourth').style.display = 'none';
-							document.querySelector('.write_category_ul.fifth').style.display = 'none';
-						});
-		document
-				.querySelector('.write_category_li_span.second')
-				.addEventListener(
-						'click',
-						function() {
-							document.querySelector('.write_category_ul.second').style.display = 'block';
-							document.querySelector('.write_category_ul.first').style.display = 'none';
-							document.querySelector('.write_category_ul.third').style.display = 'none';
-							document.querySelector('.write_category_ul.fourth').style.display = 'none';
-							document.querySelector('.write_category_ul.fifth').style.display = 'none';
-						});
-		document
-				.querySelector('.write_category_li_span.third')
-				.addEventListener(
-						'click',
-						function() {
-							document.querySelector('.write_category_ul.third').style.display = 'block';
-							document.querySelector('.write_category_ul.first').style.display = 'none';
-							document.querySelector('.write_category_ul.second').style.display = 'none';
-							document.querySelector('.write_category_ul.fourth').style.display = 'none';
-							document.querySelector('.write_category_ul.fifth').style.display = 'none';
-						});
-		document
-				.querySelector('.write_category_li_span.fourth')
-				.addEventListener(
-						'click',
-						function() {
-							document.querySelector('.write_category_ul.fourth').style.display = 'block';
-							document.querySelector('.write_category_ul.first').style.display = 'none';
-							document.querySelector('.write_category_ul.second').style.display = 'none';
-							document.querySelector('.write_category_ul.third').style.display = 'none';
-							document.querySelector('.write_category_ul.fifth').style.display = 'none';
-						});
-		document
-				.querySelector('.write_category_li_span.fifth')
-				.addEventListener(
-						'click',
-						function() {
-							document.querySelector('.write_category_ul.fifth').style.display = 'block';
-							document.querySelector('.write_category_ul.first').style.display = 'none';
-							document.querySelector('.write_category_ul.second').style.display = 'none';
-							document.querySelector('.write_category_ul.fourth').style.display = 'none';
-							document.querySelector('.write_category_ul.third').style.display = 'none';
-						});
-	</script>
+
 	<script>
 		function readURL(input) {
 			var imagePreviewContainer = document
@@ -280,31 +166,6 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 	</script>
 
 	<script>
-		function toggleCheckbox(liElement) {
-			var checkbox = liElement.querySelector('input[type="checkbox"]');
-			var allCheckboxes = document
-					.querySelectorAll('input[type="checkbox"]');
-
-			// Uncheck all checkboxes
-			allCheckboxes.forEach(function(cb) {
-				if (cb !== checkbox) {
-					cb.checked = false;
-					cb.parentNode.classList.remove('selected');
-				}
-			});
-
-			// Toggle the "selected" class for changing background color
-			if (checkbox.checked) {
-				liElement.classList.add('selected');
-			} else {
-				liElement.classList.remove('selected');
-			}
-
-			// Manually toggle the checkbox
-			checkbox.checked = !checkbox.checked;
-
-		}
-
 		function execution_daum_address() {
 
 			new daum.Postcode(

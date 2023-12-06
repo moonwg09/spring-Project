@@ -88,7 +88,7 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 					<div class="localDetail_info_profile_div">
 						<div class="localDetail_info_profile_sub_info">
 							<div class="localDetail_info_profile_img">
-								<img src="image/풋.png" alt="" style="width: 40px; height: 40px" />
+								<img src="../resources/image/defaultprofile.png" alt="" style="width: 40px; height: 40px; border:1px solid rgba(0,0,0,0.3); border-radius: 50%" />
 							</div>
 							<div class="detail_info_profile_info">
 								<div class="detail_info_profile_name">${localDetail.writer}</div>
@@ -147,18 +147,18 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 								<span>댓글</span> <span class="detail_info_span" id="modal-open">댓글작성</span>
 							</div>
 							<hr />
-							<c:forEach items="${commentList}" var="chatItem">
+							<c:forEach items="${replyList}" var="replyList">
 
 								<div class="detail_comment_profile_div">
 									<div class="detail_comment_profile_sub_info">
 										<div class="detail_info_profile_img">
-											<img src="../resources/image/profile.png" alt="" />
+											<img src="../resources/image/defaultprofile.png" alt="" />
 										</div>
 										<div class="detail_info_profile_info">
-											<div class="detail_info_profile_name">${chatItem.mvo.nickName}</div>
-											<div class="detail_info_profile_address">${chatItem.mvo.addr2}</div>
+											<div class="detail_info_profile_name">${replyList.mvo[0].nickName}</div>
+											<div class="detail_info_profile_address">${replyList.mvo[0].addr2}</div>
 										</div>
-										<c:if test="${member.nickName eq chatItem.mvo.nickName}">
+										<c:if test="${member.nickName eq replyList.mvo[0].nickName}">
 
 
 
@@ -166,7 +166,7 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 												class="detailProduct_deleteBtn">
 
 												<a
-													href="/transation/delete?chatNo=${chatItem.chatNo}&productNo=${chatItem.pvo.productNo}"><i
+													href="/localBussiness/delete?replyNo=${replyList.replyNo}&productNo=${replyList.lbvo[0].productNo}"><i
 													class="fa-solid fa-trash-can"
 													style="color: black; cursor: pointer;"></i></a>
 											</div>
@@ -174,11 +174,11 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 
 										</c:if>
 									</div>
-									<p class="comment_Ptag">${chatItem.content}</p>
+									<p class="comment_Ptag">${replyList.content}</p>
 
 								</div>
 							</c:forEach>
-							<c:if test="${empty commentList}">
+							<c:if test="${empty replyList}">
 								<p
 									style="padding: 0px 20px; text-align: center; height: 300px; display: flex; width: 100%; align-items: center; justify-content: center;">등록된
 									댓글이 없습니다.</p>

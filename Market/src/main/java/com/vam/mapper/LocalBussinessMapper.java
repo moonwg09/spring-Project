@@ -22,6 +22,10 @@ public interface LocalBussinessMapper {
 	
 	public void insertChat(ReplyVO rvo) throws Exception;
 	
-	public List<ReplyVO> selectChat(int productNo) throws Exception;
+	public List<ReplyVO> selectChat(Long productNo) throws Exception;
+	
+	public void deleteComment(int replyNo) throws Exception;
+	
+	public List<ReplyVO> selectChatAll() throws Exception;
 	
 }

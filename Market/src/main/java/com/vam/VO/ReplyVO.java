@@ -3,18 +3,18 @@ package com.vam.VO;
 import java.util.List;
 
 public class ReplyVO {
-	private int replyNO;
+	private int replyNo;
 	private Long productNo;
 	private int memberNo;
 	private String content;
 	
 	private List<MemberVO> mvo;
-	private List<ProductVO> pvo;
-	public int getReplyNO() {
-		return replyNO;
+	private List<LocalBussinessVO> lbvo;
+	public int getReplyNo() {
+		return replyNo;
 	}
-	public void setReplyNO(int replyNO) {
-		this.replyNO = replyNO;
+	public void setReplyNo(int replyNo) {
+		this.replyNo = replyNo;
 	}
 	public Long getProductNo() {
 		return productNo;
@@ -40,18 +40,17 @@ public class ReplyVO {
 	public void setMvo(List<MemberVO> mvo) {
 		this.mvo = mvo;
 	}
-	public List<ProductVO> getPvo() {
-		return pvo;
+	public List<LocalBussinessVO> getLbvo() {
+		return lbvo;
 	}
-	public void setPvo(List<ProductVO> pvo) {
-		this.pvo = pvo;
+	public void setLbvo(List<LocalBussinessVO> lbvo) {
+		this.lbvo = lbvo;
 	}
 	@Override
 	public String toString() {
-		return "ReplyVO [replyNO=" + replyNO + ", productNo=" + productNo + ", memberNo=" + memberNo + ", content="
-				+ content + ", mvo=" + mvo + ", pvo=" + pvo + "]";
+		return "ReplyVO [replyNo=" + replyNo + ", productNo=" + productNo + ", memberNo=" + memberNo + ", content="
+				+ content + ", mvo=" + mvo + ", lbvo=" + lbvo + "]";
 	}
-	
 	
 	
 	

@@ -44,35 +44,45 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 	<div class="localDetail_container">
 		<div class="localDetail_div">
 			<div id="carouselExampleIndicators" class="carousel slide"
-				data-bs-ride="carousel" style="width: 100%">
-				<div class="carousel-indicators">
-					<button type="button" data-bs-target="#carouselExampleIndicators"
-						data-bs-slide-to="0" class="active" aria-current="true"
-						aria-label="Slide 1"></button>
-					<button type="button" data-bs-target="#carouselExampleIndicators"
-						data-bs-slide-to="1" aria-label="Slide 2"></button>
-				</div>
-				<div class="carousel-inner">
-					<div class="carousel-item active">
-						<img src="image/logo.jpg" class="d-block w-100" alt="..."
-							style="height: 587px" />
+					data-bs-ride="carousel" style="width: 100%" data-interval="false">
+					<div class="carousel-indicators">
+						<c:forEach items="${localDetailImage}" var="localDetailImage"
+							varStatus="varStatus">
+							<button type="button" data-bs-target="#carouselExampleIndicators"
+								data-bs-slide-to="${varStatus.index}"
+								class="${varStatus.index == 0 ? 'active' : ''}"
+								aria-current="${varStatus.index == 0 ? 'true' : 'false'}"
+								aria-label="Slide ${varStatus.index + 1}"></button>
+						</c:forEach>
 					</div>
-					<div class="carousel-item">
-						<img src="image/풋.png" class="d-block w-100" style="height: 587px"
-							alt="..." />
+					<div class="carousel-inner">
+						<c:forEach items="${localDetailImage}" var="localDetailImage"
+							varStatus="varStatus">
+							<div
+								class="carousel-item ${varStatus.index == 0 ? 'active' : ''}">
+								<img src="" class="d-block w-100"
+									alt="Image ${varStatus.index + 1}"
+									style="width: 500px; height: 587px"
+									id="main-img${varStatus.index}" />
+								<script>
+                    var imageName${varStatus.index} = encodeURIComponent('${localDetailImage.local_imageList[0].image_uploadPath}' + '/' + '${localDetailImage.local_imageList[0].image_uuid}' + '_' + '${localDetailImage.local_imageList[0].image_name}');
+                    var realSrc${varStatus.index} = '/display?fileName=' + imageName${varStatus.index};
+                    document.getElementById("main-img${varStatus.index}").src = realSrc${varStatus.index};
+                </script>
+							</div>
+						</c:forEach>
 					</div>
+					<button class="carousel-control-prev" type="button"
+						data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button"
+						data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
 				</div>
-				<button class="carousel-control-prev" type="button"
-					data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Previous</span>
-				</button>
-				<button class="carousel-control-next" type="button"
-					data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Next</span>
-				</button>
-			</div>
 			<div class="localDetail_info_contaitner">
 				<div class="localDetail_info_div">
 					<div class="localDetail_info_profile_div">
@@ -190,7 +200,7 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 					<p class="modal_title smft">로그인 하시겠습니까?</p>
 					<div class="modal_button_div">
 						<div class="modal_button yes">
-							<span>예</span>
+							<span><a href="/member/login" style="text-decoration: none; color:white">예</a></span>
 						</div>
 						<div class="modal_button no" id="close">
 							<span>아니요</span>

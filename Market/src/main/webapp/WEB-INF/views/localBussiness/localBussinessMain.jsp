@@ -62,34 +62,40 @@
 				<!--전체창-->
 				<div id="nation1">
 					<ul class="menu_all" style="display: flex;">
-						<c:forEach items="${local}" var="local" varStatus="loop">
-							<c:if test="${local.categori == 1}">
+						<c:forEach items="${imgList}" var="imgList" varStatus="loop">
+							<c:if test="${imgList.categori == 1}">
 
 
 								<li class="A"><a class="a"
-									href="localDetail?productNo=${local.productNo}"
+									href="localDetail?productNo=${imgList.productNo}"
 									style="width: 100%">
 										<div class="Menu_AA" style="display: flex;">
 											<div class="Main_Img">
-												<div>
-													<span style="text-align: center"><img
-														id="main-img${loop.index}" src=""
-														style="width: 100%; height: auto" alt="" /></span>
-												</div> <script>
-													console.log("${local}");
-													var imageName = encodeURIComponent('${local.local_imageList[0].image_uploadPath}'+'/'+'${local.local_imageList[0].image_uuid}'+'_'+'${local.local_imageList[0].image_name}');
-													var realSrc = '/display?fileName='+imageName;
-													document.getElementById("main-img${loop.index}").src = realSrc;
+
+												<img id="main-img${loop.index}" src=""
+													 alt="Image not found" />
+												<script>
+													console.log("${imgList}");
+													var imageName = encodeURIComponent('${imgList.local_imageList[0].image_uploadPath}'
+															+ '/'
+															+ '${imgList.local_imageList[0].image_uuid}'
+															+ '_'
+															+ '${imgList.local_imageList[0].image_name}');
+													var realSrc = '/display?fileName='
+															+ imageName;
+													document
+															.getElementById("main-img${loop.index}").src = realSrc;
+													console.log(realSrc);
 												</script>
 											</div>
 											<div class="Sub_content" style="width: 100%">
 												<div class="Sub_wrapper">
-													<p class="Sub_list">${local.title}</p>
-													<span class="Sub_list_region">${local.address }</span>
+													<p class="Sub_list">${imgList.title}</p>
+													<span class="Sub_list_region">${imgList.address }</span>
 												</div>
-												<span class="Sub_list_description">${local.content}</span> <span
-													class="Sub_list_infos">후기 ${local.replyCount} ∙ 단골
-													${local.revisitCount}</span>
+												<span class="Sub_list_description">${imgList.content}</span>
+												<span class="Sub_list_infos">후기 ${imgList.replyCount}
+													∙ 단골 ${imgList.revisitCount}</span>
 											</div>
 										</div>
 								</a></li>
@@ -261,19 +267,25 @@
 							<div class="B">
 								<!--미소 프로필 전체-->
 								<div class="BImg">
-								<c:forEach items="${localbussiness}" var="local"
+									<c:forEach items="${localbussiness}" var="local"
 										varStatus="varstatus">
-										
-												<div>
-													<span style="text-align: center"><img
-														id="main-img${varstatus.index}" src=""
-														style="width: 100%; height: auto" alt="" /></span>
-												</div> <script>
-												
-													var imageName = encodeURIComponent('${localbussiness.local_imageList[0].image_uploadPath}'+'/'+'${localbussiness.local_imageList[0].image_uuid}'+'_'+'${localbussiness.local_imageList[0].image_name}');
-													var realSrc = '/display?fileName='+imageName;
-													document.getElementById("main-img${varstatus.index}").src = realSrc;
-												</script>
+
+										<div>
+											<span style="text-align: center"><img
+												id="main-img${varstatus.index}" src=""
+												style="width: 100%; height: auto" alt="" /></span>
+										</div>
+										<script>
+											var imageName = encodeURIComponent('${localbussiness.local_imageList[0].image_uploadPath}'
+													+ '/'
+													+ '${localbussiness.local_imageList[0].image_uuid}'
+													+ '_'
+													+ '${localbussiness.local_imageList[0].image_name}');
+											var realSrc = '/display?fileName='
+													+ imageName;
+											document
+													.getElementById("main-img${varstatus.index}").src = realSrc;
+										</script>
 									</c:forEach>
 								</div>
 								<div class="B-2">

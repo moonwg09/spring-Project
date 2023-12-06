@@ -62,5 +62,15 @@ public List<LocalBussinessImageVO> findById(Long productNo) {
 	// TODO Auto-generated method stub
 	return imagemapper.findById(productNo);
 }
-
+ @Override
+public List<LocalBussinessVO> localBussinessList() throws Exception {
+	// TODO Auto-generated method stub
+	return localmapper.localBussinessList();
+}
+ 
+ @Override
+public List<LocalBussinessVO> productGetDetailImage(Long productNo) throws Exception {
+	// TODO Auto-generated method stub
+	return localmapper.productGetDetailImage(productNo);
+}
 }

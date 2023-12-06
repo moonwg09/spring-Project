@@ -14,6 +14,8 @@ public class LocalBussinessVO {
     private int replyCount, revisitCount,subCategory;
 	
     private List<LocalBussinessImageVO> local_imageList;
+    
+    private List<MemberVO> mvo;
 
 	public Long getProductNo() {
 		return productNo;

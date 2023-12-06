@@ -169,6 +169,7 @@
 														id="main-img${varstatus.index}" src=""
 														style="width: 100%; height: auto" alt="" /></span>
 												</div> <script>
+												console.log("${product}");
 													console.log("sa");
 													var imageName = encodeURIComponent('${product.product_imageList[0].image_uploadPath}'+'/'+'${product.product_imageList[0].image_uuid}'+'_'+'${product.product_imageList[0].image_name}');
 													var realSrc = '/display?fileName='+imageName;

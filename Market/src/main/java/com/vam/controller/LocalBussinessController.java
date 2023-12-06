@@ -44,6 +44,8 @@ public class LocalBussinessController {
 	public void usedTransation(Model model) throws Exception {
 		logger.info("LocalBussiness 占쏙옙占쏙옙");
 		localservice.localBussinessSelectAll();
+		localservice.localBussinessList();
+		model.addAttribute("imgList", localservice.localBussinessList());
 		model.addAttribute("local",localservice.localBussinessSelectAll());
 		
 	}
@@ -51,6 +53,7 @@ public class LocalBussinessController {
 	public void localDetail(@RequestParam("productNo") Long productNo ,Model model) throws Exception {
 		logger.info("LocalDetail 占쏙옙占쏙옙");
 		localservice.localGetDetail(productNo);
+		model.addAttribute("localDetailImage",localservice.productGetDetailImage(productNo));
 		model.addAttribute("localDetail",localservice.localGetDetail(productNo));
 		
 	}

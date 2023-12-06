@@ -18,4 +18,8 @@ public interface LocalBussinessService {
 	
 	public int increaseRevisitCount(Long productNo) throws Exception;
 	
+	public List<LocalBussinessVO> localBussinessList() throws Exception;
+	
+	public List<LocalBussinessVO> productGetDetailImage(Long productNo) throws Exception;
+	
 }

@@ -31,9 +31,9 @@
 		<result property="replyCount" column="replyCount" />
 		<result property="revisitCount" column="revisitCount" />
 		<result property="subCategory" column="subCategory" />
-		<association property="local_imageList"
+		<collection property="local_imageList" ofType="com.vam.VO.LocalBussinessImageVO" 
 			resultMap="imageMap">
-		</association>
+		</collection>
 		<collection property="mvo" resultMap="memberResultMap" />
 
 	</resultMap>
@@ -46,7 +46,7 @@
 		<collection property="mvo" resultMap="memberResultMap" />
 	</resultMap>
 
-	<resultMap type="com.vam.VO.LocalBussinessVO" id="imageMap">
+	<resultMap type="com.vam.VO.LocalBussinessImageVO"  id="imageMap">
 		<id property="productNo" column="productNo" />
 		<result property="image_uuid" column="image_uuid" />
 		<result property="image_uploadPath" column="image_uploadPath" />
@@ -55,12 +55,14 @@
 	</resultMap>
 
 
-	<select id="localBussinessSelectAll" resultMap="localResultMap">
-		select * from localbussiness join
-		local_image on localbussiness.productNo = local_image.productNo where
-		categori= #{categori}
-	</select>
+	<select id="localBussinessSelectAll" resultType="com.vam.VO.LocalBussinessVO">
+		select * from localbussiness
 	
+	</select>
+	<select id="localBussinessList" resultMap="localResultMap">
+		select * from localbussiness join
+		local_image on localbussiness.productNo = local_image.productNo
+	</select>
 	<insert id="localBussinessInsert" useGeneratedKeys="true"
 		keyProperty="productNo" parameterType="com.vam.VO.LocalBussinessVO">
 		insert into localBussiness (title, writer, categori, content, address, price)
@@ -70,6 +72,13 @@
 		resultMap="localResultMap">
 		select * from localbussiness join local_image on localbussiness.productNo = local_image.productNo
 		where localbussiness.productNo = #{localbussiness.productNo, jdbcType=BIGINT}
+	</select>
+	<select id="productGetDetailImage" parameterType="java.lang.Long"
+		resultMap="localResultMap">
+		SELECT local_image.image_uuid, local_image.image_uploadPath,local_image.image_name
+		FROM localbussiness
+		LEFT JOIN local_image ON localbussiness.productNo = local_image.productNo
+		WHERE local_image.productNo = #{productNo ,jdbcType=BIGINT};
 	</select>
 	<update id="increaseRevisitCount" parameterType="java.lang.Long">
 	UPDATE localBussiness

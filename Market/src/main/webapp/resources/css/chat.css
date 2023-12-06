@@ -177,7 +177,7 @@
 }
 
 .chat_wrap #chat .message {
-  display: inline-block;
+	display: inline-block;
   margin: 5px 20px 0px 10px;
   max-width: 75%;
   border: 1px solid gray;

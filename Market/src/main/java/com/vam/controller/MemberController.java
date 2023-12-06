@@ -239,7 +239,19 @@ public class MemberController {
 //        return "redirect:/main";
 //    }
 //	
-	
+	// ���������� �α׾ƿ�
+		@RequestMapping(value="/logout", method=RequestMethod.GET)
+		public String logoutMainGET(HttpServletRequest request) throws Exception{
+			
+			logger.info("logoutMainGET�޼��� ����");
+			
+			HttpSession session = request.getSession();
+			
+			session.invalidate();
+			
+			return "redirect:/main";
+		}
+		
 	
 		
 

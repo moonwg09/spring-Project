@@ -38,6 +38,23 @@
    		opener.document.getElementById("pInput").value = document.getElementById("cInput").value;
    		window.close();
    	}
+   	
+  //인증번호 이메일 전송
+	$(".EMPopup_under_btn").click(function(){
+		
+		var email = $(".EMPopup_under_btn").val();
+		
+		$.ajax({
+			
+			type:"GET",
+			url:"mailCheck?email=" + email,
+			success:function(data){
+				
+				code = data;
+				
+			}
+		});
+	});
    
    
    </script>

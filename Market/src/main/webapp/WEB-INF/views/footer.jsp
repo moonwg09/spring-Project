@@ -26,12 +26,12 @@
             <div class="Footer_Sheet1">
                 <!--중고 거래-->
                 <div class="Footer_List">
-                    <a class="Bar_bar" target="_blank" href="GerRea.html">중고 거래</a>
+                    <a class="Bar_bar" target="_blank" href="/transation/usedTransation">중고 거래</a>
                 </div>
         
                <!--동네 업체-->
                <div class="Footer_List">
-                <a class="Bar_bar" target="_blank" href="UpChae.html">동네 업체</a>
+                <a class="Bar_bar" target="_blank" href="/localBussiness/localBussinessMain">동네 업체</a>
             </div>
                   <!--알바-->
                   <div class="Footer_List">

@@ -15,6 +15,9 @@
     <link rel="shortcut icon" type="image/x-icon" href="/resources/img/icon/favicon.png">
 
     <!-- All CSS Files -->
+    <link rel="stylesheet" type="text/css" href="../resources/css/header.css">
+	<link rel="stylesheet" type="text/css" href="../resources/css/main.css">
+	<link rel="stylesheet" type="text/css" href="../resources/css/footer.css">
     <!-- Bootstrap fremwork main css -->
     <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
     <!-- Nivo-slider css -->
@@ -31,6 +34,7 @@
     <link href="/resources/css/color/color-core.css" data-style="styles" rel="stylesheet">
     <!-- User style -->
     <link rel="stylesheet" href="/resources/css/custom.css">
+    
 
     <!-- Modernizr JS -->
     <script src="/resources/js/vendor/modernizr-2.8.3.min.js"></script>
@@ -38,190 +42,28 @@
     <script src="/resources/js/vendor/jquery-3.1.1.min.js"></script>
     <!-- Bootstrap framework js -->
     <script src="/resources/js/bootstrap.min.js"></script>
-    
-    <!-- summerNote -->
+    <link rel="stylesheet" type="text/css"
+	href="../resources/css/header.css">
+<link rel="stylesheet" type="text/css" href="../resources/css/main.css">
+<link rel="stylesheet" type="text/css"
+	href="../resources/css/footer.css">
+<link rel="stylesheet"
+	href="../resources/css/transation/detailProduct.css">
+
+<link rel="stylesheet" href="detail.css" />
+
+ <!-- summerNote -->
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
     <script src=" https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/lang/summernote-ko-KR.min.js"></script>
-
 </head>
 
+	
 <body>
-    <!-- Body main wrapper start -->
-    <div class="wrapper">
+		
+   
 
-        <!-- START HEADER AREA -->
-        <header class="header-area header-wrapper">
-            <!-- header-top-bar -->
-            <div class="header-top-bar plr-185">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-6 hidden-xs">
-                            <div class="call-us">
-                                <p class="mb-0 roboto"></p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-xs-12">
-                            <div class="top-link clearfix">
-                                <ul class="link f-right">
-                                    <li>
-                                        <a href="/myPurchase">
-                                            <i class="zmdi zmdi-account"></i>
-                                            MyPage
-                                        </a>
-                                    </li>
-                                    <li>
-                                 		<a href="/mypage/wishList">
-                                            <i class="zmdi zmdi-favorite"></i>
-                                            Wish List
-                                         </a>                                       
-                                   
-                                    </li>
-                                    <li>
-                                    	
-                                        	<a href="/mypage/customlogin">
-                                            	<i class="zmdi zmdi-lock"></i>
-                                            	Login
-                                        	</a>
-                                       
-                                        
-                                        	<a onClick="alert('Logout Success!')" href="/mypage/logout" >
-                                            	<i class="zmdi zmdi-lock"></i>
-                                            	Logout
-                                        	</a>                                       
-                                        
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- header-middle-area -->
-            <div id="sticky-header" class="header-middle-area plr-185">
-                <div class="container-fluid">
-                    <div class="full-width-mega-dropdown">
-                        <div class="row">
-                            <!-- logo -->
-                            <div class="col-md-2 col-sm-6 col-xs-12">
-                                <div class="logo">
-                                    <a href="/">
-                                        <img src="/resources/img/logo/logo.png" alt="main logo">
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- primary-menu -->
-                            <div class="col-md-8 hidden-sm hidden-xs">
-                                <nav id="primary-menu">
-                                    <ul class="main-menu text-center">
-                                        <li class="mega-parent"><a href="/product/list">Products</a>
-                                        <li>
-                                        	<a href="/notice/list">Notice</a>
-                                        </li>
-                                        <li>
-                                            <a href="/about">About us</a>
-                                        </li>
-                                        <li>
-                                            <a href="/contact">Contact</a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                            <!-- header-search & total-cart -->
-                            <div class="col-md-2 col-sm-6 col-xs-12">
-                                <div class="search-top-cart  f-right">
-                                    <!-- header-search -->
-                                    <div class="header-search header-search-2 f-left">
-                                        <div class="header-search-inner">
-                                           <button class="search-toggle">
-                                            <i class="zmdi zmdi-search"></i>
-                                           </button>
-                                            <form id='topSearchForm' action="/product/list" method='get'>
-                                                <div class="top-search-box">
-                                                    <input type="text" name = "keyword" placeholder="Search here your product...">
-                                                    <button type="submit">
-                                                        <i class="zmdi zmdi-search"></i>
-                                                    </button>
-                                                </div>
-                                            </form> 
-                                        </div>
-                                    </div>
-                                    <!-- total-cart -->
-                                    <div class="total-cart total-cart-2 f-left">
-                                        <div class="total-cart-in">
-                                            <div class="cart-toggler">
-                                                <a href="/purchase/viewCart">
-                                                    <span class="cart-quantity" id ="cart-quantity">00</span><br>
-                                                    <span class="cart-icon">
-                                                        <i class="zmdi zmdi-shopping-cart-plus"></i>
-                                                    </span>
-                                                </a>                            
-                                            </div>
-                                            <ul>
-                                                <li>
-                                                    <div class="top-cart-inner your-cart">
-                                                        <h5 class="text-capitalize">Your Cart</h5>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="total-cart-pro">
-                                                        
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="top-cart-inner subtotal">
-                                                        <h4 class="text-uppercase g-font-2">
-                                                            Total  =  
-                                                            <span id ="total_money">0</span>
-                                                        </h4>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="top-cart-inner view-cart">
-                                                        <h4 class="text-uppercase">
-                                                            <a href="/purchase/viewCart">View cart</a>
-                                                        </h4>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- END HEADER AREA -->
-
-        <!-- START MOBILE MENU AREA -->
-        <div class="mobile-menu-area hidden-lg hidden-md">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="mobile-menu">
-                            <nav id="dropdown">
-                                <ul>
-                                    <li>
-                                        <a href="/product/list">Products</a>
-                                    </li>
-                                    <li>
-                                    	<a href="/notice/list">Notice</a>
-                                    </li>
-                                    <li>
-                                        <a href="/about">About Us</a>
-                                    </li>
-                                    <li>
-                                        <a href="/contact">Contact</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
 
         <!-- END MOBILE MENU AREA -->
         
@@ -232,9 +74,9 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="breadcrumbs-inner">
-                                <h1 class="breadcrumbs-title">Notice modify Form</h1>
+                                <h1 class="breadcrumbs-title">modify Form</h1>
                                 <ul class="breadcrumb-list">
-                                    <li><a href="index.html">Notice</a></li>
+                                    <li><a href="/notice/list">List</a></li>
                                     <li>modify Form</li>
                                 </ul>
                             </div>
@@ -452,6 +294,8 @@
 	});
   });
 </script>
+
+<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 
 </html>

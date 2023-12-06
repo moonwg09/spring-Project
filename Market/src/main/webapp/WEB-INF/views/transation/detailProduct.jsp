@@ -201,7 +201,7 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 					<div class="product_detail_button_div">
 						<div class="product_detail_button">
 							<a class="likeButton" href="/member/likeProduct?productNo=${productDetail.productNo}&nickName=${member.nickName}">관심</a>
-							<a class="chatButton" href="/member/chatting">대화하기</a>
+							<a class="chatButton" href="/chat">대화하기</a>
 						</div>
 					</div>
 					</c:if>
@@ -267,7 +267,11 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 					<p class="modal_title smft">로그인 하시겠습니까?</p>
 					<div class="modal_button_div">
 						<div class="modal_button yes">
+<<<<<<< Updated upstream
 							<span><a href="/member/login" style="text-decoration: none; color:white">예</a></span>
+=======
+							<span><a href="/main">예</a></span>
+>>>>>>> Stashed changes
 						</div>
 						<div class="modal_button no" id="close">
 							<span>아니요</span>
@@ -331,11 +335,13 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 			$('#close').click(function() {
 				modalClose();
 			});
+			
 			function modalClose() {
 				$('#popup').fadeOut();
 				document.body.style.overflow = 'auto';
 			}
 		});
+		
 		var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
 		var options = {
 			//지도를 생성할 때 필요한 기본 옵션

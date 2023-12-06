@@ -38,8 +38,7 @@
 
 	</resultMap>
 
-
-	<resultMap type="com.vam.VO.LocalBussinessImageVO"  id="imageMap">
+	<resultMap type="com.vam.VO.LocalBussinessImageVO" id="imageMap">
 		<id property="productNo" column="productNo" />
 		<result property="image_uuid" column="image_uuid" />
 		<result property="image_uploadPath" column="image_uploadPath" />
@@ -56,9 +55,10 @@
 		<collection property="mvo" resultMap="memberResultMap" />
 	</resultMap>
 
-	<select id="localBussinessSelectAll" resultType="com.vam.VO.LocalBussinessVO">
-		select * from localbussiness
-	
+	<select id="localBussinessSelectAll" resultMap="localResultMap">
+		select * from localbussiness join
+		local_image on localbussiness.productNo = local_image.productNo where
+		categori= #{categori}
 	</select>
 	<select id="localBussinessList" resultMap="localResultMap">
 		select * from localbussiness join

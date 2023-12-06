@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.vam.VO.ChattingVO;
 import com.vam.service.ChatService;
-import com.vam.Impl.ChatServiceImpl;
 
 @RestController
 public class ChatController {

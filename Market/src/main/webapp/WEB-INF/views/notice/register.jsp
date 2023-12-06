@@ -5,6 +5,8 @@
 
 <!DOCTYPE html>
 <html class="no-js" lang="en">
+<!DOCTYPE html>
+<html class="no-js" lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -14,7 +16,11 @@
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="/resources/img/icon/favicon.png">
 
+
     <!-- All CSS Files -->
+    <link rel="stylesheet" type="text/css" href="../resources/css/header.css">
+	<link rel="stylesheet" type="text/css" href="../resources/css/main.css">
+	<link rel="stylesheet" type="text/css" href="../resources/css/footer.css">
     <!-- Bootstrap fremwork main css -->
     <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
     <!-- Nivo-slider css -->
@@ -46,184 +52,15 @@
 
 </head>
 
+
+
 <body>
 
+		
     <!-- Body main wrapper start -->
     <div class="wrapper">
 
-        <!-- START HEADER AREA -->
-        <header class="header-area header-wrapper">
-            <!-- header-top-bar -->
-            <div class="header-top-bar plr-185">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-6 hidden-xs">
-                            <div class="call-us">
-                                <p class="mb-0 roboto"></p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-xs-12">
-                            <div class="top-link clearfix">
-                                <ul class="link f-right">
-                                    <li>
-                                        <a href="/myPurchase">
-                                            <i class="zmdi zmdi-account"></i>
-                                            MyPage
-                                        </a>
-                                    </li>
-                                    <li>
-                                 		<a href="/mypage/wishList">
-                                            <i class="zmdi zmdi-favorite"></i>
-                                            Wish List
-                                         </a>                                       
-                                   
-                                    </li>
-                                    <li>
-                                    	
-                                        	<a href="/mypage/customlogin">
-                                            	<i class="zmdi zmdi-lock"></i>
-                                            	Login
-                                        	</a>
-                                        
-                                        
-                                        	<a onClick="alert('Logout Success!')" href="/mypage/logout" >
-                                            	<i class="zmdi zmdi-lock"></i>
-                                            	Logout
-                                        	</a>                                       
-                                        
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- header-middle-area -->
-            <div id="sticky-header" class="header-middle-area plr-185">
-                <div class="container-fluid">
-                    <div class="full-width-mega-dropdown">
-                        <div class="row">
-                            <!-- logo -->
-                            <div class="col-md-2 col-sm-6 col-xs-12">
-                                <div class="logo">
-                                    <a href="/">
-                                        <img src="/resources/img/logo/logo.png" alt="main logo">
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- primary-menu -->
-                            <div class="col-md-8 hidden-sm hidden-xs">
-                                <nav id="primary-menu">
-                                    <ul class="main-menu text-center">
-                                        <li class="mega-parent"><a href="/product/list">Products</a>
-                                        <li>
-                                        	<a href="/notice/list">Notice</a>
-                                        </li>
-                                        <li>
-                                            <a href="/about">About us</a>
-                                        </li>
-                                        <li>
-                                            <a href="/contact">Contact</a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                            <!-- header-search & total-cart -->
-                            <div class="col-md-2 col-sm-6 col-xs-12">
-                                <div class="search-top-cart  f-right">
-                                    <!-- header-search -->
-                                    <div class="header-search header-search-2 f-left">
-                                        <div class="header-search-inner">
-                                           <button class="search-toggle">
-                                            <i class="zmdi zmdi-search"></i>
-                                           </button>
-                                            <form id='topSearchForm' action="/product/list" method='get'>
-                                                <div class="top-search-box">
-                                                    <input type="text" name = "keyword" placeholder="Search here your product...">
-                                                    <button type="submit">
-                                                        <i class="zmdi zmdi-search"></i>
-                                                    </button>
-                                                </div>
-                                            </form> 
-                                        </div>
-                                    </div>
-                                    <!-- total-cart -->
-                                    <div class="total-cart total-cart-2 f-left">
-                                        <div class="total-cart-in">
-                                            <div class="cart-toggler">
-                                                <a href="/purchase/viewCart">
-                                                    <span class="cart-quantity" id ="cart-quantity">00</span><br>
-                                                    <span class="cart-icon">
-                                                        <i class="zmdi zmdi-shopping-cart-plus"></i>
-                                                    </span>
-                                                </a>                            
-                                            </div>
-                                            <ul>
-                                                <li>
-                                                    <div class="top-cart-inner your-cart">
-                                                        <h5 class="text-capitalize">Your Cart</h5>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="total-cart-pro">
-                                                        
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="top-cart-inner subtotal">
-                                                        <h4 class="text-uppercase g-font-2">
-                                                            Total  =  
-                                                            <span id ="total_money">0</span>
-                                                        </h4>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="top-cart-inner view-cart">
-                                                        <h4 class="text-uppercase">
-                                                            <a href="/purchase/viewCart">View cart</a>
-                                                        </h4>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- END HEADER AREA -->
-
-        <!-- START MOBILE MENU AREA -->
-        <div class="mobile-menu-area hidden-lg hidden-md">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="mobile-menu">
-                            <nav id="dropdown">
-                                <ul>
-                                    <li>
-                                        <a href="/product/list">Products</a>
-                                    </li>
-                                    <li>
-                                    	<a href="/notice/list">Notice</a>
-                                    </li>
-                                    <li>
-                                        <a href="/about">About Us</a>
-                                    </li>
-                                    <li>
-                                        <a href="/contact">Contact</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+       
         <!-- END MOBILE MENU AREA -->
         
         <!-- BREADCRUMBS SETCTION START -->
@@ -233,9 +70,9 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="breadcrumbs-inner">
-                                <h1 class="breadcrumbs-title">Product Register Form</h1>
+                                <h1 class="breadcrumbs-title">Register Form</h1>
                                 <ul class="breadcrumb-list">
-                                    <li><a href="index.html">Product</a></li>
+                                    <li><a href="/notice/list">list</a></li>
                                     <li>Register Form</li>
                                 </ul>
                             </div>
@@ -296,95 +133,7 @@
         <!-- End page content -->
 
     
-        <!-- START FOOTER AREA -->
-        <footer id="footer" class="footer-area section">
-            <div class="footer-top">
-                <div class="container-fluid">
-                    <div class="plr-185">
-                        <div class="footer-top-inner gray-bg">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-5 col-sm-4">
-                                    <div class="single-footer footer-about">
-                                        <div class="footer-logo">
-                                            <img src="/resources/img/logo/logo.png" alt="">
-                                        </div>
-                                        <div class="footer-brief">
-                                            <p>본 프로젝트는 Spring Framework을 이용한 쇼핑몰 웹 프로젝트입니다.</p>
-                                            <p>Java8, Spring Framework 5.0, MyBatis, MySQL, Spring Security, bootstrap4, JQuery 3.0, 카카오와 구글 API를 사용하였으며 REST방식을 일부 적용하였습니다.</p>
-                                        </div>
-                                        <ul class="footer-social">
-                                            <li>
-                                                <a class="facebook" href="https://github.com/mangdo/shoppingMallProject" title="github"><i class="zmdi zmdi-github"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 hidden-md hidden-sm">
-                                    <div class="single-footer">
-                                        <h4 class="footer-title border-left">Menu</h4>
-                                        <ul class="footer-menu">
-                                            <li>
-                                                <a href="/product/list"><i class="zmdi zmdi-circle"></i><span>Products</span></a>
-                                            </li>
-                                            <li>
-                                                <a href="/notice/list"><i class="zmdi zmdi-circle"></i><span>Notice</span></a>
-                                            </li>
-                                            <li>
-                                                <a href="/about"><i class="zmdi zmdi-circle"></i><span>About Us</span></a>
-                                            </li>
-                                            <li>
-                                                <a href="/contact"><i class="zmdi zmdi-circle"></i><span>Contact</span></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-3 col-sm-4">
-                                    <div class="single-footer">
-                                        <h4 class="footer-title border-left">my page</h4>
-                                        <ul class="footer-menu">
-                                            <li>
-                                                <a href="/myPurchase"><i class="zmdi zmdi-circle"></i><span>My Purchase</span></a>
-                                            </li>
-                                            <li>
-                                                <a href="/mypage/myReviews"><i class="zmdi zmdi-circle"></i><span>My Reviews</span></a>
-                                            </li>
-                                            <li>
-                                                <a href="/mypage/myCoupon"><i class="zmdi zmdi-circle"></i><span>My Coupon</span></a>
-                                            </li>
-                                            <li>
-                                                <a href="/mypage/myInfo"><i class="zmdi zmdi-circle"></i><span>My Info</span></a>
-                                            </li>
-                                            <li>
-                                                <a href="/mypage/wishList"><i class="zmdi zmdi-circle"></i><span>My Wishlist</span></a>
-                                            </li>
-                                            <li>
-                                                <a href="/purchase/viewCart"><i class="zmdi zmdi-circle"></i><span>My Cart</span></a>
-                                            </li>
-                                            
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4">
-                                    <div class="single-footer">
-                                        <h4 class="footer-title border-left">Get in touch</h4>
-                                        <div class="footer-message">
-                                            <form class="contact-form" action="/mail/send" method="post">
-                                                <input type="text" name="name" placeholder="Your name here...">
-                                                <input type="text" name="email" placeholder="Your email here...">
-                                                <textarea class="height-80" name="message" placeholder="Your messege here..."></textarea>
-                                                <button class="submit-btn-1 mt-20 btn-hover-1" type="submit">submit message</button> 
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </footer>
-        <!-- END FOOTER AREA --> 
+       
     </div>
     <!-- Body main wrapper end -->
 
@@ -435,7 +184,7 @@
     });
 	});
     </script>
-    
+    <jsp:include page="../footer.jsp"></jsp:include>
 </body>
 
 </html>

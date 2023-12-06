@@ -62,6 +62,7 @@
 				<!--전체창-->
 				<div id="nation1">
 					<ul class="menu_all" style="display: flex;">
+
 						<c:forEach items="${imgList}" var="imgList" varStatus="loop">
 							<c:if test="${imgList.categori == 1}">
 

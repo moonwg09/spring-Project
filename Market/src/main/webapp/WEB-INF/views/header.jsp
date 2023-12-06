@@ -119,9 +119,7 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 				<div class="content_div_font2">
 					<span onclick="window.location.href = '/notice/list'">이벤트</span>
 				</div>
-				<div class="content_div_font2">
-					<span onclick="window.location.href ='/admin/main'">관리자페이지</span>
-				</div>
+				
 
 			</div>
 			<form>
@@ -150,7 +148,7 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 							<i class="fa-solid fa-user" style="margin-right: 5%"></i> <a href="/member/mypage?nickName=${member.nickName}">마이페이지</a>
 						</div>
 						<div class="header_mypage_logout">
-							<i class="fa-solid fa-power-off" style="margin-right: 5%;"></i><a href="/main">로그아웃</a>
+							<i class="fa-solid fa-power-off" style="margin-right: 5%;"></i><a href="/member/logout">로그아웃</a>
 						</div>
 					</div>
 				</div>

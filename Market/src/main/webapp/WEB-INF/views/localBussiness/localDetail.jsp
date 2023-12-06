@@ -212,8 +212,8 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 
 	</c:if>
 	<c:if test="${member != null}">
-		<form id="frmm" action="/transation/chat" method="post">
-			<input type="hidden" value="${productDetail.productNo}"
+		<form id="frmm" action="/localBussiness/chat" method="post">
+			<input type="hidden" value="${localDetail.productNo}"
 				class="product_comment_content" name="productNo"> <input
 				type="hidden" value="${member.memberNo}" name="memberNo">
 			<div class="container">

@@ -48,7 +48,7 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 			<div class="mypage_mainInfo_left">
 				<div class="mypage_mainInfo_left_div">
 					<div class="mypage_profile_img">
-						<img src="image/logo.jpg" alt="" style="width: 70px; height: 70px" />
+						<img src="../resources/image/defaultprofile.png" alt="" style="width: 70px; height: 70px" />
 					</div>
 					<div class="mypage_profile_main_info">
 						<div class="mypage_profile_span">

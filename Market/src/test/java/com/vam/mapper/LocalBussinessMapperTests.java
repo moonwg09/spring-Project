@@ -37,6 +37,6 @@ public class LocalBussinessMapperTests {
 	
 	@Test
 	public void localGetDetail() throws Exception{
-		 System.out.println(localmapper.productGetDetailImage(7L));
+		 System.out.println(localmapper.selectChat(5));
 	}
 }

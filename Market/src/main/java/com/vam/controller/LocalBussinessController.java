@@ -20,10 +20,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.vam.VO.ChatVO;
 import com.vam.VO.LocalBussinessImageVO;
 import com.vam.VO.LocalBussinessVO;
 import com.vam.VO.ProductImageVO;
 import com.vam.VO.ProductVO;
+import com.vam.VO.ReplyVO;
 import com.vam.service.LocalBussinessService;
 
 import lombok.RequiredArgsConstructor;
@@ -56,6 +58,12 @@ public class LocalBussinessController {
 		model.addAttribute("localDetailImage",localservice.productGetDetailImage(productNo));
 		model.addAttribute("localDetail",localservice.localGetDetail(productNo));
 		
+	}
+	@RequestMapping(value = "/chat", method = RequestMethod.POST)
+	public String insertChat(ReplyVO cvo, int productNo, int memberNo) throws Exception {
+		logger.info("insertChat 占쏙옙占쏙옙");
+		localservice.insertChat(cvo);
+		return "redirect:/localBussiness/localDetail?productNo=" + cvo.getProductNo();
 	}
 	@RequestMapping(value = "/revisit", method = RequestMethod.GET)
 	public String localRevisit(@RequestParam("productNo") Long productNo, Model model) throws Exception {

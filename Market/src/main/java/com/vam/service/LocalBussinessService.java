@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.vam.VO.LocalBussinessImageVO;
 import com.vam.VO.LocalBussinessVO;
+import com.vam.VO.ReplyVO;
 
 
 public interface LocalBussinessService {
@@ -21,5 +22,7 @@ public interface LocalBussinessService {
 	public List<LocalBussinessVO> localBussinessList() throws Exception;
 	
 	public List<LocalBussinessVO> productGetDetailImage(Long productNo) throws Exception;
+	
+	public void insertChat(ReplyVO rvo) throws Exception;
 	
 }

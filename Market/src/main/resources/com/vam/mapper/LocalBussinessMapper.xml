@@ -37,14 +37,7 @@
 		<collection property="mvo" resultMap="memberResultMap" />
 
 	</resultMap>
-	<resultMap id="chatResultMap" type="com.vam.VO.ChatVO">
-		<id property="chatNo" column="chatNo" />
-		<result property="productNo" column="productNo" />
-		<result property="content" column="content" />
-		<result property="memberNo" column="memberNo" />
-		<collection property="pvo" resultMap="productResultMap" />
-		<collection property="mvo" resultMap="memberResultMap" />
-	</resultMap>
+
 
 	<resultMap type="com.vam.VO.LocalBussinessImageVO"  id="imageMap">
 		<id property="productNo" column="productNo" />
@@ -54,6 +47,14 @@
 		<result property="image_type" column="image_type" />
 	</resultMap>
 
+<resultMap id="chatResultMap" type="com.vam.VO.ReplyVO">
+		<id property="replyNo" column="replyNo" />
+		<result property="productNo" column="productNo" />
+		<result property="content" column="content" />
+		<result property="memberNo" column="memberNo" />
+		<collection property="pvo" resultMap="productResultMap" />
+		<collection property="mvo" resultMap="memberResultMap" />
+	</resultMap>
 
 	<select id="localBussinessSelectAll" resultType="com.vam.VO.LocalBussinessVO">
 		select * from localbussiness
@@ -87,6 +88,21 @@
 		WHERE productNo =  #{productNo, jdbcType=BIGINT}	
 	</update>
 	
-	
+	<insert id="insertChat">
+		insert into reply (replyNo, productNo,
+		content,
+		memberNo) values (null, #{productNo}, #{content},#{memberNo})
+	</insert>
+	<select id="selectChat" resultMap="chatResultMap">
+		SELECT reply.replyNo,
+		reply.productNo, reply.content , reply.memberNo,
+		member.nickName,
+		member.addr2
+		FROM reply JOIN product ON reply.productNo =
+		product.productNo JOIN member
+		ON reply.memberNo = member.memberNo
+		WHERE
+		reply.productNo =#{productNo} order by replyNo desc;
+	</select>
 	
 </mapper>

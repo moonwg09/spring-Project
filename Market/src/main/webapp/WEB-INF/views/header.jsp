@@ -138,8 +138,8 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 
 
 				<div class="icon_detail_div2" id="modal_click">
-					<i class="fa-solid fa-user" style=""></i>
-					<p style="font-size: 10px; text-align: center">마이페이지</p>
+					<img src="/resources/image/defaultprofile.png" alt="" style="width: 40px; height: 40px; border:1px solid rgba(0,0,0,0.3); border-radius: 50%;" />
+
 				</div>
 				<div class="header_modal_container" id="header_mypage_container"> 
 					<div class="header_modal_div">

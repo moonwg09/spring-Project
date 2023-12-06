@@ -129,7 +129,7 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 						<div class="detail_info_profile_div">
 							<div class="detail_info_profile_sub_info">
 								<div class="detail_info_profile_img">
-									<img src="../resources/image/profile.png" alt="" />
+									<img src="../resources/image/defaultprofile.png" alt="" />
 								</div>
 								<div class="detail_info_profile_info">
 									<div class="detail_info_profile_name">${writerProductInfo.mvo.nickName}</div>
@@ -145,9 +145,7 @@ MemberVO member = (MemberVO) sessi.getAttribute("member");
 											aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 									</div>
 								</div>
-								<div class="manner_div_img">
-									<img src="../resources/image/profile.png" alt="" />
-								</div>
+								
 							</div>
 						</div>
 						<div class="detail_warn_container">

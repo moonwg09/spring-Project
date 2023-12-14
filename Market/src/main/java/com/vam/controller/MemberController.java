@@ -206,7 +206,7 @@ public class MemberController {
 	// 占싸깍옙占쏙옙
 	@RequestMapping(value="mypage", method=RequestMethod.GET)
 	public void mypage(HttpServletRequest request, MemberVO mvo, RedirectAttributes rttr, Model model, String nickName) throws Exception{
-		
+		System.out.println(nickName);
 		memberservice.mypageList(nickName);
 		
 		model.addAttribute("likeProductList", memberservice.mypageLikeProductList(nickName));
@@ -223,6 +223,7 @@ public class MemberController {
 	@RequestMapping(value="likeProduct", method=RequestMethod.GET,produces = "text/html; charset=UTF-8")
 	public String mypageLikeProduct( Model model, @RequestParam(name = "nickName") String nickName, @RequestParam(name = "productNo") Long productNo) throws Exception{
 		System.out.println(productNo);
+		System.out.println(nickName);
 		memberservice.mypageLikeProduct(nickName, productNo);
 		return "redirect:/member/mypage?nickName=" + URLEncoder.encode(nickName, "UTF-8");
 	}

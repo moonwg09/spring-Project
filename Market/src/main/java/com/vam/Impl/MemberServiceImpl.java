@@ -1,10 +1,19 @@
 package com.vam.Impl;
 
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.mail.internet.MimeMessage;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.mail.HtmlEmail;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.vam.VO.LikeProductVO;
@@ -19,6 +28,11 @@ public class MemberServiceImpl implements MemberService {
 
 	@Autowired
 	MemberMapper membermapper;
+	
+	@Autowired
+	private JavaMailSender mailSender;
+	
+	 private final PasswordEncoder pwEncoder = new BCryptPasswordEncoder();
 
 	@Override
 	public void memberJoin(MemberVO mvo) throws Exception {
@@ -39,10 +53,10 @@ public class MemberServiceImpl implements MemberService {
 		String myMail = "01083404100";
 		// 4 params(to, from, type, text) are mandatory. must be filled
 		HashMap<String, String> params = new HashMap<String, String>();
-		params.put("to", memberPhone); // ¼ö½ÅÀüÈ­¹øÈ£
-		params.put("from", myMail); // ¹ß½ÅÀüÈ­¹øÈ£. Å×½ºÆ®½Ã¿¡´Â ¹ß½Å,¼ö½Å µÑ´Ù º»ÀÎ ¹øÈ£·Î ÇÏ¸é µÊ
+		params.put("to", memberPhone); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È­ï¿½ï¿½È£
+		params.put("from", myMail); // ï¿½ß½ï¿½ï¿½ï¿½È­ï¿½ï¿½È£. ï¿½×½ï¿½Æ®ï¿½Ã¿ï¿½ï¿½ï¿½ ï¿½ß½ï¿½,ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ ï¿½Ï¸ï¿½ ï¿½ï¿½
 		params.put("type", "SMS");
-		params.put("text", "[TEST] ÀÎÁõ¹øÈ£´Â" + "[" + cerNum + "]" + "ÀÔ´Ï´Ù."); // ¹®ÀÚ ³»¿ë ÀÔ·Â
+		params.put("text", "[TEST] ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½" + "[" + cerNum + "]" + "ï¿½Ô´Ï´ï¿½."); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½
 		params.put("app_version", "test app 1.2"); // application name and version
 
 		try {
@@ -104,4 +118,28 @@ public class MemberServiceImpl implements MemberService {
 		// TODO Auto-generated method stub
 		return membermapper.mypageLikeProductLists(nickName);
 	}
+
+	@Override
+	public MemberVO findMemberId(MemberVO dto) {
+		return membermapper.findMemberId(dto);
+	}
+	
+	@Override
+	public MemberVO findMemberPassword(MemberVO dto) {
+		return membermapper.findMemberPassword(dto);
+	}
+
+	public int pwdCheck(MemberVO dto) {
+		return membermapper.pwdCheck(dto);
+	}
+
+//ìƒˆë¡œìš´ ë¹„ë°€ë²ˆí˜¸ë¡œ ì €ìž¥
+	public void pwdUpdate(MemberVO dto) { 
+			membermapper.pwdUpdate(dto);
+		}
+
+	
+	
+	
+	
 }

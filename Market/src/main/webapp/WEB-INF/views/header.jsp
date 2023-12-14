@@ -28,7 +28,7 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 						onclick="window.location.href ='/localBussiness/localBussinessMain'">동네업체</span>
 				</div>
 				<div class="content_div_font">
-					<span>알바</span>
+					<span onclick="window.location.href = '/alba/albaMain'">알바</span>
 				</div>
 				<div class="content_div_font">
 					<span>부동산 직거래</span>
@@ -67,62 +67,14 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 						onclick="window.location.href ='/localBussiness/localBussinessMain'">동네업체</span>
 				</div>
 				<div class="content_div_font2">
-					<span>알바</span>
+					<span onclick="window.location.href = '/alba/albaMain'">알바</span>
 				</div>
-				<div class="content_div_font2">
-					<span>부동산 직거래</span>
-				</div>
+			
 				<div class="content_div_font2">
 					<span onclick="window.location.href = '/notice/list'">이벤트</span>
 				</div>
 			</div>
 				<form action="/transation/searchRes" method="get">
-				<div class="search_div2">
-					<div class="header_input_div2">
-						<input type="text" name="keyword" placeholder="물품이나 동네를 검색해보세요" />
-					</div>
-					<div class="header_button_div2">
-						<input class="button" type="submit" value="검색" />
-					</div>
-				</div>
-			</form>
-			<div class="icon_div2">
-
-
-				<div class="icon_detail_div2">
-					<i class="fa-solid fa-user" style=""></i>
-					<p style="font-size: 10px; text-align: center">마이페이지</p>
-				</div>
-			</div>
-		</div>
-	</div>
-</c:if>
-
-<c:if test="${member.adminCk == 1 }">
-	<div class="header_container2" style="background-color: white;">
-		<div class="header_main_div2">
-			<div class="logo_div2">
-				<img src="/resources/image/logo.jpg" alt=""
-					onclick="window.location.href = '/main'" style="cursor: pointer;" />
-			</div>
-			<div class="header_content_div2">
-				<div class="content_div_font2">
-					<span onclick="window.location.href ='/transation/usedTransation'">중고거래</span>
-				</div>
-				<div class="content_div_font2">
-					<span
-						onclick="window.location.href ='/localBussiness/localBussinessMain'">동네업체</span>
-				</div>
-				<div class="content_div_font2">
-					<span>알바</span>
-				</div>
-				<div class="content_div_font2">
-					<span onclick="window.location.href = '/notice/list'">이벤트</span>
-				</div>
-				
-
-			</div>
-			<form action="/transation/searchRes" method="get">
 				<div class="search_div2">
 					<div class="header_input_div2">
 						<input type="text" name="keyword" placeholder="물품이나 동네를 검색해보세요" />
@@ -155,6 +107,63 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 			</div>
 		</div>
 	</div>
+</c:if>
+
+<c:if test="${member.adminCk == 1 }">
+	<div class="header_container2" style="background-color: white;">
+		<div class="header_main_div2">
+			<div class="logo_div2">
+				<img src="/resources/image/logo.jpg" alt=""
+					onclick="window.location.href = '/main'" style="cursor: pointer;" />
+			</div>
+			<div class="header_content_div2">
+				<div class="content_div_font2">
+					<span onclick="window.location.href ='/transation/usedTransation'">중고거래</span>
+				</div>
+				<div class="content_div_font2">
+					<span
+						onclick="window.location.href ='/localBussiness/localBussinessMain'">동네업체</span>
+				</div>
+				<div class="content_div_font2">
+					<span onclick="window.location.href = '/alba/albaMain'">알바</span>
+				</div>
+				
+				<div class="content_div_font2">
+					<span onclick="window.location.href = '/notice/list'">이벤트</span>
+				</div>
+			</div>
+				<form action="/transation/searchRes" method="get">
+				<div class="search_div2">
+					<div class="header_input_div2">
+						<input type="text" name="keyword" placeholder="물품이나 동네를 검색해보세요" />
+					</div>
+					<div class="header_button_div2">
+						<input class="button" type="submit" value="검색" />
+					</div>
+				</div>
+			</form>
+			<div class="icon_div2">
+
+
+				<div class="icon_detail_div2" id="modal_click">
+					<img src="/resources/image/defaultprofile.png" alt="" style="width: 40px; height: 40px; border:1px solid rgba(0,0,0,0.3); border-radius: 50%;" />
+
+				</div>
+				<div class="header_modal_container" id="header_mypage_container"> 
+					<div class="header_modal_div">
+						<div class="header_modal_info">
+							<span>${member.nickName}</span> <p>${member.email}</p>
+						</div>
+						<div class="header_mypage_move">
+							<i class="fa-solid fa-user" style="margin-right: 5%"></i> <a href="/member/mypage?nickName=${member.nickName}">마이페이지</a>
+						</div>
+						<div class="header_mypage_logout">
+							<i class="fa-solid fa-power-off" style="margin-right: 5%;"></i><a href="/member/logout">로그아웃</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </c:if>
 <script src="https://code.jquery.com/jquery-3.4.1.js"

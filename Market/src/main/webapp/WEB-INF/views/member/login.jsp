@@ -53,8 +53,8 @@
         </form>
        
         <div class="links">
-            <a href="find-username">아이디 찾기</a>
-            <a href="find-password">비밀번호 찾기</a>
+            <a href="/member/findId">아이디 찾기</a>
+            <a href="/member/findPassword">비밀번호 찾기</a>
             <a href="/member/check">회원 가입 하기</a>
         </div>
     </div>

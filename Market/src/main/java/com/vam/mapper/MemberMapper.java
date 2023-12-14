@@ -6,16 +6,16 @@ import com.vam.VO.LikeProductVO;
 import com.vam.VO.MemberVO;
 
 public interface MemberMapper {
-	// È¸¿ø°¡ÀÔ
+	// È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public void memberJoin(MemberVO mvo);
 	
-	// ¾ÆÀÌµð Áßº¹ °Ë»ç
+	// ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ßºï¿½ ï¿½Ë»ï¿½
 	public int idCheck(String id);
 	
-	// ·Î±×ÀÎ
+	// ï¿½Î±ï¿½ï¿½ï¿½
 	public MemberVO memberLogin(MemberVO mvo);
 	
-	// À¯Àú Á¤º¸ °¡Á®¿À±â
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public List<MemberVO> memberGet();
 	
 
@@ -32,4 +32,13 @@ public interface MemberMapper {
 	public List<MemberVO> mypageLikeProductList(String nickName);
 	
 	public List<LikeProductVO> mypageLikeProductLists(String nickName);
+	
+	public MemberVO findMemberId(MemberVO dto);
+	
+	public MemberVO findMemberPassword(MemberVO dto);
+	
+	public int pwdCheck(MemberVO dto);
+
+	//ìƒˆë¡œìš´ ë¹„ë°€ë²ˆí˜¸ë¡œ ì €ìž¥
+	public int pwdUpdate(MemberVO dto);
 }

@@ -119,7 +119,7 @@
 				</div>
 					<p class="signupPhone_input_re_1">인증번호가 일치합니다.</p>
 				<p class="signupPhone_input_re_2">인증번호가 틀립니다. </p>
-				  <p class="final_mail_ck">휴대폰 번호를 입력해주세요.</p>
+				  <p class="final_phone_ck">휴대폰 번호를 입력해주세요.</p>
         	
 			</div>
 

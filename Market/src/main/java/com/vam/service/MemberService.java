@@ -9,6 +9,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.JsonParser;
@@ -45,6 +47,16 @@ public interface MemberService {
 	public List<MemberVO> mypageLikeProductList(String nickName) throws Exception;
 	
 	public List<LikeProductVO> mypageLikeProductLists(String nickName) throws Exception;
+	
+	public MemberVO findMemberId(MemberVO dto);
+	
+	public MemberVO findMemberPassword(MemberVO dto);
+
+	public int pwdCheck(MemberVO dto);
+
+	//새로운 비밀번호로 저장
+	public void pwdUpdate(MemberVO dto);
+
 	
 	
 }

@@ -43,9 +43,7 @@
 <link rel="stylesheet" href="detail.css" />
 </head>
 
-		<div id="header">
-		<jsp:include page="../header.jsp"></jsp:include>
-	</div>
+		
 <!-- BREADCRUMBS SETCTION START -->
         <div class="breadcrumbs-section plr-200 mb-80 section">
             <div class="breadcrumbs overlay-bg">

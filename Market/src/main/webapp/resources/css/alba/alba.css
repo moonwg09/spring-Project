@@ -1,0 +1,1364 @@
+@charset "UTF-8";
+.alba_main{
+    margin: auto 0;
+    height: 100%;
+    
+    padding: 1% 0%;
+    width: 100%
+}
+
+.alba_title_image{
+    background-color: #ffe2d2;
+    width: 100%;
+    height: 350px;
+    text-align: center;
+}
+
+.alba_main_form{
+    background-color: white;
+    width: 50%;
+    margin: 0 auto;
+    
+
+}
+
+.alba_title_image_form{
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    
+    
+}
+
+.alba_title_image_text{
+    width: 30%;
+    margin-top: 5%;
+    
+}
+
+.alba_title_image_text{
+    margin-left: 20%;
+}
+
+
+
+.alba_title_image_text1{
+    font-size: 30px;
+    font-weight: 700;
+    text-align: left;
+    
+}
+
+.alba_title_image_text2{
+    font-size: 30px;
+    font-weight: 700;
+    text-align: left;
+    margin-top: 1%;
+}
+
+.alba_title_image_subtext{
+    text-align: left;
+
+    
+}
+
+.alba_title_image_subtextbox{
+    margin-top: 5%;
+}
+
+
+.alba_main_product{
+    width: 100%;
+    background-color: ;
+    padding: 1% 1%
+    }
+.alba_main_product_form{
+    
+    width: 100%;
+    
+
+}
+
+.alba_main_product_title{
+    
+    font-size: 30px;
+    font-weight: 550;
+    padding: 3%;
+    width: 100%;
+    
+}
+
+.alba_main_product_set{
+    display: flex;
+    width: 100%;
+    margin-top: 5%;
+    
+    
+    
+    
+}
+
+.alba_main_product_box1{
+    display: flex;
+    
+    width: 50%;
+    
+}
+
+.img1{
+    border-radius: 10px;
+    
+}
+
+.alba_main_product_text_box{
+    width :65%;
+    margin-left: 5%; 
+    
+}
+
+.text_title{
+    font-size: 17px;
+    font-weight: 200;
+    
+}
+
+.text_add{
+    font-size: 13px;
+    color: gainsboro;
+    font-weight: 200;
+    
+    margin-top: 2%
+}
+
+.text_price{
+    
+    margin-top: 2%;
+    font-weight: 600;
+}
+
+
+.alba_main_product_box2{
+    display: flex;
+    
+    width: 50%;
+    
+    
+}
+
+.img2{
+    border-radius: 10px;
+    
+    
+}
+
+.alba_main_product_text_box2{
+    width : 65%;
+    margin-left: 2%; 
+    
+    
+    
+}
+
+.text_title2{
+    font-size: 17px;
+    font-weight: 200;
+    margin-left: 5%;
+    
+    width: 100%;
+}
+
+.text_add2{
+    font-size: 13px;
+    color: gainsboro;
+    font-weight: 200;
+    margin-left: 5%;
+    margin-top: 2%
+}
+
+.text_price2{
+    margin-left: 5%;
+    margin-top: 2%;
+    font-weight: 600;
+}
+
+
+.alba_main_product_box1{
+    display: flex;
+    
+    width: 50%;
+    
+}
+
+.img1{
+    border-radius: 10px;
+    
+}
+
+.alba_main_product_text_box{
+    width :65%;
+    margin-left: 5%; 
+    
+}
+
+.text_title{
+    font-size: 17px;
+    font-weight: 200;
+    
+}
+
+.text_add{
+    font-size: 13px;
+    color: gainsboro;
+    font-weight: 200;
+    
+    margin-top: 2%
+}
+
+.text_price{
+    
+    margin-top: 2%;
+    font-weight: 600;
+}
+
+
+.alba_main_product_box2{
+    display: flex;
+    
+    width: 50%;
+    
+    
+}
+
+.img2{
+    border-radius: 10px;
+    
+    
+}
+
+.alba_main_product_text_box2{
+    width : 65%;
+    margin-left: 2%; 
+    
+    
+    
+}
+
+.text_title2{
+    font-size: 17px;
+    font-weight: 200;
+    margin-left: 5%;
+    
+    width: 100%;
+}
+
+.text_add2{
+    font-size: 13px;
+    color: gainsboro;
+    font-weight: 200;
+    margin-left: 5%;
+    margin-top: 2%
+}
+
+.text_price2{
+    margin-left: 5%;
+    margin-top: 2%;
+    font-weight: 600;
+}
+
+.alba_main_product_box1{
+    display: flex;
+    
+    width: 50%;
+    
+}
+
+.img1{
+    border-radius: 10px;
+    
+}
+
+.alba_main_product_text_box{
+    width :65%;
+    margin-left: 5%; 
+    
+}
+
+.text_title{
+    font-size: 17px;
+    font-weight: 200;
+    
+}
+
+.text_add{
+    font-size: 13px;
+    color: gainsboro;
+    font-weight: 200;
+    
+    margin-top: 2%
+}
+
+.text_price{
+    
+    margin-top: 2%;
+    font-weight: 600;
+}
+
+
+.alba_main_product_box2{
+    display: flex;
+    
+    width: 50%;
+    
+    
+}
+
+.img2{
+    border-radius: 10px;
+    
+    
+}
+
+.alba_main_product_text_box2{
+    width : 65%;
+    margin-left: 2%; 
+    
+    
+    
+}
+
+.text_title2{
+    font-size: 17px;
+    font-weight: 200;
+    margin-left: 5%;
+    
+    width: 100%;
+}
+
+.text_add2{
+    font-size: 13px;
+    color: gainsboro;
+    font-weight: 200;
+    margin-left: 5%;
+    margin-top: 2%
+}
+
+.text_price2{
+    margin-left: 5%;
+    margin-top: 2%;
+    font-weight: 600;
+}
+
+.alba_main_product_box1{
+    display: flex;
+    
+    width: 50%;
+    
+}
+
+.img1{
+    border-radius: 10px;
+    
+}
+
+.alba_main_product_text_box{
+    width :65%;
+    margin-left: 5%; 
+    
+}
+
+.text_title{
+    font-size: 17px;
+    font-weight: 200;
+    
+}
+
+.text_add{
+    font-size: 13px;
+    color: gainsboro;
+    font-weight: 200;
+    
+    margin-top: 2%
+}
+
+.text_price{
+    
+    margin-top: 2%;
+    font-weight: 600;
+}
+
+
+.alba_main_product_box2{
+    display: flex;
+    
+    width: 50%;
+    
+    
+}
+
+.img2{
+    border-radius: 10px;
+    
+    
+}
+
+.alba_main_product_text_box2{
+    width : 65%;
+    margin-left: 2%; 
+    
+    
+    
+}
+
+.text_title2{
+    font-size: 17px;
+    font-weight: 200;
+    margin-left: 5%;
+    
+    width: 100%;
+}
+
+.text_add2{
+    font-size: 13px;
+    color: gainsboro;
+    font-weight: 200;
+    margin-left: 5%;
+    margin-top: 2%
+}
+
+.text_price2{
+    margin-left: 5%;
+    margin-top: 2%;
+    font-weight: 600;
+}
+
+.alba_main_product_box1{
+    display: flex;
+    
+    width: 50%;
+    
+}
+
+.img1{
+    border-radius: 10px;
+    
+}
+
+.alba_main_product_text_box{
+    width :65%;
+    margin-left: 5%; 
+    
+}
+
+.text_title{
+    font-size: 17px;
+    font-weight: 200;
+    
+}
+
+.text_add{
+    font-size: 13px;
+    color: gainsboro;
+    font-weight: 200;
+    
+    margin-top: 2%
+}
+
+.text_price{
+    
+    margin-top: 2%;
+    font-weight: 600;
+}
+
+
+.alba_main_product_box2{
+    display: flex;
+    
+    width: 50%;
+    
+    
+}
+
+.img2{
+    border-radius: 10px;
+    
+    
+}
+
+.alba_main_product_text_box2{
+    width : 65%;
+    margin-left: 2%; 
+    
+    
+    
+}
+
+.text_title2{
+    font-size: 17px;
+    font-weight: 200;
+    margin-left: 5%;
+    
+    width: 100%;
+}
+
+.text_add2{
+    font-size: 13px;
+    color: gainsboro;
+    font-weight: 200;
+    margin-left: 5%;
+    margin-top: 2%
+}
+
+.text_price2{
+    margin-left: 5%;
+    margin-top: 2%;
+    font-weight: 600;
+}
+
+.alba_main_product_box3{
+    display: flex;
+    
+    width: 50%;
+    
+}
+
+.img3{
+    border-radius: 10px;
+    
+}
+
+.alba_main_product_text_box3{
+    width :65%;
+    margin-left: 5%; 
+    
+}
+
+.text_title3{
+    font-size: 17px;
+    font-weight: 200;
+    
+}
+
+.text_add3{
+    font-size: 13px;
+    color: gainsboro;
+    font-weight: 200;
+    
+    margin-top: 2%
+}
+
+.text_price3{
+    
+    margin-top: 2%;
+    font-weight: 600;
+}
+
+
+.alba_main_product_box4{
+    display: flex;
+    
+    width: 50%;
+    
+    
+}
+
+.img4{
+    border-radius: 10px;
+    
+    
+}
+
+.alba_main_product_text_box4{
+    width : 65%;
+    margin-left: 2%; 
+    
+    
+    
+}
+
+.text_title4{
+    font-size: 17px;
+    font-weight: 200;
+    margin-left: 5%;
+    
+    width: 100%;
+}
+
+.text_add4{
+    font-size: 13px;
+    color: gainsboro;
+    font-weight: 200;
+    margin-left: 5%;
+    margin-top: 2%
+}
+
+.text_price4{
+    margin-left: 5%;
+    margin-top: 2%;
+    font-weight: 600;
+}
+
+.alba_main_product_box5{
+    display: flex;
+    
+    width: 50%;
+    
+}
+
+.img5{
+    border-radius: 10px;
+    
+}
+
+.alba_main_product_text_box5{
+    width :65%;
+    margin-left: 5%; 
+    
+}
+
+.text_title5{
+    font-size: 17px;
+    font-weight: 200;
+    
+}
+
+.text_add5{
+    font-size: 13px;
+    color: gainsboro;
+    font-weight: 200;
+    
+    margin-top: 2%
+}
+
+.text_price5{
+    
+    margin-top: 2%;
+    font-weight: 600;
+}
+
+
+.alba_main_product_box6{
+    display: flex;
+    
+    width: 50%;
+    
+    
+}
+
+.img6{
+    border-radius: 10px;
+    
+    
+}
+
+.alba_main_product_text_box6{
+    width : 65%;
+    margin-left: 2%; 
+    
+    
+    
+}
+
+.text_title6{
+    font-size: 17px;
+    font-weight: 200;
+    margin-left: 5%;
+    
+    width: 100%;
+}
+
+.text_add6{
+    font-size: 13px;
+    color: gainsboro;
+    font-weight: 200;
+    margin-left: 5%;
+    margin-top: 2%
+}
+
+.text_price6{
+    margin-left: 5%;
+    margin-top: 2%;
+    font-weight: 600;
+}
+
+.alba_main_product_box7{
+    display: flex;
+    
+    width: 50%;
+    
+}
+
+.img7{
+    border-radius: 10px;
+    
+}
+
+.alba_main_product_text_box7{
+    width :65%;
+    margin-left: 5%; 
+    
+}
+
+.text_title7{
+    font-size: 17px;
+    font-weight: 200;
+    
+}
+
+.text_add7{
+    font-size: 13px;
+    color: gainsboro;
+    font-weight: 200;
+    
+    margin-top: 2%
+}
+
+.text_price7{
+    
+    margin-top: 2%;
+    font-weight: 600;
+}
+
+
+.alba_main_product_box8{
+    display: flex;
+    
+    width: 50%;
+    
+    
+}
+
+.img8{
+    border-radius: 10px;
+    
+    
+}
+
+.alba_main_product_text_box8{
+    width : 65%;
+    margin-left: 2%; 
+    
+    
+    
+}
+
+.text_title8{
+    font-size: 17px;
+    font-weight: 200;
+    margin-left: 5%;
+    
+    width: 100%;
+}
+
+.text_add8{
+    font-size: 13px;
+    color: gainsboro;
+    font-weight: 200;
+    margin-left: 5%;
+    margin-top: 2%
+}
+
+.text_price8{
+    margin-left: 5%;
+    margin-top: 2%;
+    font-weight: 600;
+}
+
+.alba_main_product_box9{
+    display: flex;
+    
+    width: 50%;
+    
+}
+
+.img9{
+    border-radius: 10px;
+    
+}
+
+.alba_main_product_text_box9{
+    width :65%;
+    margin-left: 5%; 
+    
+}
+
+.text_title9{
+    font-size: 17px;
+    font-weight: 200;
+    
+}
+
+.text_add9{
+    font-size: 13px;
+    color: gainsboro;
+    font-weight: 200;
+    
+    margin-top: 2%
+}
+
+.text_price9{
+    
+    margin-top: 2%;
+    font-weight: 600;
+}
+
+
+.alba_main_product_box10{
+    display: flex;
+    
+    width: 50%;
+    
+    
+}
+
+.img10{
+    border-radius: 10px;
+    
+    
+}
+
+.alba_main_product_text_box10{
+    width : 65%;
+    margin-left: 2%; 
+    
+    
+    
+}
+
+.text_title10{
+    font-size: 17px;
+    font-weight: 200;
+    margin-left: 5%;
+    
+    width: 100%;
+}
+
+.text_add10{
+    font-size: 13px;
+    color: gainsboro;
+    font-weight: 200;
+    margin-left: 5%;
+    margin-top: 2%
+}
+
+.text_price10{
+    margin-left: 5%;
+    margin-top: 2%;
+    font-weight: 600;
+}
+
+
+.alba_main_middle_form{
+    margin-top: 5%;
+    background-color: #e8faf6;
+    padding: 3%;
+}
+
+.alba_main_middle_box{
+    display: flex;
+    width: 100%;
+}
+
+.middle_text{
+    width: 60%;
+    padding: 2% 0% 0% 3%;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.middle_btnbox{
+    width: 23%;
+    padding: 2% 0% 0% 10%;
+}
+
+.middle_btn{
+    border: 1px solid gainsboro;
+    text-align: center;
+    background-color: #ff6f0f;
+    color: white;
+    border-radius: 5px;
+    padding: 7% 0%;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+
+
+.alba_main_product_box11{
+    display: flex;
+    
+    width: 50%;
+    
+}
+
+.img9{
+    border-radius: 10px;
+    
+}
+
+.alba_main_product_text_box11{
+    width :65%;
+    margin-left: 5%; 
+    
+}
+
+.text_title11{
+    font-size: 17px;
+    font-weight: 200;
+    
+}
+
+.text_add11{
+    font-size: 13px;
+    color: gainsboro;
+    font-weight: 200;
+    
+    margin-top: 2%
+}
+
+.text_price11{
+    
+    margin-top: 2%;
+    font-weight: 600;
+}
+
+
+.alba_main_product_box12{
+    display: flex;
+    
+    width: 50%;
+    
+    
+}
+
+.img12{
+    border-radius: 10px;
+    
+    
+}
+
+.alba_main_product_text_box12{
+    width : 65%;
+    margin-left: 2%; 
+    
+    
+    
+}
+
+.text_title12{
+    font-size: 17px;
+    font-weight: 200;
+    margin-left: 5%;
+    
+    width: 100%;
+}
+
+.text_add12{
+    font-size: 13px;
+    color: gainsboro;
+    font-weight: 200;
+    margin-left: 5%;
+    margin-top: 2%
+}
+
+.text_price12{
+    margin-left: 5%;
+    margin-top: 2%;
+    font-weight: 600;
+}
+
+.alba_main_product_box13{
+    display: flex;
+    
+    width: 50%;
+    
+}
+
+.img13{
+    border-radius: 10px;
+    
+}
+
+.alba_main_product_text_box13{
+    width :65%;
+    margin-left: 5%; 
+    
+}
+
+.text_title13{
+    font-size: 17px;
+    font-weight: 200;
+    
+}
+
+.text_add13{
+    font-size: 13px;
+    color: gainsboro;
+    font-weight: 200;
+    
+    margin-top: 2%
+}
+
+.text_price13{
+    
+    margin-top: 2%;
+    font-weight: 600;
+}
+
+
+.alba_main_product_box14{
+    display: flex;
+    
+    width: 50%;
+    
+    
+}
+
+.img14{
+    border-radius: 10px;
+    
+    
+}
+
+.alba_main_product_text_box14{
+    width : 65%;
+    margin-left: 2%; 
+    
+    
+    
+}
+
+.text_title14{
+    font-size: 17px;
+    font-weight: 200;
+    margin-left: 5%;
+    
+    width: 100%;
+}
+
+.text_add14{
+    font-size: 13px;
+    color: gainsboro;
+    font-weight: 200;
+    margin-left: 5%;
+    margin-top: 2%
+}
+
+.text_price14{
+    margin-left: 5%;
+    margin-top: 2%;
+    font-weight: 600;
+}
+
+.alba_main_product_box15{
+    display: flex;
+    
+    width: 50%;
+    
+}
+
+.img15{
+    border-radius: 10px;
+    
+}
+
+.alba_main_product_text_box15{
+    width :65%;
+    margin-left: 5%; 
+    
+}
+
+.text_title15{
+    font-size: 17px;
+    font-weight: 200;
+    
+}
+
+.text_add15{
+    font-size: 13px;
+    color: gainsboro;
+    font-weight: 200;
+    
+    margin-top: 2%
+}
+
+.text_price15{
+    
+    margin-top: 2%;
+    font-weight: 600;
+}
+
+
+.alba_main_product_box16{
+    display: flex;
+    
+    width: 50%;
+    
+    
+}
+
+.img16{
+    border-radius: 10px;
+    
+    
+}
+
+.alba_main_product_text_box16{
+    width : 65%;
+    margin-left: 2%; 
+    
+    
+    
+}
+
+.text_title16{
+    font-size: 17px;
+    font-weight: 200;
+    margin-left: 5%;
+    
+    width: 100%;
+}
+
+.text_add16{
+    font-size: 13px;
+    color: gainsboro;
+    font-weight: 200;
+    margin-left: 5%;
+    margin-top: 2%
+}
+
+.text_price16{
+    margin-left: 5%;
+    margin-top: 2%;
+    font-weight: 600;
+}
+
+.alba_main_product_box17{
+    display: flex;
+    
+    width: 50%;
+    
+}
+
+.img17{
+    border-radius: 10px;
+    
+}
+
+.alba_main_product_text_box17{
+    width :65%;
+    margin-left: 5%; 
+    
+}
+
+.text_title17{
+    font-size: 17px;
+    font-weight: 200;
+    
+}
+
+.text_add17{
+    font-size: 13px;
+    color: gainsboro;
+    font-weight: 200;
+    
+    margin-top: 2%
+}
+
+.text_price17{
+    
+    margin-top: 2%;
+    font-weight: 600;
+}
+
+
+.alba_main_product_box18{
+    display: flex;
+    
+    width: 50%;
+    
+    
+}
+
+.img18{
+    border-radius: 10px;
+    
+    
+}
+
+.alba_main_product_text_box18{
+    width : 65%;
+    margin-left: 2%; 
+    
+    
+    
+}
+
+.text_title18{
+    font-size: 17px;
+    font-weight: 200;
+    margin-left: 5%;
+    
+    width: 100%;
+}
+
+.text_add18{
+    font-size: 13px;
+    color: gainsboro;
+    font-weight: 200;
+    margin-left: 5%;
+    margin-top: 2%
+}
+
+.text_price18{
+    margin-left: 5%;
+    margin-top: 2%;
+    font-weight: 600;
+}
+
+.alba_main_product_box19{
+    display: flex;
+    
+    width: 50%;
+    
+}
+
+.img19{
+    border-radius: 10px;
+    
+}
+
+.alba_main_product_text_box19{
+    width :65%;
+    margin-left: 5%; 
+    
+}
+
+.text_title19{
+    font-size: 17px;
+    font-weight: 200;
+    
+}
+
+.text_add19{
+    font-size: 13px;
+    color: gainsboro;
+    font-weight: 200;
+    
+    margin-top: 2%
+}
+
+.text_price19{
+    
+    margin-top: 2%;
+    font-weight: 600;
+}
+
+
+.alba_main_product_box20{
+    display: flex;
+    
+    width: 50%;
+    
+    
+}
+
+.img20{
+    border-radius: 10px;
+    
+    
+}
+
+.alba_main_product_text_box20{
+    width : 65%;
+    margin-left: 2%; 
+    
+    
+    
+}
+
+.text_title20{
+    font-size: 17px;
+    font-weight: 200;
+    margin-left: 5%;
+    
+    width: 100%;
+}
+
+.text_add20{
+    font-size: 13px;
+    color: gainsboro;
+    font-weight: 200;
+    margin-left: 5%;
+    margin-top: 2%
+}
+
+.text_price20{
+    margin-left: 5%;
+    margin-top: 2%;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+.alba_main_under_form{
+    margin-top: 5%;
+    background-color: #ffe2d2;
+    padding: 3%;
+}
+
+.alba_main_under_box{
+    display: flex;
+    width: 100%;
+}
+
+.under_text{
+    width: 60%;
+    padding: 2% 0% 0% 3%;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.under_btnbox{
+    width: 23%;
+    padding: 2% 0% 0% 10%;
+}
+
+.under_btn{
+    border: 1px solid gainsboro;
+    text-align: center;
+    background-color: #ff6f0f;
+    color: white;
+    border-radius: 5px;
+    padding: 7% 0%;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.hot_main_product_main_under_btn{
+    text-align: center;
+    margin-top: 3%;
+    font-weight: 700;
+    text-decoration: underline;
+    cursor: pointer;
+}

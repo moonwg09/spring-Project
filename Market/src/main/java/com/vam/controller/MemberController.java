@@ -9,8 +9,10 @@ import java.util.Random;
 
 import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.lang.RandomStringUtils;
 import org.apache.ibatis.annotations.Param;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +21,9 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -42,7 +47,7 @@ public class MemberController {
 
 	@Autowired
 	MemberService memberservice;
-	
+
 	@Autowired
 	TransationService productservice;
 	@Autowired
@@ -136,13 +141,13 @@ public class MemberController {
 		//占싱몌옙占쏙옙 占쏙옙占쏙옙占쏙옙
 		String setFrom = "moonwg09@naver.com";
 		String toMail = email;
-		String title = "회占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占싱몌옙占쏙옙 占쌉니댐옙.";
+		String title = "회원 가입 확인 코드";
 		String content = 
-				"홈占쏙옙占쏙옙占쏙옙占쏙옙 占썸문占쏙옙占쌍셔쇽옙 占쏙옙占쏙옙占쌌니댐옙." +
+				"감귤마켓에 가입해 주셔서 감사합니다!\"" +
 				"<br><br>" +
-				"占쏙옙占쏙옙 占쏙옙호占쏙옙 " + checkNum + "占쌉니댐옙." +
+				 "회원 가입 확인 코드는 " + checkNum + "입니다."  +
 				"<br>" + 
-				"占쌔댐옙 占쏙옙占쏙옙占쏙옙호占쏙옙 占쏙옙占쏙옙占쏙옙호 확占싸띰옙占쏙옙 占쏙옙占쏙옙占싹울옙 占쌍쇽옙占쏙옙.";
+				"가입을 완료하려면 확인 코드를 입력해 주세요.";
 		
 		try {
 			
@@ -220,11 +225,12 @@ public class MemberController {
 		System.out.println(memberservice.mypageList(nickName));
 		System.out.println(memberservice.mypageWriteCount(nickName));
 	}
-	@RequestMapping(value="likeProduct", method=RequestMethod.GET,produces = "text/html; charset=UTF-8")
-	public String mypageLikeProduct( Model model, @RequestParam(name = "nickName") String nickName, @RequestParam(name = "productNo") Long productNo) throws Exception{
+	@RequestMapping(value="likeProduct", method=RequestMethod.GET)
+	public String mypageLikeProduct( Model model,@RequestParam(name = "productNo" ,required = false) Long productNo,String nickName) throws Exception{
 		System.out.println(productNo);
 		System.out.println(nickName);
 		memberservice.mypageLikeProduct(nickName, productNo);
+
 		return "redirect:/member/mypage?nickName=" + URLEncoder.encode(nickName, "UTF-8");
 	}
 //	@RequestMapping(value="/kakao", method=RequestMethod.GET)
@@ -256,7 +262,56 @@ public class MemberController {
 		}
 		
 		
+		@RequestMapping(value = "/findId", method = RequestMethod.GET)
+		public void findId() throws Exception {
+			logger.info("findId");
+		}
 		
+		@PostMapping("findIdCheck")
+		public String searchId(HttpServletRequest request, Model model,MemberVO dto,
+				@RequestParam(name = "nickName", required = false) String nickName, 
+				@RequestParam(name = "email", required = false) String email) {
+			try {
+				dto.setNickName(nickName);
+				dto.setEmail(email);
+				MemberVO id = memberservice.findMemberId(dto);
 
+				model.addAttribute("findId", id);
+
+			} catch (Exception e) {
+				model.addAttribute("msg", "오류가 발생되었습니다.");
+				e.printStackTrace();
+			}
+			return "member/findIdResult";
+		}
+		
+		@RequestMapping(value = "/findPassword", method = RequestMethod.GET)
+		public void findPassword() throws Exception {
+			logger.info("findPassword");
+		}
+		
+		@PostMapping("findPasswordCheck")
+		public String findPwdCheck(HttpServletRequest request, Model model,
+				@RequestParam(name = "id", required = false) String id, @RequestParam(name = "nickName", required = false) String nickName,@RequestParam(name = "email" ,required = false) String email, 
+				MemberVO dto) {
+			try {
+				dto.setId(id);
+				dto.setNickName(nickName);
+				dto.setEmail(email);
+				MemberVO password = memberservice.findMemberPassword(dto);
+
+				model.addAttribute("findPwd", password);
+
+				String newPwd = RandomStringUtils.randomAlphanumeric(10);
+				dto.setPassword(newPwd);
+				memberservice.pwdUpdate(dto);
+				model.addAttribute("newPwd", newPwd);
+
+			} catch (Exception e) {
+				e.printStackTrace();
+				model.addAttribute("msg", "오류가 발생되었습니다.");
+			}
+			return "member/findPasswordResult";
+		}
 		
 }

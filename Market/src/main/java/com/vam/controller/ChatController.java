@@ -1,12 +1,7 @@
 
 package com.vam.controller;
 
-import java.io.FileInputStream;
 import java.util.List;
-
-import javax.annotation.Resource;
-
-import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

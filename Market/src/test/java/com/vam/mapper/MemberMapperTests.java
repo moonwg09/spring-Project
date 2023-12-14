@@ -21,18 +21,18 @@ public class MemberMapperTests {
 //	  member.setMemberNo(3);
 //	  member.setId("12324");
 //	  member.setPassword("12234");
-//	  member.setNickName("¿ëÈ£22");
+//	  member.setNickName("ï¿½ï¿½È£22");
 //	  member.setEmail("qwe22");
 //	  member.setAddr1("12322");
 //	  member.setAddr2("12322");
 //	  member.setPhone("12322");
 //	  member.setAdminCk(1);
 //	  
-//	  membermapper.memberJoin(member); //Äõ¸® ¸Þ¼­µå ½ÇÇà
+//	  membermapper.memberJoin(member); //ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 //	  
 //	  }
 	
-//	//¾ÆÀÌµð Áßº¹°Ë»ç
+//	//ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ßºï¿½ï¿½Ë»ï¿½
 //	@Test
 //	public void idCheck() throws Exception{
 //		String id = "test3";
@@ -45,7 +45,7 @@ public class MemberMapperTests {
 //		
 //		
 //		
-//		System.out.println(membermapper.mypageList("¿ëÈ£2"));
+//		System.out.println(membermapper.mypageList("ï¿½ï¿½È£2"));
 //	}
 	
 //	@Test
@@ -53,7 +53,7 @@ public class MemberMapperTests {
 //		
 //		
 //		
-//		System.out.println(membermapper.mypageWriteCount("¿ëÈ£2"));
+//		System.out.println(membermapper.mypageWriteCount("ï¿½ï¿½È£2"));
 //	}
 	
 //	@Test
@@ -61,7 +61,7 @@ public class MemberMapperTests {
 //		
 //		
 //		
-//		System.out.println(membermapper.mypageChatCount("¿ëÈ£2"));
+//		System.out.println(membermapper.mypageChatCount("ï¿½ï¿½È£2"));
 //	}
 
 //	@Test
@@ -69,7 +69,7 @@ public class MemberMapperTests {
 //		
 //		
 //		
-//		System.out.println(membermapper.mypageReplyCount("¿ëÈ£2"));
+//		System.out.println(membermapper.mypageReplyCount("ï¿½ï¿½È£2"));
 //	}
 
 //	@Test
@@ -85,11 +85,11 @@ public class MemberMapperTests {
 //	@Test
 //	public void mypageChatCountTest() throws Exception{
 //		
-//		System.out.println(membermapper.mypageLikeProductList("¿ëÈ£2"));
+//		System.out.println(membermapper.mypageLikeProductList("ï¿½ï¿½È£2"));
 //		}
 	@Test
 	public void mypageChatCountTest() throws Exception{
 		
-		System.out.println(membermapper.mypageLikeProductLists("¿ëÈ£2"));
+		System.out.println(membermapper.mypageLikeProductLists("ï¿½ï¿½È£2"));
 		}
 }

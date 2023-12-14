@@ -59,18 +59,18 @@
                                       </div>
                                       <div class="chat_view">
                                         <div class="preview-title-wrap">
-                                          <span class="preview-nickname">다산h</span>
+                                          <span class="preview-nickname">문웅기</span>
                                           <div class="sub-text">
-                                            <span>다산1동</span>
+                                            <span>면목동</span>
                                             <span> · </span>
-                                            <span>1년 전</span>
+                                            <span>10분전</span>
                                           </div>
                                         </div>
                                         <div class="preview-description">
                                           <span class="description-text">네</span>
                                         </div>
                                       </div>
-                                      <img src="../resources/img/고기.png" class="preview-image" alt="글 제목">
+                                      <img src="../resources/image/wkaqk.png" class="preview-image" alt="글 제목">
                                     </a>
                                   </li>
                                 <!-- 다른 목록 항목들 -->
@@ -91,7 +91,7 @@
               <div class="chat-header-profile">
                 <img class="chat-header-image" src="../resources/img/프사.png" alt="호호홓">
                 <div class="main-title">
-                  <span>호호홓</span>
+                  <span>닉네임</span>
                   <span class="temperature">37.5°C</span>
                 </div>
               </div>
@@ -99,10 +99,10 @@
             <!--판매 상세 페이지 링크-->
             <a href="#" target="_blank" rel="noreferrer" class="sale_link">
               <div class="sale_bottom">
-                <img class="article-image" src="../resources/img/profile.png" alt="판매 제목">
+                <img class="article-image" src="../resources/image/wkaqk.png" alt="판매 제목">
                 <div class="reserved-main">
-                  <div>에어팟 2세대 본체 판매합니다</div>
-                  <div class="reserved-price">20,000원</div>
+                  <div>잠바</div>
+                  <div class="reserved-price">15,000원</div>
                 </div>
                 <div>
                   <span class="reserve-button-closed">거래완료</span>

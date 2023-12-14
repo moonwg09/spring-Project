@@ -117,7 +117,7 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 						<div class="myapge_write_product_div">
 							<div class="myapge_write_product_img">
 								<!-- 이미지 출력 코드 (product.img 등 사용) -->
-								<img src="image/logo.jpg" alt=""
+								<img src="/resources/image/시계.png" alt=""
 									style="width: 100px; height: 100px" />
 							</div>
 							<div class="myapge_write_product_title">
@@ -141,7 +141,7 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 					<c:forEach items="${likeProductLists.pvo}" var="likeProductLists">
 						<div class="myapge_write_product_div">
 							<div class="myapge_write_product_img">
-								<img src="image/logo.jpg" alt=""
+								<img src="/resources/image/시계.png" alt=""
 									style="width: 100px; height: 100px" />
 							</div>
 							<div class="myapge_write_product_title">

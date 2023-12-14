@@ -55,13 +55,13 @@
                           height: 100%;
                         "
                       >
-                      <c:forEach items="${products }" var="products">
+                      <c:forEach items="${products }" var="products" varStatus="varstatus">
                       
                         <li>
                           <div>
                             <span style="text-align: center"
                               ><img
-                                src="/resources/image/logo.png"
+                                src="/resources/image/wkaqk.png"
                                 style="width: 100%; height: auto"
                                 alt=""
                             /></span>

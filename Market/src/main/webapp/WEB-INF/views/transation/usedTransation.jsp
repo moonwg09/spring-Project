@@ -79,7 +79,7 @@
 							<li><a class="category"  href="17">모자</a></li>
 							<li><a class="category"  href="18">기타</a></li>
 						</ul></li>
-					<li><a href="#" class="category">뷰티</a>
+					<li>뷰티
 						<ul>
 							<li><a class="category"  href="19">스킨케어</a></li>
 							<li><a class="category"  href="20">메이크업</a></li>
@@ -90,7 +90,7 @@
 							<li><a class="category"  href="25">남성 화장품</a></li>
 							<li><a  class="category" href="26">가발/기타용품</a></li>
 						</ul></li>
-					<li><a href="#" class="category">출산/육아용품</a>
+					<li>출산/육아용품
 						<ul>
 							<li><a class="category"  href="27">유아동의류</a></li>
 							<li><a class="category"  href="28">유아동잡화</a></li>
@@ -99,7 +99,7 @@
 							<li><a class="category"  href="31">기타 유아동용품</a></li>
 							<li><a class="category"  href="32">코너마켓</a></li>
 						</ul></li>
-					<li><a href="#" class="category">리빙/생활</a>
+					<li>리빙/생활
 						<ul>
 							<li><a class="category"  href="33">주방용품</a></li>
 							<li><a class="category"  href="34">식품</a></li>
@@ -109,14 +109,14 @@
 							<li><a class="category"  href="38">기타잡화</a></li>
 							<li><a class="category"  href="39">차량용품</a></li>
 						</ul></li>
-					<li><a href="#" class="category">전자기기</a>
+					<li>전자기기
 						<ul>
 							<li><a class="category"  href="40">모바일/태블릿</a></li>
 							<li><a class="category"  href="41">가전제품</a></li>
 							<li><a class="category"  href="42">노트북/PC</a></li>
 							<li><a class="category"  href="43">카메라/캠코더</a></li>
 						</ul></li>
-					<li><a href="#" class="category">가전제품</a>
+					<li>가전제품
 						<ul>
 							<li><a class="category"  href="44">냉장고</a></li>
 							<li><a class="category"  href="45">TV</a></li>
@@ -127,7 +127,7 @@
 							<li><a class="category"  href="50">음향가전</a></li>
 							<li><a class="category"  href="51">생활가전</a></li>
 						</ul></li>
-					<li><a href="#" class="category">게임</a>
+					<li>게임
 						<ul>
 							<li><a class="category"  href="52">PC 게임</a></li>
 							<li><a class="category"  href="53">플레이스테이션</a></li>
@@ -138,7 +138,7 @@
 							<li><a class="category"  href="58">게임타이틀</a></li>
 							<li><a class="category"  href="59">기타 게임</a></li>
 						</ul></li>
-					<li><a href="#" class="category">반려동물/취미</a>
+					<li>반려동물/취미
 						<ul>
 							<li><a class="category"  href="60">반려동물</a></li>
 							<li><a class="category"  href="61">키덜트</a></li>
@@ -147,14 +147,14 @@
 							<li><a class="category"  href="64">예술작품.공동품/수집</a></li>
 							<li><a class="category"  href="65">미술재료/미술도구</a></li>
 						</ul></li>
-					<li><a href="#" class="category">티켓/쿠폰</a>
+					<li>티켓/쿠폰
 						<ul>
 							<li><a class="category"  href="66">티켓</a></li>
 							<li><a class="category"  href="67">상품권/쿠폰</a></li>
 							<li><a class="category"  href="68">여행숙박/이용권</a></li>
 							<li><a class="category"  href="69">기타티켓/쿠폰/이용권</a></li>
 						</ul></li>
-					<li><a href="#" class="category">스포츠</a>
+					<li>스포츠
 						<ul>
 							<li><a class="category"  href="70">골프</a></li>
 							<li><a class="category"  href="71">자전거</a></li>

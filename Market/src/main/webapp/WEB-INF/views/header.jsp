@@ -30,9 +30,7 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 				<div class="content_div_font">
 					<span onclick="window.location.href = '/alba/albaMain'">알바</span>
 				</div>
-				<div class="content_div_font">
-					<span>부동산 직거래</span>
-				</div>
+				
 				<div class="content_div_font">
 					<span onclick="window.location.href = '/notice/list'">이벤트</span>
 				</div>
@@ -145,11 +143,11 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 			<div class="icon_div2">
 
 
-				<div class="icon_detail_div2" id="modal_click">
+				<div class="icon_detail_div2" id="modal_click_amdin">
 					<img src="/resources/image/defaultprofile.png" alt="" style="width: 40px; height: 40px; border:1px solid rgba(0,0,0,0.3); border-radius: 50%;" />
 
 				</div>
-				<div class="header_modal_container" id="header_mypage_container"> 
+				<div class="header_modal_container" id="header_mypage_container_admin"> 
 					<div class="header_modal_div">
 						<div class="header_modal_info">
 							<span>${member.nickName}</span> <p>${member.email}</p>
@@ -189,6 +187,19 @@ MemberVO member = (MemberVO) sess.getAttribute("member");
 			function() {
 				var headerMypageContainer = document
 						.getElementById("header_mypage_container");
+
+				if (headerMypageContainer.style.display === "none"
+						|| headerMypageContainer.style.display === "") {
+					headerMypageContainer.style.display = "block";
+				} else {
+					headerMypageContainer.style.display = "none";
+				}
+			});
+	document.getElementById("modal_click_amdin").addEventListener(
+			"click",
+			function() {
+				var headerMypageContainer = document
+						.getElementById("header_mypage_container_admin");
 
 				if (headerMypageContainer.style.display === "none"
 						|| headerMypageContainer.style.display === "") {

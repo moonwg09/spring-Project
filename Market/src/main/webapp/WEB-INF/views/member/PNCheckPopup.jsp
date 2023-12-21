@@ -34,7 +34,7 @@
     
     <script>
 	function setParentText() {
-   		opener.document.getElementById("phoneInput").value = document.getElementById("ckInput").value;
+   		
    		window.close();
    	}
     </script>
